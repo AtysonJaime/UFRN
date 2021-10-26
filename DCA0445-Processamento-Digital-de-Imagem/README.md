@@ -1,6 +1,6 @@
-# DCA0445 - Processamento Digital de Imagem
+# DCA0445 - PROCESSAMENTO DIGITAL DE IMAGEM
 
-## :sparkles: Sobre 
+## :sparkles: Sobre
 
 Nessa pasta estara contida todos os arquivos criados e utilizados para a confecção da disciplina Processamento Digital de Imagem ofertado pela Universidade Federa do Rio Grande do Norte ministrada pelo professor [Agostinho Brito](https://agostinhobritojr.github.io).
 
