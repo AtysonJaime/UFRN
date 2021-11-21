@@ -10,7 +10,7 @@ cv2.namedWindow('Imagem Normal', cv2.WINDOW_AUTOSIZE)
 cv2.namedWindow('Imagem Negativa', cv2.WINDOW_AUTOSIZE)
 
 # abre imagem bolha.png em preto e branco.
-img = cv2.imread("biel.png", cv2.IMREAD_GRAYSCALE)
+img = cv2.imread("../img/biel.png", cv2.IMREAD_GRAYSCALE)
 if (img is None):
     sys.exit("Não conseguimos abrir a imagem.")
 p1 = [0,0]
