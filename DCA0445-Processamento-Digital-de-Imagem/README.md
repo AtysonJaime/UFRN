@@ -4,9 +4,11 @@
 
 Nessa pasta estara contida todos os arquivos criados e utilizados para a confecção da disciplina Processamento Digital de Imagem ofertado pela Universidade Federa do Rio Grande do Norte ministrada pelo professor [Agostinho Brito](https://agostinhobritojr.github.io).
 
+Caso deseje visualizar as explicações para os exercicios, (Clicar aqui!)[https://atysonjaime.github.io/pdi/].
+
 ## :exclamation: Importante
 
-Para compilar os arquivos aqui dentro, se faz necessário ter o [OpenCV](https://opencv.org/releases/) e um compilador de python em sua maquina. Para os projeto usei o (Anaconda)[https://www.anaconda.com]
+Para compilar os arquivos aqui dentro, se faz necessário ter o (OpenCV)[https://opencv.org/releases/] e um compilador de python em sua maquina. Para os projeto usei o (Anaconda)[https://www.anaconda.com]
 
 Normalmente, ao instalar o anaconda em sua maquina ela já virá com a biblioteca do openCV também, mas caso não tenha instalado, nesse (tutorial)[https://www.geeksforgeeks.org/opencv-python-tutorial/] explica bem como deixar tudo funcionando.
 

@@ -34,7 +34,7 @@ p = Ponto();
 colorWhite = numpy.array([255,255,255])
 colorBlack = numpy.array([0,0,0])
 
-## Remove as bolhas da borda da imagem
+## Remove as bolhas das bordas da imagem
 # -> Topo
 for i in range(0, largura, 1):
     if (imgBolhas[0,i] == colorWhite).all():
