@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang='pt-br'>
+  <head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Controlador de Luminosidade</title>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css' integrity='sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l' crossorigin='anonymous'>
+    <style>
+      html,
+      body {
+        height: 100%;
+        background-color: #333;
+      };
+    </style>
+  </head>
+  <body>
+    <div class='w-100 h-100 d-flex flex-column justify-content-center align-items-center'>
+      <h1 class='text-white text-center m-4'>Controlador de Luminosidade</h1>
+      <div class='d-flex w-100 justify-content-around flex-wrap'>
+        <div class='text-center m-4' style='border: 2px solid white; padding: 30px; color: white;'>
+          <h4>Porcentagem de Luminosidade: </h4>
+          <h6>50%</h6>
+        </div>
+        <div class='m-4'>
+          <div class='d-flex flex-wrap justify-content-around align-items-center'>
+            <a class='btn btn-lg btn-success m-2' title='Ligar Luz' href="/Ligar">Ligar Luz</a>
+            <a class='btn btn-lg btn-danger m-2' title='Desligar Luz' href="/Desligar">Desligar Luz</a>
+          </div>
+          <div class='d-flex flex-wrap justify-content-around align-items-center'>
+            <a class='btn btn-lg btn-primary m-2' title='Aumento em 10%' href="/Aumentar">Aumentar Luminosidade</a>
+            <a class='btn btn-lg btn-secondary m-2' title='Reduz em 10%' href="/Reduzir">Reduzir Luminosidade</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
