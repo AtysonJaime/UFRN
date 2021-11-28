@@ -12,8 +12,6 @@ class Ponto:
     x = 0;
     y = 0;
 
-cv2.namedWindow('Imagem Bolhas', cv2.WINDOW_AUTOSIZE)
-
 # abre imagem bolha.png em colorido.
 imgBolhas = cv2.imread("../img/bolhas.png", cv2.IMREAD_COLOR)
 if (imgBolhas is None):
@@ -41,8 +39,6 @@ for i in range(0, largura, 1):
         p.x = i
         p.y = 0
         cv2.floodFill(imgBolhas,None, (p.x,p.y), (0,0,0))
-cv2.imshow('Imagem Bolhas', imgBolhas)
-cv2.waitKey()
 
 # -> Baixo
 for i in range(0, largura, 1):
@@ -50,8 +46,6 @@ for i in range(0, largura, 1):
         p.x = i
         p.y = altura-1
         cv2.floodFill(imgBolhas,None, (p.x,p.y), (0,0,0))
-cv2.imshow('Imagem Bolhas', imgBolhas)
-cv2.waitKey()
 
 # -> Direita
 for j in range(0, altura, 1):
@@ -59,8 +53,6 @@ for j in range(0, altura, 1):
         p.x = 0
         p.y = j
         cv2.floodFill(imgBolhas,None, (p.x,p.y), (0,0,0))
-cv2.imshow('Imagem Bolhas', imgBolhas)
-cv2.waitKey()
 
 # -> Esquerda
 for j in range(0, altura, 1):
@@ -68,9 +60,9 @@ for j in range(0, altura, 1):
         p.x = largura-1
         p.y = j
         cv2.floodFill(imgBolhas,None, (p.x,p.y), (0,0,0))
-cv2.imshow('Imagem Bolhas', imgBolhas)
+cv2.namedWindow('Imagem Bolhas Sem Borda', cv2.WINDOW_AUTOSIZE)
+cv2.imshow('Imagem Bolhas Sem Borda', imgBolhas)
 cv2.waitKey()
-
 ## Filtra a imagem para calcular quantidade
 for i in range(0, altura, 1):
     for j in range(0, largura, 1):
@@ -101,8 +93,8 @@ for i in range(1, altura, 1):
             n_bolhas_buraco += 1
             cv2.floodFill(imgBolhas,None, (p.x,p.y), (0,0,255))
             cv2.floodFill(imgBolhas,None, (p.x-1,p.y-1), (0,0,255))
-cv2.namedWindow('Imagem Filtrada', cv2.WINDOW_AUTOSIZE)
-cv2.imshow('Imagem Filtrada', imgBolhas)
+cv2.namedWindow('Imagem Filtrada Com Burado', cv2.WINDOW_AUTOSIZE)
+cv2.imshow('Imagem Filtrada Com Burado', imgBolhas)
 print("Existem ", n_bolhas, ' bolhas na imagem original')
 print("Dessas ", n_bolhas_buraco, ' possuem buracos no meio')
 
