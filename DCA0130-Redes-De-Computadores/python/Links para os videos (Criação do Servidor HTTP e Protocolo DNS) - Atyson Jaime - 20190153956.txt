@@ -1,0 +1,8 @@
+Olá Professor, Vai os links para os videos dos relatorio
+
+Aluno: Atyson Jaime de Sousa Martins
+Matricula: 20190153956
+
+https://youtu.be/4psWUlc0VHM  --> Relatório Criação do servidor HTTP
+
+https://youtu.be/h5iSuhFIhps --> Relatório Protocolo DNS

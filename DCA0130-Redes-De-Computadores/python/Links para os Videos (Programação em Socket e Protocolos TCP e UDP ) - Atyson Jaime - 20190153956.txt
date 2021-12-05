@@ -1,0 +1,8 @@
+Olá Professor, Vai os links para os videos dos relatorio
+
+Aluno: Atyson Jaime de Sousa Martins
+Matricula: 20190153956
+
+https://youtu.be/9-h8Q2JxiBA  --> Relatório Programação em Socket
+
+https://youtu.be/VN0Nsj5UcqE --> Relatório Estudos de Protocolos TCP e UDP

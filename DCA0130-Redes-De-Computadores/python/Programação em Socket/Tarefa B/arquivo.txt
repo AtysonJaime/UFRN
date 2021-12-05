@@ -1,0 +1,1 @@
+Esse e um arquivo exemplo para a confeccao da tarefa B do relatorio de programacao em Sockets
