@@ -1,0 +1,160 @@
+m255
+K3
+13
+cModel Technology
+dC:\altera\13.0sp1\modelsim_ase\win32aloem
+Eacumu_16b
+Z0 w1542841244
+Z1 dC:\Users\caiocelso\Desktop\Digital (P3)\ACUMULADOR
+Z2 8C:/Users/caiocelso/Desktop/Digital (P3)/ACUMULADOR/ACUMU_16B.vhd
+Z3 FC:/Users/caiocelso/Desktop/Digital (P3)/ACUMULADOR/ACUMU_16B.vhd
+l0
+L1
+VBdO3lFSz:<[1gHD4XTD7^1
+Z4 OV;C;10.1d;51
+32
+Z5 !s108 1542841301.173000
+Z6 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/caiocelso/Desktop/Digital (P3)/ACUMULADOR/ACUMU_16B.vhd|
+Z7 !s107 C:/Users/caiocelso/Desktop/Digital (P3)/ACUMULADOR/ACUMU_16B.vhd|
+Z8 o-work work -2002 -explicit -O0
+Z9 tExplicit 1
+!s100 7WNY>]@N[K3_SjJhYZGUP3
+!i10b 1
+Ackt
+DEx4 work 9 acumu_16b 0 22 BdO3lFSz:<[1gHD4XTD7^1
+l41
+L12
+V;kmPkRkL`N6e25WN]G@JC1
+R4
+32
+R5
+R6
+R7
+R8
+R9
+!s100 _3S82F2=>lIO`SeaoSGU=1
+!i10b 1
+Effd
+Z10 w1541342556
+R1
+Z11 8C:/Users/caiocelso/Desktop/Digital (P3)/REG_16B/ffd.vhd
+Z12 FC:/Users/caiocelso/Desktop/Digital (P3)/REG_16B/ffd.vhd
+l0
+L1
+VaGZ[A@n<XbjHGH0EobWR51
+R4
+32
+Z13 !s108 1542841301.807000
+Z14 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/caiocelso/Desktop/Digital (P3)/REG_16B/ffd.vhd|
+Z15 !s107 C:/Users/caiocelso/Desktop/Digital (P3)/REG_16B/ffd.vhd|
+R8
+R9
+!s100 C<H^ll6D@Bi<GjmDJmZ`;3
+!i10b 1
+Ackt
+DEx4 work 3 ffd 0 22 aGZ[A@n<XbjHGH0EobWR51
+l12
+L8
+V9?@zK26]J:?gK59a7LJ>a0
+R4
+32
+R13
+R14
+R15
+R8
+R9
+!s100 <GSZlCaKLQ@Te83jHA0Bk2
+!i10b 1
+Ereg_16b
+Z16 w1542821606
+R1
+Z17 8C:/Users/caiocelso/Desktop/Digital (P3)/REG_16B/REG_16B.vhd
+Z18 FC:/Users/caiocelso/Desktop/Digital (P3)/REG_16B/REG_16B.vhd
+l0
+L1
+VK9HkQhe7Z]2CYfF=jJUf;3
+R4
+32
+Z19 !s108 1542841301.476000
+Z20 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/caiocelso/Desktop/Digital (P3)/REG_16B/REG_16B.vhd|
+Z21 !s107 C:/Users/caiocelso/Desktop/Digital (P3)/REG_16B/REG_16B.vhd|
+R8
+R9
+!s100 dZ2L_zXCT1?QC;2`Q87?40
+!i10b 1
+Ackt
+DEx4 work 7 reg_16b 0 22 K9HkQhe7Z]2CYfF=jJUf;3
+l21
+L10
+V?HN1J6PPQzMJJd@J;jBd?2
+R4
+32
+R19
+R20
+R21
+R8
+R9
+!s100 zK6<Id358BiJQ>h9OM?]C3
+!i10b 1
+Esomadorb1
+Z22 w1535037244
+R1
+Z23 8C:/Users/caiocelso/Desktop/Digital (P3)/SUM_16B/SUM_1B.vhd
+Z24 FC:/Users/caiocelso/Desktop/Digital (P3)/SUM_16B/SUM_1B.vhd
+l0
+L1
+VXRAg?cWzBlP^nfeJI`K672
+R4
+32
+Z25 !s108 1542841302.331000
+Z26 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/caiocelso/Desktop/Digital (P3)/SUM_16B/SUM_1B.vhd|
+Z27 !s107 C:/Users/caiocelso/Desktop/Digital (P3)/SUM_16B/SUM_1B.vhd|
+R8
+R9
+!s100 MHjSHG3XE?8h]>@jA=7C21
+!i10b 1
+Alogic
+DEx4 work 9 somadorb1 0 22 XRAg?cWzBlP^nfeJI`K672
+l10
+L9
+V[l5XIaL]`dUia6]moEmZm2
+R4
+32
+R25
+R26
+R27
+R8
+R9
+!s100 DlW1JfBVWbBZ`]DaRRa>G2
+!i10b 1
+Esum_16b
+Z28 w1542824904
+R1
+Z29 8C:/Users/caiocelso/Desktop/Digital (P3)/SUM_16B/SUM_16B.vhd
+Z30 FC:/Users/caiocelso/Desktop/Digital (P3)/SUM_16B/SUM_16B.vhd
+l0
+L1
+V=NYFd:GDgh_E7b?fYLLaH1
+!s100 OeC>dT]jCBJK_ao6fbW[o3
+R4
+32
+!i10b 1
+Z31 !s108 1542841302.661000
+Z32 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/caiocelso/Desktop/Digital (P3)/SUM_16B/SUM_16B.vhd|
+Z33 !s107 C:/Users/caiocelso/Desktop/Digital (P3)/SUM_16B/SUM_16B.vhd|
+R8
+R9
+Aencapss4
+DEx4 work 7 sum_16b 0 22 =NYFd:GDgh_E7b?fYLLaH1
+l25
+L12
+VHC1Ca?klMR<B^gicI3jXP0
+!s100 _[PASFzFgYV_g``^:?g8D2
+R4
+32
+!i10b 1
+R31
+R32
+R33
+R8
+R9

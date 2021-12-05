@@ -1,0 +1,12 @@
+vsim REG_16B
+
+add wave *
+
+force CLK_REG '0' 1ns, '1' 2ns -repeat 4ns
+force LD_REG '0' 4ns, '1' 8ns -repeat 16ns
+
+force D_16B "0000000000000010" 0ns
+force PRE_REG '1' 0ns
+force CLR_REG '0' 0ns, '1' 8ns -repeat 16ns
+
+run 160ns

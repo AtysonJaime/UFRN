@@ -1,0 +1,73 @@
+|Up_Down_4bits
+clk_ud => ffjk:FFJK_1.clk
+clk_ud => ffjk:FFJK_2.clk
+clk_ud => ffjk:FFJK_3.clk
+clk_ud => ffjk:FFJK_4.clk
+UD => saida_and_1.IN1
+UD => saida_and_1_barrado.IN1
+Cle => ffjk:FFJK_1.C
+Cle => ffjk:FFJK_2.C
+Cle => ffjk:FFJK_3.C
+Cle => ffjk:FFJK_4.C
+S[0] <= ffjk:FFJK_1.q
+S[1] <= ffjk:FFJK_2.q
+S[2] <= ffjk:FFJK_3.q
+S[3] <= ffjk:FFJK_4.q
+
+
+|Up_Down_4bits|ffjk:FFJK_1
+clk => qS.CLK
+J => process_0.IN0
+J => process_0.IN0
+J => process_0.IN0
+K => process_0.IN1
+K => process_0.IN1
+K => process_0.IN1
+P => qS.IN0
+P => qS.PRESET
+C => qS.IN1
+q <= qS.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Up_Down_4bits|ffjk:FFJK_2
+clk => qS.CLK
+J => process_0.IN0
+J => process_0.IN0
+J => process_0.IN0
+K => process_0.IN1
+K => process_0.IN1
+K => process_0.IN1
+P => qS.IN0
+P => qS.PRESET
+C => qS.IN1
+q <= qS.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Up_Down_4bits|ffjk:FFJK_3
+clk => qS.CLK
+J => process_0.IN0
+J => process_0.IN0
+J => process_0.IN0
+K => process_0.IN1
+K => process_0.IN1
+K => process_0.IN1
+P => qS.IN0
+P => qS.PRESET
+C => qS.IN1
+q <= qS.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Up_Down_4bits|ffjk:FFJK_4
+clk => qS.CLK
+J => process_0.IN0
+J => process_0.IN0
+J => process_0.IN0
+K => process_0.IN1
+K => process_0.IN1
+K => process_0.IN1
+P => qS.IN0
+P => qS.PRESET
+C => qS.IN1
+q <= qS.DB_MAX_OUTPUT_PORT_TYPE
+
+

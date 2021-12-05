@@ -1,0 +1,13 @@
+{C:/Users/caiocelso/Desktop/Digital (P3)/SUM_16B/SUM_16B.vhd} {1 {vcom -work work -2002 -explicit {C:/Users/caiocelso/Desktop/Digital (P3)/SUM_16B/SUM_16B.vhd}
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Compiling entity SUM_16B
+-- Compiling architecture encapss4 of SUM_16B
+
+} {} {}} {C:/Users/caiocelso/Desktop/Digital (P3)/SUM_16B/SUM_1B.vhd} {1 {vcom -work work -2002 -explicit {C:/Users/caiocelso/Desktop/Digital (P3)/SUM_16B/SUM_1B.vhd}
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Compiling entity somadorb1
+-- Compiling architecture logic of somadorb1
+
+} {} {}}

@@ -1,0 +1,9 @@
+vsim COMP_16B
+
+add wave *
+
+
+force A_COMP "1000010001001001" 0ns, "1000010001001000" 2ns, "1000010001001001" 4ns -repeat 8ns   
+force B_COMP "1000010001001001" 0ns, "1000010001001001" 4ns, "1000010000001001" 8ns -repeat 16ns
+
+run 160ns

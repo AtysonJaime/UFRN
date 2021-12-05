@@ -1,0 +1,11 @@
+vsim RTL_SAD
+
+add wave *
+
+force A "00000010" 0ns, "00001010" 20ns, "00000110" 40ns, "00001110" 80ns -repeat 100ns
+force B "00000110" 0ns, "00000011" 20ns, "00001111" 40ns, "00001011" 80ns -repeat 100ns
+force Clk 1 1ns, 0 4ns -repeat 4ns
+force CLE 0 0ns, 1 1ns
+force c 0 0ns, 1 3ns, 0 6ns, 1 171ns, 0 173ns
+ 
+run 190ns

@@ -1,0 +1,67 @@
+m255
+K3
+13
+cModel Technology
+dC:\altera\13.0sp1\modelsim_ase\win32aloem
+Esomadorb1
+Z0 w1535037244
+Z1 dC:\Users\caiocelso\Desktop\Digital (P3)\SUM_16B
+Z2 8C:/Users/caiocelso/Desktop/Digital (P3)/SUM_16B/SUM_1B.vhd
+Z3 FC:/Users/caiocelso/Desktop/Digital (P3)/SUM_16B/SUM_1B.vhd
+l0
+L1
+VXRAg?cWzBlP^nfeJI`K672
+Z4 OV;C;10.1d;51
+32
+Z5 !s108 1542827048.772000
+Z6 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/caiocelso/Desktop/Digital (P3)/SUM_16B/SUM_1B.vhd|
+Z7 !s107 C:/Users/caiocelso/Desktop/Digital (P3)/SUM_16B/SUM_1B.vhd|
+Z8 o-work work -2002 -explicit -O0
+Z9 tExplicit 1
+!s100 MHjSHG3XE?8h]>@jA=7C21
+!i10b 1
+Alogic
+DEx4 work 9 somadorb1 0 22 XRAg?cWzBlP^nfeJI`K672
+l10
+L9
+V[l5XIaL]`dUia6]moEmZm2
+!s100 DlW1JfBVWbBZ`]DaRRa>G2
+R4
+32
+R5
+R6
+R7
+R8
+R9
+!i10b 1
+Esum_16b
+Z10 w1542824904
+R1
+Z11 8C:/Users/caiocelso/Desktop/Digital (P3)/SUM_16B/SUM_16B.vhd
+Z12 FC:/Users/caiocelso/Desktop/Digital (P3)/SUM_16B/SUM_16B.vhd
+l0
+L1
+V=NYFd:GDgh_E7b?fYLLaH1
+!s100 OeC>dT]jCBJK_ao6fbW[o3
+R4
+32
+!i10b 1
+Z13 !s108 1542827049.458000
+Z14 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/caiocelso/Desktop/Digital (P3)/SUM_16B/SUM_16B.vhd|
+Z15 !s107 C:/Users/caiocelso/Desktop/Digital (P3)/SUM_16B/SUM_16B.vhd|
+R8
+R9
+Aencapss4
+Z16 DEx4 work 7 sum_16b 0 22 =NYFd:GDgh_E7b?fYLLaH1
+l25
+L12
+Z17 VHC1Ca?klMR<B^gicI3jXP0
+Z18 !s100 _[PASFzFgYV_g``^:?g8D2
+R4
+32
+!i10b 1
+R13
+R14
+R15
+R8
+R9

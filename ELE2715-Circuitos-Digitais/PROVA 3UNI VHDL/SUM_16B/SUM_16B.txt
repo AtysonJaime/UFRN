@@ -1,0 +1,10 @@
+vsim SUM_16B
+
+add wave *
+
+
+force NUM1_16B "1111111000000000" 
+force NUM2_16B "0000000011111111" 
+force CIN_SUM_16B "0" 0ns, "1" 16ns -repeat 20ns
+
+run 160ns
