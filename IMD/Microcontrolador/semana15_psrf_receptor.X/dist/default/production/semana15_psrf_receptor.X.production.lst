@@ -1,0 +1,397 @@
+
+
+Microchip MPLAB XC8 Assembler V2.10 build 88905656 
+                                                                                               Tue Sep 08 20:45:02 2020
+
+Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1 
+     1                           	processor	18F45K20
+     2                           	fnconf	rparam,??,?,0
+     3                           	opt	pw 120
+     4                           	opt	flic
+     5                           	psect	cinit,global,reloc=2,class=CODE,delta=1
+     6                           	psect	cstackCOMRAM,global,class=COMRAM,space=1,delta=1,noexec
+     7                           	psect	text0,global,reloc=2,class=CODE,delta=1
+     8                           	psect	text1,global,reloc=2,class=CODE,delta=1
+     9                           	psect	intsave_regs,global,class=BIGRAM,space=1,delta=1,noexec
+    10                           	psect	rparam,global,class=COMRAM,space=1,delta=1,noexec
+    11  0000                     
+    12                           ; Version 2.10
+    13                           ; Generated 31/07/2019 GMT
+    14                           ; 
+    15                           ; Copyright © 2019, Microchip Technology Inc. and its subsidiaries ("Microchip")
+    16                           ; All rights reserved.
+    17                           ; 
+    18                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
+      +                          ip").
+    19                           ; 
+    20                           ; Redistribution and use in source and binary forms, with or without modification, are
+    21                           ; permitted provided that the following conditions are met:
+    22                           ; 
+    23                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
+      +                          t of
+    24                           ;        conditions and the following disclaimer.
+    25                           ; 
+    26                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
+      +                          list
+    27                           ;        of conditions and the following disclaimer in the documentation and/or other
+    28                           ;        materials provided with the distribution.
+    29                           ; 
+    30                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
+      +                          is
+    31                           ;        software without specific prior written permission.
+    32                           ; 
+    33                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+    34                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
+      +                          OR
+    35                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
+      +                          T,
+    36                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+    37                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+    38                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
+      +                          RICT
+    39                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
+      +                          SE OF
+    40                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    41                           ; 
+    42                           ; 
+    43                           ; Code-generator required, PIC18F45K20 Definitions
+    44                           ; 
+    45                           ; SFR Addresses
+    46  0000                     _PORTD	set	3971
+    47  0000                     _RCREG	set	4014
+    48  0000                     _PIR1	set	3998
+    49  0000                     _TRISD	set	3989
+    50  0000                     _SPBRG	set	4015
+    51  0000                     _RCSTA	set	4011
+    52  0000                     _TXSTA	set	4012
+    53  0000                     _OSCCONbits	set	4051
+    54                           
+    55                           ; #config settings
+    56  0000                     
+    57                           	psect	cinit
+    58  007F8A                     __pcinit:
+    59                           	opt callstack 0
+    60  007F8A                     start_initialization:
+    61                           	opt callstack 0
+    62  007F8A                     __initialization:
+    63                           	opt callstack 0
+    64  007F8A                     end_of_initialization:
+    65                           	opt callstack 0
+    66  007F8A                     __end_of__initialization:
+    67                           	opt callstack 0
+    68  007F8A  0100               	movlb	0
+    69  007F8C  EFD3  F03F         	goto	_main	;jump to C main() function
+    70                           
+    71                           	psect	cstackCOMRAM
+    72  000001                     __pcstackCOMRAM:
+    73                           	opt callstack 0
+    74  000001                     ??_main:
+    75                           
+    76                           ; 1 bytes @ 0x0
+    77  000001                     	ds	1
+    78  000002                     main@valor_recebido:
+    79                           	opt callstack 0
+    80                           
+    81                           ; 1 bytes @ 0x1
+    82  000002                     	ds	1
+    83                           
+    84 ;;
+    85 ;;Main: autosize = 0, tempsize = 1, incstack = 0, save=0
+    86 ;;
+    87 ;; *************** function _main *****************
+    88 ;; Defined at:
+    89 ;;		line 37 in file "semana15_psrf_receptor.c"
+    90 ;; Parameters:    Size  Location     Type
+    91 ;;		None
+    92 ;; Auto vars:     Size  Location     Type
+    93 ;;  valor_recebi    1    1[COMRAM] unsigned char 
+    94 ;; Return value:  Size  Location     Type
+    95 ;;                  1    wreg      void 
+    96 ;; Registers used:
+    97 ;;		wreg, status,2, status,0, cstack
+    98 ;; Tracked objects:
+    99 ;;		On entry : 0/0
+   100 ;;		On exit  : 0/0
+   101 ;;		Unchanged: 0/0
+   102 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   103 ;;      Params:         0       0       0       0       0       0       0
+   104 ;;      Locals:         1       0       0       0       0       0       0
+   105 ;;      Temps:          1       0       0       0       0       0       0
+   106 ;;      Totals:         2       0       0       0       0       0       0
+   107 ;;Total ram usage:        2 bytes
+   108 ;; Hardware stack levels required when called:    1
+   109 ;; This function calls:
+   110 ;;		_configura_serial
+   111 ;; This function is called by:
+   112 ;;		Startup code after reset
+   113 ;; This function uses a non-reentrant model
+   114 ;;
+   115                           
+   116                           	psect	text0
+   117  007FA6                     __ptext0:
+   118                           	opt callstack 0
+   119  007FA6                     _main:
+   120                           	opt callstack 30
+   121  007FA6                     
+   122                           ;semana15_psrf_receptor.c: 38:         PORTD = 0;;semana15_psrf_receptor.c: 40:     retu
+      +                          rn;
+   123  007FA6  ECC8  F03F         	call	_configura_serial	;wreg free
+   124  007FAA  0E00               	movlw	0
+   125  007FAC  6E95               	movwf	149,c	;volatile
+   126  007FAE                     l715:
+   127  007FAE  0E90               	movlw	144
+   128  007FB0  6EAB               	movwf	171,c	;volatile
+   129  007FB2                     l717:
+   130  007FB2  CF9E F001          	movff	3998,??_main	;volatile
+   131  007FB6  0E1F               	movlw	31
+   132  007FB8  1601               	andwf	??_main^0,f,c
+   133  007FBA  B4D8               	btfsc	status,2,c
+   134  007FBC  EFE2  F03F         	goto	u11
+   135  007FC0  EFE4  F03F         	goto	u10
+   136  007FC4                     u11:
+   137  007FC4  EFD9  F03F         	goto	l717
+   138  007FC8                     u10:
+   139  007FC8  CFAE F002          	movff	4014,main@valor_recebido	;volatile
+   140  007FCC  0E80               	movlw	128
+   141  007FCE  6EAB               	movwf	171,c	;volatile
+   142  007FD0  0E55               	movlw	85
+   143  007FD2  1802               	xorwf	main@valor_recebido^0,w,c
+   144  007FD4  A4D8               	btfss	status,2,c
+   145  007FD6  EFEF  F03F         	goto	u21
+   146  007FDA  EFF1  F03F         	goto	u20
+   147  007FDE                     u21:
+   148  007FDE  EFF3  F03F         	goto	l725
+   149  007FE2                     u20:
+   150  007FE2  0E0F               	movlw	15
+   151  007FE4  6E83               	movwf	131,c	;volatile
+   152  007FE6                     l725:
+   153  007FE6  0E62               	movlw	98
+   154  007FE8  6E01               	movwf	??_main^0,c
+   155  007FEA  0E66               	movlw	102
+   156  007FEC                     u37:
+   157  007FEC  2EE8               	decfsz	wreg,f,c
+   158  007FEE  D7FE               	bra	u37
+   159  007FF0  2E01               	decfsz	??_main^0,f,c
+   160  007FF2  D7FC               	bra	u37
+   161  007FF4  0E00               	movlw	0
+   162  007FF6  6E83               	movwf	131,c	;volatile
+   163  007FF8  EFD7  F03F         	goto	l715
+   164  007FFC  EF00  F000         	goto	start
+   165  008000                     __end_of_main:
+   166                           	opt callstack 0
+   167                           
+   168 ;; *************** function _configura_serial *****************
+   169 ;; Defined at:
+   170 ;;		line 27 in file "semana15_psrf_receptor.c"
+   171 ;; Parameters:    Size  Location     Type
+   172 ;;		None
+   173 ;; Auto vars:     Size  Location     Type
+   174 ;;		None
+   175 ;; Return value:  Size  Location     Type
+   176 ;;                  1    wreg      void 
+   177 ;; Registers used:
+   178 ;;		wreg, status,2
+   179 ;; Tracked objects:
+   180 ;;		On entry : 0/0
+   181 ;;		On exit  : 0/0
+   182 ;;		Unchanged: 0/0
+   183 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   184 ;;      Params:         0       0       0       0       0       0       0
+   185 ;;      Locals:         0       0       0       0       0       0       0
+   186 ;;      Temps:          0       0       0       0       0       0       0
+   187 ;;      Totals:         0       0       0       0       0       0       0
+   188 ;;Total ram usage:        0 bytes
+   189 ;; Hardware stack levels used:    1
+   190 ;; This function calls:
+   191 ;;		Nothing
+   192 ;; This function is called by:
+   193 ;;		_main
+   194 ;; This function uses a non-reentrant model
+   195 ;;
+   196                           
+   197                           	psect	text1
+   198  007F90                     __ptext1:
+   199                           	opt callstack 0
+   200  007F90                     _configura_serial:
+   201                           	opt callstack 30
+   202  007F90                     
+   203                           ;semana15_psrf_receptor.c: 28:         RCSTA = 0b10000000;
+   204  007F90  50D3               	movf	211,w,c	;volatile
+   205  007F92  0B8F               	andlw	-113
+   206  007F94  0930               	iorlw	48
+   207  007F96  6ED3               	movwf	211,c	;volatile
+   208                           
+   209                           ;semana15_psrf_receptor.c: 30: 
+   210  007F98  0E20               	movlw	32
+   211  007F9A  6EAC               	movwf	172,c	;volatile
+   212                           
+   213                           ;semana15_psrf_receptor.c: 32:             PORTD = 0b00001111;
+   214  007F9C  0E90               	movlw	144
+   215  007F9E  6EAB               	movwf	171,c	;volatile
+   216                           
+   217                           ;semana15_psrf_receptor.c: 34: 
+   218  007FA0  0E0C               	movlw	12
+   219  007FA2  6EAF               	movwf	175,c	;volatile
+   220  007FA4  0012               	return		;funcret
+   221  007FA6                     __end_of_configura_serial:
+   222                           	opt callstack 0
+   223  0000                     
+   224                           	psect	rparam
+   225  0000                     tosu	equ	0xFFF
+   226                           tosh	equ	0xFFE
+   227                           tosl	equ	0xFFD
+   228                           stkptr	equ	0xFFC
+   229                           pclatu	equ	0xFFB
+   230                           pclath	equ	0xFFA
+   231                           pcl	equ	0xFF9
+   232                           tblptru	equ	0xFF8
+   233                           tblptrh	equ	0xFF7
+   234                           tblptrl	equ	0xFF6
+   235                           tablat	equ	0xFF5
+   236                           prodh	equ	0xFF4
+   237                           prodl	equ	0xFF3
+   238                           indf0	equ	0xFEF
+   239                           postinc0	equ	0xFEE
+   240                           postdec0	equ	0xFED
+   241                           preinc0	equ	0xFEC
+   242                           plusw0	equ	0xFEB
+   243                           fsr0h	equ	0xFEA
+   244                           fsr0l	equ	0xFE9
+   245                           wreg	equ	0xFE8
+   246                           indf1	equ	0xFE7
+   247                           postinc1	equ	0xFE6
+   248                           postdec1	equ	0xFE5
+   249                           preinc1	equ	0xFE4
+   250                           plusw1	equ	0xFE3
+   251                           fsr1h	equ	0xFE2
+   252                           fsr1l	equ	0xFE1
+   253                           bsr	equ	0xFE0
+   254                           indf2	equ	0xFDF
+   255                           postinc2	equ	0xFDE
+   256                           postdec2	equ	0xFDD
+   257                           preinc2	equ	0xFDC
+   258                           plusw2	equ	0xFDB
+   259                           fsr2h	equ	0xFDA
+   260                           fsr2l	equ	0xFD9
+   261                           status	equ	0xFD8
+
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        0
+    BSS         0
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMRAM           95      2       2
+    BANK0           160      0       0
+    BANK1           256      0       0
+    BANK2           256      0       0
+    BANK3           256      0       0
+    BANK4           256      0       0
+    BANK5           256      0       0
+
+Pointer List with Targets:
+
+    None.
+
+Critical Paths under _main in COMRAM
+
+    None.
+
+Critical Paths under _main in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Critical Paths under _main in BANK3
+
+    None.
+
+Critical Paths under _main in BANK4
+
+    None.
+
+Critical Paths under _main in BANK5
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 2     2      0      15
+                                              0 COMRAM     2     2      0
+                   _configura_serial
+ ---------------------------------------------------------------------------------
+ (1) _configura_serial                                     0     0      0       0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 1
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _configura_serial
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BITCOMRAM           5F      0       0       0        0.0%
+EEDATA             100      0       0       0        0.0%
+NULL                 0      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+COMRAM              5F      2       2       1        2.1%
+STACK                0      0       0       2        0.0%
+DATA                 0      0       0       3        0.0%
+BITBANK0            A0      0       0       4        0.0%
+BANK0               A0      0       0       5        0.0%
+BITBANK1           100      0       0       6        0.0%
+BANK1              100      0       0       7        0.0%
+BITBANK2           100      0       0       8        0.0%
+BANK2              100      0       0       9        0.0%
+BITBANK3           100      0       0      10        0.0%
+BANK3              100      0       0      11        0.0%
+BITBANK4           100      0       0      12        0.0%
+BANK4              100      0       0      13        0.0%
+BANK5              100      0       0      14        0.0%
+ABS                  0      0       0      15        0.0%
+BITBANK5           100      0       0      16        0.0%
+BIGRAM             5FF      0       0      17        0.0%
+BITSFR               0      0       0     200        0.0%
+SFR                  0      0       0     200        0.0%
+
+
+Microchip Technology PIC18 Macro Assembler V2.10 build 88905656 
+Symbol Table                                                                                   Tue Sep 08 20:45:02 2020
+
+                       l21 7FA4                         l29 7FC8                         u10 7FC8  
+                       u11 7FC4                         u20 7FE2                         u21 7FDE  
+                       u37 7FEC                        l711 7FA6                        l721 7FD0  
+                      l713 7FAA                        l723 7FE2                        l715 7FAE  
+                      l709 7F90                        l725 7FE6                        l717 7FB2  
+                      l727 7FF4                        l719 7FCC                        wreg 000FE8  
+             __CFG_LVP$OFF 000000                       _PIR1 000F9E                       _main 7FA6  
+                     start 0000               ___param_bank 000000                      ?_main 0001  
+                    _RCREG 000FAE                      _RCSTA 000FAB                      _SPBRG 000FAF  
+                    _PORTD 000F83                      _TRISD 000F95                      _TXSTA 000FAC  
+       main@valor_recebido 0002          ?_configura_serial 0001         ??_configura_serial 0001  
+                    status 000FD8            __initialization 7F8A               __end_of_main 8000  
+                   ??_main 0001              __activetblptr 000000             __CFG_WDTEN$OFF 000000  
+               __accesstop 0060    __end_of__initialization 7F8A            __CFG_PBADEN$OFF 000000  
+            ___rparam_used 000001             __pcstackCOMRAM 0001                    __Hparam 0000  
+                  __Lparam 0000  __size_of_configura_serial 0016                    __pcinit 7F8A  
+                  __ramtop 0600                    __ptext0 7FA6                    __ptext1 7F90  
+     end_of_initialization 7F8A        start_initialization 7F8A           _configura_serial 7F90  
+                 __Hrparam 0000                   __Lrparam 0000   __end_of_configura_serial 7FA6  
+            __size_of_main 005A                 _OSCCONbits 000FD3          __CFG_FOSC$INTIO67 000000  

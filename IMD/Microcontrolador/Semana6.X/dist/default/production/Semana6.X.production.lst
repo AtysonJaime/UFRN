@@ -1,0 +1,466 @@
+
+
+Microchip MPLAB XC8 Assembler V2.10 build 88905656 
+                                                                                               Fri Jul 10 15:34:16 2020
+
+Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1 
+     1                           	processor	18F45K20
+     2                           	fnconf	rparam,??,?,0
+     3                           	opt	pw 120
+     4                           	opt	flic
+     5                           	psect	cinit,global,reloc=2,class=CODE,delta=1
+     6                           	psect	cstackCOMRAM,global,class=COMRAM,space=1,delta=1,noexec
+     7                           	psect	text0,global,reloc=2,class=CODE,delta=1
+     8                           	psect	intsave_regs,global,class=BIGRAM,space=1,delta=1,noexec
+     9                           	psect	rparam,global,class=COMRAM,space=1,delta=1,noexec
+    10  0000                     
+    11                           ; Version 2.10
+    12                           ; Generated 31/07/2019 GMT
+    13                           ; 
+    14                           ; Copyright © 2019, Microchip Technology Inc. and its subsidiaries ("Microchip")
+    15                           ; All rights reserved.
+    16                           ; 
+    17                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
+      +                          ip").
+    18                           ; 
+    19                           ; Redistribution and use in source and binary forms, with or without modification, are
+    20                           ; permitted provided that the following conditions are met:
+    21                           ; 
+    22                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
+      +                          t of
+    23                           ;        conditions and the following disclaimer.
+    24                           ; 
+    25                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
+      +                          list
+    26                           ;        of conditions and the following disclaimer in the documentation and/or other
+    27                           ;        materials provided with the distribution.
+    28                           ; 
+    29                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
+      +                          is
+    30                           ;        software without specific prior written permission.
+    31                           ; 
+    32                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+    33                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
+      +                          OR
+    34                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
+      +                          T,
+    35                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+    36                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+    37                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
+      +                          RICT
+    38                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
+      +                          SE OF
+    39                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    40                           ; 
+    41                           ; 
+    42                           ; Code-generator required, PIC18F45K20 Definitions
+    43                           ; 
+    44                           ; SFR Addresses
+    45  0000                     _PORTD	set	3971
+    46  0000                     _PORTBbits	set	3969
+    47  0000                     _TRISB	set	3987
+    48  0000                     _TRISD	set	3989
+    49                           
+    50                           ; #config settings
+    51  0000                     
+    52                           	psect	cinit
+    53  007ED6                     __pcinit:
+    54                           	opt callstack 0
+    55  007ED6                     start_initialization:
+    56                           	opt callstack 0
+    57  007ED6                     __initialization:
+    58                           	opt callstack 0
+    59  007ED6                     end_of_initialization:
+    60                           	opt callstack 0
+    61  007ED6                     __end_of__initialization:
+    62                           	opt callstack 0
+    63  007ED6  0100               	movlb	0
+    64  007ED8  EF6E  F03F         	goto	_main	;jump to C main() function
+    65                           
+    66                           	psect	cstackCOMRAM
+    67  000001                     __pcstackCOMRAM:
+    68                           	opt callstack 0
+    69  000001                     ??_main:
+    70                           
+    71                           ; 1 bytes @ 0x0
+    72  000001                     	ds	2
+    73  000003                     main@ahAbertoNoBotao:
+    74                           	opt callstack 0
+    75                           
+    76                           ; 2 bytes @ 0x2
+    77  000003                     	ds	2
+    78                           
+    79 ;;
+    80 ;;Main: autosize = 0, tempsize = 2, incstack = 0, save=0
+    81 ;;
+    82 ;; *************** function _main *****************
+    83 ;; Defined at:
+    84 ;;		line 18 in file "main_semana6_exp2.c"
+    85 ;; Parameters:    Size  Location     Type
+    86 ;;		None
+    87 ;; Auto vars:     Size  Location     Type
+    88 ;;  ahAbertoNoBo    2    2[COMRAM] int 
+    89 ;; Return value:  Size  Location     Type
+    90 ;;                  1    wreg      void 
+    91 ;; Registers used:
+    92 ;;		wreg, status,2, status,0
+    93 ;; Tracked objects:
+    94 ;;		On entry : 0/0
+    95 ;;		On exit  : 0/0
+    96 ;;		Unchanged: 0/0
+    97 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+    98 ;;      Params:         0       0       0       0       0       0       0
+    99 ;;      Locals:         2       0       0       0       0       0       0
+   100 ;;      Temps:          2       0       0       0       0       0       0
+   101 ;;      Totals:         4       0       0       0       0       0       0
+   102 ;;Total ram usage:        4 bytes
+   103 ;; This function calls:
+   104 ;;		Nothing
+   105 ;; This function is called by:
+   106 ;;		Startup code after reset
+   107 ;; This function uses a non-reentrant model
+   108 ;;
+   109                           
+   110                           	psect	text0
+   111  007EDC                     __ptext0:
+   112                           	opt callstack 0
+   113  007EDC                     _main:
+   114                           	opt callstack 31
+   115  007EDC                     
+   116                           ;main_semana6_exp2.c: 19:                 }
+   117  007EDC  0E00               	movlw	0
+   118  007EDE  6E95               	movwf	149,c	;volatile
+   119  007EE0                     
+   120                           ;main_semana6_exp2.c: 20:                 PORTD = 0b00000010;
+   121  007EE0  8093               	bsf	147,0,c	;volatile
+   122  007EE2                     l709:
+   123                           
+   124                           ;main_semana6_exp2.c: 23:                 }
+   125  007EE2  0E00               	movlw	0
+   126  007EE4  6E04               	movwf	(main@ahAbertoNoBotao+1)^0,c
+   127  007EE6  0E00               	movlw	0
+   128  007EE8  6E03               	movwf	main@ahAbertoNoBotao^0,c
+   129                           
+   130                           ;main_semana6_exp2.c: 24:                 _delay((unsigned long)((2000)*(1000000/4000.0)
+      +                          ));
+   131  007EEA  EFDF  F03F         	goto	l749
+   132  007EEE                     l17:
+   133                           
+   134                           ;main_semana6_exp2.c: 25:                 if(PORTBbits.RB0 == 0){
+   135  007EEE  B081               	btfsc	129,0,c	;volatile
+   136  007EF0  EF7C  F03F         	goto	u11
+   137  007EF4  EF7E  F03F         	goto	u10
+   138  007EF8                     u11:
+   139  007EF8  EF82  F03F         	goto	l713
+   140  007EFC                     u10:
+   141  007EFC                     
+   142                           ;main_semana6_exp2.c: 26:                     break;
+   143  007EFC  4A03               	infsnz	main@ahAbertoNoBotao^0,f,c
+   144  007EFE  2A04               	incf	(main@ahAbertoNoBotao+1)^0,f,c
+   145                           
+   146                           ;main_semana6_exp2.c: 27:                 }
+   147  007F00  EFDF  F03F         	goto	l749
+   148  007F04                     l713:
+   149                           
+   150                           ;main_semana6_exp2.c: 28:                 PORTD = 0b00000100;
+   151  007F04  0E01               	movlw	1
+   152  007F06  6E83               	movwf	131,c	;volatile
+   153  007F08                     
+   154                           ;main_semana6_exp2.c: 29:                 if(PORTBbits.RB0 == 0){
+   155  007F08  B081               	btfsc	129,0,c	;volatile
+   156  007F0A  EF89  F03F         	goto	u21
+   157  007F0E  EF8B  F03F         	goto	u20
+   158  007F12                     u21:
+   159  007F12  EF8D  F03F         	goto	l719
+   160  007F16                     u20:
+   161  007F16  EFED  F03F         	goto	l751
+   162  007F1A                     l719:
+   163                           
+   164                           ;main_semana6_exp2.c: 32:                 _delay((unsigned long)((4000)*(1000000/4000.0)
+      +                          ));
+   165  007F1A  0E0B               	movlw	11
+   166  007F1C  6E02               	movwf	(??_main+1)^0,c
+   167  007F1E  0E26               	movlw	38
+   168  007F20  6E01               	movwf	??_main^0,c
+   169  007F22  0E5E               	movlw	94
+   170  007F24                     u97:
+   171  007F24  2EE8               	decfsz	wreg,f,c
+   172  007F26  D7FE               	bra	u97
+   173  007F28  2E01               	decfsz	??_main^0,f,c
+   174  007F2A  D7FC               	bra	u97
+   175  007F2C  2E02               	decfsz	(??_main+1)^0,f,c
+   176  007F2E  D7FA               	bra	u97
+   177  007F30                     
+   178                           ;main_semana6_exp2.c: 33:                 if(PORTBbits.RB0 == 0){
+   179  007F30  B081               	btfsc	129,0,c	;volatile
+   180  007F32  EF9D  F03F         	goto	u31
+   181  007F36  EF9F  F03F         	goto	u30
+   182  007F3A                     u31:
+   183  007F3A  EFA1  F03F         	goto	l725
+   184  007F3E                     u30:
+   185  007F3E  EFED  F03F         	goto	l751
+   186  007F42                     l725:
+   187                           
+   188                           ;main_semana6_exp2.c: 36:             }
+   189  007F42  0E02               	movlw	2
+   190  007F44  6E83               	movwf	131,c	;volatile
+   191  007F46                     
+   192                           ;main_semana6_exp2.c: 37:         };
+   193  007F46  B081               	btfsc	129,0,c	;volatile
+   194  007F48  EFA8  F03F         	goto	u41
+   195  007F4C  EFAA  F03F         	goto	u40
+   196  007F50                     u41:
+   197  007F50  EFAC  F03F         	goto	l731
+   198  007F54                     u40:
+   199  007F54  EFED  F03F         	goto	l751
+   200  007F58                     l731:
+   201                           
+   202                           ;main_semana6_exp2.c: 40:         _delay((unsigned long)((5000)*(1000000/4000.0)));
+   203  007F58  0E03               	movlw	3
+   204  007F5A  6E02               	movwf	(??_main+1)^0,c
+   205  007F5C  0E8A               	movlw	138
+   206  007F5E  6E01               	movwf	??_main^0,c
+   207  007F60  0E56               	movlw	86
+   208  007F62                     u107:
+   209  007F62  2EE8               	decfsz	wreg,f,c
+   210  007F64  D7FE               	bra	u107
+   211  007F66  2E01               	decfsz	??_main^0,f,c
+   212  007F68  D7FC               	bra	u107
+   213  007F6A  2E02               	decfsz	(??_main+1)^0,f,c
+   214  007F6C  D7FA               	bra	u107
+   215  007F6E                     
+   216                           ;main_semana6_exp2.c: 41:     }
+   217  007F6E  B081               	btfsc	129,0,c	;volatile
+   218  007F70  EFBC  F03F         	goto	u51
+   219  007F74  EFBE  F03F         	goto	u50
+   220  007F78                     u51:
+   221  007F78  EFC0  F03F         	goto	l737
+   222  007F7C                     u50:
+   223  007F7C  EFED  F03F         	goto	l751
+   224  007F80                     l737:
+   225  007F80  0E04               	movlw	4
+   226  007F82  6E83               	movwf	131,c	;volatile
+   227  007F84  B081               	btfsc	129,0,c	;volatile
+   228  007F86  EFC7  F03F         	goto	u61
+   229  007F8A  EFC9  F03F         	goto	u60
+   230  007F8E                     u61:
+   231  007F8E  EFCB  F03F         	goto	l743
+   232  007F92                     u60:
+   233  007F92  EFED  F03F         	goto	l751
+   234  007F96                     l743:
+   235  007F96  0E06               	movlw	6
+   236  007F98  6E02               	movwf	(??_main+1)^0,c
+   237  007F9A  0E13               	movlw	19
+   238  007F9C  6E01               	movwf	??_main^0,c
+   239  007F9E  0EAE               	movlw	174
+   240  007FA0                     u117:
+   241  007FA0  2EE8               	decfsz	wreg,f,c
+   242  007FA2  D7FE               	bra	u117
+   243  007FA4  2E01               	decfsz	??_main^0,f,c
+   244  007FA6  D7FC               	bra	u117
+   245  007FA8  2E02               	decfsz	(??_main+1)^0,f,c
+   246  007FAA  D7FA               	bra	u117
+   247  007FAC  B081               	btfsc	129,0,c	;volatile
+   248  007FAE  EFDB  F03F         	goto	u71
+   249  007FB2  EFDD  F03F         	goto	u70
+   250  007FB6                     u71:
+   251  007FB6  EFDF  F03F         	goto	l749
+   252  007FBA                     u70:
+   253  007FBA  EFED  F03F         	goto	l751
+   254  007FBE                     l749:
+   255                           
+   256                           ;main_semana6_exp2.c: 24:                 _delay((unsigned long)((2000)*(1000000/4000.0)
+      +                          ));
+   257  007FBE  BE04               	btfsc	(main@ahAbertoNoBotao+1)^0,7,c
+   258  007FC0  EFEB  F03F         	goto	u81
+   259  007FC4  5004               	movf	(main@ahAbertoNoBotao+1)^0,w,c
+   260  007FC6  E109               	bnz	u80
+   261  007FC8  0E04               	movlw	4
+   262  007FCA  5C03               	subwf	main@ahAbertoNoBotao^0,w,c
+   263  007FCC  A0D8               	btfss	status,0,c
+   264  007FCE  EFEB  F03F         	goto	u81
+   265  007FD2  EFED  F03F         	goto	u80
+   266  007FD6                     u81:
+   267  007FD6  EF77  F03F         	goto	l17
+   268  007FDA                     u80:
+   269  007FDA                     l751:
+   270  007FDA  0E00               	movlw	0
+   271  007FDC  6E83               	movwf	131,c	;volatile
+   272  007FDE  0E80               	movlw	128
+   273  007FE0  6E83               	movwf	131,c	;volatile
+   274  007FE2  0E07               	movlw	7
+   275  007FE4  6E02               	movwf	(??_main+1)^0,c
+   276  007FE6  0E58               	movlw	88
+   277  007FE8  6E01               	movwf	??_main^0,c
+   278  007FEA  0E5A               	movlw	90
+   279  007FEC                     u127:
+   280  007FEC  2EE8               	decfsz	wreg,f,c
+   281  007FEE  D7FE               	bra	u127
+   282  007FF0  2E01               	decfsz	??_main^0,f,c
+   283  007FF2  D7FC               	bra	u127
+   284  007FF4  2E02               	decfsz	(??_main+1)^0,f,c
+   285  007FF6  D7FA               	bra	u127
+   286  007FF8  EF71  F03F         	goto	l709
+   287  007FFC  EF00  F000         	goto	start
+   288  008000                     __end_of_main:
+   289                           	opt callstack 0
+   290  0000                     
+   291                           	psect	rparam
+   292  0000                     tosu	equ	0xFFF
+   293                           tosh	equ	0xFFE
+   294                           tosl	equ	0xFFD
+   295                           stkptr	equ	0xFFC
+   296                           pclatu	equ	0xFFB
+   297                           pclath	equ	0xFFA
+   298                           pcl	equ	0xFF9
+   299                           tblptru	equ	0xFF8
+   300                           tblptrh	equ	0xFF7
+   301                           tblptrl	equ	0xFF6
+   302                           tablat	equ	0xFF5
+   303                           prodh	equ	0xFF4
+   304                           prodl	equ	0xFF3
+   305                           indf0	equ	0xFEF
+   306                           postinc0	equ	0xFEE
+   307                           postdec0	equ	0xFED
+   308                           preinc0	equ	0xFEC
+   309                           plusw0	equ	0xFEB
+   310                           fsr0h	equ	0xFEA
+   311                           fsr0l	equ	0xFE9
+   312                           wreg	equ	0xFE8
+   313                           indf1	equ	0xFE7
+   314                           postinc1	equ	0xFE6
+   315                           postdec1	equ	0xFE5
+   316                           preinc1	equ	0xFE4
+   317                           plusw1	equ	0xFE3
+   318                           fsr1h	equ	0xFE2
+   319                           fsr1l	equ	0xFE1
+   320                           bsr	equ	0xFE0
+   321                           indf2	equ	0xFDF
+   322                           postinc2	equ	0xFDE
+   323                           postdec2	equ	0xFDD
+   324                           preinc2	equ	0xFDC
+   325                           plusw2	equ	0xFDB
+   326                           fsr2h	equ	0xFDA
+   327                           fsr2l	equ	0xFD9
+   328                           status	equ	0xFD8
+
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        0
+    BSS         0
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMRAM           95      4       4
+    BANK0           160      0       0
+    BANK1           256      0       0
+    BANK2           256      0       0
+    BANK3           256      0       0
+    BANK4           256      0       0
+    BANK5           256      0       0
+
+Pointer List with Targets:
+
+    None.
+
+Critical Paths under _main in COMRAM
+
+    None.
+
+Critical Paths under _main in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Critical Paths under _main in BANK3
+
+    None.
+
+Critical Paths under _main in BANK4
+
+    None.
+
+Critical Paths under _main in BANK5
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 4     4      0      15
+                                              0 COMRAM     4     4      0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 0
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BITCOMRAM           5F      0       0       0        0.0%
+EEDATA             100      0       0       0        0.0%
+NULL                 0      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+COMRAM              5F      4       4       1        4.2%
+STACK                0      0       0       2        0.0%
+DATA                 0      0       0       3        0.0%
+BITBANK0            A0      0       0       4        0.0%
+BANK0               A0      0       0       5        0.0%
+BITBANK1           100      0       0       6        0.0%
+BANK1              100      0       0       7        0.0%
+BITBANK2           100      0       0       8        0.0%
+BANK2              100      0       0       9        0.0%
+BITBANK3           100      0       0      10        0.0%
+BANK3              100      0       0      11        0.0%
+BITBANK4           100      0       0      12        0.0%
+BANK4              100      0       0      13        0.0%
+BANK5              100      0       0      14        0.0%
+ABS                  0      0       0      15        0.0%
+BITBANK5           100      0       0      16        0.0%
+BIGRAM             5FF      0       0      17        0.0%
+BITSFR               0      0       0     200        0.0%
+SFR                  0      0       0     200        0.0%
+
+
+Microchip Technology PIC18 Macro Assembler V2.10 build 88905656 
+Symbol Table                                                                                   Fri Jul 10 15:34:16 2020
+
+                     l17 7EEE                       u10 7EFC                       u11 7EF8  
+                     u20 7F16                       u21 7F12                       u30 7F3E  
+                     u31 7F3A                       u40 7F54                       u41 7F50  
+                     u50 7F7C                       u51 7F78                       u60 7F92  
+                     u61 7F8E                       u70 7FBA                       u71 7FB6  
+                     u80 7FDA                       u81 7FD6                       u97 7F24  
+                    l711 7EFC                      l721 7F30                      l713 7F04  
+                    l705 7EDC                      l731 7F58                      l715 7F08  
+                    l707 7EE0                      l733 7F6E                      l725 7F42  
+                    l709 7EE2                      l743 7F96                      l727 7F46  
+                    l751 7FDA                      l719 7F1A                      l753 7FE2  
+                    l745 7FAC                      l737 7F80                      l739 7F84  
+                    l749 7FBE                      u107 7F62                      u117 7FA0  
+                    u127 7FEC                      wreg 000FE8      main@ahAbertoNoBotao 0003  
+                   _main 7EDC                     start 0000             ___param_bank 000000  
+                  ?_main 0001                    _PORTD 000F83                    _TRISB 000F93  
+                  _TRISD 000F95                    status 000FD8          __initialization 7ED6  
+           __end_of_main 8000                   ??_main 0001            __activetblptr 000000  
+             __accesstop 0060  __end_of__initialization 7ED6          __CFG_PBADEN$OFF 000000  
+          ___rparam_used 000001           __pcstackCOMRAM 0001                  __Hparam 0000  
+                __Lparam 0000                  __pcinit 7ED6                  __ramtop 0600  
+                __ptext0 7EDC     end_of_initialization 7ED6                _PORTBbits 000F81  
+    start_initialization 7ED6                 __Hrparam 0000                 __Lrparam 0000  
+          __size_of_main 0124        __CFG_FOSC$INTIO67 000000  
