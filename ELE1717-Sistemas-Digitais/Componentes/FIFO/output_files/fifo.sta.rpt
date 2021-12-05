@@ -1,0 +1,1269 @@
+TimeQuest Timing Analyzer report for fifo
+Fri Mar 13 20:51:54 2020
+Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'CLK_fifo'
+ 12. Slow Model Hold: 'CLK_fifo'
+ 13. Slow Model Minimum Pulse Width: 'CLK_fifo'
+ 14. Setup Times
+ 15. Hold Times
+ 16. Clock to Output Times
+ 17. Minimum Clock to Output Times
+ 18. Fast Model Setup Summary
+ 19. Fast Model Hold Summary
+ 20. Fast Model Recovery Summary
+ 21. Fast Model Removal Summary
+ 22. Fast Model Minimum Pulse Width Summary
+ 23. Fast Model Setup: 'CLK_fifo'
+ 24. Fast Model Hold: 'CLK_fifo'
+ 25. Fast Model Minimum Pulse Width: 'CLK_fifo'
+ 26. Setup Times
+ 27. Hold Times
+ 28. Clock to Output Times
+ 29. Minimum Clock to Output Times
+ 30. Multicorner Timing Analysis Summary
+ 31. Setup Times
+ 32. Hold Times
+ 33. Clock to Output Times
+ 34. Minimum Clock to Output Times
+ 35. Setup Transfers
+ 36. Hold Transfers
+ 37. Report TCCS
+ 38. Report RSKM
+ 39. Unconstrained Paths
+ 40. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                       ;
++--------------------+----------------------------------------------------+
+; Quartus II Version ; Version 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
+; Revision Name      ; fifo                                               ;
+; Device Family      ; Cyclone II                                         ;
+; Device Name        ; EP2C35F672C6                                       ;
+; Timing Models      ; Final                                              ;
+; Delay Model        ; Combined                                           ;
+; Rise/Fall Delays   ; Unavailable                                        ;
++--------------------+----------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 8      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                               ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets      ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------+
+; CLK_fifo   ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { CLK_fifo } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------+
+
+
++-------------------------------------------------+
+; Slow Model Fmax Summary                         ;
++-----------+-----------------+------------+------+
+; Fmax      ; Restricted Fmax ; Clock Name ; Note ;
++-----------+-----------------+------------+------+
+; 330.8 MHz ; 330.8 MHz       ; CLK_fifo   ;      ;
++-----------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++-----------------------------------+
+; Slow Model Setup Summary          ;
++----------+--------+---------------+
+; Clock    ; Slack  ; End Point TNS ;
++----------+--------+---------------+
+; CLK_fifo ; -2.023 ; -379.107      ;
++----------+--------+---------------+
+
+
++----------------------------------+
+; Slow Model Hold Summary          ;
++----------+-------+---------------+
+; Clock    ; Slack ; End Point TNS ;
++----------+-------+---------------+
+; CLK_fifo ; 0.391 ; 0.000         ;
++----------+-------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Slow Model Minimum Pulse Width Summary ;
++----------+--------+--------------------+
+; Clock    ; Slack  ; End Point TNS      ;
++----------+--------+--------------------+
+; CLK_fifo ; -1.380 ; -222.380           ;
++----------+--------+--------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'CLK_fifo'                                                                                                                                                                                                          ;
++--------+------------------------------------------------------------+-------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                                  ; To Node                                                                                   ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------------------------------------------+-------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -2.023 ; datapathFIFO:Datapath|contador4Bits:Contador_RD|ffjk:Q2|qS ; blocoDeControleFIFO:BlocodeControle|estado.p_escrita                                      ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.000      ; 3.059      ;
+; -2.007 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[0]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.002      ; 3.045      ;
+; -2.007 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[4]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.002      ; 3.045      ;
+; -2.007 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[8]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.002      ; 3.045      ;
+; -2.007 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[10] ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.002      ; 3.045      ;
+; -2.007 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[12] ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.002      ; 3.045      ;
+; -1.974 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS ; blocoDeControleFIFO:BlocodeControle|estado.p_escrita                                      ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.000      ; 3.010      ;
+; -1.970 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[0]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.002      ; 3.008      ;
+; -1.970 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[4]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.002      ; 3.008      ;
+; -1.970 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[8]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.002      ; 3.008      ;
+; -1.970 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[10] ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.002      ; 3.008      ;
+; -1.970 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[12] ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.002      ; 3.008      ;
+; -1.953 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[2]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; -0.003     ; 2.986      ;
+; -1.953 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[6]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; -0.003     ; 2.986      ;
+; -1.953 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[9]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; -0.003     ; 2.986      ;
+; -1.953 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[10] ; CLK_fifo     ; CLK_fifo    ; 1.000        ; -0.003     ; 2.986      ;
+; -1.935 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg08|qs[0]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; -0.003     ; 2.968      ;
+; -1.935 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg08|qs[2]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; -0.003     ; 2.968      ;
+; -1.935 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg08|qs[5]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; -0.003     ; 2.968      ;
+; -1.935 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg08|qs[6]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; -0.003     ; 2.968      ;
+; -1.935 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg08|qs[9]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; -0.003     ; 2.968      ;
+; -1.935 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg08|qs[10] ; CLK_fifo     ; CLK_fifo    ; 1.000        ; -0.003     ; 2.968      ;
+; -1.928 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; blocoDeControleFIFO:BlocodeControle|estado.p_leitura                                      ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.000      ; 2.964      ;
+; -1.927 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg12|qs[9]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; -0.007     ; 2.956      ;
+; -1.927 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg12|qs[10] ; CLK_fifo     ; CLK_fifo    ; 1.000        ; -0.007     ; 2.956      ;
+; -1.916 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg04|qs[0]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.004      ; 2.956      ;
+; -1.916 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg04|qs[4]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.004      ; 2.956      ;
+; -1.916 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg04|qs[8]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.004      ; 2.956      ;
+; -1.916 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg04|qs[12] ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.004      ; 2.956      ;
+; -1.913 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg12|qs[0]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.004      ; 2.953      ;
+; -1.913 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg12|qs[1]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.004      ; 2.953      ;
+; -1.913 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg12|qs[2]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.004      ; 2.953      ;
+; -1.913 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg12|qs[3]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.004      ; 2.953      ;
+; -1.913 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg12|qs[4]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.004      ; 2.953      ;
+; -1.913 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg12|qs[5]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.004      ; 2.953      ;
+; -1.913 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg12|qs[6]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.004      ; 2.953      ;
+; -1.913 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg12|qs[7]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.004      ; 2.953      ;
+; -1.913 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg12|qs[8]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.004      ; 2.953      ;
+; -1.913 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg12|qs[11] ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.004      ; 2.953      ;
+; -1.913 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg12|qs[12] ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.004      ; 2.953      ;
+; -1.912 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg04|qs[9]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.002      ; 2.950      ;
+; -1.912 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg04|qs[10] ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.002      ; 2.950      ;
+; -1.912 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg04|qs[11] ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.002      ; 2.950      ;
+; -1.911 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg04|qs[1]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.003      ; 2.950      ;
+; -1.911 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg04|qs[2]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.003      ; 2.950      ;
+; -1.911 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg04|qs[3]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.003      ; 2.950      ;
+; -1.911 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg04|qs[5]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.003      ; 2.950      ;
+; -1.911 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg04|qs[6]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.003      ; 2.950      ;
+; -1.911 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg04|qs[7]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.003      ; 2.950      ;
+; -1.907 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg08|qs[1]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.004      ; 2.947      ;
+; -1.907 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg08|qs[3]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.004      ; 2.947      ;
+; -1.907 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg08|qs[7]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.004      ; 2.947      ;
+; -1.907 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg08|qs[11] ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.004      ; 2.947      ;
+; -1.889 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; blocoDeControleFIFO:BlocodeControle|estado.escrita                                        ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.000      ; 2.925      ;
+; -1.883 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[0]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; -0.001     ; 2.918      ;
+; -1.883 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[1]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; -0.001     ; 2.918      ;
+; -1.883 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[4]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; -0.001     ; 2.918      ;
+; -1.883 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[12] ; CLK_fifo     ; CLK_fifo    ; 1.000        ; -0.001     ; 2.918      ;
+; -1.868 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg08|qs[4]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.001      ; 2.905      ;
+; -1.868 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg08|qs[8]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.001      ; 2.905      ;
+; -1.868 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg08|qs[12] ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.001      ; 2.905      ;
+; -1.867 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q1|qS ; blocoDeControleFIFO:BlocodeControle|estado.p_leitura                                      ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.000      ; 2.903      ;
+; -1.859 ; datapathFIFO:Datapath|contador4Bits:Contador_RD|ffjk:Q0|qS ; blocoDeControleFIFO:BlocodeControle|estado.p_leitura                                      ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.000      ; 2.895      ;
+; -1.857 ; datapathFIFO:Datapath|contador4Bits:Contador_RD|ffjk:Q0|qS ; blocoDeControleFIFO:BlocodeControle|estado.leitura                                        ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.000      ; 2.893      ;
+; -1.832 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[2]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; -0.003     ; 2.865      ;
+; -1.832 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[6]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; -0.003     ; 2.865      ;
+; -1.832 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[9]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; -0.003     ; 2.865      ;
+; -1.832 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[10] ; CLK_fifo     ; CLK_fifo    ; 1.000        ; -0.003     ; 2.865      ;
+; -1.828 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q1|qS ; blocoDeControleFIFO:BlocodeControle|estado.escrita                                        ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.000      ; 2.864      ;
+; -1.826 ; datapathFIFO:Datapath|contador4Bits:Contador_RD|ffjk:Q0|qS ; blocoDeControleFIFO:BlocodeControle|estado.escrita                                        ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.000      ; 2.862      ;
+; -1.817 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg08|qs[0]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; -0.003     ; 2.850      ;
+; -1.817 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg08|qs[2]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; -0.003     ; 2.850      ;
+; -1.817 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg08|qs[5]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; -0.003     ; 2.850      ;
+; -1.817 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg08|qs[6]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; -0.003     ; 2.850      ;
+; -1.817 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg08|qs[9]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; -0.003     ; 2.850      ;
+; -1.817 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg08|qs[10] ; CLK_fifo     ; CLK_fifo    ; 1.000        ; -0.003     ; 2.850      ;
+; -1.816 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg11|qs[7]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.003      ; 2.855      ;
+; -1.816 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg11|qs[9]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.003      ; 2.855      ;
+; -1.816 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg11|qs[11] ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.003      ; 2.855      ;
+; -1.809 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg12|qs[9]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; -0.007     ; 2.838      ;
+; -1.809 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg12|qs[10] ; CLK_fifo     ; CLK_fifo    ; 1.000        ; -0.007     ; 2.838      ;
+; -1.807 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg01|qs[3]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; -0.002     ; 2.841      ;
+; -1.807 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg01|qs[5]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; -0.002     ; 2.841      ;
+; -1.807 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg01|qs[6]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; -0.002     ; 2.841      ;
+; -1.807 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg01|qs[7]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; -0.002     ; 2.841      ;
+; -1.807 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg01|qs[9]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; -0.002     ; 2.841      ;
+; -1.807 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg01|qs[10] ; CLK_fifo     ; CLK_fifo    ; 1.000        ; -0.002     ; 2.841      ;
+; -1.807 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg01|qs[11] ; CLK_fifo     ; CLK_fifo    ; 1.000        ; -0.002     ; 2.841      ;
+; -1.807 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; blocoDeControleFIFO:BlocodeControle|estado.p_escrita                                      ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.000      ; 2.843      ;
+; -1.800 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg03|qs[3]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; -0.003     ; 2.833      ;
+; -1.800 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg03|qs[7]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; -0.003     ; 2.833      ;
+; -1.800 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg03|qs[9]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; -0.003     ; 2.833      ;
+; -1.800 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg03|qs[11] ; CLK_fifo     ; CLK_fifo    ; 1.000        ; -0.003     ; 2.833      ;
+; -1.797 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg04|qs[0]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.004      ; 2.837      ;
+; -1.797 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg04|qs[4]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.004      ; 2.837      ;
+; -1.797 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg04|qs[8]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.004      ; 2.837      ;
+; -1.797 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg04|qs[12] ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.004      ; 2.837      ;
+; -1.795 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg12|qs[0]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.004      ; 2.835      ;
+; -1.795 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg12|qs[1]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.004      ; 2.835      ;
+; -1.795 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg12|qs[2]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.004      ; 2.835      ;
++--------+------------------------------------------------------------+-------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'CLK_fifo'                                                                                                                                                                                                          ;
++-------+------------------------------------------------------------+-------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                                  ; To Node                                                                                   ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------------------------------------------------+-------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.391 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS                                ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; datapathFIFO:Datapath|contador4Bits:Contador_RD|ffjk:Q2|qS ; datapathFIFO:Datapath|contador4Bits:Contador_RD|ffjk:Q2|qS                                ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; blocoDeControleFIFO:BlocodeControle|estado.escrita                                        ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q3|qS ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q3|qS                                ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; blocoDeControleFIFO:BlocodeControle|estado.p_escrita       ; blocoDeControleFIFO:BlocodeControle|estado.p_escrita                                      ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; blocoDeControleFIFO:BlocodeControle|estado.leitura         ; blocoDeControleFIFO:BlocodeControle|estado.leitura                                        ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; datapathFIFO:Datapath|contador4Bits:Contador_RD|ffjk:Q3|qS ; datapathFIFO:Datapath|contador4Bits:Contador_RD|ffjk:Q3|qS                                ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.768 ; datapathFIFO:Datapath|contador4Bits:Contador_RD|ffjk:Q1|qS ; datapathFIFO:Datapath|contador4Bits:Contador_RD|ffjk:Q2|qS                                ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.000      ; 1.034      ;
+; 0.768 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q3|qS                                ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.000      ; 1.034      ;
+; 0.789 ; datapathFIFO:Datapath|contador4Bits:Contador_RD|ffjk:Q0|qS ; datapathFIFO:Datapath|contador4Bits:Contador_RD|ffjk:Q3|qS                                ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.000      ; 1.055      ;
+; 0.818 ; blocoDeControleFIFO:BlocodeControle|estado.leitura         ; blocoDeControleFIFO:BlocodeControle|estado.p_leitura                                      ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.000      ; 1.084      ;
+; 0.819 ; blocoDeControleFIFO:BlocodeControle|estado.leitura         ; datapathFIFO:Datapath|contador4Bits:Contador_RD|ffjk:Q2|qS                                ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.000      ; 1.085      ;
+; 0.833 ; blocoDeControleFIFO:BlocodeControle|estado.start           ; blocoDeControleFIFO:BlocodeControle|estado.p_leitura                                      ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.000      ; 1.099      ;
+; 0.862 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; blocoDeControleFIFO:BlocodeControle|estado.p_escrita                                      ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.000      ; 1.128      ;
+; 1.290 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS                                ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.000      ; 1.556      ;
+; 1.298 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q1|qS ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q3|qS                                ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.000      ; 1.564      ;
+; 1.312 ; blocoDeControleFIFO:BlocodeControle|estado.p_leitura       ; blocoDeControleFIFO:BlocodeControle|estado.p_leitura                                      ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.000      ; 1.578      ;
+; 1.314 ; datapathFIFO:Datapath|contador4Bits:Contador_RD|ffjk:Q0|qS ; datapathFIFO:Datapath|contador4Bits:Contador_RD|ffjk:Q2|qS                                ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.000      ; 1.580      ;
+; 1.374 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q3|qS                                ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.000      ; 1.640      ;
+; 1.401 ; datapathFIFO:Datapath|contador4Bits:Contador_RD|ffjk:Q1|qS ; datapathFIFO:Datapath|contador4Bits:Contador_RD|ffjk:Q3|qS                                ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.000      ; 1.667      ;
+; 1.407 ; blocoDeControleFIFO:BlocodeControle|estado.p_escrita       ; blocoDeControleFIFO:BlocodeControle|estado.leitura                                        ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.000      ; 1.673      ;
+; 1.418 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q3|qS                                ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.000      ; 1.684      ;
+; 1.477 ; blocoDeControleFIFO:BlocodeControle|estado.p_leitura       ; blocoDeControleFIFO:BlocodeControle|estado.escrita                                        ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.000      ; 1.743      ;
+; 1.521 ; blocoDeControleFIFO:BlocodeControle|estado.p_leitura       ; blocoDeControleFIFO:BlocodeControle|estado.leitura                                        ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.000      ; 1.787      ;
+; 1.557 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[3]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.000      ; 1.823      ;
+; 1.557 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[5]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.000      ; 1.823      ;
+; 1.557 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[7]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.000      ; 1.823      ;
+; 1.557 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[8]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.000      ; 1.823      ;
+; 1.557 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[11] ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.000      ; 1.823      ;
+; 1.632 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[2]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.000      ; 1.898      ;
+; 1.632 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[6]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.000      ; 1.898      ;
+; 1.665 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[1]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.002      ; 1.933      ;
+; 1.665 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[3]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.002      ; 1.933      ;
+; 1.665 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[5]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.002      ; 1.933      ;
+; 1.665 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[7]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.002      ; 1.933      ;
+; 1.665 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[9]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.002      ; 1.933      ;
+; 1.665 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[11] ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.002      ; 1.933      ;
+; 1.681 ; datapathFIFO:Datapath|contador4Bits:Contador_RD|ffjk:Q2|qS ; datapathFIFO:Datapath|contador4Bits:Contador_RD|ffjk:Q3|qS                                ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.000      ; 1.947      ;
+; 1.713 ; datapathFIFO:Datapath|contador4Bits:Contador_RD|ffjk:Q1|qS ; blocoDeControleFIFO:BlocodeControle|estado.leitura                                        ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.000      ; 1.979      ;
+; 1.715 ; datapathFIFO:Datapath|contador4Bits:Contador_RD|ffjk:Q1|qS ; blocoDeControleFIFO:BlocodeControle|estado.p_leitura                                      ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.000      ; 1.981      ;
+; 1.754 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q1|qS ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS                                ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.000      ; 2.020      ;
+; 1.798 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg08|qs[4]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.001      ; 2.065      ;
+; 1.798 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg08|qs[8]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.001      ; 2.065      ;
+; 1.798 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg08|qs[12] ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.001      ; 2.065      ;
+; 1.811 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[0]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; -0.001     ; 2.076      ;
+; 1.811 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[1]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; -0.001     ; 2.076      ;
+; 1.811 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[4]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; -0.001     ; 2.076      ;
+; 1.811 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[12] ; CLK_fifo     ; CLK_fifo    ; 0.000        ; -0.001     ; 2.076      ;
+; 1.817 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS                                ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.000      ; 2.083      ;
+; 1.836 ; blocoDeControleFIFO:BlocodeControle|estado.leitura         ; datapathFIFO:Datapath|contador4Bits:Contador_RD|ffjk:Q3|qS                                ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.000      ; 2.102      ;
+; 1.837 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg08|qs[1]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.004      ; 2.107      ;
+; 1.837 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg08|qs[3]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.004      ; 2.107      ;
+; 1.837 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg08|qs[7]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.004      ; 2.107      ;
+; 1.837 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg08|qs[11] ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.004      ; 2.107      ;
+; 1.840 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS ; blocoDeControleFIFO:BlocodeControle|estado.escrita                                        ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.000      ; 2.106      ;
+; 1.841 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg04|qs[1]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.003      ; 2.110      ;
+; 1.841 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg04|qs[2]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.003      ; 2.110      ;
+; 1.841 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg04|qs[3]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.003      ; 2.110      ;
+; 1.841 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg04|qs[5]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.003      ; 2.110      ;
+; 1.841 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg04|qs[6]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.003      ; 2.110      ;
+; 1.841 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg04|qs[7]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.003      ; 2.110      ;
+; 1.842 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg04|qs[9]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.002      ; 2.110      ;
+; 1.842 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg04|qs[10] ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.002      ; 2.110      ;
+; 1.842 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg04|qs[11] ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.002      ; 2.110      ;
+; 1.843 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg12|qs[0]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.004      ; 2.113      ;
+; 1.843 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg12|qs[1]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.004      ; 2.113      ;
+; 1.843 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg12|qs[2]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.004      ; 2.113      ;
+; 1.843 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg12|qs[3]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.004      ; 2.113      ;
+; 1.843 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg12|qs[4]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.004      ; 2.113      ;
+; 1.843 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg12|qs[5]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.004      ; 2.113      ;
+; 1.843 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg12|qs[6]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.004      ; 2.113      ;
+; 1.843 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg12|qs[7]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.004      ; 2.113      ;
+; 1.843 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg12|qs[8]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.004      ; 2.113      ;
+; 1.843 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg12|qs[11] ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.004      ; 2.113      ;
+; 1.843 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg12|qs[12] ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.004      ; 2.113      ;
+; 1.846 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg04|qs[0]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.004      ; 2.116      ;
+; 1.846 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg04|qs[4]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.004      ; 2.116      ;
+; 1.846 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg04|qs[8]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.004      ; 2.116      ;
+; 1.846 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg04|qs[12] ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.004      ; 2.116      ;
+; 1.857 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg12|qs[9]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; -0.007     ; 2.116      ;
+; 1.857 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg12|qs[10] ; CLK_fifo     ; CLK_fifo    ; 0.000        ; -0.007     ; 2.116      ;
+; 1.859 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q1|qS ; blocoDeControleFIFO:BlocodeControle|estado.escrita                                        ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.000      ; 2.125      ;
+; 1.865 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg08|qs[0]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; -0.003     ; 2.128      ;
+; 1.865 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg08|qs[2]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; -0.003     ; 2.128      ;
+; 1.865 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg08|qs[5]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; -0.003     ; 2.128      ;
+; 1.865 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg08|qs[6]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; -0.003     ; 2.128      ;
+; 1.865 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg08|qs[9]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; -0.003     ; 2.128      ;
+; 1.865 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg08|qs[10] ; CLK_fifo     ; CLK_fifo    ; 0.000        ; -0.003     ; 2.128      ;
+; 1.881 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[2]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; -0.003     ; 2.144      ;
+; 1.881 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[6]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; -0.003     ; 2.144      ;
+; 1.881 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[9]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; -0.003     ; 2.144      ;
+; 1.881 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[10] ; CLK_fifo     ; CLK_fifo    ; 0.000        ; -0.003     ; 2.144      ;
+; 1.885 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[0]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.002      ; 2.153      ;
+; 1.885 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[4]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.002      ; 2.153      ;
+; 1.885 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[8]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.002      ; 2.153      ;
+; 1.885 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[10] ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.002      ; 2.153      ;
+; 1.885 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[12] ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.002      ; 2.153      ;
+; 1.906 ; blocoDeControleFIFO:BlocodeControle|estado.p_escrita       ; blocoDeControleFIFO:BlocodeControle|estado.escrita                                        ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.000      ; 2.172      ;
+; 1.934 ; datapathFIFO:Datapath|contador4Bits:Contador_RD|ffjk:Q3|qS ; blocoDeControleFIFO:BlocodeControle|estado.escrita                                        ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.000      ; 2.200      ;
+; 1.938 ; blocoDeControleFIFO:BlocodeControle|estado.leitura         ; datapathFIFO:Datapath|contador4Bits:Contador_RD|ffjk:Q1|qS                                ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.000      ; 2.204      ;
++-------+------------------------------------------------------------+-------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'CLK_fifo'                                                                                                                                    ;
++--------+--------------+----------------+------------------+----------+------------+-------------------------------------------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock    ; Clock Edge ; Target                                                                                    ;
++--------+--------------+----------------+------------------+----------+------------+-------------------------------------------------------------------------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; CLK_fifo ; Rise       ; CLK_fifo                                                                                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; blocoDeControleFIFO:BlocodeControle|estado.escrita                                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; blocoDeControleFIFO:BlocodeControle|estado.escrita                                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; blocoDeControleFIFO:BlocodeControle|estado.leitura                                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; blocoDeControleFIFO:BlocodeControle|estado.leitura                                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; blocoDeControleFIFO:BlocodeControle|estado.p_escrita                                      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; blocoDeControleFIFO:BlocodeControle|estado.p_escrita                                      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; blocoDeControleFIFO:BlocodeControle|estado.p_leitura                                      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; blocoDeControleFIFO:BlocodeControle|estado.p_leitura                                      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; blocoDeControleFIFO:BlocodeControle|estado.start                                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; blocoDeControleFIFO:BlocodeControle|estado.start                                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[10] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[10] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[11] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[11] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[12] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[12] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[7]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[7]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[8]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[8]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[9]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[9]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg01|qs[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg01|qs[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg01|qs[10] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg01|qs[10] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg01|qs[11] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg01|qs[11] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg01|qs[12] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg01|qs[12] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg01|qs[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg01|qs[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg01|qs[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg01|qs[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg01|qs[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg01|qs[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg01|qs[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg01|qs[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg01|qs[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg01|qs[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg01|qs[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg01|qs[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg01|qs[7]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg01|qs[7]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg01|qs[8]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg01|qs[8]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg01|qs[9]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg01|qs[9]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[10] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[10] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[11] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[11] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[12] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[12] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[7]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[7]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[8]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[8]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[9]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[9]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg03|qs[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg03|qs[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg03|qs[10] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg03|qs[10] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg03|qs[11] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg03|qs[11] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg03|qs[12] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg03|qs[12] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg03|qs[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg03|qs[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg03|qs[2]  ;
++--------+--------------+----------------+------------------+----------+------------+-------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------+
+; Setup Times                                                             ;
++-------------+------------+-------+-------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-------------+------------+-------+-------+------------+-----------------+
+; RD          ; CLK_fifo   ; 2.533 ; 2.533 ; Rise       ; CLK_fifo        ;
+; WR          ; CLK_fifo   ; 2.531 ; 2.531 ; Rise       ; CLK_fifo        ;
+; W_data[*]   ; CLK_fifo   ; 5.244 ; 5.244 ; Rise       ; CLK_fifo        ;
+;  W_data[0]  ; CLK_fifo   ; 3.825 ; 3.825 ; Rise       ; CLK_fifo        ;
+;  W_data[1]  ; CLK_fifo   ; 3.629 ; 3.629 ; Rise       ; CLK_fifo        ;
+;  W_data[2]  ; CLK_fifo   ; 4.137 ; 4.137 ; Rise       ; CLK_fifo        ;
+;  W_data[3]  ; CLK_fifo   ; 3.983 ; 3.983 ; Rise       ; CLK_fifo        ;
+;  W_data[4]  ; CLK_fifo   ; 4.042 ; 4.042 ; Rise       ; CLK_fifo        ;
+;  W_data[5]  ; CLK_fifo   ; 3.988 ; 3.988 ; Rise       ; CLK_fifo        ;
+;  W_data[6]  ; CLK_fifo   ; 4.146 ; 4.146 ; Rise       ; CLK_fifo        ;
+;  W_data[7]  ; CLK_fifo   ; 4.476 ; 4.476 ; Rise       ; CLK_fifo        ;
+;  W_data[8]  ; CLK_fifo   ; 5.244 ; 5.244 ; Rise       ; CLK_fifo        ;
+;  W_data[9]  ; CLK_fifo   ; 4.109 ; 4.109 ; Rise       ; CLK_fifo        ;
+;  W_data[10] ; CLK_fifo   ; 4.135 ; 4.135 ; Rise       ; CLK_fifo        ;
+;  W_data[11] ; CLK_fifo   ; 3.590 ; 3.590 ; Rise       ; CLK_fifo        ;
+;  W_data[12] ; CLK_fifo   ; 4.443 ; 4.443 ; Rise       ; CLK_fifo        ;
++-------------+------------+-------+-------+------------+-----------------+
+
+
++---------------------------------------------------------------------------+
+; Hold Times                                                                ;
++-------------+------------+--------+--------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-------------+------------+--------+--------+------------+-----------------+
+; RD          ; CLK_fifo   ; -0.621 ; -0.621 ; Rise       ; CLK_fifo        ;
+; WR          ; CLK_fifo   ; -0.530 ; -0.530 ; Rise       ; CLK_fifo        ;
+; W_data[*]   ; CLK_fifo   ; -2.951 ; -2.951 ; Rise       ; CLK_fifo        ;
+;  W_data[0]  ; CLK_fifo   ; -2.969 ; -2.969 ; Rise       ; CLK_fifo        ;
+;  W_data[1]  ; CLK_fifo   ; -2.958 ; -2.958 ; Rise       ; CLK_fifo        ;
+;  W_data[2]  ; CLK_fifo   ; -3.097 ; -3.097 ; Rise       ; CLK_fifo        ;
+;  W_data[3]  ; CLK_fifo   ; -3.053 ; -3.053 ; Rise       ; CLK_fifo        ;
+;  W_data[4]  ; CLK_fifo   ; -3.108 ; -3.108 ; Rise       ; CLK_fifo        ;
+;  W_data[5]  ; CLK_fifo   ; -3.098 ; -3.098 ; Rise       ; CLK_fifo        ;
+;  W_data[6]  ; CLK_fifo   ; -3.069 ; -3.069 ; Rise       ; CLK_fifo        ;
+;  W_data[7]  ; CLK_fifo   ; -3.118 ; -3.118 ; Rise       ; CLK_fifo        ;
+;  W_data[8]  ; CLK_fifo   ; -3.239 ; -3.239 ; Rise       ; CLK_fifo        ;
+;  W_data[9]  ; CLK_fifo   ; -2.951 ; -2.951 ; Rise       ; CLK_fifo        ;
+;  W_data[10] ; CLK_fifo   ; -2.971 ; -2.971 ; Rise       ; CLK_fifo        ;
+;  W_data[11] ; CLK_fifo   ; -3.122 ; -3.122 ; Rise       ; CLK_fifo        ;
+;  W_data[12] ; CLK_fifo   ; -3.167 ; -3.167 ; Rise       ; CLK_fifo        ;
++-------------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------------------+
+; Clock to Output Times                                                             ;
++---------------------+------------+--------+--------+------------+-----------------+
+; Data Port           ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++---------------------+------------+--------+--------+------------+-----------------+
+; Estados_maquina[*]  ; CLK_fifo   ; 7.570  ; 7.570  ; Rise       ; CLK_fifo        ;
+;  Estados_maquina[0] ; CLK_fifo   ; 7.512  ; 7.512  ; Rise       ; CLK_fifo        ;
+;  Estados_maquina[1] ; CLK_fifo   ; 7.570  ; 7.570  ; Rise       ; CLK_fifo        ;
+;  Estados_maquina[2] ; CLK_fifo   ; 6.409  ; 6.409  ; Rise       ; CLK_fifo        ;
+; R_data[*]           ; CLK_fifo   ; 13.972 ; 13.972 ; Rise       ; CLK_fifo        ;
+;  R_data[0]          ; CLK_fifo   ; 11.279 ; 11.279 ; Rise       ; CLK_fifo        ;
+;  R_data[1]          ; CLK_fifo   ; 12.878 ; 12.878 ; Rise       ; CLK_fifo        ;
+;  R_data[2]          ; CLK_fifo   ; 11.556 ; 11.556 ; Rise       ; CLK_fifo        ;
+;  R_data[3]          ; CLK_fifo   ; 13.047 ; 13.047 ; Rise       ; CLK_fifo        ;
+;  R_data[4]          ; CLK_fifo   ; 11.071 ; 11.071 ; Rise       ; CLK_fifo        ;
+;  R_data[5]          ; CLK_fifo   ; 12.265 ; 12.265 ; Rise       ; CLK_fifo        ;
+;  R_data[6]          ; CLK_fifo   ; 11.616 ; 11.616 ; Rise       ; CLK_fifo        ;
+;  R_data[7]          ; CLK_fifo   ; 13.114 ; 13.114 ; Rise       ; CLK_fifo        ;
+;  R_data[8]          ; CLK_fifo   ; 11.749 ; 11.749 ; Rise       ; CLK_fifo        ;
+;  R_data[9]          ; CLK_fifo   ; 12.390 ; 12.390 ; Rise       ; CLK_fifo        ;
+;  R_data[10]         ; CLK_fifo   ; 12.166 ; 12.166 ; Rise       ; CLK_fifo        ;
+;  R_data[11]         ; CLK_fifo   ; 13.972 ; 13.972 ; Rise       ; CLK_fifo        ;
+;  R_data[12]         ; CLK_fifo   ; 11.602 ; 11.602 ; Rise       ; CLK_fifo        ;
+; em                  ; CLK_fifo   ; 8.430  ; 8.430  ; Rise       ; CLK_fifo        ;
+; fu                  ; CLK_fifo   ; 8.457  ; 8.457  ; Rise       ; CLK_fifo        ;
++---------------------+------------+--------+--------+------------+-----------------+
+
+
++---------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                   ;
++---------------------+------------+-------+-------+------------+-----------------+
+; Data Port           ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++---------------------+------------+-------+-------+------------+-----------------+
+; Estados_maquina[*]  ; CLK_fifo   ; 6.409 ; 6.409 ; Rise       ; CLK_fifo        ;
+;  Estados_maquina[0] ; CLK_fifo   ; 7.475 ; 7.475 ; Rise       ; CLK_fifo        ;
+;  Estados_maquina[1] ; CLK_fifo   ; 7.471 ; 7.471 ; Rise       ; CLK_fifo        ;
+;  Estados_maquina[2] ; CLK_fifo   ; 6.409 ; 6.409 ; Rise       ; CLK_fifo        ;
+; R_data[*]           ; CLK_fifo   ; 7.376 ; 7.376 ; Rise       ; CLK_fifo        ;
+;  R_data[0]          ; CLK_fifo   ; 7.590 ; 7.590 ; Rise       ; CLK_fifo        ;
+;  R_data[1]          ; CLK_fifo   ; 8.305 ; 8.305 ; Rise       ; CLK_fifo        ;
+;  R_data[2]          ; CLK_fifo   ; 7.622 ; 7.622 ; Rise       ; CLK_fifo        ;
+;  R_data[3]          ; CLK_fifo   ; 7.871 ; 7.871 ; Rise       ; CLK_fifo        ;
+;  R_data[4]          ; CLK_fifo   ; 7.376 ; 7.376 ; Rise       ; CLK_fifo        ;
+;  R_data[5]          ; CLK_fifo   ; 8.541 ; 8.541 ; Rise       ; CLK_fifo        ;
+;  R_data[6]          ; CLK_fifo   ; 7.815 ; 7.815 ; Rise       ; CLK_fifo        ;
+;  R_data[7]          ; CLK_fifo   ; 7.644 ; 7.644 ; Rise       ; CLK_fifo        ;
+;  R_data[8]          ; CLK_fifo   ; 8.171 ; 8.171 ; Rise       ; CLK_fifo        ;
+;  R_data[9]          ; CLK_fifo   ; 7.713 ; 7.713 ; Rise       ; CLK_fifo        ;
+;  R_data[10]         ; CLK_fifo   ; 8.216 ; 8.216 ; Rise       ; CLK_fifo        ;
+;  R_data[11]         ; CLK_fifo   ; 7.898 ; 7.898 ; Rise       ; CLK_fifo        ;
+;  R_data[12]         ; CLK_fifo   ; 7.574 ; 7.574 ; Rise       ; CLK_fifo        ;
+; em                  ; CLK_fifo   ; 7.226 ; 7.226 ; Rise       ; CLK_fifo        ;
+; fu                  ; CLK_fifo   ; 7.489 ; 7.489 ; Rise       ; CLK_fifo        ;
++---------------------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------+
+; Fast Model Setup Summary          ;
++----------+--------+---------------+
+; Clock    ; Slack  ; End Point TNS ;
++----------+--------+---------------+
+; CLK_fifo ; -0.457 ; -70.542       ;
++----------+--------+---------------+
+
+
++----------------------------------+
+; Fast Model Hold Summary          ;
++----------+-------+---------------+
+; Clock    ; Slack ; End Point TNS ;
++----------+-------+---------------+
+; CLK_fifo ; 0.215 ; 0.000         ;
++----------+-------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Fast Model Minimum Pulse Width Summary ;
++----------+--------+--------------------+
+; Clock    ; Slack  ; End Point TNS      ;
++----------+--------+--------------------+
+; CLK_fifo ; -1.380 ; -222.380           ;
++----------+--------+--------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'CLK_fifo'                                                                                                                                                                                                          ;
++--------+------------------------------------------------------------+-------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                                  ; To Node                                                                                   ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------------------------------------------+-------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -0.457 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[0]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.002      ; 1.491      ;
+; -0.457 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[4]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.002      ; 1.491      ;
+; -0.457 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[8]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.002      ; 1.491      ;
+; -0.457 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[10] ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.002      ; 1.491      ;
+; -0.457 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[12] ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.002      ; 1.491      ;
+; -0.435 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[2]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; -0.004     ; 1.463      ;
+; -0.435 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[6]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; -0.004     ; 1.463      ;
+; -0.435 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[9]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; -0.004     ; 1.463      ;
+; -0.435 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[10] ; CLK_fifo     ; CLK_fifo    ; 1.000        ; -0.004     ; 1.463      ;
+; -0.423 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[0]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.002      ; 1.457      ;
+; -0.423 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[4]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.002      ; 1.457      ;
+; -0.423 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[8]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.002      ; 1.457      ;
+; -0.423 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[10] ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.002      ; 1.457      ;
+; -0.423 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[12] ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.002      ; 1.457      ;
+; -0.422 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg08|qs[0]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; -0.004     ; 1.450      ;
+; -0.422 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg08|qs[2]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; -0.004     ; 1.450      ;
+; -0.422 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg08|qs[5]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; -0.004     ; 1.450      ;
+; -0.422 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg08|qs[6]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; -0.004     ; 1.450      ;
+; -0.422 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg08|qs[9]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; -0.004     ; 1.450      ;
+; -0.422 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg08|qs[10] ; CLK_fifo     ; CLK_fifo    ; 1.000        ; -0.004     ; 1.450      ;
+; -0.420 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg12|qs[9]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; -0.007     ; 1.445      ;
+; -0.420 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg12|qs[10] ; CLK_fifo     ; CLK_fifo    ; 1.000        ; -0.007     ; 1.445      ;
+; -0.415 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg04|qs[0]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.003      ; 1.450      ;
+; -0.415 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg04|qs[4]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.003      ; 1.450      ;
+; -0.415 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg04|qs[8]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.003      ; 1.450      ;
+; -0.415 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg04|qs[12] ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.003      ; 1.450      ;
+; -0.411 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg12|qs[0]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.003      ; 1.446      ;
+; -0.411 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg12|qs[1]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.003      ; 1.446      ;
+; -0.411 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg12|qs[2]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.003      ; 1.446      ;
+; -0.411 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg12|qs[3]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.003      ; 1.446      ;
+; -0.411 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg12|qs[4]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.003      ; 1.446      ;
+; -0.411 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg12|qs[5]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.003      ; 1.446      ;
+; -0.411 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg12|qs[6]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.003      ; 1.446      ;
+; -0.411 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg12|qs[7]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.003      ; 1.446      ;
+; -0.411 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg12|qs[8]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.003      ; 1.446      ;
+; -0.411 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg12|qs[11] ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.003      ; 1.446      ;
+; -0.411 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg12|qs[12] ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.003      ; 1.446      ;
+; -0.408 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg08|qs[1]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.002      ; 1.442      ;
+; -0.408 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg08|qs[3]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.002      ; 1.442      ;
+; -0.408 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg08|qs[7]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.002      ; 1.442      ;
+; -0.408 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg08|qs[11] ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.002      ; 1.442      ;
+; -0.407 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg04|qs[9]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.001      ; 1.440      ;
+; -0.407 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg04|qs[10] ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.001      ; 1.440      ;
+; -0.407 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg04|qs[11] ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.001      ; 1.440      ;
+; -0.406 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg04|qs[1]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.001      ; 1.439      ;
+; -0.406 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg04|qs[2]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.001      ; 1.439      ;
+; -0.406 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg04|qs[3]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.001      ; 1.439      ;
+; -0.406 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg04|qs[5]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.001      ; 1.439      ;
+; -0.406 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg04|qs[6]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.001      ; 1.439      ;
+; -0.406 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg04|qs[7]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.001      ; 1.439      ;
+; -0.399 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[0]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; -0.002     ; 1.429      ;
+; -0.399 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[1]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; -0.002     ; 1.429      ;
+; -0.399 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[4]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; -0.002     ; 1.429      ;
+; -0.399 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[12] ; CLK_fifo     ; CLK_fifo    ; 1.000        ; -0.002     ; 1.429      ;
+; -0.399 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[2]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; -0.004     ; 1.427      ;
+; -0.399 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[6]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; -0.004     ; 1.427      ;
+; -0.399 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[9]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; -0.004     ; 1.427      ;
+; -0.399 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[10] ; CLK_fifo     ; CLK_fifo    ; 1.000        ; -0.004     ; 1.427      ;
+; -0.389 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg08|qs[0]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; -0.004     ; 1.417      ;
+; -0.389 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg08|qs[2]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; -0.004     ; 1.417      ;
+; -0.389 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg08|qs[5]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; -0.004     ; 1.417      ;
+; -0.389 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg08|qs[6]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; -0.004     ; 1.417      ;
+; -0.389 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg08|qs[9]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; -0.004     ; 1.417      ;
+; -0.389 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg08|qs[10] ; CLK_fifo     ; CLK_fifo    ; 1.000        ; -0.004     ; 1.417      ;
+; -0.388 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg08|qs[4]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.001      ; 1.421      ;
+; -0.388 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg08|qs[8]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.001      ; 1.421      ;
+; -0.388 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg08|qs[12] ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.001      ; 1.421      ;
+; -0.382 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg12|qs[9]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; -0.007     ; 1.407      ;
+; -0.382 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg12|qs[10] ; CLK_fifo     ; CLK_fifo    ; 1.000        ; -0.007     ; 1.407      ;
+; -0.377 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg04|qs[0]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.003      ; 1.412      ;
+; -0.377 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg04|qs[4]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.003      ; 1.412      ;
+; -0.377 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg04|qs[8]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.003      ; 1.412      ;
+; -0.377 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg04|qs[12] ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.003      ; 1.412      ;
+; -0.375 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg08|qs[1]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.002      ; 1.409      ;
+; -0.375 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg08|qs[3]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.002      ; 1.409      ;
+; -0.375 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg08|qs[7]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.002      ; 1.409      ;
+; -0.375 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg08|qs[11] ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.002      ; 1.409      ;
+; -0.373 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg12|qs[0]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.003      ; 1.408      ;
+; -0.373 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg12|qs[1]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.003      ; 1.408      ;
+; -0.373 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg12|qs[2]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.003      ; 1.408      ;
+; -0.373 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg12|qs[3]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.003      ; 1.408      ;
+; -0.373 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg12|qs[4]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.003      ; 1.408      ;
+; -0.373 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg12|qs[5]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.003      ; 1.408      ;
+; -0.373 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg12|qs[6]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.003      ; 1.408      ;
+; -0.373 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg12|qs[7]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.003      ; 1.408      ;
+; -0.373 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg12|qs[8]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.003      ; 1.408      ;
+; -0.373 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg12|qs[11] ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.003      ; 1.408      ;
+; -0.373 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg12|qs[12] ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.003      ; 1.408      ;
+; -0.369 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg04|qs[9]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.001      ; 1.402      ;
+; -0.369 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg04|qs[10] ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.001      ; 1.402      ;
+; -0.369 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg04|qs[11] ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.001      ; 1.402      ;
+; -0.368 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg04|qs[1]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.001      ; 1.401      ;
+; -0.368 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg04|qs[2]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.001      ; 1.401      ;
+; -0.368 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg04|qs[3]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.001      ; 1.401      ;
+; -0.368 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg04|qs[5]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.001      ; 1.401      ;
+; -0.368 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg04|qs[6]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.001      ; 1.401      ;
+; -0.368 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg04|qs[7]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; 0.001      ; 1.401      ;
+; -0.363 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[0]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; -0.002     ; 1.393      ;
+; -0.363 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[1]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; -0.002     ; 1.393      ;
+; -0.363 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[4]  ; CLK_fifo     ; CLK_fifo    ; 1.000        ; -0.002     ; 1.393      ;
++--------+------------------------------------------------------------+-------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'CLK_fifo'                                                                                                                                                                                                          ;
++-------+------------------------------------------------------------+-------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                                  ; To Node                                                                                   ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------------------------------------------------+-------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.215 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS                                ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; datapathFIFO:Datapath|contador4Bits:Contador_RD|ffjk:Q2|qS ; datapathFIFO:Datapath|contador4Bits:Contador_RD|ffjk:Q2|qS                                ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; blocoDeControleFIFO:BlocodeControle|estado.escrita                                        ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q3|qS ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q3|qS                                ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; blocoDeControleFIFO:BlocodeControle|estado.p_escrita       ; blocoDeControleFIFO:BlocodeControle|estado.p_escrita                                      ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; blocoDeControleFIFO:BlocodeControle|estado.leitura         ; blocoDeControleFIFO:BlocodeControle|estado.leitura                                        ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; datapathFIFO:Datapath|contador4Bits:Contador_RD|ffjk:Q3|qS ; datapathFIFO:Datapath|contador4Bits:Contador_RD|ffjk:Q3|qS                                ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.355 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q3|qS                                ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.000      ; 0.507      ;
+; 0.357 ; datapathFIFO:Datapath|contador4Bits:Contador_RD|ffjk:Q1|qS ; datapathFIFO:Datapath|contador4Bits:Contador_RD|ffjk:Q2|qS                                ; CLK_fifo     ; CLK_fifo    ; 0.000        ; -0.001     ; 0.508      ;
+; 0.366 ; blocoDeControleFIFO:BlocodeControle|estado.leitura         ; blocoDeControleFIFO:BlocodeControle|estado.p_leitura                                      ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.000      ; 0.518      ;
+; 0.368 ; blocoDeControleFIFO:BlocodeControle|estado.leitura         ; datapathFIFO:Datapath|contador4Bits:Contador_RD|ffjk:Q2|qS                                ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.000      ; 0.520      ;
+; 0.371 ; blocoDeControleFIFO:BlocodeControle|estado.start           ; blocoDeControleFIFO:BlocodeControle|estado.p_leitura                                      ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.000      ; 0.523      ;
+; 0.381 ; datapathFIFO:Datapath|contador4Bits:Contador_RD|ffjk:Q0|qS ; datapathFIFO:Datapath|contador4Bits:Contador_RD|ffjk:Q3|qS                                ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.000      ; 0.533      ;
+; 0.393 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; blocoDeControleFIFO:BlocodeControle|estado.p_escrita                                      ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.000      ; 0.545      ;
+; 0.575 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS                                ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.000      ; 0.727      ;
+; 0.585 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q1|qS ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q3|qS                                ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.000      ; 0.737      ;
+; 0.589 ; blocoDeControleFIFO:BlocodeControle|estado.p_leitura       ; blocoDeControleFIFO:BlocodeControle|estado.p_leitura                                      ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.000      ; 0.741      ;
+; 0.598 ; datapathFIFO:Datapath|contador4Bits:Contador_RD|ffjk:Q0|qS ; datapathFIFO:Datapath|contador4Bits:Contador_RD|ffjk:Q2|qS                                ; CLK_fifo     ; CLK_fifo    ; 0.000        ; -0.001     ; 0.749      ;
+; 0.624 ; blocoDeControleFIFO:BlocodeControle|estado.p_escrita       ; blocoDeControleFIFO:BlocodeControle|estado.leitura                                        ; CLK_fifo     ; CLK_fifo    ; 0.000        ; -0.001     ; 0.775      ;
+; 0.625 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q3|qS                                ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.000      ; 0.777      ;
+; 0.629 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q3|qS                                ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.000      ; 0.781      ;
+; 0.636 ; datapathFIFO:Datapath|contador4Bits:Contador_RD|ffjk:Q1|qS ; datapathFIFO:Datapath|contador4Bits:Contador_RD|ffjk:Q3|qS                                ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.000      ; 0.788      ;
+; 0.651 ; blocoDeControleFIFO:BlocodeControle|estado.p_leitura       ; blocoDeControleFIFO:BlocodeControle|estado.escrita                                        ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.001      ; 0.804      ;
+; 0.667 ; blocoDeControleFIFO:BlocodeControle|estado.p_leitura       ; blocoDeControleFIFO:BlocodeControle|estado.leitura                                        ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.000      ; 0.819      ;
+; 0.763 ; datapathFIFO:Datapath|contador4Bits:Contador_RD|ffjk:Q2|qS ; datapathFIFO:Datapath|contador4Bits:Contador_RD|ffjk:Q3|qS                                ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.001      ; 0.916      ;
+; 0.777 ; datapathFIFO:Datapath|contador4Bits:Contador_RD|ffjk:Q1|qS ; blocoDeControleFIFO:BlocodeControle|estado.leitura                                        ; CLK_fifo     ; CLK_fifo    ; 0.000        ; -0.001     ; 0.928      ;
+; 0.779 ; datapathFIFO:Datapath|contador4Bits:Contador_RD|ffjk:Q1|qS ; blocoDeControleFIFO:BlocodeControle|estado.p_leitura                                      ; CLK_fifo     ; CLK_fifo    ; 0.000        ; -0.001     ; 0.930      ;
+; 0.785 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[3]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; -0.001     ; 0.936      ;
+; 0.785 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[5]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; -0.001     ; 0.936      ;
+; 0.785 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[7]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; -0.001     ; 0.936      ;
+; 0.785 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[8]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; -0.001     ; 0.936      ;
+; 0.785 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[11] ; CLK_fifo     ; CLK_fifo    ; 0.000        ; -0.001     ; 0.936      ;
+; 0.799 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS ; blocoDeControleFIFO:BlocodeControle|estado.escrita                                        ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.000      ; 0.951      ;
+; 0.804 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q1|qS ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS                                ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.000      ; 0.956      ;
+; 0.812 ; blocoDeControleFIFO:BlocodeControle|estado.leitura         ; datapathFIFO:Datapath|contador4Bits:Contador_RD|ffjk:Q3|qS                                ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.001      ; 0.965      ;
+; 0.826 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS                                ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.000      ; 0.978      ;
+; 0.834 ; datapathFIFO:Datapath|contador4Bits:Contador_RD|ffjk:Q3|qS ; blocoDeControleFIFO:BlocodeControle|estado.escrita                                        ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.000      ; 0.986      ;
+; 0.841 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[2]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.000      ; 0.993      ;
+; 0.841 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[6]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.000      ; 0.993      ;
+; 0.843 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q1|qS ; blocoDeControleFIFO:BlocodeControle|estado.escrita                                        ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.000      ; 0.995      ;
+; 0.847 ; blocoDeControleFIFO:BlocodeControle|estado.p_escrita       ; blocoDeControleFIFO:BlocodeControle|estado.escrita                                        ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.000      ; 0.999      ;
+; 0.856 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[1]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.001      ; 1.009      ;
+; 0.856 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[3]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.001      ; 1.009      ;
+; 0.856 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[5]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.001      ; 1.009      ;
+; 0.856 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[7]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.001      ; 1.009      ;
+; 0.856 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[9]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.001      ; 1.009      ;
+; 0.856 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[11] ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.001      ; 1.009      ;
+; 0.864 ; datapathFIFO:Datapath|contador4Bits:Contador_RD|ffjk:Q3|qS ; blocoDeControleFIFO:BlocodeControle|estado.p_escrita                                      ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.000      ; 1.016      ;
+; 0.880 ; datapathFIFO:Datapath|contador4Bits:Contador_RD|ffjk:Q0|qS ; blocoDeControleFIFO:BlocodeControle|estado.escrita                                        ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.000      ; 1.032      ;
+; 0.887 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg08|qs[4]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.001      ; 1.040      ;
+; 0.887 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg08|qs[8]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.001      ; 1.040      ;
+; 0.887 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg08|qs[12] ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.001      ; 1.040      ;
+; 0.888 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; blocoDeControleFIFO:BlocodeControle|estado.escrita                                        ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.000      ; 1.040      ;
+; 0.896 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[0]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; -0.002     ; 1.046      ;
+; 0.896 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[1]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; -0.002     ; 1.046      ;
+; 0.896 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[4]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; -0.002     ; 1.046      ;
+; 0.896 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[12] ; CLK_fifo     ; CLK_fifo    ; 0.000        ; -0.002     ; 1.046      ;
+; 0.898 ; blocoDeControleFIFO:BlocodeControle|estado.leitura         ; datapathFIFO:Datapath|contador4Bits:Contador_RD|ffjk:Q1|qS                                ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.001      ; 1.051      ;
+; 0.899 ; datapathFIFO:Datapath|contador4Bits:Contador_RD|ffjk:Q2|qS ; blocoDeControleFIFO:BlocodeControle|estado.leitura                                        ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.000      ; 1.051      ;
+; 0.901 ; datapathFIFO:Datapath|contador4Bits:Contador_RD|ffjk:Q0|qS ; blocoDeControleFIFO:BlocodeControle|estado.p_leitura                                      ; CLK_fifo     ; CLK_fifo    ; 0.000        ; -0.001     ; 1.052      ;
+; 0.901 ; datapathFIFO:Datapath|contador4Bits:Contador_RD|ffjk:Q2|qS ; blocoDeControleFIFO:BlocodeControle|estado.p_leitura                                      ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.000      ; 1.053      ;
+; 0.901 ; datapathFIFO:Datapath|contador4Bits:Contador_RD|ffjk:Q1|qS ; blocoDeControleFIFO:BlocodeControle|estado.p_escrita                                      ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.000      ; 1.053      ;
+; 0.904 ; blocoDeControleFIFO:BlocodeControle|estado.escrita         ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS                                ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.000      ; 1.056      ;
+; 0.907 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q1|qS ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q1|qS                                ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.000      ; 1.059      ;
+; 0.907 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg08|qs[1]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.002      ; 1.061      ;
+; 0.907 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg04|qs[1]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.001      ; 1.060      ;
+; 0.907 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg04|qs[2]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.001      ; 1.060      ;
+; 0.907 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg04|qs[3]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.001      ; 1.060      ;
+; 0.907 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg08|qs[3]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.002      ; 1.061      ;
+; 0.907 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg04|qs[5]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.001      ; 1.060      ;
+; 0.907 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg04|qs[6]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.001      ; 1.060      ;
+; 0.907 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg04|qs[7]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.001      ; 1.060      ;
+; 0.907 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg08|qs[7]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.002      ; 1.061      ;
+; 0.907 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg08|qs[11] ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.002      ; 1.061      ;
+; 0.907 ; datapathFIFO:Datapath|contador4Bits:Contador_RD|ffjk:Q0|qS ; datapathFIFO:Datapath|contador4Bits:Contador_RD|ffjk:Q1|qS                                ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.000      ; 1.059      ;
+; 0.908 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg04|qs[9]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.001      ; 1.061      ;
+; 0.908 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg04|qs[10] ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.001      ; 1.061      ;
+; 0.908 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg04|qs[11] ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.001      ; 1.061      ;
+; 0.911 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg12|qs[0]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.003      ; 1.066      ;
+; 0.911 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg12|qs[1]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.003      ; 1.066      ;
+; 0.911 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg12|qs[2]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.003      ; 1.066      ;
+; 0.911 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg12|qs[3]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.003      ; 1.066      ;
+; 0.911 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg12|qs[4]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.003      ; 1.066      ;
+; 0.911 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg12|qs[5]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.003      ; 1.066      ;
+; 0.911 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg12|qs[6]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.003      ; 1.066      ;
+; 0.911 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg12|qs[7]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.003      ; 1.066      ;
+; 0.911 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg12|qs[8]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.003      ; 1.066      ;
+; 0.911 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg12|qs[11] ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.003      ; 1.066      ;
+; 0.911 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg12|qs[12] ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.003      ; 1.066      ;
+; 0.913 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0|qS ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS                                ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.000      ; 1.065      ;
+; 0.913 ; datapathFIFO:Datapath|contador4Bits:Contador_RD|ffjk:Q2|qS ; blocoDeControleFIFO:BlocodeControle|estado.p_escrita                                      ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.001      ; 1.066      ;
+; 0.916 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg04|qs[0]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.003      ; 1.071      ;
+; 0.916 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg04|qs[4]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.003      ; 1.071      ;
+; 0.916 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg04|qs[8]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.003      ; 1.071      ;
+; 0.916 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg04|qs[12] ; CLK_fifo     ; CLK_fifo    ; 0.000        ; 0.003      ; 1.071      ;
+; 0.916 ; datapathFIFO:Datapath|contador4Bits:Contador_RD|ffjk:Q3|qS ; blocoDeControleFIFO:BlocodeControle|estado.leitura                                        ; CLK_fifo     ; CLK_fifo    ; 0.000        ; -0.001     ; 1.067      ;
+; 0.920 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg12|qs[9]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; -0.007     ; 1.065      ;
+; 0.920 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg12|qs[10] ; CLK_fifo     ; CLK_fifo    ; 0.000        ; -0.007     ; 1.065      ;
+; 0.921 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg08|qs[0]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; -0.004     ; 1.069      ;
+; 0.921 ; datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2|qS ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg08|qs[2]  ; CLK_fifo     ; CLK_fifo    ; 0.000        ; -0.004     ; 1.069      ;
++-------+------------------------------------------------------------+-------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'CLK_fifo'                                                                                                                                    ;
++--------+--------------+----------------+------------------+----------+------------+-------------------------------------------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock    ; Clock Edge ; Target                                                                                    ;
++--------+--------------+----------------+------------------+----------+------------+-------------------------------------------------------------------------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; CLK_fifo ; Rise       ; CLK_fifo                                                                                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; blocoDeControleFIFO:BlocodeControle|estado.escrita                                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; blocoDeControleFIFO:BlocodeControle|estado.escrita                                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; blocoDeControleFIFO:BlocodeControle|estado.leitura                                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; blocoDeControleFIFO:BlocodeControle|estado.leitura                                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; blocoDeControleFIFO:BlocodeControle|estado.p_escrita                                      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; blocoDeControleFIFO:BlocodeControle|estado.p_escrita                                      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; blocoDeControleFIFO:BlocodeControle|estado.p_leitura                                      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; blocoDeControleFIFO:BlocodeControle|estado.p_leitura                                      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; blocoDeControleFIFO:BlocodeControle|estado.start                                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; blocoDeControleFIFO:BlocodeControle|estado.start                                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[10] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[10] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[11] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[11] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[12] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[12] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[7]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[7]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[8]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[8]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[9]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00|qs[9]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg01|qs[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg01|qs[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg01|qs[10] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg01|qs[10] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg01|qs[11] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg01|qs[11] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg01|qs[12] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg01|qs[12] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg01|qs[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg01|qs[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg01|qs[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg01|qs[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg01|qs[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg01|qs[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg01|qs[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg01|qs[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg01|qs[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg01|qs[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg01|qs[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg01|qs[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg01|qs[7]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg01|qs[7]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg01|qs[8]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg01|qs[8]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg01|qs[9]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg01|qs[9]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[10] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[10] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[11] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[11] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[12] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[12] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[7]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[7]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[8]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[8]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[9]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02|qs[9]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg03|qs[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg03|qs[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg03|qs[10] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg03|qs[10] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg03|qs[11] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg03|qs[11] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg03|qs[12] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg03|qs[12] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg03|qs[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg03|qs[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_fifo ; Rise       ; datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg03|qs[2]  ;
++--------+--------------+----------------+------------------+----------+------------+-------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------+
+; Setup Times                                                             ;
++-------------+------------+-------+-------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-------------+------------+-------+-------+------------+-----------------+
+; RD          ; CLK_fifo   ; 0.828 ; 0.828 ; Rise       ; CLK_fifo        ;
+; WR          ; CLK_fifo   ; 0.833 ; 0.833 ; Rise       ; CLK_fifo        ;
+; W_data[*]   ; CLK_fifo   ; 2.710 ; 2.710 ; Rise       ; CLK_fifo        ;
+;  W_data[0]  ; CLK_fifo   ; 2.059 ; 2.059 ; Rise       ; CLK_fifo        ;
+;  W_data[1]  ; CLK_fifo   ; 1.970 ; 1.970 ; Rise       ; CLK_fifo        ;
+;  W_data[2]  ; CLK_fifo   ; 2.201 ; 2.201 ; Rise       ; CLK_fifo        ;
+;  W_data[3]  ; CLK_fifo   ; 2.092 ; 2.092 ; Rise       ; CLK_fifo        ;
+;  W_data[4]  ; CLK_fifo   ; 2.137 ; 2.137 ; Rise       ; CLK_fifo        ;
+;  W_data[5]  ; CLK_fifo   ; 2.147 ; 2.147 ; Rise       ; CLK_fifo        ;
+;  W_data[6]  ; CLK_fifo   ; 2.187 ; 2.187 ; Rise       ; CLK_fifo        ;
+;  W_data[7]  ; CLK_fifo   ; 2.360 ; 2.360 ; Rise       ; CLK_fifo        ;
+;  W_data[8]  ; CLK_fifo   ; 2.710 ; 2.710 ; Rise       ; CLK_fifo        ;
+;  W_data[9]  ; CLK_fifo   ; 2.168 ; 2.168 ; Rise       ; CLK_fifo        ;
+;  W_data[10] ; CLK_fifo   ; 2.192 ; 2.192 ; Rise       ; CLK_fifo        ;
+;  W_data[11] ; CLK_fifo   ; 1.941 ; 1.941 ; Rise       ; CLK_fifo        ;
+;  W_data[12] ; CLK_fifo   ; 2.337 ; 2.337 ; Rise       ; CLK_fifo        ;
++-------------+------------+-------+-------+------------+-----------------+
+
+
++---------------------------------------------------------------------------+
+; Hold Times                                                                ;
++-------------+------------+--------+--------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-------------+------------+--------+--------+------------+-----------------+
+; RD          ; CLK_fifo   ; 0.055  ; 0.055  ; Rise       ; CLK_fifo        ;
+; WR          ; CLK_fifo   ; 0.078  ; 0.078  ; Rise       ; CLK_fifo        ;
+; W_data[*]   ; CLK_fifo   ; -1.601 ; -1.601 ; Rise       ; CLK_fifo        ;
+;  W_data[0]  ; CLK_fifo   ; -1.620 ; -1.620 ; Rise       ; CLK_fifo        ;
+;  W_data[1]  ; CLK_fifo   ; -1.608 ; -1.608 ; Rise       ; CLK_fifo        ;
+;  W_data[2]  ; CLK_fifo   ; -1.694 ; -1.694 ; Rise       ; CLK_fifo        ;
+;  W_data[3]  ; CLK_fifo   ; -1.666 ; -1.666 ; Rise       ; CLK_fifo        ;
+;  W_data[4]  ; CLK_fifo   ; -1.694 ; -1.694 ; Rise       ; CLK_fifo        ;
+;  W_data[5]  ; CLK_fifo   ; -1.700 ; -1.700 ; Rise       ; CLK_fifo        ;
+;  W_data[6]  ; CLK_fifo   ; -1.671 ; -1.671 ; Rise       ; CLK_fifo        ;
+;  W_data[7]  ; CLK_fifo   ; -1.707 ; -1.707 ; Rise       ; CLK_fifo        ;
+;  W_data[8]  ; CLK_fifo   ; -1.759 ; -1.759 ; Rise       ; CLK_fifo        ;
+;  W_data[9]  ; CLK_fifo   ; -1.601 ; -1.601 ; Rise       ; CLK_fifo        ;
+;  W_data[10] ; CLK_fifo   ; -1.636 ; -1.636 ; Rise       ; CLK_fifo        ;
+;  W_data[11] ; CLK_fifo   ; -1.706 ; -1.706 ; Rise       ; CLK_fifo        ;
+;  W_data[12] ; CLK_fifo   ; -1.693 ; -1.693 ; Rise       ; CLK_fifo        ;
++-------------+------------+--------+--------+------------+-----------------+
+
+
++---------------------------------------------------------------------------------+
+; Clock to Output Times                                                           ;
++---------------------+------------+-------+-------+------------+-----------------+
+; Data Port           ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++---------------------+------------+-------+-------+------------+-----------------+
+; Estados_maquina[*]  ; CLK_fifo   ; 4.191 ; 4.191 ; Rise       ; CLK_fifo        ;
+;  Estados_maquina[0] ; CLK_fifo   ; 4.152 ; 4.152 ; Rise       ; CLK_fifo        ;
+;  Estados_maquina[1] ; CLK_fifo   ; 4.191 ; 4.191 ; Rise       ; CLK_fifo        ;
+;  Estados_maquina[2] ; CLK_fifo   ; 3.663 ; 3.663 ; Rise       ; CLK_fifo        ;
+; R_data[*]           ; CLK_fifo   ; 7.019 ; 7.019 ; Rise       ; CLK_fifo        ;
+;  R_data[0]          ; CLK_fifo   ; 5.823 ; 5.823 ; Rise       ; CLK_fifo        ;
+;  R_data[1]          ; CLK_fifo   ; 6.572 ; 6.572 ; Rise       ; CLK_fifo        ;
+;  R_data[2]          ; CLK_fifo   ; 5.911 ; 5.911 ; Rise       ; CLK_fifo        ;
+;  R_data[3]          ; CLK_fifo   ; 6.622 ; 6.622 ; Rise       ; CLK_fifo        ;
+;  R_data[4]          ; CLK_fifo   ; 5.707 ; 5.707 ; Rise       ; CLK_fifo        ;
+;  R_data[5]          ; CLK_fifo   ; 6.315 ; 6.315 ; Rise       ; CLK_fifo        ;
+;  R_data[6]          ; CLK_fifo   ; 6.000 ; 6.000 ; Rise       ; CLK_fifo        ;
+;  R_data[7]          ; CLK_fifo   ; 6.660 ; 6.660 ; Rise       ; CLK_fifo        ;
+;  R_data[8]          ; CLK_fifo   ; 6.020 ; 6.020 ; Rise       ; CLK_fifo        ;
+;  R_data[9]          ; CLK_fifo   ; 6.343 ; 6.343 ; Rise       ; CLK_fifo        ;
+;  R_data[10]         ; CLK_fifo   ; 6.183 ; 6.183 ; Rise       ; CLK_fifo        ;
+;  R_data[11]         ; CLK_fifo   ; 7.019 ; 7.019 ; Rise       ; CLK_fifo        ;
+;  R_data[12]         ; CLK_fifo   ; 5.933 ; 5.933 ; Rise       ; CLK_fifo        ;
+; em                  ; CLK_fifo   ; 4.566 ; 4.566 ; Rise       ; CLK_fifo        ;
+; fu                  ; CLK_fifo   ; 4.588 ; 4.588 ; Rise       ; CLK_fifo        ;
++---------------------+------------+-------+-------+------------+-----------------+
+
+
++---------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                   ;
++---------------------+------------+-------+-------+------------+-----------------+
+; Data Port           ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++---------------------+------------+-------+-------+------------+-----------------+
+; Estados_maquina[*]  ; CLK_fifo   ; 3.663 ; 3.663 ; Rise       ; CLK_fifo        ;
+;  Estados_maquina[0] ; CLK_fifo   ; 4.142 ; 4.142 ; Rise       ; CLK_fifo        ;
+;  Estados_maquina[1] ; CLK_fifo   ; 4.144 ; 4.144 ; Rise       ; CLK_fifo        ;
+;  Estados_maquina[2] ; CLK_fifo   ; 3.663 ; 3.663 ; Rise       ; CLK_fifo        ;
+; R_data[*]           ; CLK_fifo   ; 4.079 ; 4.079 ; Rise       ; CLK_fifo        ;
+;  R_data[0]          ; CLK_fifo   ; 4.191 ; 4.191 ; Rise       ; CLK_fifo        ;
+;  R_data[1]          ; CLK_fifo   ; 4.511 ; 4.511 ; Rise       ; CLK_fifo        ;
+;  R_data[2]          ; CLK_fifo   ; 4.183 ; 4.183 ; Rise       ; CLK_fifo        ;
+;  R_data[3]          ; CLK_fifo   ; 4.296 ; 4.296 ; Rise       ; CLK_fifo        ;
+;  R_data[4]          ; CLK_fifo   ; 4.079 ; 4.079 ; Rise       ; CLK_fifo        ;
+;  R_data[5]          ; CLK_fifo   ; 4.632 ; 4.632 ; Rise       ; CLK_fifo        ;
+;  R_data[6]          ; CLK_fifo   ; 4.293 ; 4.293 ; Rise       ; CLK_fifo        ;
+;  R_data[7]          ; CLK_fifo   ; 4.221 ; 4.221 ; Rise       ; CLK_fifo        ;
+;  R_data[8]          ; CLK_fifo   ; 4.447 ; 4.447 ; Rise       ; CLK_fifo        ;
+;  R_data[9]          ; CLK_fifo   ; 4.254 ; 4.254 ; Rise       ; CLK_fifo        ;
+;  R_data[10]         ; CLK_fifo   ; 4.482 ; 4.482 ; Rise       ; CLK_fifo        ;
+;  R_data[11]         ; CLK_fifo   ; 4.331 ; 4.331 ; Rise       ; CLK_fifo        ;
+;  R_data[12]         ; CLK_fifo   ; 4.205 ; 4.205 ; Rise       ; CLK_fifo        ;
+; em                  ; CLK_fifo   ; 4.025 ; 4.025 ; Rise       ; CLK_fifo        ;
+; fu                  ; CLK_fifo   ; 4.152 ; 4.152 ; Rise       ; CLK_fifo        ;
++---------------------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                            ;
++------------------+----------+-------+----------+---------+---------------------+
+; Clock            ; Setup    ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+----------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -2.023   ; 0.215 ; N/A      ; N/A     ; -1.380              ;
+;  CLK_fifo        ; -2.023   ; 0.215 ; N/A      ; N/A     ; -1.380              ;
+; Design-wide TNS  ; -379.107 ; 0.0   ; 0.0      ; 0.0     ; -222.38             ;
+;  CLK_fifo        ; -379.107 ; 0.000 ; N/A      ; N/A     ; -222.380            ;
++------------------+----------+-------+----------+---------+---------------------+
+
+
++-------------------------------------------------------------------------+
+; Setup Times                                                             ;
++-------------+------------+-------+-------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-------------+------------+-------+-------+------------+-----------------+
+; RD          ; CLK_fifo   ; 2.533 ; 2.533 ; Rise       ; CLK_fifo        ;
+; WR          ; CLK_fifo   ; 2.531 ; 2.531 ; Rise       ; CLK_fifo        ;
+; W_data[*]   ; CLK_fifo   ; 5.244 ; 5.244 ; Rise       ; CLK_fifo        ;
+;  W_data[0]  ; CLK_fifo   ; 3.825 ; 3.825 ; Rise       ; CLK_fifo        ;
+;  W_data[1]  ; CLK_fifo   ; 3.629 ; 3.629 ; Rise       ; CLK_fifo        ;
+;  W_data[2]  ; CLK_fifo   ; 4.137 ; 4.137 ; Rise       ; CLK_fifo        ;
+;  W_data[3]  ; CLK_fifo   ; 3.983 ; 3.983 ; Rise       ; CLK_fifo        ;
+;  W_data[4]  ; CLK_fifo   ; 4.042 ; 4.042 ; Rise       ; CLK_fifo        ;
+;  W_data[5]  ; CLK_fifo   ; 3.988 ; 3.988 ; Rise       ; CLK_fifo        ;
+;  W_data[6]  ; CLK_fifo   ; 4.146 ; 4.146 ; Rise       ; CLK_fifo        ;
+;  W_data[7]  ; CLK_fifo   ; 4.476 ; 4.476 ; Rise       ; CLK_fifo        ;
+;  W_data[8]  ; CLK_fifo   ; 5.244 ; 5.244 ; Rise       ; CLK_fifo        ;
+;  W_data[9]  ; CLK_fifo   ; 4.109 ; 4.109 ; Rise       ; CLK_fifo        ;
+;  W_data[10] ; CLK_fifo   ; 4.135 ; 4.135 ; Rise       ; CLK_fifo        ;
+;  W_data[11] ; CLK_fifo   ; 3.590 ; 3.590 ; Rise       ; CLK_fifo        ;
+;  W_data[12] ; CLK_fifo   ; 4.443 ; 4.443 ; Rise       ; CLK_fifo        ;
++-------------+------------+-------+-------+------------+-----------------+
+
+
++---------------------------------------------------------------------------+
+; Hold Times                                                                ;
++-------------+------------+--------+--------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-------------+------------+--------+--------+------------+-----------------+
+; RD          ; CLK_fifo   ; 0.055  ; 0.055  ; Rise       ; CLK_fifo        ;
+; WR          ; CLK_fifo   ; 0.078  ; 0.078  ; Rise       ; CLK_fifo        ;
+; W_data[*]   ; CLK_fifo   ; -1.601 ; -1.601 ; Rise       ; CLK_fifo        ;
+;  W_data[0]  ; CLK_fifo   ; -1.620 ; -1.620 ; Rise       ; CLK_fifo        ;
+;  W_data[1]  ; CLK_fifo   ; -1.608 ; -1.608 ; Rise       ; CLK_fifo        ;
+;  W_data[2]  ; CLK_fifo   ; -1.694 ; -1.694 ; Rise       ; CLK_fifo        ;
+;  W_data[3]  ; CLK_fifo   ; -1.666 ; -1.666 ; Rise       ; CLK_fifo        ;
+;  W_data[4]  ; CLK_fifo   ; -1.694 ; -1.694 ; Rise       ; CLK_fifo        ;
+;  W_data[5]  ; CLK_fifo   ; -1.700 ; -1.700 ; Rise       ; CLK_fifo        ;
+;  W_data[6]  ; CLK_fifo   ; -1.671 ; -1.671 ; Rise       ; CLK_fifo        ;
+;  W_data[7]  ; CLK_fifo   ; -1.707 ; -1.707 ; Rise       ; CLK_fifo        ;
+;  W_data[8]  ; CLK_fifo   ; -1.759 ; -1.759 ; Rise       ; CLK_fifo        ;
+;  W_data[9]  ; CLK_fifo   ; -1.601 ; -1.601 ; Rise       ; CLK_fifo        ;
+;  W_data[10] ; CLK_fifo   ; -1.636 ; -1.636 ; Rise       ; CLK_fifo        ;
+;  W_data[11] ; CLK_fifo   ; -1.706 ; -1.706 ; Rise       ; CLK_fifo        ;
+;  W_data[12] ; CLK_fifo   ; -1.693 ; -1.693 ; Rise       ; CLK_fifo        ;
++-------------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------------------+
+; Clock to Output Times                                                             ;
++---------------------+------------+--------+--------+------------+-----------------+
+; Data Port           ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++---------------------+------------+--------+--------+------------+-----------------+
+; Estados_maquina[*]  ; CLK_fifo   ; 7.570  ; 7.570  ; Rise       ; CLK_fifo        ;
+;  Estados_maquina[0] ; CLK_fifo   ; 7.512  ; 7.512  ; Rise       ; CLK_fifo        ;
+;  Estados_maquina[1] ; CLK_fifo   ; 7.570  ; 7.570  ; Rise       ; CLK_fifo        ;
+;  Estados_maquina[2] ; CLK_fifo   ; 6.409  ; 6.409  ; Rise       ; CLK_fifo        ;
+; R_data[*]           ; CLK_fifo   ; 13.972 ; 13.972 ; Rise       ; CLK_fifo        ;
+;  R_data[0]          ; CLK_fifo   ; 11.279 ; 11.279 ; Rise       ; CLK_fifo        ;
+;  R_data[1]          ; CLK_fifo   ; 12.878 ; 12.878 ; Rise       ; CLK_fifo        ;
+;  R_data[2]          ; CLK_fifo   ; 11.556 ; 11.556 ; Rise       ; CLK_fifo        ;
+;  R_data[3]          ; CLK_fifo   ; 13.047 ; 13.047 ; Rise       ; CLK_fifo        ;
+;  R_data[4]          ; CLK_fifo   ; 11.071 ; 11.071 ; Rise       ; CLK_fifo        ;
+;  R_data[5]          ; CLK_fifo   ; 12.265 ; 12.265 ; Rise       ; CLK_fifo        ;
+;  R_data[6]          ; CLK_fifo   ; 11.616 ; 11.616 ; Rise       ; CLK_fifo        ;
+;  R_data[7]          ; CLK_fifo   ; 13.114 ; 13.114 ; Rise       ; CLK_fifo        ;
+;  R_data[8]          ; CLK_fifo   ; 11.749 ; 11.749 ; Rise       ; CLK_fifo        ;
+;  R_data[9]          ; CLK_fifo   ; 12.390 ; 12.390 ; Rise       ; CLK_fifo        ;
+;  R_data[10]         ; CLK_fifo   ; 12.166 ; 12.166 ; Rise       ; CLK_fifo        ;
+;  R_data[11]         ; CLK_fifo   ; 13.972 ; 13.972 ; Rise       ; CLK_fifo        ;
+;  R_data[12]         ; CLK_fifo   ; 11.602 ; 11.602 ; Rise       ; CLK_fifo        ;
+; em                  ; CLK_fifo   ; 8.430  ; 8.430  ; Rise       ; CLK_fifo        ;
+; fu                  ; CLK_fifo   ; 8.457  ; 8.457  ; Rise       ; CLK_fifo        ;
++---------------------+------------+--------+--------+------------+-----------------+
+
+
++---------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                   ;
++---------------------+------------+-------+-------+------------+-----------------+
+; Data Port           ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++---------------------+------------+-------+-------+------------+-----------------+
+; Estados_maquina[*]  ; CLK_fifo   ; 3.663 ; 3.663 ; Rise       ; CLK_fifo        ;
+;  Estados_maquina[0] ; CLK_fifo   ; 4.142 ; 4.142 ; Rise       ; CLK_fifo        ;
+;  Estados_maquina[1] ; CLK_fifo   ; 4.144 ; 4.144 ; Rise       ; CLK_fifo        ;
+;  Estados_maquina[2] ; CLK_fifo   ; 3.663 ; 3.663 ; Rise       ; CLK_fifo        ;
+; R_data[*]           ; CLK_fifo   ; 4.079 ; 4.079 ; Rise       ; CLK_fifo        ;
+;  R_data[0]          ; CLK_fifo   ; 4.191 ; 4.191 ; Rise       ; CLK_fifo        ;
+;  R_data[1]          ; CLK_fifo   ; 4.511 ; 4.511 ; Rise       ; CLK_fifo        ;
+;  R_data[2]          ; CLK_fifo   ; 4.183 ; 4.183 ; Rise       ; CLK_fifo        ;
+;  R_data[3]          ; CLK_fifo   ; 4.296 ; 4.296 ; Rise       ; CLK_fifo        ;
+;  R_data[4]          ; CLK_fifo   ; 4.079 ; 4.079 ; Rise       ; CLK_fifo        ;
+;  R_data[5]          ; CLK_fifo   ; 4.632 ; 4.632 ; Rise       ; CLK_fifo        ;
+;  R_data[6]          ; CLK_fifo   ; 4.293 ; 4.293 ; Rise       ; CLK_fifo        ;
+;  R_data[7]          ; CLK_fifo   ; 4.221 ; 4.221 ; Rise       ; CLK_fifo        ;
+;  R_data[8]          ; CLK_fifo   ; 4.447 ; 4.447 ; Rise       ; CLK_fifo        ;
+;  R_data[9]          ; CLK_fifo   ; 4.254 ; 4.254 ; Rise       ; CLK_fifo        ;
+;  R_data[10]         ; CLK_fifo   ; 4.482 ; 4.482 ; Rise       ; CLK_fifo        ;
+;  R_data[11]         ; CLK_fifo   ; 4.331 ; 4.331 ; Rise       ; CLK_fifo        ;
+;  R_data[12]         ; CLK_fifo   ; 4.205 ; 4.205 ; Rise       ; CLK_fifo        ;
+; em                  ; CLK_fifo   ; 4.025 ; 4.025 ; Rise       ; CLK_fifo        ;
+; fu                  ; CLK_fifo   ; 4.152 ; 4.152 ; Rise       ; CLK_fifo        ;
++---------------------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; CLK_fifo   ; CLK_fifo ; 1163     ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; CLK_fifo   ; CLK_fifo ; 1163     ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 16    ; 16   ;
+; Unconstrained Input Port Paths  ; 437   ; 437  ;
+; Unconstrained Output Ports      ; 18    ; 18   ;
+; Unconstrained Output Port Paths ; 296   ; 296  ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
+    Info: Processing started: Fri Mar 13 20:51:53 2020
+Info: Command: quartus_sta fifo -c fifo
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'fifo.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name CLK_fifo CLK_fifo
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -2.023
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -2.023      -379.107 CLK_fifo 
+Info (332146): Worst-case hold slack is 0.391
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.391         0.000 CLK_fifo 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380      -222.380 CLK_fifo 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -0.457
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -0.457       -70.542 CLK_fifo 
+Info (332146): Worst-case hold slack is 0.215
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.215         0.000 CLK_fifo 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380      -222.380 CLK_fifo 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 4548 megabytes
+    Info: Processing ended: Fri Mar 13 20:51:54 2020
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

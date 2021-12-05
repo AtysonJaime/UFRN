@@ -1,0 +1,8 @@
+|botaoSincrono
+clk => y_present~4.DATAIN
+b_in => y_next.E2.DATAB
+b_in => y_next.E3.DATAA
+b_in => y_present.E1~0.DATAIN
+b_out <= b_out~0.DB_MAX_OUTPUT_PORT_TYPE
+
+

@@ -1,0 +1,20 @@
+library ieee ;
+use ieee.std_logic_1164.all;
+
+entity projeto02 is
+	port ( clock_27,SW1,SW0,KEY3: in std_logic ;
+			 LEDR1,LEDR0: out std_logic );
+end projeto02;
+
+architecture ckt in projeto02 is
+	component divisorClock is
+		port ( clk_in : in std_logic ;
+			 clk_out : out std_logic );
+	end component;
+	
+	
+	
+	begin
+		
+
+end ckt;

@@ -1,0 +1,13 @@
+
+State Machine - |projeto01_MV|maquinaVendas:MV|blocoDeControleMV:BlocodeControle|estado
+Name estado.E4 estado.E3 estado.E2 estado.E1 
+estado.E1 0 0 0 0 
+estado.E2 0 0 1 1 
+estado.E3 0 1 0 1 
+estado.E4 1 0 0 1 
+
+State Machine - |projeto01_MV|botaoSincrono:BS|y_present
+Name y_present.E3 y_present.E2 y_present.E1 
+y_present.E1 0 0 0 
+y_present.E2 0 1 1 
+y_present.E3 1 0 1 

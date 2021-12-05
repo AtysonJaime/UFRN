@@ -1,0 +1,13 @@
+library ieee ;
+use ieee.std_logic_1164.all;
+
+entity SHR_in_8Bits is
+  port (A: in std_logic_vector(7 downto 0);
+        S: out std_logic_vector(7 downto 0));
+end SHR_8Bits;
+
+architecture ckt of SHR_in_8Bits is
+   begin
+		S(7) <= '0';
+		S(6 downto 0) <= A(7 downto 1);
+end ckt;

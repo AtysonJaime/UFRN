@@ -1,0 +1,8 @@
+
+State Machine - |projeto02|fifo:FIFO16x13|blocoDeControleFIFO:BlocodeControle|estado
+Name estado.leitura estado.p_escrita estado.escrita estado.p_leitura estado.start 
+estado.start 0 0 0 0 0 
+estado.p_leitura 0 0 0 1 1 
+estado.escrita 0 0 1 0 1 
+estado.p_escrita 0 1 0 0 1 
+estado.leitura 1 0 0 0 1 

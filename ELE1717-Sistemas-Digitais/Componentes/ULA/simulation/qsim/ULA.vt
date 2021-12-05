@@ -1,0 +1,581 @@
+// Copyright (C) 1991-2013 Altera Corporation
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, Altera MegaCore Function License 
+// Agreement, or other applicable license agreement, including, 
+// without limitation, that your use is for the sole purpose of 
+// programming logic devices manufactured by Altera and sold by 
+// Altera or its authorized distributors.  Please refer to the 
+// applicable agreement for further details.
+
+// *****************************************************************************
+// This file contains a Verilog test bench with test vectors .The test vectors  
+// are exported from a vector file in the Quartus Waveform Editor and apply to  
+// the top level entity of the current Quartus project .The user can use this   
+// testbench to simulate his design using a third-party simulation tool .       
+// *****************************************************************************
+// Generated on "10/03/2020 23:29:07"
+                                                                        
+// Verilog Self-Checking Test Bench (with test vectors) for design :    ULA
+// 
+// Simulation tool : 3rd Party
+// 
+
+`timescale 1 ps/ 1 ps
+module ULA_vlg_sample_tst(
+	ULA_A_IN,
+	ULA_B_IN,
+	ULA_S_IN,
+	sampler_tx
+);
+input [7:0] ULA_A_IN;
+input [7:0] ULA_B_IN;
+input [3:0] ULA_S_IN;
+output sampler_tx;
+
+reg sample;
+time current_time;
+always @(ULA_A_IN or ULA_B_IN or ULA_S_IN)
+                                                                                
+begin                                                 
+ if ($realtime > 0)                                   
+ begin                                                
+	if ($realtime == 0 || $realtime != current_time)  
+	begin									          
+		if (sample === 1'bx)                          
+			sample = 0;                               
+		else                                          
+			sample = ~sample;                         
+	end										          
+	current_time = $realtime;					      
+ end                                                  
+end                                                   
+
+assign sampler_tx = sample;
+endmodule
+
+module ULA_vlg_check_tst (
+	JMP_eq,
+	JMP_hi,
+	JMP_lo,
+	LED_OVRF,
+	ULA_OUT,
+	sampler_rx
+);
+input  JMP_eq;
+input  JMP_hi;
+input  JMP_lo;
+input  LED_OVRF;
+input [7:0] ULA_OUT;
+input sampler_rx;
+
+reg  JMP_eq_expected;
+reg  JMP_hi_expected;
+reg  JMP_lo_expected;
+reg  LED_OVRF_expected;
+reg [7:0] ULA_OUT_expected;
+
+reg  JMP_eq_prev;
+reg  JMP_hi_prev;
+reg  JMP_lo_prev;
+reg  LED_OVRF_prev;
+reg [7:0] ULA_OUT_prev;
+
+reg  JMP_eq_expected_prev;
+reg  JMP_hi_expected_prev;
+reg  JMP_lo_expected_prev;
+reg  LED_OVRF_expected_prev;
+reg [7:0] ULA_OUT_expected_prev;
+
+reg  last_JMP_eq_exp;
+reg  last_JMP_hi_exp;
+reg  last_JMP_lo_exp;
+reg  last_LED_OVRF_exp;
+reg [7:0] last_ULA_OUT_exp;
+
+reg trigger;
+
+integer i;
+integer nummismatches;
+
+reg [1:5] on_first_change ;
+
+
+initial
+begin
+trigger = 0;
+i = 0;
+nummismatches = 0;
+on_first_change = 5'b1;
+end
+
+// update real /o prevs
+
+always @(trigger)
+begin
+	JMP_eq_prev = JMP_eq;
+	JMP_hi_prev = JMP_hi;
+	JMP_lo_prev = JMP_lo;
+	LED_OVRF_prev = LED_OVRF;
+	ULA_OUT_prev = ULA_OUT;
+end
+
+// update expected /o prevs
+
+always @(trigger)
+begin
+	JMP_eq_expected_prev = JMP_eq_expected;
+	JMP_hi_expected_prev = JMP_hi_expected;
+	JMP_lo_expected_prev = JMP_lo_expected;
+	LED_OVRF_expected_prev = LED_OVRF_expected;
+	ULA_OUT_expected_prev = ULA_OUT_expected;
+end
+
+
+// expected ULA_OUT[ 7 ]
+initial
+begin
+	ULA_OUT_expected[7] = 1'bX;
+end 
+// expected ULA_OUT[ 6 ]
+initial
+begin
+	ULA_OUT_expected[6] = 1'bX;
+end 
+// expected ULA_OUT[ 5 ]
+initial
+begin
+	ULA_OUT_expected[5] = 1'bX;
+end 
+// expected ULA_OUT[ 4 ]
+initial
+begin
+	ULA_OUT_expected[4] = 1'bX;
+end 
+// expected ULA_OUT[ 3 ]
+initial
+begin
+	ULA_OUT_expected[3] = 1'bX;
+end 
+// expected ULA_OUT[ 2 ]
+initial
+begin
+	ULA_OUT_expected[2] = 1'bX;
+end 
+// expected ULA_OUT[ 1 ]
+initial
+begin
+	ULA_OUT_expected[1] = 1'bX;
+end 
+// expected ULA_OUT[ 0 ]
+initial
+begin
+	ULA_OUT_expected[0] = 1'bX;
+end 
+
+// expected LED_OVRF
+initial
+begin
+	LED_OVRF_expected = 1'bX;
+end 
+
+// expected JMP_hi
+initial
+begin
+	JMP_hi_expected = 1'bX;
+end 
+
+// expected JMP_eq
+initial
+begin
+	JMP_eq_expected = 1'bX;
+end 
+
+// expected JMP_lo
+initial
+begin
+	JMP_lo_expected = 1'bX;
+end 
+// generate trigger
+always @(JMP_eq_expected or JMP_eq or JMP_hi_expected or JMP_hi or JMP_lo_expected or JMP_lo or LED_OVRF_expected or LED_OVRF or ULA_OUT_expected or ULA_OUT)
+begin
+	trigger <= ~trigger;
+end
+
+always @(posedge sampler_rx or negedge sampler_rx)
+begin
+`ifdef debug_tbench
+	$display("Scanning pattern %d @time = %t",i,$realtime );
+	i = i + 1;
+	$display("| expected JMP_eq = %b | expected JMP_hi = %b | expected JMP_lo = %b | expected LED_OVRF = %b | expected ULA_OUT = %b | ",JMP_eq_expected_prev,JMP_hi_expected_prev,JMP_lo_expected_prev,LED_OVRF_expected_prev,ULA_OUT_expected_prev);
+	$display("| real JMP_eq = %b | real JMP_hi = %b | real JMP_lo = %b | real LED_OVRF = %b | real ULA_OUT = %b | ",JMP_eq_prev,JMP_hi_prev,JMP_lo_prev,LED_OVRF_prev,ULA_OUT_prev);
+`endif
+	if (
+		( JMP_eq_expected_prev !== 1'bx ) && ( JMP_eq_prev !== JMP_eq_expected_prev )
+		&& ((JMP_eq_expected_prev !== last_JMP_eq_exp) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port JMP_eq :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", JMP_eq_expected_prev);
+		$display ("     Real value = %b", JMP_eq_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_JMP_eq_exp = JMP_eq_expected_prev;
+	end
+	if (
+		( JMP_hi_expected_prev !== 1'bx ) && ( JMP_hi_prev !== JMP_hi_expected_prev )
+		&& ((JMP_hi_expected_prev !== last_JMP_hi_exp) ||
+			on_first_change[2])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port JMP_hi :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", JMP_hi_expected_prev);
+		$display ("     Real value = %b", JMP_hi_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[2] = 1'b0;
+		last_JMP_hi_exp = JMP_hi_expected_prev;
+	end
+	if (
+		( JMP_lo_expected_prev !== 1'bx ) && ( JMP_lo_prev !== JMP_lo_expected_prev )
+		&& ((JMP_lo_expected_prev !== last_JMP_lo_exp) ||
+			on_first_change[3])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port JMP_lo :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", JMP_lo_expected_prev);
+		$display ("     Real value = %b", JMP_lo_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[3] = 1'b0;
+		last_JMP_lo_exp = JMP_lo_expected_prev;
+	end
+	if (
+		( LED_OVRF_expected_prev !== 1'bx ) && ( LED_OVRF_prev !== LED_OVRF_expected_prev )
+		&& ((LED_OVRF_expected_prev !== last_LED_OVRF_exp) ||
+			on_first_change[4])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port LED_OVRF :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", LED_OVRF_expected_prev);
+		$display ("     Real value = %b", LED_OVRF_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[4] = 1'b0;
+		last_LED_OVRF_exp = LED_OVRF_expected_prev;
+	end
+	if (
+		( ULA_OUT_expected_prev[0] !== 1'bx ) && ( ULA_OUT_prev[0] !== ULA_OUT_expected_prev[0] )
+		&& ((ULA_OUT_expected_prev[0] !== last_ULA_OUT_exp[0]) ||
+			on_first_change[5])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port ULA_OUT[0] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", ULA_OUT_expected_prev);
+		$display ("     Real value = %b", ULA_OUT_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[5] = 1'b0;
+		last_ULA_OUT_exp[0] = ULA_OUT_expected_prev[0];
+	end
+	if (
+		( ULA_OUT_expected_prev[1] !== 1'bx ) && ( ULA_OUT_prev[1] !== ULA_OUT_expected_prev[1] )
+		&& ((ULA_OUT_expected_prev[1] !== last_ULA_OUT_exp[1]) ||
+			on_first_change[5])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port ULA_OUT[1] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", ULA_OUT_expected_prev);
+		$display ("     Real value = %b", ULA_OUT_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[5] = 1'b0;
+		last_ULA_OUT_exp[1] = ULA_OUT_expected_prev[1];
+	end
+	if (
+		( ULA_OUT_expected_prev[2] !== 1'bx ) && ( ULA_OUT_prev[2] !== ULA_OUT_expected_prev[2] )
+		&& ((ULA_OUT_expected_prev[2] !== last_ULA_OUT_exp[2]) ||
+			on_first_change[5])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port ULA_OUT[2] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", ULA_OUT_expected_prev);
+		$display ("     Real value = %b", ULA_OUT_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[5] = 1'b0;
+		last_ULA_OUT_exp[2] = ULA_OUT_expected_prev[2];
+	end
+	if (
+		( ULA_OUT_expected_prev[3] !== 1'bx ) && ( ULA_OUT_prev[3] !== ULA_OUT_expected_prev[3] )
+		&& ((ULA_OUT_expected_prev[3] !== last_ULA_OUT_exp[3]) ||
+			on_first_change[5])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port ULA_OUT[3] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", ULA_OUT_expected_prev);
+		$display ("     Real value = %b", ULA_OUT_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[5] = 1'b0;
+		last_ULA_OUT_exp[3] = ULA_OUT_expected_prev[3];
+	end
+	if (
+		( ULA_OUT_expected_prev[4] !== 1'bx ) && ( ULA_OUT_prev[4] !== ULA_OUT_expected_prev[4] )
+		&& ((ULA_OUT_expected_prev[4] !== last_ULA_OUT_exp[4]) ||
+			on_first_change[5])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port ULA_OUT[4] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", ULA_OUT_expected_prev);
+		$display ("     Real value = %b", ULA_OUT_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[5] = 1'b0;
+		last_ULA_OUT_exp[4] = ULA_OUT_expected_prev[4];
+	end
+	if (
+		( ULA_OUT_expected_prev[5] !== 1'bx ) && ( ULA_OUT_prev[5] !== ULA_OUT_expected_prev[5] )
+		&& ((ULA_OUT_expected_prev[5] !== last_ULA_OUT_exp[5]) ||
+			on_first_change[5])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port ULA_OUT[5] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", ULA_OUT_expected_prev);
+		$display ("     Real value = %b", ULA_OUT_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[5] = 1'b0;
+		last_ULA_OUT_exp[5] = ULA_OUT_expected_prev[5];
+	end
+	if (
+		( ULA_OUT_expected_prev[6] !== 1'bx ) && ( ULA_OUT_prev[6] !== ULA_OUT_expected_prev[6] )
+		&& ((ULA_OUT_expected_prev[6] !== last_ULA_OUT_exp[6]) ||
+			on_first_change[5])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port ULA_OUT[6] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", ULA_OUT_expected_prev);
+		$display ("     Real value = %b", ULA_OUT_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[5] = 1'b0;
+		last_ULA_OUT_exp[6] = ULA_OUT_expected_prev[6];
+	end
+	if (
+		( ULA_OUT_expected_prev[7] !== 1'bx ) && ( ULA_OUT_prev[7] !== ULA_OUT_expected_prev[7] )
+		&& ((ULA_OUT_expected_prev[7] !== last_ULA_OUT_exp[7]) ||
+			on_first_change[5])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port ULA_OUT[7] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", ULA_OUT_expected_prev);
+		$display ("     Real value = %b", ULA_OUT_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[5] = 1'b0;
+		last_ULA_OUT_exp[7] = ULA_OUT_expected_prev[7];
+	end
+
+	trigger <= ~trigger;
+end
+initial 
+
+begin 
+$timeformat(-12,3," ps",6);
+#480000;
+if (nummismatches > 0)
+	$display ("%d mismatched vectors : Simulation failed !",nummismatches);
+else
+	$display ("Simulation passed !");
+$finish;
+end 
+endmodule
+
+module ULA_vlg_vec_tst();
+// constants                                           
+// general purpose registers
+reg [7:0] ULA_A_IN;
+reg [7:0] ULA_B_IN;
+reg [3:0] ULA_S_IN;
+// wires                                               
+wire JMP_eq;
+wire JMP_hi;
+wire JMP_lo;
+wire LED_OVRF;
+wire [7:0] ULA_OUT;
+
+wire sampler;                             
+
+// assign statements (if any)                          
+ULA i1 (
+// port map - connection between master ports and signals/registers   
+	.JMP_eq(JMP_eq),
+	.JMP_hi(JMP_hi),
+	.JMP_lo(JMP_lo),
+	.LED_OVRF(LED_OVRF),
+	.ULA_A_IN(ULA_A_IN),
+	.ULA_B_IN(ULA_B_IN),
+	.ULA_OUT(ULA_OUT),
+	.ULA_S_IN(ULA_S_IN)
+);
+// ULA_A_IN[ 7 ]
+initial
+begin
+	ULA_A_IN[7] = 1'b0;
+	ULA_A_IN[7] = #80000 1'b1;
+	ULA_A_IN[7] = #80000 1'b0;
+end 
+// ULA_A_IN[ 6 ]
+initial
+begin
+	ULA_A_IN[6] = 1'b1;
+	ULA_A_IN[6] = #240000 1'b0;
+	ULA_A_IN[6] = #160000 1'b1;
+end 
+// ULA_A_IN[ 5 ]
+initial
+begin
+	ULA_A_IN[5] = 1'b0;
+	ULA_A_IN[5] = #160000 1'b1;
+	ULA_A_IN[5] = #80000 1'b0;
+	ULA_A_IN[5] = #80000 1'b1;
+end 
+// ULA_A_IN[ 4 ]
+initial
+begin
+	ULA_A_IN[4] = 1'b0;
+	ULA_A_IN[4] = #80000 1'b1;
+	ULA_A_IN[4] = #80000 1'b0;
+	ULA_A_IN[4] = #80000 1'b1;
+	ULA_A_IN[4] = #80000 1'b0;
+end 
+// ULA_A_IN[ 3 ]
+initial
+begin
+	ULA_A_IN[3] = 1'b1;
+	ULA_A_IN[3] = #80000 1'b0;
+	ULA_A_IN[3] = #80000 1'b1;
+	ULA_A_IN[3] = #240000 1'b0;
+end 
+// ULA_A_IN[ 2 ]
+initial
+begin
+	ULA_A_IN[2] = 1'b1;
+	ULA_A_IN[2] = #80000 1'b0;
+	ULA_A_IN[2] = #80000 1'b1;
+	ULA_A_IN[2] = #160000 1'b0;
+	ULA_A_IN[2] = #80000 1'b1;
+end 
+// ULA_A_IN[ 1 ]
+initial
+begin
+	ULA_A_IN[1] = 1'b1;
+	ULA_A_IN[1] = #80000 1'b0;
+	ULA_A_IN[1] = #80000 1'b1;
+end 
+// ULA_A_IN[ 0 ]
+initial
+begin
+	ULA_A_IN[0] = 1'b0;
+	ULA_A_IN[0] = #160000 1'b1;
+end 
+// ULA_B_IN[ 7 ]
+initial
+begin
+	ULA_B_IN[7] = 1'b0;
+	ULA_B_IN[7] = #80000 1'b1;
+	ULA_B_IN[7] = #80000 1'b0;
+	ULA_B_IN[7] = #80000 1'b1;
+	ULA_B_IN[7] = #80000 1'b0;
+	ULA_B_IN[7] = #80000 1'b1;
+end 
+// ULA_B_IN[ 6 ]
+initial
+begin
+	ULA_B_IN[6] = 1'b0;
+	ULA_B_IN[6] = #160000 1'b1;
+	ULA_B_IN[6] = #160000 1'b0;
+end 
+// ULA_B_IN[ 5 ]
+initial
+begin
+	ULA_B_IN[5] = 1'b0;
+	ULA_B_IN[5] = #80000 1'b1;
+	ULA_B_IN[5] = #80000 1'b0;
+	ULA_B_IN[5] = #80000 1'b1;
+	ULA_B_IN[5] = #80000 1'b0;
+end 
+// ULA_B_IN[ 4 ]
+initial
+begin
+	ULA_B_IN[4] = 1'b0;
+	ULA_B_IN[4] = #80000 1'b1;
+end 
+// ULA_B_IN[ 3 ]
+initial
+begin
+	ULA_B_IN[3] = 1'b0;
+	ULA_B_IN[3] = #160000 1'b1;
+	ULA_B_IN[3] = #80000 1'b0;
+end 
+// ULA_B_IN[ 2 ]
+initial
+begin
+	ULA_B_IN[2] = 1'b0;
+	ULA_B_IN[2] = #160000 1'b1;
+	ULA_B_IN[2] = #240000 1'b0;
+end 
+// ULA_B_IN[ 1 ]
+initial
+begin
+	ULA_B_IN[1] = 1'b0;
+	ULA_B_IN[1] = #80000 1'b1;
+	ULA_B_IN[1] = #160000 1'b0;
+end 
+// ULA_B_IN[ 0 ]
+initial
+begin
+	ULA_B_IN[0] = 1'b1;
+	ULA_B_IN[0] = #80000 1'b0;
+	ULA_B_IN[0] = #160000 1'b1;
+end 
+// ULA_S_IN[ 3 ]
+initial
+begin
+	ULA_S_IN[3] = 1'b0;
+	ULA_S_IN[3] = #320000 1'b1;
+end 
+// ULA_S_IN[ 2 ]
+initial
+begin
+	ULA_S_IN[2] = 1'b0;
+	ULA_S_IN[2] = #160000 1'b1;
+	ULA_S_IN[2] = #160000 1'b0;
+end 
+// ULA_S_IN[ 1 ]
+always
+begin
+	ULA_S_IN[1] = 1'b0;
+	ULA_S_IN[1] = #80000 1'b1;
+	#80000;
+end 
+// ULA_S_IN[ 0 ]
+always
+begin
+	ULA_S_IN[0] = 1'b0;
+	ULA_S_IN[0] = #40000 1'b1;
+	#40000;
+end 
+
+ULA_vlg_sample_tst tb_sample (
+	.ULA_A_IN(ULA_A_IN),
+	.ULA_B_IN(ULA_B_IN),
+	.ULA_S_IN(ULA_S_IN),
+	.sampler_tx(sampler)
+);
+
+ULA_vlg_check_tst tb_out(
+	.JMP_eq(JMP_eq),
+	.JMP_hi(JMP_hi),
+	.JMP_lo(JMP_lo),
+	.LED_OVRF(LED_OVRF),
+	.ULA_OUT(ULA_OUT),
+	.sampler_rx(sampler)
+);
+endmodule
+

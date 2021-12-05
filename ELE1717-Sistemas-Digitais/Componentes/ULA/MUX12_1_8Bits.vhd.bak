@@ -1,0 +1,53 @@
+library ieee ;
+use ieee.std_logic_1164.all;
+
+entity MUX12_1_8Bits is
+  port (I12_11,I12_10,I12_9,I12_8,I12_7, I12_6, I12_5, I12_4, I12_3, I12_2, I12_1, I12_0: in std_logic_vector(7 downto 0);
+		  S12: in std_logic_vector(3 downto 0); 
+        d12: out std_logic_vector(7 downto 0));
+end MUX12_1_8Bits;
+
+Architecture ckt of MUX12_1_8Bits is
+  component MUX2_1_8Bits is
+    port (I_1,I_0: in std_logic_vector(12 downto 0);
+			 S: in std_logic;
+          d: out std_logic_vector(12 downto 0));
+  end component;
+  
+  signal first_out_mux_1, first_out_mux_2,first_out_mux_3,first_out_mux_4, first_out_mux_5,first_out_mux_6: std_logic_vector(7 downto 0);
+  signal second_out_mux_1, second_out_mux_2, second_out_mux_3: std_logic_vector(7 downto 0);
+  signal third_out_mux_1, last_out_mux: std_logic_vector
+  
+  begin
+	first_mux_out_01: MUX2_1_8Bits port mao(
+		I_0 => I12_0,
+		I_1 => I12_1,
+		S => S12(0),
+		d => first_out_mux_1);
+	first_mux_out_02: MUX2_1_8Bits port mao(
+		I_0 => I12_2,
+		I_1 => I12_3,
+		S => S12(0),
+		d => first_out_mux_2);
+	first_mux_out_03: MUX2_1_8Bits port mao(
+		I_0 => I12_4,
+		I_1 => I12_5,
+		S => S12(0),
+		d => first_out_mux_3);
+	first_mux_out_04: MUX2_1_8Bits port mao(
+		I_0 => I12_6,
+		I_1 => I12_7,
+		S => S12(0),
+		d => first_out_mux_4);
+	first_mux_out_05: MUX2_1_8Bits port mao(
+		I_0 => I12_8,
+		I_1 => I12_9,
+		S => S12(0),
+		d => first_out_mux_5);
+	first_mux_out_06: MUX2_1_8Bits port mao(
+		I_0 => I12_10,
+		I_1 => I12_11,
+		S => S12(0),
+		d => first_out_mux_6);
+ end ckt;
+	

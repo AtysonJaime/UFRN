@@ -1,0 +1,6 @@
+
+State Machine - |botaoSincrono|y_present
+Name y_present.E3 y_present.E2 y_present.E1 
+y_present.E1 0 0 0 
+y_present.E2 0 1 1 
+y_present.E3 1 0 1 

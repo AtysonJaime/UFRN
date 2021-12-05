@@ -1,0 +1,20 @@
+|SUM_1Bit
+A_in => S_out~0.IN0
+A_in => S_out~1.IN0
+A_in => S_out~4.IN0
+A_in => C_out~0.IN0
+A_in => C_out~2.IN0
+A_in => S_out~5.IN0
+B_in => S_out~3.IN1
+B_in => C_out~0.IN1
+B_in => C_out~2.IN1
+B_in => S_out~7.IN1
+C_in => S_out~0.IN1
+C_in => S_out~1.IN1
+C_in => S_out~5.IN1
+C_in => C_out~1.IN1
+C_in => S_out~4.IN1
+S_out <= S_out~8.DB_MAX_OUTPUT_PORT_TYPE
+C_out <= C_out~3.DB_MAX_OUTPUT_PORT_TYPE
+
+

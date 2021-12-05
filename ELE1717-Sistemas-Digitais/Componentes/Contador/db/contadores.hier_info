@@ -1,0 +1,108 @@
+|contador6Bits
+clk_c6B => ffjk:Q0.clk
+clk_c6B => ffjk:Q1.clk
+clk_c6B => ffjk:Q2.clk
+clk_c6B => ffjk:Q3.clk
+clk_c6B => ffjk:Q4.clk
+clk_c6B => ffjk:Q5.clk
+ld_c6B => resp_and[0].IN1
+ld_c6B => ffjk:Q0.J
+ld_c6B => ffjk:Q0.K
+clr_c6B => ffjk:Q0.C
+clr_c6B => ffjk:Q1.C
+clr_c6B => ffjk:Q2.C
+clr_c6B => ffjk:Q3.C
+clr_c6B => ffjk:Q4.C
+clr_c6B => ffjk:Q5.C
+out_c6B[0] <= ffjk:Q0.q
+out_c6B[1] <= ffjk:Q1.q
+out_c6B[2] <= ffjk:Q2.q
+out_c6B[3] <= ffjk:Q3.q
+out_c6B[4] <= ffjk:Q4.q
+out_c6B[5] <= ffjk:Q5.q
+
+
+|contador6Bits|ffjk:Q0
+clk => qS.CLK
+J => process_0.IN0
+J => process_0.IN0
+J => process_0.IN0
+K => process_0.IN1
+K => process_0.IN1
+K => process_0.IN1
+P => qS.IN0
+P => qS.PRESET
+C => qS.IN1
+q <= qS.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|contador6Bits|ffjk:Q1
+clk => qS.CLK
+J => process_0.IN0
+J => process_0.IN0
+J => process_0.IN0
+K => process_0.IN1
+K => process_0.IN1
+K => process_0.IN1
+P => qS.IN0
+P => qS.PRESET
+C => qS.IN1
+q <= qS.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|contador6Bits|ffjk:Q2
+clk => qS.CLK
+J => process_0.IN0
+J => process_0.IN0
+J => process_0.IN0
+K => process_0.IN1
+K => process_0.IN1
+K => process_0.IN1
+P => qS.IN0
+P => qS.PRESET
+C => qS.IN1
+q <= qS.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|contador6Bits|ffjk:Q3
+clk => qS.CLK
+J => process_0.IN0
+J => process_0.IN0
+J => process_0.IN0
+K => process_0.IN1
+K => process_0.IN1
+K => process_0.IN1
+P => qS.IN0
+P => qS.PRESET
+C => qS.IN1
+q <= qS.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|contador6Bits|ffjk:Q4
+clk => qS.CLK
+J => process_0.IN0
+J => process_0.IN0
+J => process_0.IN0
+K => process_0.IN1
+K => process_0.IN1
+K => process_0.IN1
+P => qS.IN0
+P => qS.PRESET
+C => qS.IN1
+q <= qS.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|contador6Bits|ffjk:Q5
+clk => qS.CLK
+J => process_0.IN0
+J => process_0.IN0
+J => process_0.IN0
+K => process_0.IN1
+K => process_0.IN1
+K => process_0.IN1
+P => qS.IN0
+P => qS.PRESET
+C => qS.IN1
+q <= qS.DB_MAX_OUTPUT_PORT_TYPE
+
+

@@ -1,0 +1,9 @@
+library ieee ;
+use ieee.std_logic_1164.all;
+
+entity ULA is
+  port (ULA_A_IN,ULA_B_IN: in std_logic_vector(7 downto 0);
+		  ULA_S_IN: in std_logic_vector(3 downto 0); 
+        ULA_OUT: out std_logic_vector(7 downto 0)
+		  JMP_eq,JMP_hi,JMP_lo,LED_OVRF: out std_logic);
+end ULA;

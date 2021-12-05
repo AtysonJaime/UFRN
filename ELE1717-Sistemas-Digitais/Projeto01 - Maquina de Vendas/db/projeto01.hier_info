@@ -1,0 +1,1661 @@
+|projeto01_mv
+clock_27 => divisorClock:DivClock.clk_in
+KEY2 => botaoSincrono:BS.b_in
+KEY3 => contador6Bits:Cont.clr_c6B
+KEY3 => maquinaVendas:MV.reset
+SW[0] => maquinaVendas:MV.S[0]
+SW[1] => maquinaVendas:MV.S[1]
+SW[2] => maquinaVendas:MV.S[2]
+SW[3] => maquinaVendas:MV.S[3]
+SW[4] => maquinaVendas:MV.S[4]
+SW[5] => maquinaVendas:MV.S[5]
+SW[6] => maquinaVendas:MV.S[6]
+SW[7] => maquinaVendas:MV.S[7]
+LEDR0 <= maquinaVendas:MV.D
+LEDR1 <= botaoSincrono:BS.b_out
+LHEX2[0] <= bitToBcdToD7Seg:LedTotalMV.HEX2[0]
+LHEX2[1] <= bitToBcdToD7Seg:LedTotalMV.HEX2[1]
+LHEX2[2] <= bitToBcdToD7Seg:LedTotalMV.HEX2[2]
+LHEX2[3] <= bitToBcdToD7Seg:LedTotalMV.HEX2[3]
+LHEX2[4] <= bitToBcdToD7Seg:LedTotalMV.HEX2[4]
+LHEX2[5] <= bitToBcdToD7Seg:LedTotalMV.HEX2[5]
+LHEX2[6] <= bitToBcdToD7Seg:LedTotalMV.HEX2[6]
+LHEX1[0] <= bitToBcdToD7Seg:LedTotalMV.HEX1[0]
+LHEX1[1] <= bitToBcdToD7Seg:LedTotalMV.HEX1[1]
+LHEX1[2] <= bitToBcdToD7Seg:LedTotalMV.HEX1[2]
+LHEX1[3] <= bitToBcdToD7Seg:LedTotalMV.HEX1[3]
+LHEX1[4] <= bitToBcdToD7Seg:LedTotalMV.HEX1[4]
+LHEX1[5] <= bitToBcdToD7Seg:LedTotalMV.HEX1[5]
+LHEX1[6] <= bitToBcdToD7Seg:LedTotalMV.HEX1[6]
+LHEX0[0] <= bitToBcdToD7Seg:LedTotalMV.HEX0[0]
+LHEX0[1] <= bitToBcdToD7Seg:LedTotalMV.HEX0[1]
+LHEX0[2] <= bitToBcdToD7Seg:LedTotalMV.HEX0[2]
+LHEX0[3] <= bitToBcdToD7Seg:LedTotalMV.HEX0[3]
+LHEX0[4] <= bitToBcdToD7Seg:LedTotalMV.HEX0[4]
+LHEX0[5] <= bitToBcdToD7Seg:LedTotalMV.HEX0[5]
+LHEX0[6] <= bitToBcdToD7Seg:LedTotalMV.HEX0[6]
+LHEX5[0] <= bitToBcdToD7Seg:LedROM.HEX1[0]
+LHEX5[1] <= bitToBcdToD7Seg:LedROM.HEX1[1]
+LHEX5[2] <= bitToBcdToD7Seg:LedROM.HEX1[2]
+LHEX5[3] <= bitToBcdToD7Seg:LedROM.HEX1[3]
+LHEX5[4] <= bitToBcdToD7Seg:LedROM.HEX1[4]
+LHEX5[5] <= bitToBcdToD7Seg:LedROM.HEX1[5]
+LHEX5[6] <= bitToBcdToD7Seg:LedROM.HEX1[6]
+LHEX4[0] <= bitToBcdToD7Seg:LedROM.HEX0[0]
+LHEX4[1] <= bitToBcdToD7Seg:LedROM.HEX0[1]
+LHEX4[2] <= bitToBcdToD7Seg:LedROM.HEX0[2]
+LHEX4[3] <= bitToBcdToD7Seg:LedROM.HEX0[3]
+LHEX4[4] <= bitToBcdToD7Seg:LedROM.HEX0[4]
+LHEX4[5] <= bitToBcdToD7Seg:LedROM.HEX0[5]
+LHEX4[6] <= bitToBcdToD7Seg:LedROM.HEX0[6]
+
+
+|projeto01_mv|divisorClock:DivClock
+clk_in => ax.CLK
+clk_in => cnt[0].CLK
+clk_in => cnt[1].CLK
+clk_in => cnt[2].CLK
+clk_in => cnt[3].CLK
+clk_in => cnt[4].CLK
+clk_in => cnt[5].CLK
+clk_in => cnt[6].CLK
+clk_in => cnt[7].CLK
+clk_in => cnt[8].CLK
+clk_in => cnt[9].CLK
+clk_in => cnt[10].CLK
+clk_in => cnt[11].CLK
+clk_in => cnt[12].CLK
+clk_in => cnt[13].CLK
+clk_in => cnt[14].CLK
+clk_in => cnt[15].CLK
+clk_in => cnt[16].CLK
+clk_in => cnt[17].CLK
+clk_in => cnt[18].CLK
+clk_in => cnt[19].CLK
+clk_in => cnt[20].CLK
+clk_in => cnt[21].CLK
+clk_in => cnt[22].CLK
+clk_in => cnt[23].CLK
+clk_out <= ax.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|projeto01_mv|botaoSincrono:BS
+clk => y_present~1.DATAIN
+b_in => y_next.E2.DATAB
+b_in => y_next.E3.DATAA
+b_in => y_present.E1.DATAIN
+b_out <= b_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|projeto01_mv|romMV:ROM
+address[0] => altsyncram:altsyncram_component.address_a[0]
+address[1] => altsyncram:altsyncram_component.address_a[1]
+address[2] => altsyncram:altsyncram_component.address_a[2]
+address[3] => altsyncram:altsyncram_component.address_a[3]
+address[4] => altsyncram:altsyncram_component.address_a[4]
+address[5] => altsyncram:altsyncram_component.address_a[5]
+clock => altsyncram:altsyncram_component.clock0
+q[0] <= altsyncram:altsyncram_component.q_a[0]
+q[1] <= altsyncram:altsyncram_component.q_a[1]
+q[2] <= altsyncram:altsyncram_component.q_a[2]
+q[3] <= altsyncram:altsyncram_component.q_a[3]
+q[4] <= altsyncram:altsyncram_component.q_a[4]
+q[5] <= altsyncram:altsyncram_component.q_a[5]
+q[6] <= altsyncram:altsyncram_component.q_a[6]
+q[7] <= altsyncram:altsyncram_component.q_a[7]
+
+
+|projeto01_mv|romMV:ROM|altsyncram:altsyncram_component
+wren_a => ~NO_FANOUT~
+rden_a => ~NO_FANOUT~
+wren_b => ~NO_FANOUT~
+rden_b => ~NO_FANOUT~
+data_a[0] => ~NO_FANOUT~
+data_a[1] => ~NO_FANOUT~
+data_a[2] => ~NO_FANOUT~
+data_a[3] => ~NO_FANOUT~
+data_a[4] => ~NO_FANOUT~
+data_a[5] => ~NO_FANOUT~
+data_a[6] => ~NO_FANOUT~
+data_a[7] => ~NO_FANOUT~
+data_b[0] => ~NO_FANOUT~
+address_a[0] => altsyncram_7m71:auto_generated.address_a[0]
+address_a[1] => altsyncram_7m71:auto_generated.address_a[1]
+address_a[2] => altsyncram_7m71:auto_generated.address_a[2]
+address_a[3] => altsyncram_7m71:auto_generated.address_a[3]
+address_a[4] => altsyncram_7m71:auto_generated.address_a[4]
+address_a[5] => altsyncram_7m71:auto_generated.address_a[5]
+address_b[0] => ~NO_FANOUT~
+addressstall_a => ~NO_FANOUT~
+addressstall_b => ~NO_FANOUT~
+clock0 => altsyncram_7m71:auto_generated.clock0
+clock1 => ~NO_FANOUT~
+clocken0 => ~NO_FANOUT~
+clocken1 => ~NO_FANOUT~
+clocken2 => ~NO_FANOUT~
+clocken3 => ~NO_FANOUT~
+aclr0 => ~NO_FANOUT~
+aclr1 => ~NO_FANOUT~
+byteena_a[0] => ~NO_FANOUT~
+byteena_b[0] => ~NO_FANOUT~
+q_a[0] <= altsyncram_7m71:auto_generated.q_a[0]
+q_a[1] <= altsyncram_7m71:auto_generated.q_a[1]
+q_a[2] <= altsyncram_7m71:auto_generated.q_a[2]
+q_a[3] <= altsyncram_7m71:auto_generated.q_a[3]
+q_a[4] <= altsyncram_7m71:auto_generated.q_a[4]
+q_a[5] <= altsyncram_7m71:auto_generated.q_a[5]
+q_a[6] <= altsyncram_7m71:auto_generated.q_a[6]
+q_a[7] <= altsyncram_7m71:auto_generated.q_a[7]
+q_b[0] <= <GND>
+eccstatus[0] <= <GND>
+eccstatus[1] <= <GND>
+eccstatus[2] <= <GND>
+
+
+|projeto01_mv|romMV:ROM|altsyncram:altsyncram_component|altsyncram_7m71:auto_generated
+address_a[0] => ram_block1a0.PORTAADDR
+address_a[0] => ram_block1a1.PORTAADDR
+address_a[0] => ram_block1a2.PORTAADDR
+address_a[0] => ram_block1a3.PORTAADDR
+address_a[0] => ram_block1a4.PORTAADDR
+address_a[0] => ram_block1a5.PORTAADDR
+address_a[0] => ram_block1a6.PORTAADDR
+address_a[0] => ram_block1a7.PORTAADDR
+address_a[1] => ram_block1a0.PORTAADDR1
+address_a[1] => ram_block1a1.PORTAADDR1
+address_a[1] => ram_block1a2.PORTAADDR1
+address_a[1] => ram_block1a3.PORTAADDR1
+address_a[1] => ram_block1a4.PORTAADDR1
+address_a[1] => ram_block1a5.PORTAADDR1
+address_a[1] => ram_block1a6.PORTAADDR1
+address_a[1] => ram_block1a7.PORTAADDR1
+address_a[2] => ram_block1a0.PORTAADDR2
+address_a[2] => ram_block1a1.PORTAADDR2
+address_a[2] => ram_block1a2.PORTAADDR2
+address_a[2] => ram_block1a3.PORTAADDR2
+address_a[2] => ram_block1a4.PORTAADDR2
+address_a[2] => ram_block1a5.PORTAADDR2
+address_a[2] => ram_block1a6.PORTAADDR2
+address_a[2] => ram_block1a7.PORTAADDR2
+address_a[3] => ram_block1a0.PORTAADDR3
+address_a[3] => ram_block1a1.PORTAADDR3
+address_a[3] => ram_block1a2.PORTAADDR3
+address_a[3] => ram_block1a3.PORTAADDR3
+address_a[3] => ram_block1a4.PORTAADDR3
+address_a[3] => ram_block1a5.PORTAADDR3
+address_a[3] => ram_block1a6.PORTAADDR3
+address_a[3] => ram_block1a7.PORTAADDR3
+address_a[4] => ram_block1a0.PORTAADDR4
+address_a[4] => ram_block1a1.PORTAADDR4
+address_a[4] => ram_block1a2.PORTAADDR4
+address_a[4] => ram_block1a3.PORTAADDR4
+address_a[4] => ram_block1a4.PORTAADDR4
+address_a[4] => ram_block1a5.PORTAADDR4
+address_a[4] => ram_block1a6.PORTAADDR4
+address_a[4] => ram_block1a7.PORTAADDR4
+address_a[5] => ram_block1a0.PORTAADDR5
+address_a[5] => ram_block1a1.PORTAADDR5
+address_a[5] => ram_block1a2.PORTAADDR5
+address_a[5] => ram_block1a3.PORTAADDR5
+address_a[5] => ram_block1a4.PORTAADDR5
+address_a[5] => ram_block1a5.PORTAADDR5
+address_a[5] => ram_block1a6.PORTAADDR5
+address_a[5] => ram_block1a7.PORTAADDR5
+clock0 => ram_block1a0.CLK0
+clock0 => ram_block1a1.CLK0
+clock0 => ram_block1a2.CLK0
+clock0 => ram_block1a3.CLK0
+clock0 => ram_block1a4.CLK0
+clock0 => ram_block1a5.CLK0
+clock0 => ram_block1a6.CLK0
+clock0 => ram_block1a7.CLK0
+q_a[0] <= ram_block1a0.PORTADATAOUT
+q_a[1] <= ram_block1a1.PORTADATAOUT
+q_a[2] <= ram_block1a2.PORTADATAOUT
+q_a[3] <= ram_block1a3.PORTADATAOUT
+q_a[4] <= ram_block1a4.PORTADATAOUT
+q_a[5] <= ram_block1a5.PORTADATAOUT
+q_a[6] <= ram_block1a6.PORTADATAOUT
+q_a[7] <= ram_block1a7.PORTADATAOUT
+
+
+|projeto01_mv|contador6Bits:Cont
+clk_c6B => ffjk:Q0.clk
+clk_c6B => ffjk:Q1.clk
+clk_c6B => ffjk:Q2.clk
+clk_c6B => ffjk:Q3.clk
+clk_c6B => ffjk:Q4.clk
+clk_c6B => ffjk:Q5.clk
+ld_c6B => resp_and[0].IN1
+ld_c6B => ffjk:Q0.J
+ld_c6B => ffjk:Q0.K
+clr_c6B => ffjk:Q0.C
+clr_c6B => ffjk:Q1.C
+clr_c6B => ffjk:Q2.C
+clr_c6B => ffjk:Q3.C
+clr_c6B => ffjk:Q4.C
+clr_c6B => ffjk:Q5.C
+out_c6B[0] <= ffjk:Q0.q
+out_c6B[1] <= ffjk:Q1.q
+out_c6B[2] <= ffjk:Q2.q
+out_c6B[3] <= ffjk:Q3.q
+out_c6B[4] <= ffjk:Q4.q
+out_c6B[5] <= ffjk:Q5.q
+
+
+|projeto01_mv|contador6Bits:Cont|ffjk:Q0
+clk => qS.CLK
+J => process_0.IN0
+J => process_0.IN0
+J => process_0.IN0
+K => process_0.IN1
+K => process_0.IN1
+K => process_0.IN1
+P => qS.IN0
+P => qS.PRESET
+C => qS.IN1
+q <= qS.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|projeto01_mv|contador6Bits:Cont|ffjk:Q1
+clk => qS.CLK
+J => process_0.IN0
+J => process_0.IN0
+J => process_0.IN0
+K => process_0.IN1
+K => process_0.IN1
+K => process_0.IN1
+P => qS.IN0
+P => qS.PRESET
+C => qS.IN1
+q <= qS.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|projeto01_mv|contador6Bits:Cont|ffjk:Q2
+clk => qS.CLK
+J => process_0.IN0
+J => process_0.IN0
+J => process_0.IN0
+K => process_0.IN1
+K => process_0.IN1
+K => process_0.IN1
+P => qS.IN0
+P => qS.PRESET
+C => qS.IN1
+q <= qS.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|projeto01_mv|contador6Bits:Cont|ffjk:Q3
+clk => qS.CLK
+J => process_0.IN0
+J => process_0.IN0
+J => process_0.IN0
+K => process_0.IN1
+K => process_0.IN1
+K => process_0.IN1
+P => qS.IN0
+P => qS.PRESET
+C => qS.IN1
+q <= qS.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|projeto01_mv|contador6Bits:Cont|ffjk:Q4
+clk => qS.CLK
+J => process_0.IN0
+J => process_0.IN0
+J => process_0.IN0
+K => process_0.IN1
+K => process_0.IN1
+K => process_0.IN1
+P => qS.IN0
+P => qS.PRESET
+C => qS.IN1
+q <= qS.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|projeto01_mv|contador6Bits:Cont|ffjk:Q5
+clk => qS.CLK
+J => process_0.IN0
+J => process_0.IN0
+J => process_0.IN0
+K => process_0.IN1
+K => process_0.IN1
+K => process_0.IN1
+P => qS.IN0
+P => qS.PRESET
+C => qS.IN1
+q <= qS.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|projeto01_mv|maquinaVendas:MV
+CLK_mv => blocoDeControleMV:BlocodeControle.clk_mv
+CLK_mv => datapathMV:Datapath.clk_dmv
+C => blocoDeControleMV:BlocodeControle.c_mv
+reset => blocoDeControleMV:BlocodeControle.rst_mv
+S[0] => datapathMV:Datapath.S_mv[0]
+S[1] => datapathMV:Datapath.S_mv[1]
+S[2] => datapathMV:Datapath.S_mv[2]
+S[3] => datapathMV:Datapath.S_mv[3]
+S[4] => datapathMV:Datapath.S_mv[4]
+S[5] => datapathMV:Datapath.S_mv[5]
+S[6] => datapathMV:Datapath.S_mv[6]
+S[7] => datapathMV:Datapath.S_mv[7]
+A[0] => datapathMV:Datapath.A_mv[0]
+A[1] => datapathMV:Datapath.A_mv[1]
+A[2] => datapathMV:Datapath.A_mv[2]
+A[3] => datapathMV:Datapath.A_mv[3]
+A[4] => datapathMV:Datapath.A_mv[4]
+A[5] => datapathMV:Datapath.A_mv[5]
+A[6] => datapathMV:Datapath.A_mv[6]
+A[7] => datapathMV:Datapath.A_mv[7]
+D <= blocoDeControleMV:BlocodeControle.d_mv
+saida_mv[0] <= blocoDeControleMV:BlocodeControle.saida[0]
+saida_mv[1] <= blocoDeControleMV:BlocodeControle.saida[1]
+Tot_mv[0] <= datapathMV:Datapath.total_mv[0]
+Tot_mv[1] <= datapathMV:Datapath.total_mv[1]
+Tot_mv[2] <= datapathMV:Datapath.total_mv[2]
+Tot_mv[3] <= datapathMV:Datapath.total_mv[3]
+Tot_mv[4] <= datapathMV:Datapath.total_mv[4]
+Tot_mv[5] <= datapathMV:Datapath.total_mv[5]
+Tot_mv[6] <= datapathMV:Datapath.total_mv[6]
+Tot_mv[7] <= datapathMV:Datapath.total_mv[7]
+
+
+|projeto01_mv|maquinaVendas:MV|blocoDeControleMV:BlocodeControle
+clk_mv => estado~1.DATAIN
+rst_mv => estado~3.DATAIN
+c_mv => estado.OUTPUTSELECT
+c_mv => estado.OUTPUTSELECT
+c_mv => estado.DATAB
+tot_ld => estado.DATAA
+tot_ld => estado.DATAA
+d_mv <= d_mv.DB_MAX_OUTPUT_PORT_TYPE
+load_tot <= load_tot.DB_MAX_OUTPUT_PORT_TYPE
+clr_tot <= clr_tot.DB_MAX_OUTPUT_PORT_TYPE
+saida[0] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+saida[1] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|projeto01_mv|maquinaVendas:MV|datapathMV:Datapath
+clk_dmv => reg8Bits:Reg.clk
+clr_total => reg8Bits:Reg.clr
+ld_total => reg8Bits:Reg.load
+S_mv[0] => Comparador_8Bits:Comp.eB8[0]
+S_mv[1] => Comparador_8Bits:Comp.eB8[1]
+S_mv[2] => Comparador_8Bits:Comp.eB8[2]
+S_mv[3] => Comparador_8Bits:Comp.eB8[3]
+S_mv[4] => Comparador_8Bits:Comp.eB8[4]
+S_mv[5] => Comparador_8Bits:Comp.eB8[5]
+S_mv[6] => Comparador_8Bits:Comp.eB8[6]
+S_mv[7] => Comparador_8Bits:Comp.eB8[7]
+A_mv[0] => SUM_8Bits:SUM.B8_in[0]
+A_mv[1] => SUM_8Bits:SUM.B8_in[1]
+A_mv[2] => SUM_8Bits:SUM.B8_in[2]
+A_mv[3] => SUM_8Bits:SUM.B8_in[3]
+A_mv[4] => SUM_8Bits:SUM.B8_in[4]
+A_mv[5] => SUM_8Bits:SUM.B8_in[5]
+A_mv[6] => SUM_8Bits:SUM.B8_in[6]
+A_mv[7] => SUM_8Bits:SUM.B8_in[7]
+total_ld <= Comparador_8Bits:Comp.AltB8
+total_mv[0] <= reg8Bits:Reg.q[0]
+total_mv[1] <= reg8Bits:Reg.q[1]
+total_mv[2] <= reg8Bits:Reg.q[2]
+total_mv[3] <= reg8Bits:Reg.q[3]
+total_mv[4] <= reg8Bits:Reg.q[4]
+total_mv[5] <= reg8Bits:Reg.q[5]
+total_mv[6] <= reg8Bits:Reg.q[6]
+total_mv[7] <= reg8Bits:Reg.q[7]
+
+
+|projeto01_mv|maquinaVendas:MV|datapathMV:Datapath|reg8Bits:Reg
+clk => qs[0].CLK
+clk => qs[1].CLK
+clk => qs[2].CLK
+clk => qs[3].CLK
+clk => qs[4].CLK
+clk => qs[5].CLK
+clk => qs[6].CLK
+clk => qs[7].CLK
+preSet => qs[7].IN0
+preSet => qs[0].PRESET
+preSet => qs[1].PRESET
+preSet => qs[2].PRESET
+preSet => qs[3].PRESET
+preSet => qs[4].PRESET
+preSet => qs[5].PRESET
+preSet => qs[6].PRESET
+preSet => qs[7].PRESET
+clr => qs[7].IN1
+load => qs[7].ENA
+load => qs[6].ENA
+load => qs[5].ENA
+load => qs[4].ENA
+load => qs[3].ENA
+load => qs[2].ENA
+load => qs[1].ENA
+load => qs[0].ENA
+d[0] => qs[0].DATAIN
+d[1] => qs[1].DATAIN
+d[2] => qs[2].DATAIN
+d[3] => qs[3].DATAIN
+d[4] => qs[4].DATAIN
+d[5] => qs[5].DATAIN
+d[6] => qs[6].DATAIN
+d[7] => qs[7].DATAIN
+q[0] <= qs[0].DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= qs[1].DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= qs[2].DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= qs[3].DB_MAX_OUTPUT_PORT_TYPE
+q[4] <= qs[4].DB_MAX_OUTPUT_PORT_TYPE
+q[5] <= qs[5].DB_MAX_OUTPUT_PORT_TYPE
+q[6] <= qs[6].DB_MAX_OUTPUT_PORT_TYPE
+q[7] <= qs[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|projeto01_mv|maquinaVendas:MV|datapathMV:Datapath|SUM_8Bits:SUM
+A8_in[0] => SUM_4Bits:SUM01.A4_in[0]
+A8_in[1] => SUM_4Bits:SUM01.A4_in[1]
+A8_in[2] => SUM_4Bits:SUM01.A4_in[2]
+A8_in[3] => SUM_4Bits:SUM01.A4_in[3]
+A8_in[4] => SUM_4Bits:SUM02.A4_in[0]
+A8_in[5] => SUM_4Bits:SUM02.A4_in[1]
+A8_in[6] => SUM_4Bits:SUM02.A4_in[2]
+A8_in[7] => SUM_4Bits:SUM02.A4_in[3]
+B8_in[0] => SUM_4Bits:SUM01.B4_in[0]
+B8_in[1] => SUM_4Bits:SUM01.B4_in[1]
+B8_in[2] => SUM_4Bits:SUM01.B4_in[2]
+B8_in[3] => SUM_4Bits:SUM01.B4_in[3]
+B8_in[4] => SUM_4Bits:SUM02.B4_in[0]
+B8_in[5] => SUM_4Bits:SUM02.B4_in[1]
+B8_in[6] => SUM_4Bits:SUM02.B4_in[2]
+B8_in[7] => SUM_4Bits:SUM02.B4_in[3]
+C8_in => SUM_4Bits:SUM01.C4_in
+S8_out[0] <= SUM_4Bits:SUM01.S4_out[0]
+S8_out[1] <= SUM_4Bits:SUM01.S4_out[1]
+S8_out[2] <= SUM_4Bits:SUM01.S4_out[2]
+S8_out[3] <= SUM_4Bits:SUM01.S4_out[3]
+S8_out[4] <= SUM_4Bits:SUM02.S4_out[0]
+S8_out[5] <= SUM_4Bits:SUM02.S4_out[1]
+S8_out[6] <= SUM_4Bits:SUM02.S4_out[2]
+S8_out[7] <= SUM_4Bits:SUM02.S4_out[3]
+C8_out <= SUM_4Bits:SUM02.C4_out
+
+
+|projeto01_mv|maquinaVendas:MV|datapathMV:Datapath|SUM_8Bits:SUM|SUM_4Bits:SUM01
+A4_in[0] => SUM_2Bits:SUM01.A2_in[0]
+A4_in[1] => SUM_2Bits:SUM01.A2_in[1]
+A4_in[2] => SUM_2Bits:SUM02.A2_in[0]
+A4_in[3] => SUM_2Bits:SUM02.A2_in[1]
+B4_in[0] => SUM_2Bits:SUM01.B2_in[0]
+B4_in[1] => SUM_2Bits:SUM01.B2_in[1]
+B4_in[2] => SUM_2Bits:SUM02.B2_in[0]
+B4_in[3] => SUM_2Bits:SUM02.B2_in[1]
+C4_in => SUM_2Bits:SUM01.C2_in
+S4_out[0] <= SUM_2Bits:SUM01.S2_out[0]
+S4_out[1] <= SUM_2Bits:SUM01.S2_out[1]
+S4_out[2] <= SUM_2Bits:SUM02.S2_out[0]
+S4_out[3] <= SUM_2Bits:SUM02.S2_out[1]
+C4_out <= SUM_2Bits:SUM02.C2_out
+
+
+|projeto01_mv|maquinaVendas:MV|datapathMV:Datapath|SUM_8Bits:SUM|SUM_4Bits:SUM01|SUM_2Bits:SUM01
+A2_in[0] => SUM_1Bit:SUM01.A_in
+A2_in[1] => SUM_1Bit:SUM02.A_in
+B2_in[0] => SUM_1Bit:SUM01.B_in
+B2_in[1] => SUM_1Bit:SUM02.B_in
+C2_in => SUM_1Bit:SUM01.C_in
+S2_out[0] <= SUM_1Bit:SUM01.S_out
+S2_out[1] <= SUM_1Bit:SUM02.S_out
+C2_out <= SUM_1Bit:SUM02.C_out
+
+
+|projeto01_mv|maquinaVendas:MV|datapathMV:Datapath|SUM_8Bits:SUM|SUM_4Bits:SUM01|SUM_2Bits:SUM01|SUM_1Bit:SUM01
+A_in => S_out.IN0
+A_in => S_out.IN0
+A_in => S_out.IN0
+A_in => C_out.IN0
+A_in => C_out.IN0
+A_in => S_out.IN0
+B_in => S_out.IN1
+B_in => C_out.IN1
+B_in => C_out.IN1
+B_in => S_out.IN1
+C_in => S_out.IN1
+C_in => S_out.IN1
+C_in => S_out.IN1
+C_in => C_out.IN1
+C_in => S_out.IN1
+S_out <= S_out.DB_MAX_OUTPUT_PORT_TYPE
+C_out <= C_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|projeto01_mv|maquinaVendas:MV|datapathMV:Datapath|SUM_8Bits:SUM|SUM_4Bits:SUM01|SUM_2Bits:SUM01|SUM_1Bit:SUM02
+A_in => S_out.IN0
+A_in => S_out.IN0
+A_in => S_out.IN0
+A_in => C_out.IN0
+A_in => C_out.IN0
+A_in => S_out.IN0
+B_in => S_out.IN1
+B_in => C_out.IN1
+B_in => C_out.IN1
+B_in => S_out.IN1
+C_in => S_out.IN1
+C_in => S_out.IN1
+C_in => S_out.IN1
+C_in => C_out.IN1
+C_in => S_out.IN1
+S_out <= S_out.DB_MAX_OUTPUT_PORT_TYPE
+C_out <= C_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|projeto01_mv|maquinaVendas:MV|datapathMV:Datapath|SUM_8Bits:SUM|SUM_4Bits:SUM01|SUM_2Bits:SUM02
+A2_in[0] => SUM_1Bit:SUM01.A_in
+A2_in[1] => SUM_1Bit:SUM02.A_in
+B2_in[0] => SUM_1Bit:SUM01.B_in
+B2_in[1] => SUM_1Bit:SUM02.B_in
+C2_in => SUM_1Bit:SUM01.C_in
+S2_out[0] <= SUM_1Bit:SUM01.S_out
+S2_out[1] <= SUM_1Bit:SUM02.S_out
+C2_out <= SUM_1Bit:SUM02.C_out
+
+
+|projeto01_mv|maquinaVendas:MV|datapathMV:Datapath|SUM_8Bits:SUM|SUM_4Bits:SUM01|SUM_2Bits:SUM02|SUM_1Bit:SUM01
+A_in => S_out.IN0
+A_in => S_out.IN0
+A_in => S_out.IN0
+A_in => C_out.IN0
+A_in => C_out.IN0
+A_in => S_out.IN0
+B_in => S_out.IN1
+B_in => C_out.IN1
+B_in => C_out.IN1
+B_in => S_out.IN1
+C_in => S_out.IN1
+C_in => S_out.IN1
+C_in => S_out.IN1
+C_in => C_out.IN1
+C_in => S_out.IN1
+S_out <= S_out.DB_MAX_OUTPUT_PORT_TYPE
+C_out <= C_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|projeto01_mv|maquinaVendas:MV|datapathMV:Datapath|SUM_8Bits:SUM|SUM_4Bits:SUM01|SUM_2Bits:SUM02|SUM_1Bit:SUM02
+A_in => S_out.IN0
+A_in => S_out.IN0
+A_in => S_out.IN0
+A_in => C_out.IN0
+A_in => C_out.IN0
+A_in => S_out.IN0
+B_in => S_out.IN1
+B_in => C_out.IN1
+B_in => C_out.IN1
+B_in => S_out.IN1
+C_in => S_out.IN1
+C_in => S_out.IN1
+C_in => S_out.IN1
+C_in => C_out.IN1
+C_in => S_out.IN1
+S_out <= S_out.DB_MAX_OUTPUT_PORT_TYPE
+C_out <= C_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|projeto01_mv|maquinaVendas:MV|datapathMV:Datapath|SUM_8Bits:SUM|SUM_4Bits:SUM02
+A4_in[0] => SUM_2Bits:SUM01.A2_in[0]
+A4_in[1] => SUM_2Bits:SUM01.A2_in[1]
+A4_in[2] => SUM_2Bits:SUM02.A2_in[0]
+A4_in[3] => SUM_2Bits:SUM02.A2_in[1]
+B4_in[0] => SUM_2Bits:SUM01.B2_in[0]
+B4_in[1] => SUM_2Bits:SUM01.B2_in[1]
+B4_in[2] => SUM_2Bits:SUM02.B2_in[0]
+B4_in[3] => SUM_2Bits:SUM02.B2_in[1]
+C4_in => SUM_2Bits:SUM01.C2_in
+S4_out[0] <= SUM_2Bits:SUM01.S2_out[0]
+S4_out[1] <= SUM_2Bits:SUM01.S2_out[1]
+S4_out[2] <= SUM_2Bits:SUM02.S2_out[0]
+S4_out[3] <= SUM_2Bits:SUM02.S2_out[1]
+C4_out <= SUM_2Bits:SUM02.C2_out
+
+
+|projeto01_mv|maquinaVendas:MV|datapathMV:Datapath|SUM_8Bits:SUM|SUM_4Bits:SUM02|SUM_2Bits:SUM01
+A2_in[0] => SUM_1Bit:SUM01.A_in
+A2_in[1] => SUM_1Bit:SUM02.A_in
+B2_in[0] => SUM_1Bit:SUM01.B_in
+B2_in[1] => SUM_1Bit:SUM02.B_in
+C2_in => SUM_1Bit:SUM01.C_in
+S2_out[0] <= SUM_1Bit:SUM01.S_out
+S2_out[1] <= SUM_1Bit:SUM02.S_out
+C2_out <= SUM_1Bit:SUM02.C_out
+
+
+|projeto01_mv|maquinaVendas:MV|datapathMV:Datapath|SUM_8Bits:SUM|SUM_4Bits:SUM02|SUM_2Bits:SUM01|SUM_1Bit:SUM01
+A_in => S_out.IN0
+A_in => S_out.IN0
+A_in => S_out.IN0
+A_in => C_out.IN0
+A_in => C_out.IN0
+A_in => S_out.IN0
+B_in => S_out.IN1
+B_in => C_out.IN1
+B_in => C_out.IN1
+B_in => S_out.IN1
+C_in => S_out.IN1
+C_in => S_out.IN1
+C_in => S_out.IN1
+C_in => C_out.IN1
+C_in => S_out.IN1
+S_out <= S_out.DB_MAX_OUTPUT_PORT_TYPE
+C_out <= C_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|projeto01_mv|maquinaVendas:MV|datapathMV:Datapath|SUM_8Bits:SUM|SUM_4Bits:SUM02|SUM_2Bits:SUM01|SUM_1Bit:SUM02
+A_in => S_out.IN0
+A_in => S_out.IN0
+A_in => S_out.IN0
+A_in => C_out.IN0
+A_in => C_out.IN0
+A_in => S_out.IN0
+B_in => S_out.IN1
+B_in => C_out.IN1
+B_in => C_out.IN1
+B_in => S_out.IN1
+C_in => S_out.IN1
+C_in => S_out.IN1
+C_in => S_out.IN1
+C_in => C_out.IN1
+C_in => S_out.IN1
+S_out <= S_out.DB_MAX_OUTPUT_PORT_TYPE
+C_out <= C_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|projeto01_mv|maquinaVendas:MV|datapathMV:Datapath|SUM_8Bits:SUM|SUM_4Bits:SUM02|SUM_2Bits:SUM02
+A2_in[0] => SUM_1Bit:SUM01.A_in
+A2_in[1] => SUM_1Bit:SUM02.A_in
+B2_in[0] => SUM_1Bit:SUM01.B_in
+B2_in[1] => SUM_1Bit:SUM02.B_in
+C2_in => SUM_1Bit:SUM01.C_in
+S2_out[0] <= SUM_1Bit:SUM01.S_out
+S2_out[1] <= SUM_1Bit:SUM02.S_out
+C2_out <= SUM_1Bit:SUM02.C_out
+
+
+|projeto01_mv|maquinaVendas:MV|datapathMV:Datapath|SUM_8Bits:SUM|SUM_4Bits:SUM02|SUM_2Bits:SUM02|SUM_1Bit:SUM01
+A_in => S_out.IN0
+A_in => S_out.IN0
+A_in => S_out.IN0
+A_in => C_out.IN0
+A_in => C_out.IN0
+A_in => S_out.IN0
+B_in => S_out.IN1
+B_in => C_out.IN1
+B_in => C_out.IN1
+B_in => S_out.IN1
+C_in => S_out.IN1
+C_in => S_out.IN1
+C_in => S_out.IN1
+C_in => C_out.IN1
+C_in => S_out.IN1
+S_out <= S_out.DB_MAX_OUTPUT_PORT_TYPE
+C_out <= C_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|projeto01_mv|maquinaVendas:MV|datapathMV:Datapath|SUM_8Bits:SUM|SUM_4Bits:SUM02|SUM_2Bits:SUM02|SUM_1Bit:SUM02
+A_in => S_out.IN0
+A_in => S_out.IN0
+A_in => S_out.IN0
+A_in => C_out.IN0
+A_in => C_out.IN0
+A_in => S_out.IN0
+B_in => S_out.IN1
+B_in => C_out.IN1
+B_in => C_out.IN1
+B_in => S_out.IN1
+C_in => S_out.IN1
+C_in => S_out.IN1
+C_in => S_out.IN1
+C_in => C_out.IN1
+C_in => S_out.IN1
+S_out <= S_out.DB_MAX_OUTPUT_PORT_TYPE
+C_out <= C_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|projeto01_mv|maquinaVendas:MV|datapathMV:Datapath|Comparador_8Bits:Comp
+eA8[0] => Comparador_4Bits:Comp2.eA[0]
+eA8[1] => Comparador_4Bits:Comp2.eA[1]
+eA8[2] => Comparador_4Bits:Comp2.eA[2]
+eA8[3] => Comparador_4Bits:Comp2.eA[3]
+eA8[4] => Comparador_4Bits:Comp1.eA[0]
+eA8[5] => Comparador_4Bits:Comp1.eA[1]
+eA8[6] => Comparador_4Bits:Comp1.eA[2]
+eA8[7] => Comparador_4Bits:Comp1.eA[3]
+eB8[0] => Comparador_4Bits:Comp2.eB[0]
+eB8[1] => Comparador_4Bits:Comp2.eB[1]
+eB8[2] => Comparador_4Bits:Comp2.eB[2]
+eB8[3] => Comparador_4Bits:Comp2.eB[3]
+eB8[4] => Comparador_4Bits:Comp1.eB[0]
+eB8[5] => Comparador_4Bits:Comp1.eB[1]
+eB8[6] => Comparador_4Bits:Comp1.eB[2]
+eB8[7] => Comparador_4Bits:Comp1.eB[3]
+AeqB8 <= Comparador_4Bits:Comp2.AeqB
+AltB8 <= Comparador_4Bits:Comp2.AltB
+AgtB8 <= Comparador_4Bits:Comp2.AgtB
+
+
+|projeto01_mv|maquinaVendas:MV|datapathMV:Datapath|Comparador_8Bits:Comp|Comparador_4Bits:Comp1
+eA[0] => Comparador:Comp4.a
+eA[1] => Comparador:Comp3.a
+eA[2] => Comparador:Comp2.a
+eA[3] => Comparador:Comp1.a
+eB[0] => Comparador:Comp4.b
+eB[1] => Comparador:Comp3.b
+eB[2] => Comparador:Comp2.b
+eB[3] => Comparador:Comp1.b
+gt => Comparador:Comp1.in_gt
+lt => Comparador:Comp1.in_lt
+eq => Comparador:Comp1.in_eq
+AeqB <= Comparador:Comp4.out_eq
+AltB <= Comparador:Comp4.out_lt
+AgtB <= Comparador:Comp4.out_gt
+
+
+|projeto01_mv|maquinaVendas:MV|datapathMV:Datapath|Comparador_8Bits:Comp|Comparador_4Bits:Comp1|Comparador:Comp1
+in_gt => out_gt.IN1
+in_eq => out_gt.IN0
+in_eq => out_lt.IN0
+in_eq => out_eq.IN1
+in_lt => out_lt.IN1
+a => out_gt.IN1
+a => out_eq.IN0
+a => out_lt.IN1
+b => out_lt.IN1
+b => out_eq.IN1
+b => out_gt.IN1
+out_eq <= out_eq.DB_MAX_OUTPUT_PORT_TYPE
+out_lt <= out_lt.DB_MAX_OUTPUT_PORT_TYPE
+out_gt <= out_gt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|projeto01_mv|maquinaVendas:MV|datapathMV:Datapath|Comparador_8Bits:Comp|Comparador_4Bits:Comp1|Comparador:Comp2
+in_gt => out_gt.IN1
+in_eq => out_gt.IN0
+in_eq => out_lt.IN0
+in_eq => out_eq.IN1
+in_lt => out_lt.IN1
+a => out_gt.IN1
+a => out_eq.IN0
+a => out_lt.IN1
+b => out_lt.IN1
+b => out_eq.IN1
+b => out_gt.IN1
+out_eq <= out_eq.DB_MAX_OUTPUT_PORT_TYPE
+out_lt <= out_lt.DB_MAX_OUTPUT_PORT_TYPE
+out_gt <= out_gt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|projeto01_mv|maquinaVendas:MV|datapathMV:Datapath|Comparador_8Bits:Comp|Comparador_4Bits:Comp1|Comparador:Comp3
+in_gt => out_gt.IN1
+in_eq => out_gt.IN0
+in_eq => out_lt.IN0
+in_eq => out_eq.IN1
+in_lt => out_lt.IN1
+a => out_gt.IN1
+a => out_eq.IN0
+a => out_lt.IN1
+b => out_lt.IN1
+b => out_eq.IN1
+b => out_gt.IN1
+out_eq <= out_eq.DB_MAX_OUTPUT_PORT_TYPE
+out_lt <= out_lt.DB_MAX_OUTPUT_PORT_TYPE
+out_gt <= out_gt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|projeto01_mv|maquinaVendas:MV|datapathMV:Datapath|Comparador_8Bits:Comp|Comparador_4Bits:Comp1|Comparador:Comp4
+in_gt => out_gt.IN1
+in_eq => out_gt.IN0
+in_eq => out_lt.IN0
+in_eq => out_eq.IN1
+in_lt => out_lt.IN1
+a => out_gt.IN1
+a => out_eq.IN0
+a => out_lt.IN1
+b => out_lt.IN1
+b => out_eq.IN1
+b => out_gt.IN1
+out_eq <= out_eq.DB_MAX_OUTPUT_PORT_TYPE
+out_lt <= out_lt.DB_MAX_OUTPUT_PORT_TYPE
+out_gt <= out_gt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|projeto01_mv|maquinaVendas:MV|datapathMV:Datapath|Comparador_8Bits:Comp|Comparador_4Bits:Comp2
+eA[0] => Comparador:Comp4.a
+eA[1] => Comparador:Comp3.a
+eA[2] => Comparador:Comp2.a
+eA[3] => Comparador:Comp1.a
+eB[0] => Comparador:Comp4.b
+eB[1] => Comparador:Comp3.b
+eB[2] => Comparador:Comp2.b
+eB[3] => Comparador:Comp1.b
+gt => Comparador:Comp1.in_gt
+lt => Comparador:Comp1.in_lt
+eq => Comparador:Comp1.in_eq
+AeqB <= Comparador:Comp4.out_eq
+AltB <= Comparador:Comp4.out_lt
+AgtB <= Comparador:Comp4.out_gt
+
+
+|projeto01_mv|maquinaVendas:MV|datapathMV:Datapath|Comparador_8Bits:Comp|Comparador_4Bits:Comp2|Comparador:Comp1
+in_gt => out_gt.IN1
+in_eq => out_gt.IN0
+in_eq => out_lt.IN0
+in_eq => out_eq.IN1
+in_lt => out_lt.IN1
+a => out_gt.IN1
+a => out_eq.IN0
+a => out_lt.IN1
+b => out_lt.IN1
+b => out_eq.IN1
+b => out_gt.IN1
+out_eq <= out_eq.DB_MAX_OUTPUT_PORT_TYPE
+out_lt <= out_lt.DB_MAX_OUTPUT_PORT_TYPE
+out_gt <= out_gt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|projeto01_mv|maquinaVendas:MV|datapathMV:Datapath|Comparador_8Bits:Comp|Comparador_4Bits:Comp2|Comparador:Comp2
+in_gt => out_gt.IN1
+in_eq => out_gt.IN0
+in_eq => out_lt.IN0
+in_eq => out_eq.IN1
+in_lt => out_lt.IN1
+a => out_gt.IN1
+a => out_eq.IN0
+a => out_lt.IN1
+b => out_lt.IN1
+b => out_eq.IN1
+b => out_gt.IN1
+out_eq <= out_eq.DB_MAX_OUTPUT_PORT_TYPE
+out_lt <= out_lt.DB_MAX_OUTPUT_PORT_TYPE
+out_gt <= out_gt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|projeto01_mv|maquinaVendas:MV|datapathMV:Datapath|Comparador_8Bits:Comp|Comparador_4Bits:Comp2|Comparador:Comp3
+in_gt => out_gt.IN1
+in_eq => out_gt.IN0
+in_eq => out_lt.IN0
+in_eq => out_eq.IN1
+in_lt => out_lt.IN1
+a => out_gt.IN1
+a => out_eq.IN0
+a => out_lt.IN1
+b => out_lt.IN1
+b => out_eq.IN1
+b => out_gt.IN1
+out_eq <= out_eq.DB_MAX_OUTPUT_PORT_TYPE
+out_lt <= out_lt.DB_MAX_OUTPUT_PORT_TYPE
+out_gt <= out_gt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|projeto01_mv|maquinaVendas:MV|datapathMV:Datapath|Comparador_8Bits:Comp|Comparador_4Bits:Comp2|Comparador:Comp4
+in_gt => out_gt.IN1
+in_eq => out_gt.IN0
+in_eq => out_lt.IN0
+in_eq => out_eq.IN1
+in_lt => out_lt.IN1
+a => out_gt.IN1
+a => out_eq.IN0
+a => out_lt.IN1
+b => out_lt.IN1
+b => out_eq.IN1
+b => out_gt.IN1
+out_eq <= out_eq.DB_MAX_OUTPUT_PORT_TYPE
+out_lt <= out_lt.DB_MAX_OUTPUT_PORT_TYPE
+out_gt <= out_gt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|projeto01_mv|bitToBcdToD7Seg:LedTotalMV
+SW_in[0] => bitToBcd:BtB.bit_in[0]
+SW_in[1] => bitToBcd:BtB.bit_in[1]
+SW_in[2] => bitToBcd:BtB.bit_in[2]
+SW_in[3] => bitToBcd:BtB.bit_in[3]
+SW_in[4] => bitToBcd:BtB.bit_in[4]
+SW_in[5] => bitToBcd:BtB.bit_in[5]
+SW_in[6] => bitToBcd:BtB.bit_in[6]
+SW_in[7] => bitToBcd:BtB.bit_in[7]
+HEX0[0] <= d7Seg:D7S0.D_out[0]
+HEX0[1] <= d7Seg:D7S0.D_out[1]
+HEX0[2] <= d7Seg:D7S0.D_out[2]
+HEX0[3] <= d7Seg:D7S0.D_out[3]
+HEX0[4] <= d7Seg:D7S0.D_out[4]
+HEX0[5] <= d7Seg:D7S0.D_out[5]
+HEX0[6] <= d7Seg:D7S0.D_out[6]
+HEX1[0] <= d7Seg:D7S1.D_out[0]
+HEX1[1] <= d7Seg:D7S1.D_out[1]
+HEX1[2] <= d7Seg:D7S1.D_out[2]
+HEX1[3] <= d7Seg:D7S1.D_out[3]
+HEX1[4] <= d7Seg:D7S1.D_out[4]
+HEX1[5] <= d7Seg:D7S1.D_out[5]
+HEX1[6] <= d7Seg:D7S1.D_out[6]
+HEX2[0] <= d7Seg:D7S2.D_out[0]
+HEX2[1] <= d7Seg:D7S2.D_out[1]
+HEX2[2] <= d7Seg:D7S2.D_out[2]
+HEX2[3] <= d7Seg:D7S2.D_out[3]
+HEX2[4] <= d7Seg:D7S2.D_out[4]
+HEX2[5] <= d7Seg:D7S2.D_out[5]
+HEX2[6] <= d7Seg:D7S2.D_out[6]
+
+
+|projeto01_mv|bitToBcdToD7Seg:LedTotalMV|bitToBcd:BtB
+bit_in[0] => bcd_out[0].DATAIN
+bit_in[1] => ciBitToBcd:ciBtB07.BtB_in[0]
+bit_in[2] => ciBitToBcd:ciBtB05.BtB_in[0]
+bit_in[3] => ciBitToBcd:ciBtB03.BtB_in[0]
+bit_in[4] => ciBitToBcd:ciBtB02.BtB_in[0]
+bit_in[5] => ciBitToBcd:ciBtB01.BtB_in[0]
+bit_in[6] => ciBitToBcd:ciBtB01.BtB_in[1]
+bit_in[7] => ciBitToBcd:ciBtB01.BtB_in[2]
+bcd_out[0] <= bit_in[0].DB_MAX_OUTPUT_PORT_TYPE
+bcd_out[1] <= ciBitToBcd:ciBtB07.BtB_out[0]
+bcd_out[2] <= ciBitToBcd:ciBtB07.BtB_out[1]
+bcd_out[3] <= ciBitToBcd:ciBtB07.BtB_out[2]
+bcd_out[4] <= ciBitToBcd:ciBtB07.BtB_out[3]
+bcd_out[5] <= ciBitToBcd:ciBtB06.BtB_out[0]
+bcd_out[6] <= ciBitToBcd:ciBtB06.BtB_out[1]
+bcd_out[7] <= ciBitToBcd:ciBtB06.BtB_out[2]
+bcd_out[8] <= ciBitToBcd:ciBtB06.BtB_out[3]
+bcd_out[9] <= ciBitToBcd:ciBtB04.BtB_out[3]
+bcd_out[10] <= <GND>
+bcd_out[11] <= <GND>
+
+
+|projeto01_mv|bitToBcdToD7Seg:LedTotalMV|bitToBcd:BtB|ciBitToBcd:ciBtB01
+BtB_in[0] => BtB_out.IN0
+BtB_in[0] => BtB_out.IN0
+BtB_in[0] => BtB_out.IN0
+BtB_in[0] => BtB_out.IN1
+BtB_in[0] => BtB_out.IN1
+BtB_in[0] => BtB_out.IN0
+BtB_in[0] => BtB_out.IN1
+BtB_in[1] => BtB_out.IN1
+BtB_in[1] => BtB_out.IN1
+BtB_in[1] => BtB_out.IN0
+BtB_in[1] => BtB_out.IN0
+BtB_in[2] => BtB_out.IN1
+BtB_in[2] => BtB_out.IN1
+BtB_in[2] => BtB_out.IN1
+BtB_in[2] => BtB_out.IN1
+BtB_in[2] => BtB_out.IN0
+BtB_in[3] => BtB_out.IN1
+BtB_in[3] => BtB_out.IN1
+BtB_in[3] => BtB_out.IN1
+BtB_in[3] => BtB_out.IN1
+BtB_in[3] => BtB_out.IN1
+BtB_out[0] <= BtB_out.DB_MAX_OUTPUT_PORT_TYPE
+BtB_out[1] <= BtB_out.DB_MAX_OUTPUT_PORT_TYPE
+BtB_out[2] <= BtB_out.DB_MAX_OUTPUT_PORT_TYPE
+BtB_out[3] <= BtB_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|projeto01_mv|bitToBcdToD7Seg:LedTotalMV|bitToBcd:BtB|ciBitToBcd:ciBtB02
+BtB_in[0] => BtB_out.IN0
+BtB_in[0] => BtB_out.IN0
+BtB_in[0] => BtB_out.IN0
+BtB_in[0] => BtB_out.IN1
+BtB_in[0] => BtB_out.IN1
+BtB_in[0] => BtB_out.IN0
+BtB_in[0] => BtB_out.IN1
+BtB_in[1] => BtB_out.IN1
+BtB_in[1] => BtB_out.IN1
+BtB_in[1] => BtB_out.IN0
+BtB_in[1] => BtB_out.IN0
+BtB_in[2] => BtB_out.IN1
+BtB_in[2] => BtB_out.IN1
+BtB_in[2] => BtB_out.IN1
+BtB_in[2] => BtB_out.IN1
+BtB_in[2] => BtB_out.IN0
+BtB_in[3] => BtB_out.IN1
+BtB_in[3] => BtB_out.IN1
+BtB_in[3] => BtB_out.IN1
+BtB_in[3] => BtB_out.IN1
+BtB_in[3] => BtB_out.IN1
+BtB_out[0] <= BtB_out.DB_MAX_OUTPUT_PORT_TYPE
+BtB_out[1] <= BtB_out.DB_MAX_OUTPUT_PORT_TYPE
+BtB_out[2] <= BtB_out.DB_MAX_OUTPUT_PORT_TYPE
+BtB_out[3] <= BtB_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|projeto01_mv|bitToBcdToD7Seg:LedTotalMV|bitToBcd:BtB|ciBitToBcd:ciBtB03
+BtB_in[0] => BtB_out.IN0
+BtB_in[0] => BtB_out.IN0
+BtB_in[0] => BtB_out.IN0
+BtB_in[0] => BtB_out.IN1
+BtB_in[0] => BtB_out.IN1
+BtB_in[0] => BtB_out.IN0
+BtB_in[0] => BtB_out.IN1
+BtB_in[1] => BtB_out.IN1
+BtB_in[1] => BtB_out.IN1
+BtB_in[1] => BtB_out.IN0
+BtB_in[1] => BtB_out.IN0
+BtB_in[2] => BtB_out.IN1
+BtB_in[2] => BtB_out.IN1
+BtB_in[2] => BtB_out.IN1
+BtB_in[2] => BtB_out.IN1
+BtB_in[2] => BtB_out.IN0
+BtB_in[3] => BtB_out.IN1
+BtB_in[3] => BtB_out.IN1
+BtB_in[3] => BtB_out.IN1
+BtB_in[3] => BtB_out.IN1
+BtB_in[3] => BtB_out.IN1
+BtB_out[0] <= BtB_out.DB_MAX_OUTPUT_PORT_TYPE
+BtB_out[1] <= BtB_out.DB_MAX_OUTPUT_PORT_TYPE
+BtB_out[2] <= BtB_out.DB_MAX_OUTPUT_PORT_TYPE
+BtB_out[3] <= BtB_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|projeto01_mv|bitToBcdToD7Seg:LedTotalMV|bitToBcd:BtB|ciBitToBcd:ciBtB04
+BtB_in[0] => BtB_out.IN0
+BtB_in[0] => BtB_out.IN0
+BtB_in[0] => BtB_out.IN0
+BtB_in[0] => BtB_out.IN1
+BtB_in[0] => BtB_out.IN1
+BtB_in[0] => BtB_out.IN0
+BtB_in[0] => BtB_out.IN1
+BtB_in[1] => BtB_out.IN1
+BtB_in[1] => BtB_out.IN1
+BtB_in[1] => BtB_out.IN0
+BtB_in[1] => BtB_out.IN0
+BtB_in[2] => BtB_out.IN1
+BtB_in[2] => BtB_out.IN1
+BtB_in[2] => BtB_out.IN1
+BtB_in[2] => BtB_out.IN1
+BtB_in[2] => BtB_out.IN0
+BtB_in[3] => BtB_out.IN1
+BtB_in[3] => BtB_out.IN1
+BtB_in[3] => BtB_out.IN1
+BtB_in[3] => BtB_out.IN1
+BtB_in[3] => BtB_out.IN1
+BtB_out[0] <= BtB_out.DB_MAX_OUTPUT_PORT_TYPE
+BtB_out[1] <= BtB_out.DB_MAX_OUTPUT_PORT_TYPE
+BtB_out[2] <= BtB_out.DB_MAX_OUTPUT_PORT_TYPE
+BtB_out[3] <= BtB_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|projeto01_mv|bitToBcdToD7Seg:LedTotalMV|bitToBcd:BtB|ciBitToBcd:ciBtB05
+BtB_in[0] => BtB_out.IN0
+BtB_in[0] => BtB_out.IN0
+BtB_in[0] => BtB_out.IN0
+BtB_in[0] => BtB_out.IN1
+BtB_in[0] => BtB_out.IN1
+BtB_in[0] => BtB_out.IN0
+BtB_in[0] => BtB_out.IN1
+BtB_in[1] => BtB_out.IN1
+BtB_in[1] => BtB_out.IN1
+BtB_in[1] => BtB_out.IN0
+BtB_in[1] => BtB_out.IN0
+BtB_in[2] => BtB_out.IN1
+BtB_in[2] => BtB_out.IN1
+BtB_in[2] => BtB_out.IN1
+BtB_in[2] => BtB_out.IN1
+BtB_in[2] => BtB_out.IN0
+BtB_in[3] => BtB_out.IN1
+BtB_in[3] => BtB_out.IN1
+BtB_in[3] => BtB_out.IN1
+BtB_in[3] => BtB_out.IN1
+BtB_in[3] => BtB_out.IN1
+BtB_out[0] <= BtB_out.DB_MAX_OUTPUT_PORT_TYPE
+BtB_out[1] <= BtB_out.DB_MAX_OUTPUT_PORT_TYPE
+BtB_out[2] <= BtB_out.DB_MAX_OUTPUT_PORT_TYPE
+BtB_out[3] <= BtB_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|projeto01_mv|bitToBcdToD7Seg:LedTotalMV|bitToBcd:BtB|ciBitToBcd:ciBtB06
+BtB_in[0] => BtB_out.IN0
+BtB_in[0] => BtB_out.IN0
+BtB_in[0] => BtB_out.IN0
+BtB_in[0] => BtB_out.IN1
+BtB_in[0] => BtB_out.IN1
+BtB_in[0] => BtB_out.IN0
+BtB_in[0] => BtB_out.IN1
+BtB_in[1] => BtB_out.IN1
+BtB_in[1] => BtB_out.IN1
+BtB_in[1] => BtB_out.IN0
+BtB_in[1] => BtB_out.IN0
+BtB_in[2] => BtB_out.IN1
+BtB_in[2] => BtB_out.IN1
+BtB_in[2] => BtB_out.IN1
+BtB_in[2] => BtB_out.IN1
+BtB_in[2] => BtB_out.IN0
+BtB_in[3] => BtB_out.IN1
+BtB_in[3] => BtB_out.IN1
+BtB_in[3] => BtB_out.IN1
+BtB_in[3] => BtB_out.IN1
+BtB_in[3] => BtB_out.IN1
+BtB_out[0] <= BtB_out.DB_MAX_OUTPUT_PORT_TYPE
+BtB_out[1] <= BtB_out.DB_MAX_OUTPUT_PORT_TYPE
+BtB_out[2] <= BtB_out.DB_MAX_OUTPUT_PORT_TYPE
+BtB_out[3] <= BtB_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|projeto01_mv|bitToBcdToD7Seg:LedTotalMV|bitToBcd:BtB|ciBitToBcd:ciBtB07
+BtB_in[0] => BtB_out.IN0
+BtB_in[0] => BtB_out.IN0
+BtB_in[0] => BtB_out.IN0
+BtB_in[0] => BtB_out.IN1
+BtB_in[0] => BtB_out.IN1
+BtB_in[0] => BtB_out.IN0
+BtB_in[0] => BtB_out.IN1
+BtB_in[1] => BtB_out.IN1
+BtB_in[1] => BtB_out.IN1
+BtB_in[1] => BtB_out.IN0
+BtB_in[1] => BtB_out.IN0
+BtB_in[2] => BtB_out.IN1
+BtB_in[2] => BtB_out.IN1
+BtB_in[2] => BtB_out.IN1
+BtB_in[2] => BtB_out.IN1
+BtB_in[2] => BtB_out.IN0
+BtB_in[3] => BtB_out.IN1
+BtB_in[3] => BtB_out.IN1
+BtB_in[3] => BtB_out.IN1
+BtB_in[3] => BtB_out.IN1
+BtB_in[3] => BtB_out.IN1
+BtB_out[0] <= BtB_out.DB_MAX_OUTPUT_PORT_TYPE
+BtB_out[1] <= BtB_out.DB_MAX_OUTPUT_PORT_TYPE
+BtB_out[2] <= BtB_out.DB_MAX_OUTPUT_PORT_TYPE
+BtB_out[3] <= BtB_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|projeto01_mv|bitToBcdToD7Seg:LedTotalMV|d7Seg:D7S2
+S_in[0] => D_out.IN0
+S_in[0] => D_out.IN0
+S_in[0] => D_out.IN0
+S_in[0] => D_out.IN1
+S_in[0] => D_out.IN0
+S_in[0] => D_out.IN0
+S_in[0] => D_out.IN0
+S_in[0] => D_out.IN0
+S_in[1] => D_out.IN0
+S_in[1] => D_out.IN1
+S_in[1] => D_out.IN0
+S_in[1] => D_out.IN1
+S_in[1] => D_out.IN1
+S_in[1] => D_out.IN1
+S_in[1] => D_out.IN0
+S_in[1] => D_out.IN1
+S_in[1] => D_out.IN0
+S_in[2] => D_out.IN1
+S_in[2] => D_out.IN1
+S_in[2] => D_out.IN1
+S_in[2] => D_out.IN1
+S_in[2] => D_out.IN1
+S_in[2] => D_out.IN1
+S_in[2] => D_out.IN1
+S_in[2] => D_out.IN1
+S_in[2] => D_out.IN1
+S_in[3] => D_out.IN1
+S_in[3] => D_out.IN1
+S_in[3] => D_out.IN1
+S_in[3] => D_out.IN1
+S_in[3] => D_out.IN1
+D_out[0] <= D_out.DB_MAX_OUTPUT_PORT_TYPE
+D_out[1] <= D_out.DB_MAX_OUTPUT_PORT_TYPE
+D_out[2] <= D_out.DB_MAX_OUTPUT_PORT_TYPE
+D_out[3] <= D_out.DB_MAX_OUTPUT_PORT_TYPE
+D_out[4] <= D_out.DB_MAX_OUTPUT_PORT_TYPE
+D_out[5] <= D_out.DB_MAX_OUTPUT_PORT_TYPE
+D_out[6] <= D_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|projeto01_mv|bitToBcdToD7Seg:LedTotalMV|d7Seg:D7S1
+S_in[0] => D_out.IN0
+S_in[0] => D_out.IN0
+S_in[0] => D_out.IN0
+S_in[0] => D_out.IN1
+S_in[0] => D_out.IN0
+S_in[0] => D_out.IN0
+S_in[0] => D_out.IN0
+S_in[0] => D_out.IN0
+S_in[1] => D_out.IN0
+S_in[1] => D_out.IN1
+S_in[1] => D_out.IN0
+S_in[1] => D_out.IN1
+S_in[1] => D_out.IN1
+S_in[1] => D_out.IN1
+S_in[1] => D_out.IN0
+S_in[1] => D_out.IN1
+S_in[1] => D_out.IN0
+S_in[2] => D_out.IN1
+S_in[2] => D_out.IN1
+S_in[2] => D_out.IN1
+S_in[2] => D_out.IN1
+S_in[2] => D_out.IN1
+S_in[2] => D_out.IN1
+S_in[2] => D_out.IN1
+S_in[2] => D_out.IN1
+S_in[2] => D_out.IN1
+S_in[3] => D_out.IN1
+S_in[3] => D_out.IN1
+S_in[3] => D_out.IN1
+S_in[3] => D_out.IN1
+S_in[3] => D_out.IN1
+D_out[0] <= D_out.DB_MAX_OUTPUT_PORT_TYPE
+D_out[1] <= D_out.DB_MAX_OUTPUT_PORT_TYPE
+D_out[2] <= D_out.DB_MAX_OUTPUT_PORT_TYPE
+D_out[3] <= D_out.DB_MAX_OUTPUT_PORT_TYPE
+D_out[4] <= D_out.DB_MAX_OUTPUT_PORT_TYPE
+D_out[5] <= D_out.DB_MAX_OUTPUT_PORT_TYPE
+D_out[6] <= D_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|projeto01_mv|bitToBcdToD7Seg:LedTotalMV|d7Seg:D7S0
+S_in[0] => D_out.IN0
+S_in[0] => D_out.IN0
+S_in[0] => D_out.IN0
+S_in[0] => D_out.IN1
+S_in[0] => D_out.IN0
+S_in[0] => D_out.IN0
+S_in[0] => D_out.IN0
+S_in[0] => D_out.IN0
+S_in[1] => D_out.IN0
+S_in[1] => D_out.IN1
+S_in[1] => D_out.IN0
+S_in[1] => D_out.IN1
+S_in[1] => D_out.IN1
+S_in[1] => D_out.IN1
+S_in[1] => D_out.IN0
+S_in[1] => D_out.IN1
+S_in[1] => D_out.IN0
+S_in[2] => D_out.IN1
+S_in[2] => D_out.IN1
+S_in[2] => D_out.IN1
+S_in[2] => D_out.IN1
+S_in[2] => D_out.IN1
+S_in[2] => D_out.IN1
+S_in[2] => D_out.IN1
+S_in[2] => D_out.IN1
+S_in[2] => D_out.IN1
+S_in[3] => D_out.IN1
+S_in[3] => D_out.IN1
+S_in[3] => D_out.IN1
+S_in[3] => D_out.IN1
+S_in[3] => D_out.IN1
+D_out[0] <= D_out.DB_MAX_OUTPUT_PORT_TYPE
+D_out[1] <= D_out.DB_MAX_OUTPUT_PORT_TYPE
+D_out[2] <= D_out.DB_MAX_OUTPUT_PORT_TYPE
+D_out[3] <= D_out.DB_MAX_OUTPUT_PORT_TYPE
+D_out[4] <= D_out.DB_MAX_OUTPUT_PORT_TYPE
+D_out[5] <= D_out.DB_MAX_OUTPUT_PORT_TYPE
+D_out[6] <= D_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|projeto01_mv|bitToBcdToD7Seg:LedROM
+SW_in[0] => bitToBcd:BtB.bit_in[0]
+SW_in[1] => bitToBcd:BtB.bit_in[1]
+SW_in[2] => bitToBcd:BtB.bit_in[2]
+SW_in[3] => bitToBcd:BtB.bit_in[3]
+SW_in[4] => bitToBcd:BtB.bit_in[4]
+SW_in[5] => bitToBcd:BtB.bit_in[5]
+SW_in[6] => bitToBcd:BtB.bit_in[6]
+SW_in[7] => bitToBcd:BtB.bit_in[7]
+HEX0[0] <= d7Seg:D7S0.D_out[0]
+HEX0[1] <= d7Seg:D7S0.D_out[1]
+HEX0[2] <= d7Seg:D7S0.D_out[2]
+HEX0[3] <= d7Seg:D7S0.D_out[3]
+HEX0[4] <= d7Seg:D7S0.D_out[4]
+HEX0[5] <= d7Seg:D7S0.D_out[5]
+HEX0[6] <= d7Seg:D7S0.D_out[6]
+HEX1[0] <= d7Seg:D7S1.D_out[0]
+HEX1[1] <= d7Seg:D7S1.D_out[1]
+HEX1[2] <= d7Seg:D7S1.D_out[2]
+HEX1[3] <= d7Seg:D7S1.D_out[3]
+HEX1[4] <= d7Seg:D7S1.D_out[4]
+HEX1[5] <= d7Seg:D7S1.D_out[5]
+HEX1[6] <= d7Seg:D7S1.D_out[6]
+HEX2[0] <= d7Seg:D7S2.D_out[0]
+HEX2[1] <= d7Seg:D7S2.D_out[1]
+HEX2[2] <= d7Seg:D7S2.D_out[2]
+HEX2[3] <= d7Seg:D7S2.D_out[3]
+HEX2[4] <= d7Seg:D7S2.D_out[4]
+HEX2[5] <= d7Seg:D7S2.D_out[5]
+HEX2[6] <= d7Seg:D7S2.D_out[6]
+
+
+|projeto01_mv|bitToBcdToD7Seg:LedROM|bitToBcd:BtB
+bit_in[0] => bcd_out[0].DATAIN
+bit_in[1] => ciBitToBcd:ciBtB07.BtB_in[0]
+bit_in[2] => ciBitToBcd:ciBtB05.BtB_in[0]
+bit_in[3] => ciBitToBcd:ciBtB03.BtB_in[0]
+bit_in[4] => ciBitToBcd:ciBtB02.BtB_in[0]
+bit_in[5] => ciBitToBcd:ciBtB01.BtB_in[0]
+bit_in[6] => ciBitToBcd:ciBtB01.BtB_in[1]
+bit_in[7] => ciBitToBcd:ciBtB01.BtB_in[2]
+bcd_out[0] <= bit_in[0].DB_MAX_OUTPUT_PORT_TYPE
+bcd_out[1] <= ciBitToBcd:ciBtB07.BtB_out[0]
+bcd_out[2] <= ciBitToBcd:ciBtB07.BtB_out[1]
+bcd_out[3] <= ciBitToBcd:ciBtB07.BtB_out[2]
+bcd_out[4] <= ciBitToBcd:ciBtB07.BtB_out[3]
+bcd_out[5] <= ciBitToBcd:ciBtB06.BtB_out[0]
+bcd_out[6] <= ciBitToBcd:ciBtB06.BtB_out[1]
+bcd_out[7] <= ciBitToBcd:ciBtB06.BtB_out[2]
+bcd_out[8] <= ciBitToBcd:ciBtB06.BtB_out[3]
+bcd_out[9] <= ciBitToBcd:ciBtB04.BtB_out[3]
+bcd_out[10] <= <GND>
+bcd_out[11] <= <GND>
+
+
+|projeto01_mv|bitToBcdToD7Seg:LedROM|bitToBcd:BtB|ciBitToBcd:ciBtB01
+BtB_in[0] => BtB_out.IN0
+BtB_in[0] => BtB_out.IN0
+BtB_in[0] => BtB_out.IN0
+BtB_in[0] => BtB_out.IN1
+BtB_in[0] => BtB_out.IN1
+BtB_in[0] => BtB_out.IN0
+BtB_in[0] => BtB_out.IN1
+BtB_in[1] => BtB_out.IN1
+BtB_in[1] => BtB_out.IN1
+BtB_in[1] => BtB_out.IN0
+BtB_in[1] => BtB_out.IN0
+BtB_in[2] => BtB_out.IN1
+BtB_in[2] => BtB_out.IN1
+BtB_in[2] => BtB_out.IN1
+BtB_in[2] => BtB_out.IN1
+BtB_in[2] => BtB_out.IN0
+BtB_in[3] => BtB_out.IN1
+BtB_in[3] => BtB_out.IN1
+BtB_in[3] => BtB_out.IN1
+BtB_in[3] => BtB_out.IN1
+BtB_in[3] => BtB_out.IN1
+BtB_out[0] <= BtB_out.DB_MAX_OUTPUT_PORT_TYPE
+BtB_out[1] <= BtB_out.DB_MAX_OUTPUT_PORT_TYPE
+BtB_out[2] <= BtB_out.DB_MAX_OUTPUT_PORT_TYPE
+BtB_out[3] <= BtB_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|projeto01_mv|bitToBcdToD7Seg:LedROM|bitToBcd:BtB|ciBitToBcd:ciBtB02
+BtB_in[0] => BtB_out.IN0
+BtB_in[0] => BtB_out.IN0
+BtB_in[0] => BtB_out.IN0
+BtB_in[0] => BtB_out.IN1
+BtB_in[0] => BtB_out.IN1
+BtB_in[0] => BtB_out.IN0
+BtB_in[0] => BtB_out.IN1
+BtB_in[1] => BtB_out.IN1
+BtB_in[1] => BtB_out.IN1
+BtB_in[1] => BtB_out.IN0
+BtB_in[1] => BtB_out.IN0
+BtB_in[2] => BtB_out.IN1
+BtB_in[2] => BtB_out.IN1
+BtB_in[2] => BtB_out.IN1
+BtB_in[2] => BtB_out.IN1
+BtB_in[2] => BtB_out.IN0
+BtB_in[3] => BtB_out.IN1
+BtB_in[3] => BtB_out.IN1
+BtB_in[3] => BtB_out.IN1
+BtB_in[3] => BtB_out.IN1
+BtB_in[3] => BtB_out.IN1
+BtB_out[0] <= BtB_out.DB_MAX_OUTPUT_PORT_TYPE
+BtB_out[1] <= BtB_out.DB_MAX_OUTPUT_PORT_TYPE
+BtB_out[2] <= BtB_out.DB_MAX_OUTPUT_PORT_TYPE
+BtB_out[3] <= BtB_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|projeto01_mv|bitToBcdToD7Seg:LedROM|bitToBcd:BtB|ciBitToBcd:ciBtB03
+BtB_in[0] => BtB_out.IN0
+BtB_in[0] => BtB_out.IN0
+BtB_in[0] => BtB_out.IN0
+BtB_in[0] => BtB_out.IN1
+BtB_in[0] => BtB_out.IN1
+BtB_in[0] => BtB_out.IN0
+BtB_in[0] => BtB_out.IN1
+BtB_in[1] => BtB_out.IN1
+BtB_in[1] => BtB_out.IN1
+BtB_in[1] => BtB_out.IN0
+BtB_in[1] => BtB_out.IN0
+BtB_in[2] => BtB_out.IN1
+BtB_in[2] => BtB_out.IN1
+BtB_in[2] => BtB_out.IN1
+BtB_in[2] => BtB_out.IN1
+BtB_in[2] => BtB_out.IN0
+BtB_in[3] => BtB_out.IN1
+BtB_in[3] => BtB_out.IN1
+BtB_in[3] => BtB_out.IN1
+BtB_in[3] => BtB_out.IN1
+BtB_in[3] => BtB_out.IN1
+BtB_out[0] <= BtB_out.DB_MAX_OUTPUT_PORT_TYPE
+BtB_out[1] <= BtB_out.DB_MAX_OUTPUT_PORT_TYPE
+BtB_out[2] <= BtB_out.DB_MAX_OUTPUT_PORT_TYPE
+BtB_out[3] <= BtB_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|projeto01_mv|bitToBcdToD7Seg:LedROM|bitToBcd:BtB|ciBitToBcd:ciBtB04
+BtB_in[0] => BtB_out.IN0
+BtB_in[0] => BtB_out.IN0
+BtB_in[0] => BtB_out.IN0
+BtB_in[0] => BtB_out.IN1
+BtB_in[0] => BtB_out.IN1
+BtB_in[0] => BtB_out.IN0
+BtB_in[0] => BtB_out.IN1
+BtB_in[1] => BtB_out.IN1
+BtB_in[1] => BtB_out.IN1
+BtB_in[1] => BtB_out.IN0
+BtB_in[1] => BtB_out.IN0
+BtB_in[2] => BtB_out.IN1
+BtB_in[2] => BtB_out.IN1
+BtB_in[2] => BtB_out.IN1
+BtB_in[2] => BtB_out.IN1
+BtB_in[2] => BtB_out.IN0
+BtB_in[3] => BtB_out.IN1
+BtB_in[3] => BtB_out.IN1
+BtB_in[3] => BtB_out.IN1
+BtB_in[3] => BtB_out.IN1
+BtB_in[3] => BtB_out.IN1
+BtB_out[0] <= BtB_out.DB_MAX_OUTPUT_PORT_TYPE
+BtB_out[1] <= BtB_out.DB_MAX_OUTPUT_PORT_TYPE
+BtB_out[2] <= BtB_out.DB_MAX_OUTPUT_PORT_TYPE
+BtB_out[3] <= BtB_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|projeto01_mv|bitToBcdToD7Seg:LedROM|bitToBcd:BtB|ciBitToBcd:ciBtB05
+BtB_in[0] => BtB_out.IN0
+BtB_in[0] => BtB_out.IN0
+BtB_in[0] => BtB_out.IN0
+BtB_in[0] => BtB_out.IN1
+BtB_in[0] => BtB_out.IN1
+BtB_in[0] => BtB_out.IN0
+BtB_in[0] => BtB_out.IN1
+BtB_in[1] => BtB_out.IN1
+BtB_in[1] => BtB_out.IN1
+BtB_in[1] => BtB_out.IN0
+BtB_in[1] => BtB_out.IN0
+BtB_in[2] => BtB_out.IN1
+BtB_in[2] => BtB_out.IN1
+BtB_in[2] => BtB_out.IN1
+BtB_in[2] => BtB_out.IN1
+BtB_in[2] => BtB_out.IN0
+BtB_in[3] => BtB_out.IN1
+BtB_in[3] => BtB_out.IN1
+BtB_in[3] => BtB_out.IN1
+BtB_in[3] => BtB_out.IN1
+BtB_in[3] => BtB_out.IN1
+BtB_out[0] <= BtB_out.DB_MAX_OUTPUT_PORT_TYPE
+BtB_out[1] <= BtB_out.DB_MAX_OUTPUT_PORT_TYPE
+BtB_out[2] <= BtB_out.DB_MAX_OUTPUT_PORT_TYPE
+BtB_out[3] <= BtB_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|projeto01_mv|bitToBcdToD7Seg:LedROM|bitToBcd:BtB|ciBitToBcd:ciBtB06
+BtB_in[0] => BtB_out.IN0
+BtB_in[0] => BtB_out.IN0
+BtB_in[0] => BtB_out.IN0
+BtB_in[0] => BtB_out.IN1
+BtB_in[0] => BtB_out.IN1
+BtB_in[0] => BtB_out.IN0
+BtB_in[0] => BtB_out.IN1
+BtB_in[1] => BtB_out.IN1
+BtB_in[1] => BtB_out.IN1
+BtB_in[1] => BtB_out.IN0
+BtB_in[1] => BtB_out.IN0
+BtB_in[2] => BtB_out.IN1
+BtB_in[2] => BtB_out.IN1
+BtB_in[2] => BtB_out.IN1
+BtB_in[2] => BtB_out.IN1
+BtB_in[2] => BtB_out.IN0
+BtB_in[3] => BtB_out.IN1
+BtB_in[3] => BtB_out.IN1
+BtB_in[3] => BtB_out.IN1
+BtB_in[3] => BtB_out.IN1
+BtB_in[3] => BtB_out.IN1
+BtB_out[0] <= BtB_out.DB_MAX_OUTPUT_PORT_TYPE
+BtB_out[1] <= BtB_out.DB_MAX_OUTPUT_PORT_TYPE
+BtB_out[2] <= BtB_out.DB_MAX_OUTPUT_PORT_TYPE
+BtB_out[3] <= BtB_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|projeto01_mv|bitToBcdToD7Seg:LedROM|bitToBcd:BtB|ciBitToBcd:ciBtB07
+BtB_in[0] => BtB_out.IN0
+BtB_in[0] => BtB_out.IN0
+BtB_in[0] => BtB_out.IN0
+BtB_in[0] => BtB_out.IN1
+BtB_in[0] => BtB_out.IN1
+BtB_in[0] => BtB_out.IN0
+BtB_in[0] => BtB_out.IN1
+BtB_in[1] => BtB_out.IN1
+BtB_in[1] => BtB_out.IN1
+BtB_in[1] => BtB_out.IN0
+BtB_in[1] => BtB_out.IN0
+BtB_in[2] => BtB_out.IN1
+BtB_in[2] => BtB_out.IN1
+BtB_in[2] => BtB_out.IN1
+BtB_in[2] => BtB_out.IN1
+BtB_in[2] => BtB_out.IN0
+BtB_in[3] => BtB_out.IN1
+BtB_in[3] => BtB_out.IN1
+BtB_in[3] => BtB_out.IN1
+BtB_in[3] => BtB_out.IN1
+BtB_in[3] => BtB_out.IN1
+BtB_out[0] <= BtB_out.DB_MAX_OUTPUT_PORT_TYPE
+BtB_out[1] <= BtB_out.DB_MAX_OUTPUT_PORT_TYPE
+BtB_out[2] <= BtB_out.DB_MAX_OUTPUT_PORT_TYPE
+BtB_out[3] <= BtB_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|projeto01_mv|bitToBcdToD7Seg:LedROM|d7Seg:D7S2
+S_in[0] => D_out.IN0
+S_in[0] => D_out.IN0
+S_in[0] => D_out.IN0
+S_in[0] => D_out.IN1
+S_in[0] => D_out.IN0
+S_in[0] => D_out.IN0
+S_in[0] => D_out.IN0
+S_in[0] => D_out.IN0
+S_in[1] => D_out.IN0
+S_in[1] => D_out.IN1
+S_in[1] => D_out.IN0
+S_in[1] => D_out.IN1
+S_in[1] => D_out.IN1
+S_in[1] => D_out.IN1
+S_in[1] => D_out.IN0
+S_in[1] => D_out.IN1
+S_in[1] => D_out.IN0
+S_in[2] => D_out.IN1
+S_in[2] => D_out.IN1
+S_in[2] => D_out.IN1
+S_in[2] => D_out.IN1
+S_in[2] => D_out.IN1
+S_in[2] => D_out.IN1
+S_in[2] => D_out.IN1
+S_in[2] => D_out.IN1
+S_in[2] => D_out.IN1
+S_in[3] => D_out.IN1
+S_in[3] => D_out.IN1
+S_in[3] => D_out.IN1
+S_in[3] => D_out.IN1
+S_in[3] => D_out.IN1
+D_out[0] <= D_out.DB_MAX_OUTPUT_PORT_TYPE
+D_out[1] <= D_out.DB_MAX_OUTPUT_PORT_TYPE
+D_out[2] <= D_out.DB_MAX_OUTPUT_PORT_TYPE
+D_out[3] <= D_out.DB_MAX_OUTPUT_PORT_TYPE
+D_out[4] <= D_out.DB_MAX_OUTPUT_PORT_TYPE
+D_out[5] <= D_out.DB_MAX_OUTPUT_PORT_TYPE
+D_out[6] <= D_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|projeto01_mv|bitToBcdToD7Seg:LedROM|d7Seg:D7S1
+S_in[0] => D_out.IN0
+S_in[0] => D_out.IN0
+S_in[0] => D_out.IN0
+S_in[0] => D_out.IN1
+S_in[0] => D_out.IN0
+S_in[0] => D_out.IN0
+S_in[0] => D_out.IN0
+S_in[0] => D_out.IN0
+S_in[1] => D_out.IN0
+S_in[1] => D_out.IN1
+S_in[1] => D_out.IN0
+S_in[1] => D_out.IN1
+S_in[1] => D_out.IN1
+S_in[1] => D_out.IN1
+S_in[1] => D_out.IN0
+S_in[1] => D_out.IN1
+S_in[1] => D_out.IN0
+S_in[2] => D_out.IN1
+S_in[2] => D_out.IN1
+S_in[2] => D_out.IN1
+S_in[2] => D_out.IN1
+S_in[2] => D_out.IN1
+S_in[2] => D_out.IN1
+S_in[2] => D_out.IN1
+S_in[2] => D_out.IN1
+S_in[2] => D_out.IN1
+S_in[3] => D_out.IN1
+S_in[3] => D_out.IN1
+S_in[3] => D_out.IN1
+S_in[3] => D_out.IN1
+S_in[3] => D_out.IN1
+D_out[0] <= D_out.DB_MAX_OUTPUT_PORT_TYPE
+D_out[1] <= D_out.DB_MAX_OUTPUT_PORT_TYPE
+D_out[2] <= D_out.DB_MAX_OUTPUT_PORT_TYPE
+D_out[3] <= D_out.DB_MAX_OUTPUT_PORT_TYPE
+D_out[4] <= D_out.DB_MAX_OUTPUT_PORT_TYPE
+D_out[5] <= D_out.DB_MAX_OUTPUT_PORT_TYPE
+D_out[6] <= D_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|projeto01_mv|bitToBcdToD7Seg:LedROM|d7Seg:D7S0
+S_in[0] => D_out.IN0
+S_in[0] => D_out.IN0
+S_in[0] => D_out.IN0
+S_in[0] => D_out.IN1
+S_in[0] => D_out.IN0
+S_in[0] => D_out.IN0
+S_in[0] => D_out.IN0
+S_in[0] => D_out.IN0
+S_in[1] => D_out.IN0
+S_in[1] => D_out.IN1
+S_in[1] => D_out.IN0
+S_in[1] => D_out.IN1
+S_in[1] => D_out.IN1
+S_in[1] => D_out.IN1
+S_in[1] => D_out.IN0
+S_in[1] => D_out.IN1
+S_in[1] => D_out.IN0
+S_in[2] => D_out.IN1
+S_in[2] => D_out.IN1
+S_in[2] => D_out.IN1
+S_in[2] => D_out.IN1
+S_in[2] => D_out.IN1
+S_in[2] => D_out.IN1
+S_in[2] => D_out.IN1
+S_in[2] => D_out.IN1
+S_in[2] => D_out.IN1
+S_in[3] => D_out.IN1
+S_in[3] => D_out.IN1
+S_in[3] => D_out.IN1
+S_in[3] => D_out.IN1
+S_in[3] => D_out.IN1
+D_out[0] <= D_out.DB_MAX_OUTPUT_PORT_TYPE
+D_out[1] <= D_out.DB_MAX_OUTPUT_PORT_TYPE
+D_out[2] <= D_out.DB_MAX_OUTPUT_PORT_TYPE
+D_out[3] <= D_out.DB_MAX_OUTPUT_PORT_TYPE
+D_out[4] <= D_out.DB_MAX_OUTPUT_PORT_TYPE
+D_out[5] <= D_out.DB_MAX_OUTPUT_PORT_TYPE
+D_out[6] <= D_out.DB_MAX_OUTPUT_PORT_TYPE
+
+

@@ -1,0 +1,8 @@
+|divisorClock
+clk_in => ax.CLK
+clk_in => cnt[0].CLK
+clk_in => cnt[1].CLK
+clk_in => cnt[2].CLK
+clk_out <= ax.DB_MAX_OUTPUT_PORT_TYPE
+
+

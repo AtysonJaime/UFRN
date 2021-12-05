@@ -1,0 +1,1007 @@
+Analysis & Synthesis report for projeto02
+Mon Mar 16 11:19:32 2020
+Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. Analysis & Synthesis IP Cores Summary
+ 10. State Machine - |projeto02|fifo:FIFO16x13|blocoDeControleFIFO:BlocodeControle|estado
+ 11. General Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Source assignments for romFIFO:ROM|altsyncram:altsyncram_component|altsyncram_kt71:auto_generated
+ 14. Parameter Settings for User Entity Instance: romFIFO:ROM|altsyncram:altsyncram_component
+ 15. altsyncram Parameter Settings by Entity Instance
+ 16. Port Connectivity Checks: "bitToBcd13bitsToD7Seg:DisplayContador"
+ 17. Port Connectivity Checks: "bitToBcd13bitsToD7Seg:DisplayRead|bitToBcd13bits:BtB|ciBitToBcd:ciBtB10"
+ 18. Port Connectivity Checks: "bitToBcd13bitsToD7Seg:DisplayRead|bitToBcd13bits:BtB|ciBitToBcd:ciBtB04"
+ 19. Port Connectivity Checks: "bitToBcd13bitsToD7Seg:DisplayRead|bitToBcd13bits:BtB|ciBitToBcd:ciBtB01"
+ 20. Port Connectivity Checks: "contador6Bits:Contador|ffjk:Q5"
+ 21. Port Connectivity Checks: "contador6Bits:Contador|ffjk:Q4"
+ 22. Port Connectivity Checks: "contador6Bits:Contador|ffjk:Q3"
+ 23. Port Connectivity Checks: "contador6Bits:Contador|ffjk:Q2"
+ 24. Port Connectivity Checks: "contador6Bits:Contador|ffjk:Q1"
+ 25. Port Connectivity Checks: "contador6Bits:Contador|ffjk:Q0"
+ 26. Port Connectivity Checks: "fifo:FIFO16x13|datapathFIFO:Datapath|SUM_4Bits:somador_rd1"
+ 27. Port Connectivity Checks: "fifo:FIFO16x13|datapathFIFO:Datapath|SUM_4Bits:somador_wr1"
+ 28. Port Connectivity Checks: "fifo:FIFO16x13|datapathFIFO:Datapath|Comparador_4Bits:comparador_wr_com_rd1"
+ 29. Port Connectivity Checks: "fifo:FIFO16x13|datapathFIFO:Datapath|Comparador_4Bits:comparador_wr1_com_rd"
+ 30. Port Connectivity Checks: "fifo:FIFO16x13|datapathFIFO:Datapath|Comparador_4Bits:comparador_wr_com_rd"
+ 31. Port Connectivity Checks: "fifo:FIFO16x13|datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q3"
+ 32. Port Connectivity Checks: "fifo:FIFO16x13|datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2"
+ 33. Port Connectivity Checks: "fifo:FIFO16x13|datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q1"
+ 34. Port Connectivity Checks: "fifo:FIFO16x13|datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0"
+ 35. Port Connectivity Checks: "fifo:FIFO16x13|datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg15"
+ 36. Port Connectivity Checks: "fifo:FIFO16x13|datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg14"
+ 37. Port Connectivity Checks: "fifo:FIFO16x13|datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg13"
+ 38. Port Connectivity Checks: "fifo:FIFO16x13|datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg12"
+ 39. Port Connectivity Checks: "fifo:FIFO16x13|datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg11"
+ 40. Port Connectivity Checks: "fifo:FIFO16x13|datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg10"
+ 41. Port Connectivity Checks: "fifo:FIFO16x13|datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg09"
+ 42. Port Connectivity Checks: "fifo:FIFO16x13|datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg08"
+ 43. Port Connectivity Checks: "fifo:FIFO16x13|datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg07"
+ 44. Port Connectivity Checks: "fifo:FIFO16x13|datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg06"
+ 45. Port Connectivity Checks: "fifo:FIFO16x13|datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg05"
+ 46. Port Connectivity Checks: "fifo:FIFO16x13|datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg04"
+ 47. Port Connectivity Checks: "fifo:FIFO16x13|datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg03"
+ 48. Port Connectivity Checks: "fifo:FIFO16x13|datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02"
+ 49. Port Connectivity Checks: "fifo:FIFO16x13|datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg01"
+ 50. Port Connectivity Checks: "fifo:FIFO16x13|datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00"
+ 51. Elapsed Time Per Partition
+ 52. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++---------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                    ;
++------------------------------------+--------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Mon Mar 16 11:19:32 2020      ;
+; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
+; Revision Name                      ; projeto02                                  ;
+; Top-level Entity Name              ; projeto02                                  ;
+; Family                             ; Cyclone II                                 ;
+; Total logic elements               ; 592                                        ;
+;     Total combinational functions  ; 383                                        ;
+;     Dedicated logic registers      ; 252                                        ;
+; Total registers                    ; 252                                        ;
+; Total pins                         ; 51                                         ;
+; Total virtual pins                 ; 0                                          ;
+; Total memory bits                  ; 832                                        ;
+; Embedded Multiplier 9-bit elements ; 0                                          ;
+; Total PLLs                         ; 0                                          ;
++------------------------------------+--------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP2C35F672C6       ;                    ;
+; Top-level entity name                                                      ; projeto02          ; projeto02          ;
+; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 8      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                        ;
++----------------------------------+-----------------+----------------------------------+---------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                        ; File Name with Absolute Path                                                                ; Library ;
++----------------------------------+-----------------+----------------------------------+---------------------------------------------------------------------------------------------+---------+
+; romFIFO.mif                      ; yes             ; User Memory Initialization File  ; C:/Users/Aty/Documents/UFRN/Sistemas Digitais/Projeto 02 - FIFO/romFIFO.mif                 ;         ;
+; divisorClock.vhd                 ; yes             ; User VHDL File                   ; C:/Users/Aty/Documents/UFRN/Sistemas Digitais/Projeto 02 - FIFO/divisorClock.vhd            ;         ;
+; SUM_4Bits.vhd                    ; yes             ; User VHDL File                   ; C:/Users/Aty/Documents/UFRN/Sistemas Digitais/Projeto 02 - FIFO/SUM_4Bits.vhd               ;         ;
+; SUM_2Bits.vhd                    ; yes             ; User VHDL File                   ; C:/Users/Aty/Documents/UFRN/Sistemas Digitais/Projeto 02 - FIFO/SUM_2Bits.vhd               ;         ;
+; SUM_1Bit.vhd                     ; yes             ; User VHDL File                   ; C:/Users/Aty/Documents/UFRN/Sistemas Digitais/Projeto 02 - FIFO/SUM_1Bit.vhd                ;         ;
+; romFIFO.vhd                      ; yes             ; User Wizard-Generated File       ; C:/Users/Aty/Documents/UFRN/Sistemas Digitais/Projeto 02 - FIFO/romFIFO.vhd                 ;         ;
+; reg13Bits.vhd                    ; yes             ; User VHDL File                   ; C:/Users/Aty/Documents/UFRN/Sistemas Digitais/Projeto 02 - FIFO/reg13Bits.vhd               ;         ;
+; MUX16_1_13Bits.vhd               ; yes             ; User VHDL File                   ; C:/Users/Aty/Documents/UFRN/Sistemas Digitais/Projeto 02 - FIFO/MUX16_1_13Bits.vhd          ;         ;
+; MUX2_1_13Bits.vhd                ; yes             ; User VHDL File                   ; C:/Users/Aty/Documents/UFRN/Sistemas Digitais/Projeto 02 - FIFO/MUX2_1_13Bits.vhd           ;         ;
+; fifo.vhd                         ; yes             ; User VHDL File                   ; C:/Users/Aty/Documents/UFRN/Sistemas Digitais/Projeto 02 - FIFO/fifo.vhd                    ;         ;
+; ffjk.vhd                         ; yes             ; User VHDL File                   ; C:/Users/Aty/Documents/UFRN/Sistemas Digitais/Projeto 02 - FIFO/ffjk.vhd                    ;         ;
+; decodificador1X16.vhd            ; yes             ; User VHDL File                   ; C:/Users/Aty/Documents/UFRN/Sistemas Digitais/Projeto 02 - FIFO/decodificador1X16.vhd       ;         ;
+; datapathFIFO.vhd                 ; yes             ; User VHDL File                   ; C:/Users/Aty/Documents/UFRN/Sistemas Digitais/Projeto 02 - FIFO/datapathFIFO.vhd            ;         ;
+; d7Seg.vhd                        ; yes             ; User VHDL File                   ; C:/Users/Aty/Documents/UFRN/Sistemas Digitais/Projeto 02 - FIFO/d7Seg.vhd                   ;         ;
+; contador6Bits.vhd                ; yes             ; User VHDL File                   ; C:/Users/Aty/Documents/UFRN/Sistemas Digitais/Projeto 02 - FIFO/contador6Bits.vhd           ;         ;
+; contador4Bits.vhd                ; yes             ; User VHDL File                   ; C:/Users/Aty/Documents/UFRN/Sistemas Digitais/Projeto 02 - FIFO/contador4Bits.vhd           ;         ;
+; Comparador_4Bits.vhd             ; yes             ; User VHDL File                   ; C:/Users/Aty/Documents/UFRN/Sistemas Digitais/Projeto 02 - FIFO/Comparador_4Bits.vhd        ;         ;
+; Comparador.vhd                   ; yes             ; User VHDL File                   ; C:/Users/Aty/Documents/UFRN/Sistemas Digitais/Projeto 02 - FIFO/Comparador.vhd              ;         ;
+; ciBitToBcd.vhd                   ; yes             ; User VHDL File                   ; C:/Users/Aty/Documents/UFRN/Sistemas Digitais/Projeto 02 - FIFO/ciBitToBcd.vhd              ;         ;
+; blocoDeControleFIFO.vhd          ; yes             ; User VHDL File                   ; C:/Users/Aty/Documents/UFRN/Sistemas Digitais/Projeto 02 - FIFO/blocoDeControleFIFO.vhd     ;         ;
+; bitToBcd13bitsToD7Seg.vhd        ; yes             ; User VHDL File                   ; C:/Users/Aty/Documents/UFRN/Sistemas Digitais/Projeto 02 - FIFO/bitToBcd13bitsToD7Seg.vhd   ;         ;
+; bitToBcd13bits.vhd               ; yes             ; User VHDL File                   ; C:/Users/Aty/Documents/UFRN/Sistemas Digitais/Projeto 02 - FIFO/bitToBcd13bits.vhd          ;         ;
+; bancoDeRegistrador16X13.vhd      ; yes             ; User VHDL File                   ; C:/Users/Aty/Documents/UFRN/Sistemas Digitais/Projeto 02 - FIFO/bancoDeRegistrador16X13.vhd ;         ;
+; projeto02.vhd                    ; yes             ; User VHDL File                   ; C:/Users/Aty/Documents/UFRN/Sistemas Digitais/Projeto 02 - FIFO/projeto02.vhd               ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                     ; c:/altera/13.0/quartus/libraries/megafunctions/altsyncram.tdf                               ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                     ; c:/altera/13.0/quartus/libraries/megafunctions/stratix_ram_block.inc                        ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                     ; c:/altera/13.0/quartus/libraries/megafunctions/lpm_mux.inc                                  ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                     ; c:/altera/13.0/quartus/libraries/megafunctions/lpm_decode.inc                               ;         ;
+; aglobal130.inc                   ; yes             ; Megafunction                     ; c:/altera/13.0/quartus/libraries/megafunctions/aglobal130.inc                               ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                     ; c:/altera/13.0/quartus/libraries/megafunctions/a_rdenreg.inc                                ;         ;
+; altrom.inc                       ; yes             ; Megafunction                     ; c:/altera/13.0/quartus/libraries/megafunctions/altrom.inc                                   ;         ;
+; altram.inc                       ; yes             ; Megafunction                     ; c:/altera/13.0/quartus/libraries/megafunctions/altram.inc                                   ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                     ; c:/altera/13.0/quartus/libraries/megafunctions/altdpram.inc                                 ;         ;
+; db/altsyncram_kt71.tdf           ; yes             ; Auto-Generated Megafunction      ; C:/Users/Aty/Documents/UFRN/Sistemas Digitais/Projeto 02 - FIFO/db/altsyncram_kt71.tdf      ;         ;
++----------------------------------+-----------------+----------------------------------+---------------------------------------------------------------------------------------------+---------+
+
+
++----------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                          ;
++---------------------------------------------+------------------------+
+; Resource                                    ; Usage                  ;
++---------------------------------------------+------------------------+
+; Estimated Total logic elements              ; 592                    ;
+;                                             ;                        ;
+; Total combinational functions               ; 383                    ;
+; Logic element usage by number of LUT inputs ;                        ;
+;     -- 4 input functions                    ; 309                    ;
+;     -- 3 input functions                    ; 26                     ;
+;     -- <=2 input functions                  ; 48                     ;
+;                                             ;                        ;
+; Logic elements by mode                      ;                        ;
+;     -- normal mode                          ; 360                    ;
+;     -- arithmetic mode                      ; 23                     ;
+;                                             ;                        ;
+; Total registers                             ; 252                    ;
+;     -- Dedicated logic registers            ; 252                    ;
+;     -- I/O registers                        ; 0                      ;
+;                                             ;                        ;
+; I/O pins                                    ; 51                     ;
+; Total memory bits                           ; 832                    ;
+; Embedded Multiplier 9-bit elements          ; 0                      ;
+; Maximum fan-out node                        ; divisorClock:DClock|ax ;
+; Maximum fan-out                             ; 241                    ;
+; Total fan-out                               ; 2485                   ;
+; Average fan-out                             ; 3.56                   ;
++---------------------------------------------+------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                            ;
++---------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                              ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                       ; Library Name ;
++---------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; |projeto02                                              ; 383 (0)           ; 252 (0)      ; 832         ; 0            ; 0       ; 0         ; 51   ; 0            ; |projeto02                                                                                                                                ;              ;
+;    |bitToBcd13bitsToD7Seg:DisplayContador|              ; 25 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|bitToBcd13bitsToD7Seg:DisplayContador                                                                                          ;              ;
+;       |bitToBcd13bits:BtB|                              ; 9 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|bitToBcd13bitsToD7Seg:DisplayContador|bitToBcd13bits:BtB                                                                       ;              ;
+;          |ciBitToBcd:ciBtB15|                           ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|bitToBcd13bitsToD7Seg:DisplayContador|bitToBcd13bits:BtB|ciBitToBcd:ciBtB15                                                    ;              ;
+;          |ciBitToBcd:ciBtB18|                           ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|bitToBcd13bitsToD7Seg:DisplayContador|bitToBcd13bits:BtB|ciBitToBcd:ciBtB18                                                    ;              ;
+;          |ciBitToBcd:ciBtB21|                           ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|bitToBcd13bitsToD7Seg:DisplayContador|bitToBcd13bits:BtB|ciBitToBcd:ciBtB21                                                    ;              ;
+;       |d7Seg:D7S0|                                      ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|bitToBcd13bitsToD7Seg:DisplayContador|d7Seg:D7S0                                                                               ;              ;
+;       |d7Seg:D7S1|                                      ; 9 (9)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|bitToBcd13bitsToD7Seg:DisplayContador|d7Seg:D7S1                                                                               ;              ;
+;    |bitToBcd13bitsToD7Seg:DisplayRead|                  ; 109 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|bitToBcd13bitsToD7Seg:DisplayRead                                                                                              ;              ;
+;       |bitToBcd13bits:BtB|                              ; 81 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|bitToBcd13bitsToD7Seg:DisplayRead|bitToBcd13bits:BtB                                                                           ;              ;
+;          |ciBitToBcd:ciBtB01|                           ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|bitToBcd13bitsToD7Seg:DisplayRead|bitToBcd13bits:BtB|ciBitToBcd:ciBtB01                                                        ;              ;
+;          |ciBitToBcd:ciBtB02|                           ; 9 (9)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|bitToBcd13bitsToD7Seg:DisplayRead|bitToBcd13bits:BtB|ciBitToBcd:ciBtB02                                                        ;              ;
+;          |ciBitToBcd:ciBtB03|                           ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|bitToBcd13bitsToD7Seg:DisplayRead|bitToBcd13bits:BtB|ciBitToBcd:ciBtB03                                                        ;              ;
+;          |ciBitToBcd:ciBtB04|                           ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|bitToBcd13bitsToD7Seg:DisplayRead|bitToBcd13bits:BtB|ciBitToBcd:ciBtB04                                                        ;              ;
+;          |ciBitToBcd:ciBtB05|                           ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|bitToBcd13bitsToD7Seg:DisplayRead|bitToBcd13bits:BtB|ciBitToBcd:ciBtB05                                                        ;              ;
+;          |ciBitToBcd:ciBtB06|                           ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|bitToBcd13bitsToD7Seg:DisplayRead|bitToBcd13bits:BtB|ciBitToBcd:ciBtB06                                                        ;              ;
+;          |ciBitToBcd:ciBtB07|                           ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|bitToBcd13bitsToD7Seg:DisplayRead|bitToBcd13bits:BtB|ciBitToBcd:ciBtB07                                                        ;              ;
+;          |ciBitToBcd:ciBtB08|                           ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|bitToBcd13bitsToD7Seg:DisplayRead|bitToBcd13bits:BtB|ciBitToBcd:ciBtB08                                                        ;              ;
+;          |ciBitToBcd:ciBtB09|                           ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|bitToBcd13bitsToD7Seg:DisplayRead|bitToBcd13bits:BtB|ciBitToBcd:ciBtB09                                                        ;              ;
+;          |ciBitToBcd:ciBtB10|                           ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|bitToBcd13bitsToD7Seg:DisplayRead|bitToBcd13bits:BtB|ciBitToBcd:ciBtB10                                                        ;              ;
+;          |ciBitToBcd:ciBtB11|                           ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|bitToBcd13bitsToD7Seg:DisplayRead|bitToBcd13bits:BtB|ciBitToBcd:ciBtB11                                                        ;              ;
+;          |ciBitToBcd:ciBtB12|                           ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|bitToBcd13bitsToD7Seg:DisplayRead|bitToBcd13bits:BtB|ciBitToBcd:ciBtB12                                                        ;              ;
+;          |ciBitToBcd:ciBtB13|                           ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|bitToBcd13bitsToD7Seg:DisplayRead|bitToBcd13bits:BtB|ciBitToBcd:ciBtB13                                                        ;              ;
+;          |ciBitToBcd:ciBtB14|                           ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|bitToBcd13bitsToD7Seg:DisplayRead|bitToBcd13bits:BtB|ciBitToBcd:ciBtB14                                                        ;              ;
+;          |ciBitToBcd:ciBtB15|                           ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|bitToBcd13bitsToD7Seg:DisplayRead|bitToBcd13bits:BtB|ciBitToBcd:ciBtB15                                                        ;              ;
+;          |ciBitToBcd:ciBtB16|                           ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|bitToBcd13bitsToD7Seg:DisplayRead|bitToBcd13bits:BtB|ciBitToBcd:ciBtB16                                                        ;              ;
+;          |ciBitToBcd:ciBtB17|                           ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|bitToBcd13bitsToD7Seg:DisplayRead|bitToBcd13bits:BtB|ciBitToBcd:ciBtB17                                                        ;              ;
+;          |ciBitToBcd:ciBtB18|                           ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|bitToBcd13bitsToD7Seg:DisplayRead|bitToBcd13bits:BtB|ciBitToBcd:ciBtB18                                                        ;              ;
+;          |ciBitToBcd:ciBtB19|                           ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|bitToBcd13bitsToD7Seg:DisplayRead|bitToBcd13bits:BtB|ciBitToBcd:ciBtB19                                                        ;              ;
+;          |ciBitToBcd:ciBtB20|                           ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|bitToBcd13bitsToD7Seg:DisplayRead|bitToBcd13bits:BtB|ciBitToBcd:ciBtB20                                                        ;              ;
+;          |ciBitToBcd:ciBtB21|                           ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|bitToBcd13bitsToD7Seg:DisplayRead|bitToBcd13bits:BtB|ciBitToBcd:ciBtB21                                                        ;              ;
+;       |d7Seg:D7S0|                                      ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|bitToBcd13bitsToD7Seg:DisplayRead|d7Seg:D7S0                                                                                   ;              ;
+;       |d7Seg:D7S1|                                      ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|bitToBcd13bitsToD7Seg:DisplayRead|d7Seg:D7S1                                                                                   ;              ;
+;       |d7Seg:D7S2|                                      ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|bitToBcd13bitsToD7Seg:DisplayRead|d7Seg:D7S2                                                                                   ;              ;
+;       |d7Seg:D7S3|                                      ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|bitToBcd13bitsToD7Seg:DisplayRead|d7Seg:D7S3                                                                                   ;              ;
+;    |contador6Bits:Contador|                             ; 7 (1)             ; 6 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|contador6Bits:Contador                                                                                                         ;              ;
+;       |ffjk:Q0|                                         ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|contador6Bits:Contador|ffjk:Q0                                                                                                 ;              ;
+;       |ffjk:Q1|                                         ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|contador6Bits:Contador|ffjk:Q1                                                                                                 ;              ;
+;       |ffjk:Q2|                                         ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|contador6Bits:Contador|ffjk:Q2                                                                                                 ;              ;
+;       |ffjk:Q3|                                         ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|contador6Bits:Contador|ffjk:Q3                                                                                                 ;              ;
+;       |ffjk:Q4|                                         ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|contador6Bits:Contador|ffjk:Q4                                                                                                 ;              ;
+;       |ffjk:Q5|                                         ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|contador6Bits:Contador|ffjk:Q5                                                                                                 ;              ;
+;    |divisorClock:DClock|                                ; 47 (47)           ; 25 (25)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|divisorClock:DClock                                                                                                            ;              ;
+;    |fifo:FIFO16x13|                                     ; 195 (0)           ; 221 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|fifo:FIFO16x13                                                                                                                 ;              ;
+;       |blocoDeControleFIFO:BlocodeControle|             ; 15 (15)           ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|fifo:FIFO16x13|blocoDeControleFIFO:BlocodeControle                                                                             ;              ;
+;       |datapathFIFO:Datapath|                           ; 180 (0)           ; 216 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|fifo:FIFO16x13|datapathFIFO:Datapath                                                                                           ;              ;
+;          |Comparador_4Bits:comparador_wr1_com_rd|       ; 3 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|fifo:FIFO16x13|datapathFIFO:Datapath|Comparador_4Bits:comparador_wr1_com_rd                                                    ;              ;
+;             |Comparador:Comp2|                          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|fifo:FIFO16x13|datapathFIFO:Datapath|Comparador_4Bits:comparador_wr1_com_rd|Comparador:Comp2                                   ;              ;
+;             |Comparador:Comp4|                          ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|fifo:FIFO16x13|datapathFIFO:Datapath|Comparador_4Bits:comparador_wr1_com_rd|Comparador:Comp4                                   ;              ;
+;          |Comparador_4Bits:comparador_wr_com_rd1|       ; 3 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|fifo:FIFO16x13|datapathFIFO:Datapath|Comparador_4Bits:comparador_wr_com_rd1                                                    ;              ;
+;             |Comparador:Comp2|                          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|fifo:FIFO16x13|datapathFIFO:Datapath|Comparador_4Bits:comparador_wr_com_rd1|Comparador:Comp2                                   ;              ;
+;             |Comparador:Comp4|                          ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|fifo:FIFO16x13|datapathFIFO:Datapath|Comparador_4Bits:comparador_wr_com_rd1|Comparador:Comp4                                   ;              ;
+;          |Comparador_4Bits:comparador_wr_com_rd|        ; 4 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|fifo:FIFO16x13|datapathFIFO:Datapath|Comparador_4Bits:comparador_wr_com_rd                                                     ;              ;
+;             |Comparador:Comp1|                          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|fifo:FIFO16x13|datapathFIFO:Datapath|Comparador_4Bits:comparador_wr_com_rd|Comparador:Comp1                                    ;              ;
+;             |Comparador:Comp4|                          ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|fifo:FIFO16x13|datapathFIFO:Datapath|Comparador_4Bits:comparador_wr_com_rd|Comparador:Comp4                                    ;              ;
+;          |SUM_4Bits:somador_rd1|                        ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|fifo:FIFO16x13|datapathFIFO:Datapath|SUM_4Bits:somador_rd1                                                                     ;              ;
+;             |SUM_2Bits:SUM02|                           ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|fifo:FIFO16x13|datapathFIFO:Datapath|SUM_4Bits:somador_rd1|SUM_2Bits:SUM02                                                     ;              ;
+;                |SUM_1Bit:SUM01|                         ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|fifo:FIFO16x13|datapathFIFO:Datapath|SUM_4Bits:somador_rd1|SUM_2Bits:SUM02|SUM_1Bit:SUM01                                      ;              ;
+;          |SUM_4Bits:somador_wr1|                        ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|fifo:FIFO16x13|datapathFIFO:Datapath|SUM_4Bits:somador_wr1                                                                     ;              ;
+;             |SUM_2Bits:SUM02|                           ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|fifo:FIFO16x13|datapathFIFO:Datapath|SUM_4Bits:somador_wr1|SUM_2Bits:SUM02                                                     ;              ;
+;                |SUM_1Bit:SUM01|                         ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|fifo:FIFO16x13|datapathFIFO:Datapath|SUM_4Bits:somador_wr1|SUM_2Bits:SUM02|SUM_1Bit:SUM01                                      ;              ;
+;          |bancoDeRegistrador16X13:BancoDeRegistradores| ; 158 (0)           ; 208 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|fifo:FIFO16x13|datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores                                              ;              ;
+;             |MUX16_1_13Bits:MUX_rd|                     ; 140 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|fifo:FIFO16x13|datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|MUX16_1_13Bits:MUX_rd                        ;              ;
+;                |MUX2_1_13Bits:muxFinal|                 ; 140 (140)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|fifo:FIFO16x13|datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|MUX16_1_13Bits:MUX_rd|MUX2_1_13Bits:muxFinal ;              ;
+;             |decodificador1X16:Dec_wr|                  ; 18 (18)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|fifo:FIFO16x13|datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|decodificador1X16:Dec_wr                     ;              ;
+;             |reg13Bits:Reg00|                           ; 0 (0)             ; 13 (13)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|fifo:FIFO16x13|datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00                              ;              ;
+;             |reg13Bits:Reg01|                           ; 0 (0)             ; 13 (13)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|fifo:FIFO16x13|datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg01                              ;              ;
+;             |reg13Bits:Reg02|                           ; 0 (0)             ; 13 (13)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|fifo:FIFO16x13|datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02                              ;              ;
+;             |reg13Bits:Reg03|                           ; 0 (0)             ; 13 (13)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|fifo:FIFO16x13|datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg03                              ;              ;
+;             |reg13Bits:Reg04|                           ; 0 (0)             ; 13 (13)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|fifo:FIFO16x13|datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg04                              ;              ;
+;             |reg13Bits:Reg05|                           ; 0 (0)             ; 13 (13)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|fifo:FIFO16x13|datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg05                              ;              ;
+;             |reg13Bits:Reg06|                           ; 0 (0)             ; 13 (13)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|fifo:FIFO16x13|datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg06                              ;              ;
+;             |reg13Bits:Reg07|                           ; 0 (0)             ; 13 (13)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|fifo:FIFO16x13|datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg07                              ;              ;
+;             |reg13Bits:Reg08|                           ; 0 (0)             ; 13 (13)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|fifo:FIFO16x13|datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg08                              ;              ;
+;             |reg13Bits:Reg09|                           ; 0 (0)             ; 13 (13)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|fifo:FIFO16x13|datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg09                              ;              ;
+;             |reg13Bits:Reg10|                           ; 0 (0)             ; 13 (13)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|fifo:FIFO16x13|datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg10                              ;              ;
+;             |reg13Bits:Reg11|                           ; 0 (0)             ; 13 (13)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|fifo:FIFO16x13|datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg11                              ;              ;
+;             |reg13Bits:Reg12|                           ; 0 (0)             ; 13 (13)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|fifo:FIFO16x13|datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg12                              ;              ;
+;             |reg13Bits:Reg13|                           ; 0 (0)             ; 13 (13)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|fifo:FIFO16x13|datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg13                              ;              ;
+;             |reg13Bits:Reg14|                           ; 0 (0)             ; 13 (13)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|fifo:FIFO16x13|datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg14                              ;              ;
+;             |reg13Bits:Reg15|                           ; 0 (0)             ; 13 (13)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|fifo:FIFO16x13|datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg15                              ;              ;
+;          |contador4Bits:Contador_RD|                    ; 5 (1)             ; 4 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|fifo:FIFO16x13|datapathFIFO:Datapath|contador4Bits:Contador_RD                                                                 ;              ;
+;             |ffjk:Q0|                                   ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|fifo:FIFO16x13|datapathFIFO:Datapath|contador4Bits:Contador_RD|ffjk:Q0                                                         ;              ;
+;             |ffjk:Q1|                                   ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|fifo:FIFO16x13|datapathFIFO:Datapath|contador4Bits:Contador_RD|ffjk:Q1                                                         ;              ;
+;             |ffjk:Q2|                                   ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|fifo:FIFO16x13|datapathFIFO:Datapath|contador4Bits:Contador_RD|ffjk:Q2                                                         ;              ;
+;             |ffjk:Q3|                                   ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|fifo:FIFO16x13|datapathFIFO:Datapath|contador4Bits:Contador_RD|ffjk:Q3                                                         ;              ;
+;          |contador4Bits:Contador_WR|                    ; 5 (1)             ; 4 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|fifo:FIFO16x13|datapathFIFO:Datapath|contador4Bits:Contador_WR                                                                 ;              ;
+;             |ffjk:Q0|                                   ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|fifo:FIFO16x13|datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0                                                         ;              ;
+;             |ffjk:Q1|                                   ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|fifo:FIFO16x13|datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q1                                                         ;              ;
+;             |ffjk:Q2|                                   ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|fifo:FIFO16x13|datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2                                                         ;              ;
+;             |ffjk:Q3|                                   ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|fifo:FIFO16x13|datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q3                                                         ;              ;
+;    |romFIFO:ROM|                                        ; 0 (0)             ; 0 (0)        ; 832         ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|romFIFO:ROM                                                                                                                    ;              ;
+;       |altsyncram:altsyncram_component|                 ; 0 (0)             ; 0 (0)        ; 832         ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|romFIFO:ROM|altsyncram:altsyncram_component                                                                                    ;              ;
+;          |altsyncram_kt71:auto_generated|               ; 0 (0)             ; 0 (0)        ; 832         ; 0            ; 0       ; 0         ; 0    ; 0            ; |projeto02|romFIFO:ROM|altsyncram:altsyncram_component|altsyncram_kt71:auto_generated                                                     ;              ;
++---------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                     ;
++---------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+-------------+
+; Name                                                                                  ; Type ; Mode ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF         ;
++---------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+-------------+
+; romFIFO:ROM|altsyncram:altsyncram_component|altsyncram_kt71:auto_generated|ALTSYNCRAM ; AUTO ; ROM  ; 64           ; 13           ; --           ; --           ; 832  ; romFIFO.mif ;
++---------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                                                                ;
++--------+--------------+---------+--------------+--------------+------------------------+-----------------------------------------------------------------------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance        ; IP Include File                                                             ;
++--------+--------------+---------+--------------+--------------+------------------------+-----------------------------------------------------------------------------+
+; Altera ; ROM: 1-PORT  ; N/A     ; N/A          ; N/A          ; |projeto02|romFIFO:ROM ; C:/Users/Aty/Documents/UFRN/Sistemas Digitais/Projeto 02 - FIFO/romFIFO.vhd ;
++--------+--------------+---------+--------------+--------------+------------------------+-----------------------------------------------------------------------------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------------+
+; State Machine - |projeto02|fifo:FIFO16x13|blocoDeControleFIFO:BlocodeControle|estado                    ;
++------------------+----------------+------------------+----------------+------------------+--------------+
+; Name             ; estado.leitura ; estado.p_escrita ; estado.escrita ; estado.p_leitura ; estado.start ;
++------------------+----------------+------------------+----------------+------------------+--------------+
+; estado.start     ; 0              ; 0                ; 0              ; 0                ; 0            ;
+; estado.p_leitura ; 0              ; 0                ; 0              ; 1                ; 1            ;
+; estado.escrita   ; 0              ; 0                ; 1              ; 0                ; 1            ;
+; estado.p_escrita ; 0              ; 1                ; 0              ; 0                ; 1            ;
+; estado.leitura   ; 1              ; 0                ; 0              ; 0                ; 1            ;
++------------------+----------------+------------------+----------------+------------------+--------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 252   ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 227   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 208   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                                                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+; 16:1               ; 13 bits   ; 130 LEs       ; 130 LEs              ; 0 LEs                  ; No         ; |projeto02|fifo:FIFO16x13|datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|MUX16_1_13Bits:MUX_rd|MUX2_1_13Bits:muxFinal|d ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Source assignments for romFIFO:ROM|altsyncram:altsyncram_component|altsyncram_kt71:auto_generated ;
++---------------------------------+--------------------+------+-------------------------------------+
+; Assignment                      ; Value              ; From ; To                                  ;
++---------------------------------+--------------------+------+-------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                   ;
++---------------------------------+--------------------+------+-------------------------------------+
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: romFIFO:ROM|altsyncram:altsyncram_component ;
++------------------------------------+----------------------+------------------------------+
+; Parameter Name                     ; Value                ; Type                         ;
++------------------------------------+----------------------+------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                      ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                   ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                 ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                 ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE               ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                      ;
+; OPERATION_MODE                     ; ROM                  ; Untyped                      ;
+; WIDTH_A                            ; 13                   ; Signed Integer               ;
+; WIDTHAD_A                          ; 6                    ; Signed Integer               ;
+; NUMWORDS_A                         ; 64                   ; Signed Integer               ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                      ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                      ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                      ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                      ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                      ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                      ;
+; WIDTH_B                            ; 1                    ; Untyped                      ;
+; WIDTHAD_B                          ; 1                    ; Untyped                      ;
+; NUMWORDS_B                         ; 1                    ; Untyped                      ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                      ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                      ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                      ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                      ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                      ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                      ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                      ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                      ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                      ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                      ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                      ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                      ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer               ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                      ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                      ;
+; BYTE_SIZE                          ; 8                    ; Untyped                      ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                      ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                      ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                      ;
+; INIT_FILE                          ; romFIFO.mif          ; Untyped                      ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                      ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                      ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                      ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                      ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                      ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                      ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                      ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                      ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                      ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                      ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                      ;
+; DEVICE_FAMILY                      ; Cyclone II           ; Untyped                      ;
+; CBXI_PARAMETER                     ; altsyncram_kt71      ; Untyped                      ;
++------------------------------------+----------------------+------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                        ;
++-------------------------------------------+---------------------------------------------+
+; Name                                      ; Value                                       ;
++-------------------------------------------+---------------------------------------------+
+; Number of entity instances                ; 1                                           ;
+; Entity Instance                           ; romFIFO:ROM|altsyncram:altsyncram_component ;
+;     -- OPERATION_MODE                     ; ROM                                         ;
+;     -- WIDTH_A                            ; 13                                          ;
+;     -- NUMWORDS_A                         ; 64                                          ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                ;
+;     -- WIDTH_B                            ; 1                                           ;
+;     -- NUMWORDS_B                         ; 1                                           ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                      ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                        ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                   ;
++-------------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "bitToBcd13bitsToD7Seg:DisplayContador"                                                      ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port         ; Type   ; Severity ; Details                                                                             ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; sw_in[12..6] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; hex2         ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; hex3         ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "bitToBcd13bitsToD7Seg:DisplayRead|bitToBcd13bits:BtB|ciBitToBcd:ciBtB10" ;
++-----------+-------+----------+----------------------------------------------------------------------+
+; Port      ; Type  ; Severity ; Details                                                              ;
++-----------+-------+----------+----------------------------------------------------------------------+
+; btb_in[3] ; Input ; Info     ; Stuck at GND                                                         ;
++-----------+-------+----------+----------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "bitToBcd13bitsToD7Seg:DisplayRead|bitToBcd13bits:BtB|ciBitToBcd:ciBtB04" ;
++-----------+-------+----------+----------------------------------------------------------------------+
+; Port      ; Type  ; Severity ; Details                                                              ;
++-----------+-------+----------+----------------------------------------------------------------------+
+; btb_in[3] ; Input ; Info     ; Stuck at GND                                                         ;
++-----------+-------+----------+----------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "bitToBcd13bitsToD7Seg:DisplayRead|bitToBcd13bits:BtB|ciBitToBcd:ciBtB01" ;
++-----------+-------+----------+----------------------------------------------------------------------+
+; Port      ; Type  ; Severity ; Details                                                              ;
++-----------+-------+----------+----------------------------------------------------------------------+
+; btb_in[3] ; Input ; Info     ; Stuck at GND                                                         ;
++-----------+-------+----------+----------------------------------------------------------------------+
+
+
++------------------------------------------------------------+
+; Port Connectivity Checks: "contador6Bits:Contador|ffjk:Q5" ;
++------+-------+----------+----------------------------------+
+; Port ; Type  ; Severity ; Details                          ;
++------+-------+----------+----------------------------------+
+; p    ; Input ; Info     ; Stuck at VCC                     ;
++------+-------+----------+----------------------------------+
+
+
++------------------------------------------------------------+
+; Port Connectivity Checks: "contador6Bits:Contador|ffjk:Q4" ;
++------+-------+----------+----------------------------------+
+; Port ; Type  ; Severity ; Details                          ;
++------+-------+----------+----------------------------------+
+; p    ; Input ; Info     ; Stuck at VCC                     ;
++------+-------+----------+----------------------------------+
+
+
++------------------------------------------------------------+
+; Port Connectivity Checks: "contador6Bits:Contador|ffjk:Q3" ;
++------+-------+----------+----------------------------------+
+; Port ; Type  ; Severity ; Details                          ;
++------+-------+----------+----------------------------------+
+; p    ; Input ; Info     ; Stuck at VCC                     ;
++------+-------+----------+----------------------------------+
+
+
++------------------------------------------------------------+
+; Port Connectivity Checks: "contador6Bits:Contador|ffjk:Q2" ;
++------+-------+----------+----------------------------------+
+; Port ; Type  ; Severity ; Details                          ;
++------+-------+----------+----------------------------------+
+; p    ; Input ; Info     ; Stuck at VCC                     ;
++------+-------+----------+----------------------------------+
+
+
++------------------------------------------------------------+
+; Port Connectivity Checks: "contador6Bits:Contador|ffjk:Q1" ;
++------+-------+----------+----------------------------------+
+; Port ; Type  ; Severity ; Details                          ;
++------+-------+----------+----------------------------------+
+; p    ; Input ; Info     ; Stuck at VCC                     ;
++------+-------+----------+----------------------------------+
+
+
++------------------------------------------------------------+
+; Port Connectivity Checks: "contador6Bits:Contador|ffjk:Q0" ;
++------+-------+----------+----------------------------------+
+; Port ; Type  ; Severity ; Details                          ;
++------+-------+----------+----------------------------------+
+; p    ; Input ; Info     ; Stuck at VCC                     ;
++------+-------+----------+----------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "fifo:FIFO16x13|datapathFIFO:Datapath|SUM_4Bits:somador_rd1"                                ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                             ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; b4_in[3..1] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; b4_in[0]    ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; c4_in       ; Input  ; Info     ; Stuck at GND                                                                        ;
+; c4_out      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "fifo:FIFO16x13|datapathFIFO:Datapath|SUM_4Bits:somador_wr1"                                ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                             ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; b4_in[3..1] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; b4_in[0]    ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; c4_in       ; Input  ; Info     ; Stuck at GND                                                                        ;
+; c4_out      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "fifo:FIFO16x13|datapathFIFO:Datapath|Comparador_4Bits:comparador_wr_com_rd1"        ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; gt   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; lt   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; eq   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; altb ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; agtb ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "fifo:FIFO16x13|datapathFIFO:Datapath|Comparador_4Bits:comparador_wr1_com_rd"        ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; gt   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; lt   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; eq   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; altb ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; agtb ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "fifo:FIFO16x13|datapathFIFO:Datapath|Comparador_4Bits:comparador_wr_com_rd"         ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; gt   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; lt   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; eq   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; altb ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; agtb ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "fifo:FIFO16x13|datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q3" ;
++------+-------+----------+--------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                  ;
++------+-------+----------+--------------------------------------------------------------------------+
+; p    ; Input ; Info     ; Stuck at VCC                                                             ;
++------+-------+----------+--------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "fifo:FIFO16x13|datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q2" ;
++------+-------+----------+--------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                  ;
++------+-------+----------+--------------------------------------------------------------------------+
+; p    ; Input ; Info     ; Stuck at VCC                                                             ;
++------+-------+----------+--------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "fifo:FIFO16x13|datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q1" ;
++------+-------+----------+--------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                  ;
++------+-------+----------+--------------------------------------------------------------------------+
+; p    ; Input ; Info     ; Stuck at VCC                                                             ;
++------+-------+----------+--------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "fifo:FIFO16x13|datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0" ;
++------+-------+----------+--------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                  ;
++------+-------+----------+--------------------------------------------------------------------------+
+; p    ; Input ; Info     ; Stuck at VCC                                                             ;
++------+-------+----------+--------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "fifo:FIFO16x13|datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg15" ;
++--------+-------+----------+---------------------------------------------------------------------------------------------------+
+; Port   ; Type  ; Severity ; Details                                                                                           ;
++--------+-------+----------+---------------------------------------------------------------------------------------------------+
+; preset ; Input ; Info     ; Stuck at VCC                                                                                      ;
++--------+-------+----------+---------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "fifo:FIFO16x13|datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg14" ;
++--------+-------+----------+---------------------------------------------------------------------------------------------------+
+; Port   ; Type  ; Severity ; Details                                                                                           ;
++--------+-------+----------+---------------------------------------------------------------------------------------------------+
+; preset ; Input ; Info     ; Stuck at VCC                                                                                      ;
++--------+-------+----------+---------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "fifo:FIFO16x13|datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg13" ;
++--------+-------+----------+---------------------------------------------------------------------------------------------------+
+; Port   ; Type  ; Severity ; Details                                                                                           ;
++--------+-------+----------+---------------------------------------------------------------------------------------------------+
+; preset ; Input ; Info     ; Stuck at VCC                                                                                      ;
++--------+-------+----------+---------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "fifo:FIFO16x13|datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg12" ;
++--------+-------+----------+---------------------------------------------------------------------------------------------------+
+; Port   ; Type  ; Severity ; Details                                                                                           ;
++--------+-------+----------+---------------------------------------------------------------------------------------------------+
+; preset ; Input ; Info     ; Stuck at VCC                                                                                      ;
++--------+-------+----------+---------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "fifo:FIFO16x13|datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg11" ;
++--------+-------+----------+---------------------------------------------------------------------------------------------------+
+; Port   ; Type  ; Severity ; Details                                                                                           ;
++--------+-------+----------+---------------------------------------------------------------------------------------------------+
+; preset ; Input ; Info     ; Stuck at VCC                                                                                      ;
++--------+-------+----------+---------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "fifo:FIFO16x13|datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg10" ;
++--------+-------+----------+---------------------------------------------------------------------------------------------------+
+; Port   ; Type  ; Severity ; Details                                                                                           ;
++--------+-------+----------+---------------------------------------------------------------------------------------------------+
+; preset ; Input ; Info     ; Stuck at VCC                                                                                      ;
++--------+-------+----------+---------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "fifo:FIFO16x13|datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg09" ;
++--------+-------+----------+---------------------------------------------------------------------------------------------------+
+; Port   ; Type  ; Severity ; Details                                                                                           ;
++--------+-------+----------+---------------------------------------------------------------------------------------------------+
+; preset ; Input ; Info     ; Stuck at VCC                                                                                      ;
++--------+-------+----------+---------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "fifo:FIFO16x13|datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg08" ;
++--------+-------+----------+---------------------------------------------------------------------------------------------------+
+; Port   ; Type  ; Severity ; Details                                                                                           ;
++--------+-------+----------+---------------------------------------------------------------------------------------------------+
+; preset ; Input ; Info     ; Stuck at VCC                                                                                      ;
++--------+-------+----------+---------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "fifo:FIFO16x13|datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg07" ;
++--------+-------+----------+---------------------------------------------------------------------------------------------------+
+; Port   ; Type  ; Severity ; Details                                                                                           ;
++--------+-------+----------+---------------------------------------------------------------------------------------------------+
+; preset ; Input ; Info     ; Stuck at VCC                                                                                      ;
++--------+-------+----------+---------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "fifo:FIFO16x13|datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg06" ;
++--------+-------+----------+---------------------------------------------------------------------------------------------------+
+; Port   ; Type  ; Severity ; Details                                                                                           ;
++--------+-------+----------+---------------------------------------------------------------------------------------------------+
+; preset ; Input ; Info     ; Stuck at VCC                                                                                      ;
++--------+-------+----------+---------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "fifo:FIFO16x13|datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg05" ;
++--------+-------+----------+---------------------------------------------------------------------------------------------------+
+; Port   ; Type  ; Severity ; Details                                                                                           ;
++--------+-------+----------+---------------------------------------------------------------------------------------------------+
+; preset ; Input ; Info     ; Stuck at VCC                                                                                      ;
++--------+-------+----------+---------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "fifo:FIFO16x13|datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg04" ;
++--------+-------+----------+---------------------------------------------------------------------------------------------------+
+; Port   ; Type  ; Severity ; Details                                                                                           ;
++--------+-------+----------+---------------------------------------------------------------------------------------------------+
+; preset ; Input ; Info     ; Stuck at VCC                                                                                      ;
++--------+-------+----------+---------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "fifo:FIFO16x13|datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg03" ;
++--------+-------+----------+---------------------------------------------------------------------------------------------------+
+; Port   ; Type  ; Severity ; Details                                                                                           ;
++--------+-------+----------+---------------------------------------------------------------------------------------------------+
+; preset ; Input ; Info     ; Stuck at VCC                                                                                      ;
++--------+-------+----------+---------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "fifo:FIFO16x13|datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg02" ;
++--------+-------+----------+---------------------------------------------------------------------------------------------------+
+; Port   ; Type  ; Severity ; Details                                                                                           ;
++--------+-------+----------+---------------------------------------------------------------------------------------------------+
+; preset ; Input ; Info     ; Stuck at VCC                                                                                      ;
++--------+-------+----------+---------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "fifo:FIFO16x13|datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg01" ;
++--------+-------+----------+---------------------------------------------------------------------------------------------------+
+; Port   ; Type  ; Severity ; Details                                                                                           ;
++--------+-------+----------+---------------------------------------------------------------------------------------------------+
+; preset ; Input ; Info     ; Stuck at VCC                                                                                      ;
++--------+-------+----------+---------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "fifo:FIFO16x13|datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00" ;
++--------+-------+----------+---------------------------------------------------------------------------------------------------+
+; Port   ; Type  ; Severity ; Details                                                                                           ;
++--------+-------+----------+---------------------------------------------------------------------------------------------------+
+; preset ; Input ; Info     ; Stuck at VCC                                                                                      ;
++--------+-------+----------+---------------------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:03     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
+    Info: Processing started: Mon Mar 16 11:19:25 2020
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off projeto02 -c projeto02
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 2 design units, including 1 entities, in source file divisorclock.vhd
+    Info (12022): Found design unit 1: divisorClock-ckt
+    Info (12023): Found entity 1: divisorClock
+Info (12021): Found 2 design units, including 1 entities, in source file sum_4bits.vhd
+    Info (12022): Found design unit 1: SUM_4Bits-ckt
+    Info (12023): Found entity 1: SUM_4Bits
+Info (12021): Found 2 design units, including 1 entities, in source file sum_2bits.vhd
+    Info (12022): Found design unit 1: SUM_2Bits-ckt
+    Info (12023): Found entity 1: SUM_2Bits
+Info (12021): Found 2 design units, including 1 entities, in source file sum_1bit.vhd
+    Info (12022): Found design unit 1: SUM_1Bit-ckt
+    Info (12023): Found entity 1: SUM_1Bit
+Info (12021): Found 2 design units, including 1 entities, in source file romfifo.vhd
+    Info (12022): Found design unit 1: romfifo-SYN
+    Info (12023): Found entity 1: romFIFO
+Info (12021): Found 2 design units, including 1 entities, in source file reg13bits.vhd
+    Info (12022): Found design unit 1: reg13Bits-ckt
+    Info (12023): Found entity 1: reg13Bits
+Info (12021): Found 2 design units, including 1 entities, in source file mux16_1_13bits.vhd
+    Info (12022): Found design unit 1: MUX16_1_13Bits-ckt
+    Info (12023): Found entity 1: MUX16_1_13Bits
+Info (12021): Found 2 design units, including 1 entities, in source file mux2_1_13bits.vhd
+    Info (12022): Found design unit 1: MUX2_1_13Bits-ckt
+    Info (12023): Found entity 1: MUX2_1_13Bits
+Info (12021): Found 2 design units, including 1 entities, in source file fifo.vhd
+    Info (12022): Found design unit 1: fifo-ckt
+    Info (12023): Found entity 1: fifo
+Info (12021): Found 2 design units, including 1 entities, in source file ffjk.vhd
+    Info (12022): Found design unit 1: ffjk-ckt
+    Info (12023): Found entity 1: ffjk
+Info (12021): Found 2 design units, including 1 entities, in source file decodificador1x16.vhd
+    Info (12022): Found design unit 1: decodificador1X16-ckt
+    Info (12023): Found entity 1: decodificador1X16
+Info (12021): Found 2 design units, including 1 entities, in source file datapathfifo.vhd
+    Info (12022): Found design unit 1: datapathFIFO-ckt
+    Info (12023): Found entity 1: datapathFIFO
+Info (12021): Found 2 design units, including 1 entities, in source file d7seg.vhd
+    Info (12022): Found design unit 1: d7Seg-display
+    Info (12023): Found entity 1: d7Seg
+Info (12021): Found 2 design units, including 1 entities, in source file contador6bits.vhd
+    Info (12022): Found design unit 1: contador6Bits-ckt
+    Info (12023): Found entity 1: contador6Bits
+Info (12021): Found 2 design units, including 1 entities, in source file contador4bits.vhd
+    Info (12022): Found design unit 1: contador4Bits-ckt
+    Info (12023): Found entity 1: contador4Bits
+Info (12021): Found 2 design units, including 1 entities, in source file comparador_4bits.vhd
+    Info (12022): Found design unit 1: Comparador_4Bits-ckt
+    Info (12023): Found entity 1: Comparador_4Bits
+Info (12021): Found 2 design units, including 1 entities, in source file comparador.vhd
+    Info (12022): Found design unit 1: Comparador-ckt
+    Info (12023): Found entity 1: Comparador
+Info (12021): Found 2 design units, including 1 entities, in source file cibittobcd.vhd
+    Info (12022): Found design unit 1: ciBitToBcd-ckt
+    Info (12023): Found entity 1: ciBitToBcd
+Info (12021): Found 2 design units, including 1 entities, in source file blocodecontrolefifo.vhd
+    Info (12022): Found design unit 1: blocoDeControleFIFO-ckt
+    Info (12023): Found entity 1: blocoDeControleFIFO
+Info (12021): Found 2 design units, including 1 entities, in source file bittobcd13bitstod7seg.vhd
+    Info (12022): Found design unit 1: bitToBcd13bitsToD7Seg-ckt
+    Info (12023): Found entity 1: bitToBcd13bitsToD7Seg
+Info (12021): Found 2 design units, including 1 entities, in source file bittobcd13bits.vhd
+    Info (12022): Found design unit 1: bitToBcd13bits-ckt
+    Info (12023): Found entity 1: bitToBcd13bits
+Info (12021): Found 2 design units, including 1 entities, in source file bancoderegistrador16x13.vhd
+    Info (12022): Found design unit 1: bancoDeRegistrador16X13-ckt
+    Info (12023): Found entity 1: bancoDeRegistrador16X13
+Info (12021): Found 2 design units, including 1 entities, in source file projeto02.vhd
+    Info (12022): Found design unit 1: projeto02-ckt
+    Info (12023): Found entity 1: projeto02
+Info (12127): Elaborating entity "projeto02" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at projeto02.vhd(49): object "lixo1" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at projeto02.vhd(49): object "lixo0" assigned a value but never read
+Info (12128): Elaborating entity "divisorClock" for hierarchy "divisorClock:DClock"
+Info (12128): Elaborating entity "fifo" for hierarchy "fifo:FIFO16x13"
+Info (12128): Elaborating entity "blocoDeControleFIFO" for hierarchy "fifo:FIFO16x13|blocoDeControleFIFO:BlocodeControle"
+Info (12128): Elaborating entity "datapathFIFO" for hierarchy "fifo:FIFO16x13|datapathFIFO:Datapath"
+Warning (10036): Verilog HDL or VHDL warning at datapathFIFO.vhd(41): object "lixo" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at datapathFIFO.vhd(42): object "saida_ld_comparador_wd_com_rd" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at datapathFIFO.vhd(42): object "saida_gt_comparador_wd_com_rd" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at datapathFIFO.vhd(43): object "saida_ld_comparador_wd1_com_rd" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at datapathFIFO.vhd(43): object "saida_gt_comparador_wd1_com_rd" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at datapathFIFO.vhd(44): object "saida_ld_comparador_wd_com_rd1" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at datapathFIFO.vhd(44): object "saida_gt_comparador_wd_com_rd1" assigned a value but never read
+Info (12128): Elaborating entity "bancoDeRegistrador16X13" for hierarchy "fifo:FIFO16x13|datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores"
+Info (12128): Elaborating entity "decodificador1X16" for hierarchy "fifo:FIFO16x13|datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|decodificador1X16:Dec_wr"
+Info (12128): Elaborating entity "reg13Bits" for hierarchy "fifo:FIFO16x13|datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|reg13Bits:Reg00"
+Info (12128): Elaborating entity "MUX16_1_13Bits" for hierarchy "fifo:FIFO16x13|datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|MUX16_1_13Bits:MUX_rd"
+Info (12128): Elaborating entity "MUX2_1_13Bits" for hierarchy "fifo:FIFO16x13|datapathFIFO:Datapath|bancoDeRegistrador16X13:BancoDeRegistradores|MUX16_1_13Bits:MUX_rd|MUX2_1_13Bits:muxI0I1"
+Info (12128): Elaborating entity "contador4Bits" for hierarchy "fifo:FIFO16x13|datapathFIFO:Datapath|contador4Bits:Contador_WR"
+Info (12128): Elaborating entity "ffjk" for hierarchy "fifo:FIFO16x13|datapathFIFO:Datapath|contador4Bits:Contador_WR|ffjk:Q0"
+Info (12128): Elaborating entity "Comparador_4Bits" for hierarchy "fifo:FIFO16x13|datapathFIFO:Datapath|Comparador_4Bits:comparador_wr_com_rd"
+Info (12128): Elaborating entity "Comparador" for hierarchy "fifo:FIFO16x13|datapathFIFO:Datapath|Comparador_4Bits:comparador_wr_com_rd|Comparador:Comp1"
+Info (12128): Elaborating entity "SUM_4Bits" for hierarchy "fifo:FIFO16x13|datapathFIFO:Datapath|SUM_4Bits:somador_wr1"
+Info (12128): Elaborating entity "SUM_2Bits" for hierarchy "fifo:FIFO16x13|datapathFIFO:Datapath|SUM_4Bits:somador_wr1|SUM_2Bits:SUM01"
+Info (12128): Elaborating entity "SUM_1Bit" for hierarchy "fifo:FIFO16x13|datapathFIFO:Datapath|SUM_4Bits:somador_wr1|SUM_2Bits:SUM01|SUM_1Bit:SUM01"
+Info (12128): Elaborating entity "romFIFO" for hierarchy "romFIFO:ROM"
+Info (12128): Elaborating entity "altsyncram" for hierarchy "romFIFO:ROM|altsyncram:altsyncram_component"
+Info (12130): Elaborated megafunction instantiation "romFIFO:ROM|altsyncram:altsyncram_component"
+Info (12133): Instantiated megafunction "romFIFO:ROM|altsyncram:altsyncram_component" with the following parameter:
+    Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
+    Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
+    Info (12134): Parameter "init_file" = "romFIFO.mif"
+    Info (12134): Parameter "intended_device_family" = "Cyclone II"
+    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
+    Info (12134): Parameter "lpm_type" = "altsyncram"
+    Info (12134): Parameter "numwords_a" = "64"
+    Info (12134): Parameter "operation_mode" = "ROM"
+    Info (12134): Parameter "outdata_aclr_a" = "NONE"
+    Info (12134): Parameter "outdata_reg_a" = "UNREGISTERED"
+    Info (12134): Parameter "widthad_a" = "6"
+    Info (12134): Parameter "width_a" = "13"
+    Info (12134): Parameter "width_byteena_a" = "1"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_kt71.tdf
+    Info (12023): Found entity 1: altsyncram_kt71
+Info (12128): Elaborating entity "altsyncram_kt71" for hierarchy "romFIFO:ROM|altsyncram:altsyncram_component|altsyncram_kt71:auto_generated"
+Info (12128): Elaborating entity "contador6Bits" for hierarchy "contador6Bits:Contador"
+Info (12128): Elaborating entity "bitToBcd13bitsToD7Seg" for hierarchy "bitToBcd13bitsToD7Seg:DisplayRead"
+Info (12128): Elaborating entity "bitToBcd13bits" for hierarchy "bitToBcd13bitsToD7Seg:DisplayRead|bitToBcd13bits:BtB"
+Info (12128): Elaborating entity "ciBitToBcd" for hierarchy "bitToBcd13bitsToD7Seg:DisplayRead|bitToBcd13bits:BtB|ciBitToBcd:ciBtB01"
+Info (12128): Elaborating entity "d7Seg" for hierarchy "bitToBcd13bitsToD7Seg:DisplayRead|d7Seg:D7S3"
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 656 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 4 input pins
+    Info (21059): Implemented 47 output pins
+    Info (21061): Implemented 592 logic cells
+    Info (21064): Implemented 13 RAM segments
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 10 warnings
+    Info: Peak virtual memory: 4670 megabytes
+    Info: Processing ended: Mon Mar 16 11:19:32 2020
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:07
+
+

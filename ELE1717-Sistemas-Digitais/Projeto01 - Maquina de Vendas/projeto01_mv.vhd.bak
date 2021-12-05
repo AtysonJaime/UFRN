@@ -1,0 +1,65 @@
+library ieee ;
+use ieee.std_logic_1164.all;
+
+entity projeto01_MV is
+	port (CLK_mv, C, reset: in std_logic; 
+			S, A: in std_logic_vector(7 downto 0);
+			D: out std_logic;
+			Tot_mv: out std_logic_vector(7 downto 0));
+end projeto01_MV;
+
+architecture ckt of projeto01_MV is
+	component maquinaVendas is
+		port (CLK_mv, C, reset: in std_logic; 
+				S, A: in std_logic_vector(7 downto 0);
+				D: out std_logic;
+				Tot_mv: out std_logic_vector(7 downto 0));
+	end component;
+	component maquinaVendas is
+		port (CLK_mv, C, reset: in std_logic; 
+				S, A: in std_logic_vector(7 downto 0);
+				D: out std_logic;
+				Tot_mv: out std_logic_vector(7 downto 0));
+	end component;
+	component romMV IS
+		PORT(address: IN STD_LOGIC_VECTOR (5 DOWNTO 0);
+			  clock: IN STD_LOGIC  := '1';
+			  q: OUT STD_LOGIC_VECTOR (7 DOWNTO 0));
+	END component;
+	component divisorClock is
+		port ( clk_in : in std_logic ;
+				clk_out : out std_logic );
+	end component ;
+	component divisorClock is
+		port ( clk_in : in std_logic ;
+				clk_out : out std_logic );
+	end component ;
+	component divisorClock is
+		port ( clk_in : in std_logic ;
+				clk_out : out std_logic );
+	end component ;
+	
+	signal result_total: std_logic_vector(7 downto 0);
+	signal result_comp_lt, result_despacho, sinal_somar_tot, clear_tot: std_logic;
+	begin
+		BlocodeControle: blocoDeControleMV port map(
+			clk_mv => CLK_mv,
+			rst_mv => reset,
+			c_mv => C,
+			tot_ld => result_comp_lt,
+			d_mv => result_despacho,
+			load_tot => sinal_somar_tot,
+			clr_tot => clear_tot);
+		
+		Datapath: datapathMV port map(
+			clk_dmv => CLK_mv,
+			clr_total => clear_tot,
+			ld_total => sinal_somar_tot,
+			S_mv => S,
+			A_mv => A,
+			total_ld => result_comp_lt,
+			total_mv => result_total);
+			
+		D <= result_despacho;
+		Tot_mv <= result_total;
+end ckt ;

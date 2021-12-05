@@ -1,0 +1,34 @@
+library ieee ;
+use ieee . std_logic_1164 .all;
+entity mde_b is
+	port (clk , r, w: in std_logic ;
+	z : out std_logic );
+end mde_b ;
+architecture ckt of mde_b is
+	type state_type is (a, b, c);
+	signal y_present , y_next : state_type ;
+	begin
+		process (w, y_present )
+			begin
+				case y_present is
+					when a =>
+						if w = '0' then y_next <= a;
+						else y_next <= b; end if;
+					when b =>
+						if w = '0' then y_next <= a;
+						else y_next <= c; end if;
+					when c =>
+						if w = '0' then y_next <= a;
+						else y_next <= c; end if;
+				end case ;
+		end process ;
+		process (clk ,r)
+			begin
+			if r = '0' then
+				y_present <= a;
+			elsif (clk ' event and clk = '1') then
+				y_present <= y_next ;
+			end if;
+		end process ;
+		z <= '1' when y_present = c else '0';
+end ckt;

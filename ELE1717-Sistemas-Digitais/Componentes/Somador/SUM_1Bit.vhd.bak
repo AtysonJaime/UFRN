@@ -1,0 +1,39 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity SUM_1Bit is
+  port (A_in,B_in,C_in: in std_logic;
+        S_out, C_out: out bit);
+end SUM_1Bit;
+
+Architecture ckt of SUM_1Bits is
+  
+Begin
+  SUM: process(A_in,B_in,C_in)
+  begin
+		case(C_in) is
+			when '0' => 
+				if (A_in = '1' and B_in = '1') then 
+						S_out <= '0'; 
+						C_out <= '1';
+				elsif (A_in = '0' and B_in = '0') then
+						S_out <= '0';
+						C_out <= '0';  
+				else
+						S_out <= '1';
+						C_out <= '0';
+				end if;
+			when '1' =>
+				if (A_in = '1' and B_in = '1') then 
+						S_out <= '1'; 
+						C_out <= '1';
+				elsif (A_in = '0' and B_in = '0') then
+						S_out <= '1';
+						C_out <= '0';
+				else
+						S_out <= '0';
+						C_out <= '1';
+				end if;
+		end case;
+	end process SUM;
+end ckt;

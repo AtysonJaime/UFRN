@@ -1,0 +1,57 @@
+library ieee;
+use ieee.std_logic_1164 .all;
+
+entity blocoDeControleFIFO is
+	port (clk_ff , rst_ff , eq_ff, rd_ff, wr_ff: in std_logic ;
+			led_vazio_ff, led_cheio_ff: out std_logic;
+			saida_mv_fifo: out std_logic_vector(2 downto 0));
+end blocoDeControleFIFO;
+
+architecture ckt of blocoDeControleFIFO is
+	type st is (start, vazio, cheio, apos_escrita, apos_leitura, escrita, leitura);
+	signal estado : st;
+	begin
+		process (clk_mv , rst_mv)
+		begin
+			if rst_mv = '1' then
+				estado <= start ;
+			elsif (clk_mv'event and clk_mv ='1') then
+				case estado is
+					when start =>
+						estado <= vazio;
+					when vazio =>
+						if wr_ff='1' then estado <= escrita;
+						else estado <= vazio; 
+						end if;
+					when cheio =>
+						if rd_ff='1' then estado <= leitura;
+						else estado <= cheio; 
+						end if;
+					when apos_escrita =>
+						if eq_ff='1' then estado <= cheio;
+						elsif wr_ff='1' then estado <= escrita;
+						elsif rd_ff='1' then estado <= leitura;
+						else estado <= apos_escrita;
+						end if;
+					when apos_leitura =>
+						if eq_ff='1' then estado <= vazio;
+						elsif wr_ff='1' then estado <= escrita;
+						elsif rd_ff='1' then estado <= leitura;
+						else estado <= apos_leitura;
+						end if;
+					when escrita =>
+						estado <= apos_escrita;
+					when leitura =>
+						estado <= apos_leitura;
+				end case ;
+			end if;
+		end process;
+		d_mv <= '1' when estado = E4 else '0';
+		load_tot <= '1' when estado = E3 else '0';
+		clr_tot <= '1' when estado = E1 else '0';
+		with estado select
+			saida <= "00" when E1 ,
+			"01" when E2 ,
+			"11" when E4 ,
+			"10" when E3 ;
+end ckt ;

@@ -1,0 +1,192 @@
+|Comparador_8Bits
+eA8[0] => Comparador_4Bits:Comp2.eA[0]
+eA8[1] => Comparador_4Bits:Comp2.eA[1]
+eA8[2] => Comparador_4Bits:Comp2.eA[2]
+eA8[3] => Comparador_4Bits:Comp2.eA[3]
+eA8[4] => Comparador_4Bits:Comp1.eA[0]
+eA8[5] => Comparador_4Bits:Comp1.eA[1]
+eA8[6] => Comparador_4Bits:Comp1.eA[2]
+eA8[7] => Comparador_4Bits:Comp1.eA[3]
+eB8[0] => Comparador_4Bits:Comp2.eB[0]
+eB8[1] => Comparador_4Bits:Comp2.eB[1]
+eB8[2] => Comparador_4Bits:Comp2.eB[2]
+eB8[3] => Comparador_4Bits:Comp2.eB[3]
+eB8[4] => Comparador_4Bits:Comp1.eB[0]
+eB8[5] => Comparador_4Bits:Comp1.eB[1]
+eB8[6] => Comparador_4Bits:Comp1.eB[2]
+eB8[7] => Comparador_4Bits:Comp1.eB[3]
+AeqB8 <= Comparador_4Bits:Comp2.AeqB
+AltB8 <= Comparador_4Bits:Comp2.AltB
+AgtB8 <= Comparador_4Bits:Comp2.AgtB
+
+
+|Comparador_8Bits|Comparador_4Bits:Comp1
+eA[0] => Comparador:Comp4.a
+eA[1] => Comparador:Comp3.a
+eA[2] => Comparador:Comp2.a
+eA[3] => Comparador:Comp1.a
+eB[0] => Comparador:Comp4.b
+eB[1] => Comparador:Comp3.b
+eB[2] => Comparador:Comp2.b
+eB[3] => Comparador:Comp1.b
+gt => Comparador:Comp1.in_gt
+lt => Comparador:Comp1.in_lt
+eq => Comparador:Comp1.in_eq
+AeqB <= Comparador:Comp4.out_eq
+AltB <= Comparador:Comp4.out_lt
+AgtB <= Comparador:Comp4.out_gt
+
+
+|Comparador_8Bits|Comparador_4Bits:Comp1|Comparador:Comp1
+in_gt => out_gt~2.IN1
+in_eq => out_gt~0.IN0
+in_eq => out_lt~0.IN0
+in_eq => out_eq~1.IN1
+in_lt => out_lt~2.IN1
+a => out_gt~0.IN1
+a => out_eq~0.IN0
+a => out_lt~0.IN1
+b => out_lt~1.IN1
+b => out_eq~0.IN1
+b => out_gt~1.IN1
+out_eq <= out_eq~1.DB_MAX_OUTPUT_PORT_TYPE
+out_lt <= out_lt~2.DB_MAX_OUTPUT_PORT_TYPE
+out_gt <= out_gt~2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Comparador_8Bits|Comparador_4Bits:Comp1|Comparador:Comp2
+in_gt => out_gt~2.IN1
+in_eq => out_gt~0.IN0
+in_eq => out_lt~0.IN0
+in_eq => out_eq~1.IN1
+in_lt => out_lt~2.IN1
+a => out_gt~0.IN1
+a => out_eq~0.IN0
+a => out_lt~0.IN1
+b => out_lt~1.IN1
+b => out_eq~0.IN1
+b => out_gt~1.IN1
+out_eq <= out_eq~1.DB_MAX_OUTPUT_PORT_TYPE
+out_lt <= out_lt~2.DB_MAX_OUTPUT_PORT_TYPE
+out_gt <= out_gt~2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Comparador_8Bits|Comparador_4Bits:Comp1|Comparador:Comp3
+in_gt => out_gt~2.IN1
+in_eq => out_gt~0.IN0
+in_eq => out_lt~0.IN0
+in_eq => out_eq~1.IN1
+in_lt => out_lt~2.IN1
+a => out_gt~0.IN1
+a => out_eq~0.IN0
+a => out_lt~0.IN1
+b => out_lt~1.IN1
+b => out_eq~0.IN1
+b => out_gt~1.IN1
+out_eq <= out_eq~1.DB_MAX_OUTPUT_PORT_TYPE
+out_lt <= out_lt~2.DB_MAX_OUTPUT_PORT_TYPE
+out_gt <= out_gt~2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Comparador_8Bits|Comparador_4Bits:Comp1|Comparador:Comp4
+in_gt => out_gt~2.IN1
+in_eq => out_gt~0.IN0
+in_eq => out_lt~0.IN0
+in_eq => out_eq~1.IN1
+in_lt => out_lt~2.IN1
+a => out_gt~0.IN1
+a => out_eq~0.IN0
+a => out_lt~0.IN1
+b => out_lt~1.IN1
+b => out_eq~0.IN1
+b => out_gt~1.IN1
+out_eq <= out_eq~1.DB_MAX_OUTPUT_PORT_TYPE
+out_lt <= out_lt~2.DB_MAX_OUTPUT_PORT_TYPE
+out_gt <= out_gt~2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Comparador_8Bits|Comparador_4Bits:Comp2
+eA[0] => Comparador:Comp4.a
+eA[1] => Comparador:Comp3.a
+eA[2] => Comparador:Comp2.a
+eA[3] => Comparador:Comp1.a
+eB[0] => Comparador:Comp4.b
+eB[1] => Comparador:Comp3.b
+eB[2] => Comparador:Comp2.b
+eB[3] => Comparador:Comp1.b
+gt => Comparador:Comp1.in_gt
+lt => Comparador:Comp1.in_lt
+eq => Comparador:Comp1.in_eq
+AeqB <= Comparador:Comp4.out_eq
+AltB <= Comparador:Comp4.out_lt
+AgtB <= Comparador:Comp4.out_gt
+
+
+|Comparador_8Bits|Comparador_4Bits:Comp2|Comparador:Comp1
+in_gt => out_gt~2.IN1
+in_eq => out_gt~0.IN0
+in_eq => out_lt~0.IN0
+in_eq => out_eq~1.IN1
+in_lt => out_lt~2.IN1
+a => out_gt~0.IN1
+a => out_eq~0.IN0
+a => out_lt~0.IN1
+b => out_lt~1.IN1
+b => out_eq~0.IN1
+b => out_gt~1.IN1
+out_eq <= out_eq~1.DB_MAX_OUTPUT_PORT_TYPE
+out_lt <= out_lt~2.DB_MAX_OUTPUT_PORT_TYPE
+out_gt <= out_gt~2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Comparador_8Bits|Comparador_4Bits:Comp2|Comparador:Comp2
+in_gt => out_gt~2.IN1
+in_eq => out_gt~0.IN0
+in_eq => out_lt~0.IN0
+in_eq => out_eq~1.IN1
+in_lt => out_lt~2.IN1
+a => out_gt~0.IN1
+a => out_eq~0.IN0
+a => out_lt~0.IN1
+b => out_lt~1.IN1
+b => out_eq~0.IN1
+b => out_gt~1.IN1
+out_eq <= out_eq~1.DB_MAX_OUTPUT_PORT_TYPE
+out_lt <= out_lt~2.DB_MAX_OUTPUT_PORT_TYPE
+out_gt <= out_gt~2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Comparador_8Bits|Comparador_4Bits:Comp2|Comparador:Comp3
+in_gt => out_gt~2.IN1
+in_eq => out_gt~0.IN0
+in_eq => out_lt~0.IN0
+in_eq => out_eq~1.IN1
+in_lt => out_lt~2.IN1
+a => out_gt~0.IN1
+a => out_eq~0.IN0
+a => out_lt~0.IN1
+b => out_lt~1.IN1
+b => out_eq~0.IN1
+b => out_gt~1.IN1
+out_eq <= out_eq~1.DB_MAX_OUTPUT_PORT_TYPE
+out_lt <= out_lt~2.DB_MAX_OUTPUT_PORT_TYPE
+out_gt <= out_gt~2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Comparador_8Bits|Comparador_4Bits:Comp2|Comparador:Comp4
+in_gt => out_gt~2.IN1
+in_eq => out_gt~0.IN0
+in_eq => out_lt~0.IN0
+in_eq => out_eq~1.IN1
+in_lt => out_lt~2.IN1
+a => out_gt~0.IN1
+a => out_eq~0.IN0
+a => out_lt~0.IN1
+b => out_lt~1.IN1
+b => out_eq~0.IN1
+b => out_gt~1.IN1
+out_eq <= out_eq~1.DB_MAX_OUTPUT_PORT_TYPE
+out_lt <= out_lt~2.DB_MAX_OUTPUT_PORT_TYPE
+out_gt <= out_gt~2.DB_MAX_OUTPUT_PORT_TYPE
+
+

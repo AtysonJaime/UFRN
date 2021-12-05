@@ -1,0 +1,69 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow Model Setup 'divisorClock:DivClock|ax'
+Slack : -4.543
+TNS   : -42.583
+
+Type  : Slow Model Setup 'clock_27'
+Slack : -2.686
+TNS   : -46.405
+
+Type  : Slow Model Hold 'clock_27'
+Slack : -2.506
+TNS   : -2.506
+
+Type  : Slow Model Hold 'divisorClock:DivClock|ax'
+Slack : 0.391
+TNS   : 0.000
+
+Type  : Slow Model Recovery 'divisorClock:DivClock|ax'
+Slack : -0.261
+TNS   : -2.088
+
+Type  : Slow Model Removal 'divisorClock:DivClock|ax'
+Slack : 1.031
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'divisorClock:DivClock|ax'
+Slack : -1.423
+TNS   : -37.076
+
+Type  : Slow Model Minimum Pulse Width 'clock_27'
+Slack : -1.380
+TNS   : -26.380
+
+Type  : Fast Model Setup 'divisorClock:DivClock|ax'
+Slack : -2.081
+TNS   : -17.016
+
+Type  : Fast Model Setup 'clock_27'
+Slack : -0.762
+TNS   : -9.471
+
+Type  : Fast Model Hold 'clock_27'
+Slack : -1.551
+TNS   : -1.551
+
+Type  : Fast Model Hold 'divisorClock:DivClock|ax'
+Slack : 0.215
+TNS   : 0.000
+
+Type  : Fast Model Recovery 'divisorClock:DivClock|ax'
+Slack : 0.299
+TNS   : 0.000
+
+Type  : Fast Model Removal 'divisorClock:DivClock|ax'
+Slack : 0.581
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'divisorClock:DivClock|ax'
+Slack : -1.423
+TNS   : -37.076
+
+Type  : Fast Model Minimum Pulse Width 'clock_27'
+Slack : -1.380
+TNS   : -26.380
+
+------------------------------------------------------------

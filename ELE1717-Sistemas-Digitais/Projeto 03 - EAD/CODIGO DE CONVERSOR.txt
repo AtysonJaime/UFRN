@@ -1,0 +1,104 @@
+.INCLUDE"m328Pdef.inc"
+      .ORG 0X00
+      .def rl4 = R17
+      .def rl3 = R18
+      .def rl2 = R19
+      .def rl1 = R20
+      .def rl0 = R21
+
+    ;  LDI R16, HIGH(RAMEND)
+     ; OUT SPH, R16
+      ;LDI R16, LOW(RAMEND)
+      ;OUT SPL, R16
+      
+      LDI R16, 0X0F
+      OUT DDRB, R16 ;indica que os pinos 3,2,1,0 do portb devem se comportar como output e os pinos 4,5,6,7 como input(isso será alterado)
+      LDI R16, 0XFF 
+      OUT DDRD, R16 ;indica que todos os pinos do portd devem se comportar como output (isso será alterado)
+      LDI R16, 0X00
+      OUT DDRC, R16 ;indica que todos os pinos do portc devem se comportar como input (isso será alterado)
+      
+      LDI R16, 0X00
+      STS ADMUX, R16 ;indica que irei carregar o valor "00000000" no registrador admux, REFS[1..0](indica que selecionarei o Aref como referencia),adlar(inidica que o resultado será ajustado para a direita),mux[3..0](indica que eu quero selecionar a porta pc0)
+      LDI R16, 0X81
+      STS ADCSRA, R16 ;indica que irei carregar o valor "10000001" no registrador adcsra,aden=1(indica que estou dando enable no conversor), 
+      
+StartADC:    LDS R16, ADCSRA
+	     ORI R16, 1<<ADSC  ;indica que irei carregar o valor '1' no pino adsc do registrador ADCSRA dando start na conversão
+	     STS ADCSRA, R16   ;
+
+
+KeepPolling: lds R16, ADCSRA
+	     sbrs R16,	ADIF ;indica que devo dar skip na proxima instrução caso o 
+	     rjmp KeepPolling
+	     
+	     
+	     ;SBI ADCSRA, ADIF
+	     ;LDS R16, ADCL
+	     ;OUT PORTD, R16
+	     ;LDS R16, ADCH
+	    ; OUT PORTB, R16
+	     
+
+
+	    LDI rl4, 0 
+
+	    LDI rl3, 0 
+
+	    LDI rl2, 0 
+
+	    LDS rl0, ADCL 
+
+	    LDS rl1, ADCH 
+	    
+	    
+	    
+	    
+
+compcent1: CPI rl1, 0 
+
+	    BREQ compcent2 
+      
+	    SUBI rl0, 100
+
+	    SBCI rl1, 0
+      
+	    INC rl4 
+
+	    RJMP compcent1
+
+compcent2: CPI rl0, 100 
+
+	    BRLO compdez
+
+	    SUBI rl0, 100
+
+	    INC rl4
+
+	    RJMP compcent2
+
+compdez: CPI rl0, 10
+
+	    BRLO compuni
+
+	    SUBI rl0, 10
+
+	    INC rl3
+
+	    RJMP compdez
+
+compuni: MOV rl2, rl0
+
+	     ;SBI ADCSRA, ADIF
+	     ;LDS R16, ADCL
+	     SWAP rl4
+	     OR rl4, rl3; RL4=CENT,RL3=DEZ,RL2=UNIDADE
+	     
+	     OUT PORTD, rl4
+	    ; LDS R16, ADCH
+	    in R16, PORTB
+	     OUT PORTB, rl2
+	     
+	    LDS rl0, ADCL 
+
+	    LDS rl1, ADCH

@@ -1,0 +1,41 @@
+|d7Seg
+S_in[0] => D_out~1.IN0
+S_in[0] => D_out~3.IN0
+S_in[0] => D_out~5.IN0
+S_in[0] => D_out~7.IN0
+S_in[0] => D_out~13.IN0
+S_in[0] => D_out~18.IN1
+S_in[0] => D_out~23.IN0
+S_in[0] => D_out~20.IN0
+S_in[1] => D_out~0.IN0
+S_in[1] => D_out~5.IN1
+S_in[1] => D_out~7.IN1
+S_in[1] => D_out~11.IN0
+S_in[1] => D_out~14.IN1
+S_in[1] => D_out~20.IN1
+S_in[1] => D_out~23.IN1
+S_in[1] => D_out~26.IN0
+S_in[1] => D_out~17.IN0
+S_in[2] => D_out~1.IN1
+S_in[2] => D_out~3.IN1
+S_in[2] => D_out~9.IN1
+S_in[2] => D_out~11.IN1
+S_in[2] => D_out~13.IN1
+S_in[2] => D_out~17.IN1
+S_in[2] => D_out~24.IN1
+S_in[2] => D_out~6.IN1
+S_in[2] => D_out~26.IN1
+S_in[3] => D_out~0.IN1
+S_in[3] => D_out~15.IN1
+S_in[3] => D_out~22.IN1
+S_in[3] => D_out~27.IN1
+S_in[3] => D_out~10.IN1
+D_out[0] <= D_out~28.DB_MAX_OUTPUT_PORT_TYPE
+D_out[1] <= D_out~25.DB_MAX_OUTPUT_PORT_TYPE
+D_out[2] <= D_out~21.DB_MAX_OUTPUT_PORT_TYPE
+D_out[3] <= D_out~19.DB_MAX_OUTPUT_PORT_TYPE
+D_out[4] <= D_out~12.DB_MAX_OUTPUT_PORT_TYPE
+D_out[5] <= D_out~8.DB_MAX_OUTPUT_PORT_TYPE
+D_out[6] <= D_out~4.DB_MAX_OUTPUT_PORT_TYPE
+
+

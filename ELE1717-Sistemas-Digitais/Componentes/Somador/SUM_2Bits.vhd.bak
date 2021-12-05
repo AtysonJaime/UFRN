@@ -1,0 +1,33 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity Sum2Bit is
+  port (A_in_1bit,B_in_1bit,C_in_1bit: in std_logic;
+        S_out_1bit, C_out_1bit: out bit);
+end Sum2Bit;
+
+Architecture ckt of Sum2Bit is
+  
+Begin
+  SUM: process(A_in_1bit,B_in_1bit,C_in_1bit)
+  begin
+		case(C_in_1bit)
+			when '0' => 
+				if(A_in_1bit = '1') then
+					if (B_in_1bit = '1') then S_out_1bit <= '0', C_out_1bit <= '1';
+					else 							  S_out_1bit <= '1', C_out_1bit <= '0'; 
+					end if;
+				else if (B_in_1bit = '1') then S_out_1bit <= '1', C_out_1bit <= '0';
+				else 							  S_out_1bit <= '0', C_out_1bit <= '0'; 
+				end if;
+			when '1' =>
+				if(A_in_1bit = '1') then
+					if (B_in_1bit = '1') then S_out_1bit <= '1', C_out_1bit <= '1';
+					else 							  S_out_1bit <= '0', C_out_1bit <= '1'; 
+					end if;
+				else if (B_in_1bit = '1') then S_out_1bit <= '0', C_out_1bit <= '1';;
+				else 							  S_out_1bit <= '1', C_out_1bit <= '0'; 
+				end if;
+		end case;
+	end process SUM;
+end ckt;

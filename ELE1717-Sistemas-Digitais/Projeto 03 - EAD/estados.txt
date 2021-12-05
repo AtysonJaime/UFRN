@@ -1,0 +1,66 @@
+Transições
+
+regmath -> R0
+regcount -> R1
+
+INICIO:	                  
+	LIGAR led vermelho	
+	LIMPAR regmatch        CLR R0
+	LIMPAR regcount	       CLR R1
+	LER powerbutton
+	COMPARAR com 1
+	PULAR para AJUSTE1 se powerbutton = 1
+	LOOP
+
+Inicio: 
+
+AJUSTE1:
+	LER potenciomentro
+	LIGAR led azul
+	MOSTRAR valor no display
+	LER powerbutton
+	COMPARAR com 1
+	PULAR para Inicio se powerbutton = 1
+	LER add
+	COMPARAR com 1
+	PULAR para AJUSTE2 se ADD = 1
+	LOOP
+
+AJUSTE2: ;aqui já entra com powerbutton = 0 e add = 1
+	LER potenciomentro
+	LIGAR led azul
+	MOSTRAR valor no display
+	INCREMENTAR regcount
+	LER flag entrada == senha
+	COMPARAR com 1
+	PULAR para WAIT1 se flag = 1
+	PULAR para WAIT2
+	
+WAIT1: 
+	MOSTRAR valor no display
+	LIGAR led verde e vermelho
+	INCREMENTAR regmatch
+	LER regcount
+	COMPARAR com 3
+	PULAR para AJUSTE1 se menor
+	LER regmatch
+	COMPARAR com 3
+	PULAR para INICIO se menor
+	PULAR para LIBERAR
+
+WAIT2:
+	MOSTRAR valor no display
+	LIGAR led verde e vermelho
+	LER regcount
+	COMPARAR com 3
+	PULAR para AJUSTE1 se menor
+	PULAR para INICIO
+
+LIBERAR:
+	MOSTRAR padrão no display
+	LIGAR led verde
+	LER powerbutton
+	COMPARAR com 1
+	PULAR para INICIO se = 1
+	LOOP
+	

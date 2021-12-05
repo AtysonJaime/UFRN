@@ -1,0 +1,8 @@
+library ieee ;
+use ieee.std_logic_1164.all;
+
+entity REGx3_OUT is
+	port (clk_reg8bits,clr_reg8bits,ld_reg8bits: in std_logic;
+			d_in_reg8bits: in std_logic_vector(7 downto 0);
+			q_out_reg8bits : out std_logic_vector(7 downto 0));
+end REGx3_OUT;

@@ -1,0 +1,1115 @@
+TimeQuest Timing Analyzer report for maquinaVendas
+Fri Mar 06 17:15:50 2020
+Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'CLK_mv'
+ 12. Slow Model Hold: 'CLK_mv'
+ 13. Slow Model Recovery: 'CLK_mv'
+ 14. Slow Model Removal: 'CLK_mv'
+ 15. Slow Model Minimum Pulse Width: 'CLK_mv'
+ 16. Setup Times
+ 17. Hold Times
+ 18. Clock to Output Times
+ 19. Minimum Clock to Output Times
+ 20. Fast Model Setup Summary
+ 21. Fast Model Hold Summary
+ 22. Fast Model Recovery Summary
+ 23. Fast Model Removal Summary
+ 24. Fast Model Minimum Pulse Width Summary
+ 25. Fast Model Setup: 'CLK_mv'
+ 26. Fast Model Hold: 'CLK_mv'
+ 27. Fast Model Recovery: 'CLK_mv'
+ 28. Fast Model Removal: 'CLK_mv'
+ 29. Fast Model Minimum Pulse Width: 'CLK_mv'
+ 30. Setup Times
+ 31. Hold Times
+ 32. Clock to Output Times
+ 33. Minimum Clock to Output Times
+ 34. Multicorner Timing Analysis Summary
+ 35. Setup Times
+ 36. Hold Times
+ 37. Clock to Output Times
+ 38. Minimum Clock to Output Times
+ 39. Setup Transfers
+ 40. Hold Transfers
+ 41. Recovery Transfers
+ 42. Removal Transfers
+ 43. Report TCCS
+ 44. Report RSKM
+ 45. Unconstrained Paths
+ 46. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                       ;
++--------------------+----------------------------------------------------+
+; Quartus II Version ; Version 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
+; Revision Name      ; maquinaVendas                                      ;
+; Device Family      ; Cyclone II                                         ;
+; Device Name        ; EP2C35F672C6                                       ;
+; Timing Models      ; Final                                              ;
+; Delay Model        ; Combined                                           ;
+; Rise/Fall Delays   ; Unavailable                                        ;
++--------------------+----------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 8      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                             ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets    ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------+
+; CLK_mv     ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { CLK_mv } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------+
+
+
++--------------------------------------------------+
+; Slow Model Fmax Summary                          ;
++------------+-----------------+------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
++------------+-----------------+------------+------+
+; 373.13 MHz ; 373.13 MHz      ; CLK_mv     ;      ;
++------------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++---------------------------------+
+; Slow Model Setup Summary        ;
++--------+--------+---------------+
+; Clock  ; Slack  ; End Point TNS ;
++--------+--------+---------------+
+; CLK_mv ; -1.680 ; -11.151       ;
++--------+--------+---------------+
+
+
++--------------------------------+
+; Slow Model Hold Summary        ;
++--------+-------+---------------+
+; Clock  ; Slack ; End Point TNS ;
++--------+-------+---------------+
+; CLK_mv ; 0.391 ; 0.000         ;
++--------+-------+---------------+
+
+
++---------------------------------+
+; Slow Model Recovery Summary     ;
++--------+--------+---------------+
+; Clock  ; Slack  ; End Point TNS ;
++--------+--------+---------------+
+; CLK_mv ; -0.453 ; -2.399        ;
++--------+--------+---------------+
+
+
++--------------------------------+
+; Slow Model Removal Summary     ;
++--------+-------+---------------+
+; Clock  ; Slack ; End Point TNS ;
++--------+-------+---------------+
+; CLK_mv ; 1.048 ; 0.000         ;
++--------+-------+---------------+
+
+
++----------------------------------------+
+; Slow Model Minimum Pulse Width Summary ;
++--------+--------+----------------------+
+; Clock  ; Slack  ; End Point TNS        ;
++--------+--------+----------------------+
+; CLK_mv ; -1.380 ; -13.380              ;
++--------+--------+----------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'CLK_mv'                                                                                                                                               ;
++--------+---------------------------------------------+---------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                   ; To Node                                     ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------------------------+---------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -1.680 ; datapathMV:Datapath|reg8Bits:Reg|qs[7]      ; blocoDeControleMV:BlocodeControle|estado.E2 ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.002      ; 2.718      ;
+; -1.679 ; datapathMV:Datapath|reg8Bits:Reg|qs[7]      ; blocoDeControleMV:BlocodeControle|estado.E4 ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.002      ; 2.717      ;
+; -1.579 ; datapathMV:Datapath|reg8Bits:Reg|qs[1]      ; blocoDeControleMV:BlocodeControle|estado.E2 ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.002      ; 2.617      ;
+; -1.578 ; datapathMV:Datapath|reg8Bits:Reg|qs[1]      ; blocoDeControleMV:BlocodeControle|estado.E4 ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.002      ; 2.616      ;
+; -1.560 ; datapathMV:Datapath|reg8Bits:Reg|qs[0]      ; blocoDeControleMV:BlocodeControle|estado.E2 ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 2.596      ;
+; -1.559 ; datapathMV:Datapath|reg8Bits:Reg|qs[0]      ; blocoDeControleMV:BlocodeControle|estado.E4 ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 2.595      ;
+; -1.553 ; datapathMV:Datapath|reg8Bits:Reg|qs[3]      ; blocoDeControleMV:BlocodeControle|estado.E2 ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.002      ; 2.591      ;
+; -1.552 ; datapathMV:Datapath|reg8Bits:Reg|qs[3]      ; blocoDeControleMV:BlocodeControle|estado.E4 ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.002      ; 2.590      ;
+; -1.411 ; datapathMV:Datapath|reg8Bits:Reg|qs[6]      ; blocoDeControleMV:BlocodeControle|estado.E2 ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.002      ; 2.449      ;
+; -1.410 ; datapathMV:Datapath|reg8Bits:Reg|qs[6]      ; blocoDeControleMV:BlocodeControle|estado.E4 ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.002      ; 2.448      ;
+; -1.396 ; datapathMV:Datapath|reg8Bits:Reg|qs[4]      ; blocoDeControleMV:BlocodeControle|estado.E2 ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.002      ; 2.434      ;
+; -1.395 ; datapathMV:Datapath|reg8Bits:Reg|qs[4]      ; blocoDeControleMV:BlocodeControle|estado.E4 ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.002      ; 2.433      ;
+; -1.343 ; datapathMV:Datapath|reg8Bits:Reg|qs[2]      ; blocoDeControleMV:BlocodeControle|estado.E2 ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.002      ; 2.381      ;
+; -1.342 ; datapathMV:Datapath|reg8Bits:Reg|qs[2]      ; blocoDeControleMV:BlocodeControle|estado.E4 ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.002      ; 2.380      ;
+; -1.329 ; datapathMV:Datapath|reg8Bits:Reg|qs[0]      ; datapathMV:Datapath|reg8Bits:Reg|qs[7]      ; CLK_mv       ; CLK_mv      ; 1.000        ; -0.002     ; 2.363      ;
+; -1.258 ; datapathMV:Datapath|reg8Bits:Reg|qs[0]      ; datapathMV:Datapath|reg8Bits:Reg|qs[6]      ; CLK_mv       ; CLK_mv      ; 1.000        ; -0.002     ; 2.292      ;
+; -1.187 ; datapathMV:Datapath|reg8Bits:Reg|qs[0]      ; datapathMV:Datapath|reg8Bits:Reg|qs[5]      ; CLK_mv       ; CLK_mv      ; 1.000        ; -0.002     ; 2.221      ;
+; -1.183 ; datapathMV:Datapath|reg8Bits:Reg|qs[5]      ; blocoDeControleMV:BlocodeControle|estado.E2 ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.002      ; 2.221      ;
+; -1.182 ; datapathMV:Datapath|reg8Bits:Reg|qs[5]      ; blocoDeControleMV:BlocodeControle|estado.E4 ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.002      ; 2.220      ;
+; -1.116 ; datapathMV:Datapath|reg8Bits:Reg|qs[0]      ; datapathMV:Datapath|reg8Bits:Reg|qs[4]      ; CLK_mv       ; CLK_mv      ; 1.000        ; -0.002     ; 2.150      ;
+; -1.045 ; datapathMV:Datapath|reg8Bits:Reg|qs[0]      ; datapathMV:Datapath|reg8Bits:Reg|qs[3]      ; CLK_mv       ; CLK_mv      ; 1.000        ; -0.002     ; 2.079      ;
+; -0.974 ; datapathMV:Datapath|reg8Bits:Reg|qs[0]      ; datapathMV:Datapath|reg8Bits:Reg|qs[2]      ; CLK_mv       ; CLK_mv      ; 1.000        ; -0.002     ; 2.008      ;
+; -0.853 ; datapathMV:Datapath|reg8Bits:Reg|qs[1]      ; datapathMV:Datapath|reg8Bits:Reg|qs[7]      ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 1.889      ;
+; -0.782 ; datapathMV:Datapath|reg8Bits:Reg|qs[1]      ; datapathMV:Datapath|reg8Bits:Reg|qs[6]      ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 1.818      ;
+; -0.747 ; datapathMV:Datapath|reg8Bits:Reg|qs[4]      ; datapathMV:Datapath|reg8Bits:Reg|qs[7]      ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 1.783      ;
+; -0.737 ; datapathMV:Datapath|reg8Bits:Reg|qs[2]      ; datapathMV:Datapath|reg8Bits:Reg|qs[7]      ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 1.773      ;
+; -0.711 ; datapathMV:Datapath|reg8Bits:Reg|qs[1]      ; datapathMV:Datapath|reg8Bits:Reg|qs[5]      ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 1.747      ;
+; -0.676 ; datapathMV:Datapath|reg8Bits:Reg|qs[4]      ; datapathMV:Datapath|reg8Bits:Reg|qs[6]      ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 1.712      ;
+; -0.666 ; datapathMV:Datapath|reg8Bits:Reg|qs[2]      ; datapathMV:Datapath|reg8Bits:Reg|qs[6]      ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 1.702      ;
+; -0.646 ; datapathMV:Datapath|reg8Bits:Reg|qs[3]      ; datapathMV:Datapath|reg8Bits:Reg|qs[7]      ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 1.682      ;
+; -0.640 ; datapathMV:Datapath|reg8Bits:Reg|qs[1]      ; datapathMV:Datapath|reg8Bits:Reg|qs[4]      ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 1.676      ;
+; -0.605 ; datapathMV:Datapath|reg8Bits:Reg|qs[4]      ; datapathMV:Datapath|reg8Bits:Reg|qs[5]      ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 1.641      ;
+; -0.595 ; datapathMV:Datapath|reg8Bits:Reg|qs[2]      ; datapathMV:Datapath|reg8Bits:Reg|qs[5]      ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 1.631      ;
+; -0.587 ; datapathMV:Datapath|reg8Bits:Reg|qs[0]      ; datapathMV:Datapath|reg8Bits:Reg|qs[1]      ; CLK_mv       ; CLK_mv      ; 1.000        ; -0.002     ; 1.621      ;
+; -0.575 ; datapathMV:Datapath|reg8Bits:Reg|qs[3]      ; datapathMV:Datapath|reg8Bits:Reg|qs[6]      ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 1.611      ;
+; -0.569 ; datapathMV:Datapath|reg8Bits:Reg|qs[1]      ; datapathMV:Datapath|reg8Bits:Reg|qs[3]      ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 1.605      ;
+; -0.524 ; datapathMV:Datapath|reg8Bits:Reg|qs[2]      ; datapathMV:Datapath|reg8Bits:Reg|qs[4]      ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 1.560      ;
+; -0.523 ; datapathMV:Datapath|reg8Bits:Reg|qs[5]      ; datapathMV:Datapath|reg8Bits:Reg|qs[7]      ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 1.559      ;
+; -0.504 ; datapathMV:Datapath|reg8Bits:Reg|qs[3]      ; datapathMV:Datapath|reg8Bits:Reg|qs[5]      ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 1.540      ;
+; -0.498 ; datapathMV:Datapath|reg8Bits:Reg|qs[1]      ; datapathMV:Datapath|reg8Bits:Reg|qs[2]      ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 1.534      ;
+; -0.460 ; datapathMV:Datapath|reg8Bits:Reg|qs[6]      ; datapathMV:Datapath|reg8Bits:Reg|qs[7]      ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 1.496      ;
+; -0.453 ; datapathMV:Datapath|reg8Bits:Reg|qs[2]      ; datapathMV:Datapath|reg8Bits:Reg|qs[3]      ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 1.489      ;
+; -0.452 ; datapathMV:Datapath|reg8Bits:Reg|qs[5]      ; datapathMV:Datapath|reg8Bits:Reg|qs[6]      ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 1.488      ;
+; -0.436 ; blocoDeControleMV:BlocodeControle|estado.E2 ; blocoDeControleMV:BlocodeControle|estado.E2 ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 1.472      ;
+; -0.433 ; datapathMV:Datapath|reg8Bits:Reg|qs[3]      ; datapathMV:Datapath|reg8Bits:Reg|qs[4]      ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 1.469      ;
+; -0.427 ; datapathMV:Datapath|reg8Bits:Reg|qs[1]      ; datapathMV:Datapath|reg8Bits:Reg|qs[1]      ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 1.463      ;
+; -0.348 ; blocoDeControleMV:BlocodeControle|estado.E3 ; datapathMV:Datapath|reg8Bits:Reg|qs[2]      ; CLK_mv       ; CLK_mv      ; 1.000        ; -0.002     ; 1.382      ;
+; -0.348 ; blocoDeControleMV:BlocodeControle|estado.E3 ; datapathMV:Datapath|reg8Bits:Reg|qs[3]      ; CLK_mv       ; CLK_mv      ; 1.000        ; -0.002     ; 1.382      ;
+; -0.348 ; blocoDeControleMV:BlocodeControle|estado.E3 ; datapathMV:Datapath|reg8Bits:Reg|qs[4]      ; CLK_mv       ; CLK_mv      ; 1.000        ; -0.002     ; 1.382      ;
+; -0.348 ; blocoDeControleMV:BlocodeControle|estado.E3 ; datapathMV:Datapath|reg8Bits:Reg|qs[5]      ; CLK_mv       ; CLK_mv      ; 1.000        ; -0.002     ; 1.382      ;
+; -0.348 ; blocoDeControleMV:BlocodeControle|estado.E3 ; datapathMV:Datapath|reg8Bits:Reg|qs[6]      ; CLK_mv       ; CLK_mv      ; 1.000        ; -0.002     ; 1.382      ;
+; -0.348 ; blocoDeControleMV:BlocodeControle|estado.E3 ; datapathMV:Datapath|reg8Bits:Reg|qs[7]      ; CLK_mv       ; CLK_mv      ; 1.000        ; -0.002     ; 1.382      ;
+; -0.348 ; blocoDeControleMV:BlocodeControle|estado.E3 ; datapathMV:Datapath|reg8Bits:Reg|qs[1]      ; CLK_mv       ; CLK_mv      ; 1.000        ; -0.002     ; 1.382      ;
+; -0.256 ; blocoDeControleMV:BlocodeControle|estado.E3 ; datapathMV:Datapath|reg8Bits:Reg|qs[0]      ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 1.292      ;
+; -0.255 ; blocoDeControleMV:BlocodeControle|estado.E1 ; blocoDeControleMV:BlocodeControle|estado.E2 ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.002      ; 1.293      ;
+; -0.222 ; datapathMV:Datapath|reg8Bits:Reg|qs[4]      ; datapathMV:Datapath|reg8Bits:Reg|qs[4]      ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 1.258      ;
+; -0.077 ; datapathMV:Datapath|reg8Bits:Reg|qs[6]      ; datapathMV:Datapath|reg8Bits:Reg|qs[6]      ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 1.113      ;
+; -0.073 ; datapathMV:Datapath|reg8Bits:Reg|qs[7]      ; datapathMV:Datapath|reg8Bits:Reg|qs[7]      ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 1.109      ;
+; -0.067 ; datapathMV:Datapath|reg8Bits:Reg|qs[2]      ; datapathMV:Datapath|reg8Bits:Reg|qs[2]      ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 1.103      ;
+; -0.065 ; datapathMV:Datapath|reg8Bits:Reg|qs[5]      ; datapathMV:Datapath|reg8Bits:Reg|qs[5]      ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 1.101      ;
+; -0.050 ; blocoDeControleMV:BlocodeControle|estado.E3 ; blocoDeControleMV:BlocodeControle|estado.E2 ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 1.086      ;
+; -0.046 ; datapathMV:Datapath|reg8Bits:Reg|qs[3]      ; datapathMV:Datapath|reg8Bits:Reg|qs[3]      ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 1.082      ;
+; -0.040 ; blocoDeControleMV:BlocodeControle|estado.E2 ; blocoDeControleMV:BlocodeControle|estado.E3 ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 1.076      ;
+; -0.007 ; blocoDeControleMV:BlocodeControle|estado.E2 ; blocoDeControleMV:BlocodeControle|estado.E4 ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 1.043      ;
+; 0.049  ; blocoDeControleMV:BlocodeControle|estado.E4 ; blocoDeControleMV:BlocodeControle|estado.E1 ; CLK_mv       ; CLK_mv      ; 1.000        ; -0.002     ; 0.985      ;
+; 0.379  ; datapathMV:Datapath|reg8Bits:Reg|qs[0]      ; datapathMV:Datapath|reg8Bits:Reg|qs[0]      ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 0.657      ;
++--------+---------------------------------------------+---------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'CLK_mv'                                                                                                                                               ;
++-------+---------------------------------------------+---------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                   ; To Node                                     ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------------------------------+---------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.391 ; datapathMV:Datapath|reg8Bits:Reg|qs[0]      ; datapathMV:Datapath|reg8Bits:Reg|qs[0]      ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.721 ; blocoDeControleMV:BlocodeControle|estado.E4 ; blocoDeControleMV:BlocodeControle|estado.E1 ; CLK_mv       ; CLK_mv      ; 0.000        ; -0.002     ; 0.985      ;
+; 0.777 ; blocoDeControleMV:BlocodeControle|estado.E2 ; blocoDeControleMV:BlocodeControle|estado.E4 ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 1.043      ;
+; 0.810 ; blocoDeControleMV:BlocodeControle|estado.E2 ; blocoDeControleMV:BlocodeControle|estado.E3 ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 1.076      ;
+; 0.816 ; datapathMV:Datapath|reg8Bits:Reg|qs[3]      ; datapathMV:Datapath|reg8Bits:Reg|qs[3]      ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 1.082      ;
+; 0.820 ; blocoDeControleMV:BlocodeControle|estado.E3 ; blocoDeControleMV:BlocodeControle|estado.E2 ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 1.086      ;
+; 0.835 ; datapathMV:Datapath|reg8Bits:Reg|qs[5]      ; datapathMV:Datapath|reg8Bits:Reg|qs[5]      ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 1.101      ;
+; 0.837 ; datapathMV:Datapath|reg8Bits:Reg|qs[2]      ; datapathMV:Datapath|reg8Bits:Reg|qs[2]      ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 1.103      ;
+; 0.843 ; datapathMV:Datapath|reg8Bits:Reg|qs[7]      ; datapathMV:Datapath|reg8Bits:Reg|qs[7]      ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 1.109      ;
+; 0.847 ; datapathMV:Datapath|reg8Bits:Reg|qs[6]      ; datapathMV:Datapath|reg8Bits:Reg|qs[6]      ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 1.113      ;
+; 0.992 ; datapathMV:Datapath|reg8Bits:Reg|qs[4]      ; datapathMV:Datapath|reg8Bits:Reg|qs[4]      ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 1.258      ;
+; 1.025 ; blocoDeControleMV:BlocodeControle|estado.E1 ; blocoDeControleMV:BlocodeControle|estado.E2 ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.002      ; 1.293      ;
+; 1.026 ; blocoDeControleMV:BlocodeControle|estado.E3 ; datapathMV:Datapath|reg8Bits:Reg|qs[0]      ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 1.292      ;
+; 1.118 ; blocoDeControleMV:BlocodeControle|estado.E3 ; datapathMV:Datapath|reg8Bits:Reg|qs[2]      ; CLK_mv       ; CLK_mv      ; 0.000        ; -0.002     ; 1.382      ;
+; 1.118 ; blocoDeControleMV:BlocodeControle|estado.E3 ; datapathMV:Datapath|reg8Bits:Reg|qs[3]      ; CLK_mv       ; CLK_mv      ; 0.000        ; -0.002     ; 1.382      ;
+; 1.118 ; blocoDeControleMV:BlocodeControle|estado.E3 ; datapathMV:Datapath|reg8Bits:Reg|qs[4]      ; CLK_mv       ; CLK_mv      ; 0.000        ; -0.002     ; 1.382      ;
+; 1.118 ; blocoDeControleMV:BlocodeControle|estado.E3 ; datapathMV:Datapath|reg8Bits:Reg|qs[5]      ; CLK_mv       ; CLK_mv      ; 0.000        ; -0.002     ; 1.382      ;
+; 1.118 ; blocoDeControleMV:BlocodeControle|estado.E3 ; datapathMV:Datapath|reg8Bits:Reg|qs[6]      ; CLK_mv       ; CLK_mv      ; 0.000        ; -0.002     ; 1.382      ;
+; 1.118 ; blocoDeControleMV:BlocodeControle|estado.E3 ; datapathMV:Datapath|reg8Bits:Reg|qs[7]      ; CLK_mv       ; CLK_mv      ; 0.000        ; -0.002     ; 1.382      ;
+; 1.118 ; blocoDeControleMV:BlocodeControle|estado.E3 ; datapathMV:Datapath|reg8Bits:Reg|qs[1]      ; CLK_mv       ; CLK_mv      ; 0.000        ; -0.002     ; 1.382      ;
+; 1.197 ; datapathMV:Datapath|reg8Bits:Reg|qs[1]      ; datapathMV:Datapath|reg8Bits:Reg|qs[1]      ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 1.463      ;
+; 1.203 ; datapathMV:Datapath|reg8Bits:Reg|qs[3]      ; datapathMV:Datapath|reg8Bits:Reg|qs[4]      ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 1.469      ;
+; 1.206 ; blocoDeControleMV:BlocodeControle|estado.E2 ; blocoDeControleMV:BlocodeControle|estado.E2 ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 1.472      ;
+; 1.222 ; datapathMV:Datapath|reg8Bits:Reg|qs[5]      ; datapathMV:Datapath|reg8Bits:Reg|qs[6]      ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 1.488      ;
+; 1.223 ; datapathMV:Datapath|reg8Bits:Reg|qs[2]      ; datapathMV:Datapath|reg8Bits:Reg|qs[3]      ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 1.489      ;
+; 1.230 ; datapathMV:Datapath|reg8Bits:Reg|qs[6]      ; datapathMV:Datapath|reg8Bits:Reg|qs[7]      ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 1.496      ;
+; 1.268 ; datapathMV:Datapath|reg8Bits:Reg|qs[1]      ; datapathMV:Datapath|reg8Bits:Reg|qs[2]      ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 1.534      ;
+; 1.274 ; datapathMV:Datapath|reg8Bits:Reg|qs[3]      ; datapathMV:Datapath|reg8Bits:Reg|qs[5]      ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 1.540      ;
+; 1.293 ; datapathMV:Datapath|reg8Bits:Reg|qs[5]      ; datapathMV:Datapath|reg8Bits:Reg|qs[7]      ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 1.559      ;
+; 1.294 ; datapathMV:Datapath|reg8Bits:Reg|qs[2]      ; datapathMV:Datapath|reg8Bits:Reg|qs[4]      ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 1.560      ;
+; 1.339 ; datapathMV:Datapath|reg8Bits:Reg|qs[1]      ; datapathMV:Datapath|reg8Bits:Reg|qs[3]      ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 1.605      ;
+; 1.345 ; datapathMV:Datapath|reg8Bits:Reg|qs[3]      ; datapathMV:Datapath|reg8Bits:Reg|qs[6]      ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 1.611      ;
+; 1.357 ; datapathMV:Datapath|reg8Bits:Reg|qs[0]      ; datapathMV:Datapath|reg8Bits:Reg|qs[1]      ; CLK_mv       ; CLK_mv      ; 0.000        ; -0.002     ; 1.621      ;
+; 1.365 ; datapathMV:Datapath|reg8Bits:Reg|qs[2]      ; datapathMV:Datapath|reg8Bits:Reg|qs[5]      ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 1.631      ;
+; 1.375 ; datapathMV:Datapath|reg8Bits:Reg|qs[4]      ; datapathMV:Datapath|reg8Bits:Reg|qs[5]      ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 1.641      ;
+; 1.410 ; datapathMV:Datapath|reg8Bits:Reg|qs[1]      ; datapathMV:Datapath|reg8Bits:Reg|qs[4]      ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 1.676      ;
+; 1.416 ; datapathMV:Datapath|reg8Bits:Reg|qs[3]      ; datapathMV:Datapath|reg8Bits:Reg|qs[7]      ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 1.682      ;
+; 1.436 ; datapathMV:Datapath|reg8Bits:Reg|qs[2]      ; datapathMV:Datapath|reg8Bits:Reg|qs[6]      ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 1.702      ;
+; 1.446 ; datapathMV:Datapath|reg8Bits:Reg|qs[4]      ; datapathMV:Datapath|reg8Bits:Reg|qs[6]      ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 1.712      ;
+; 1.481 ; datapathMV:Datapath|reg8Bits:Reg|qs[1]      ; datapathMV:Datapath|reg8Bits:Reg|qs[5]      ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 1.747      ;
+; 1.507 ; datapathMV:Datapath|reg8Bits:Reg|qs[2]      ; datapathMV:Datapath|reg8Bits:Reg|qs[7]      ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 1.773      ;
+; 1.517 ; datapathMV:Datapath|reg8Bits:Reg|qs[4]      ; datapathMV:Datapath|reg8Bits:Reg|qs[7]      ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 1.783      ;
+; 1.552 ; datapathMV:Datapath|reg8Bits:Reg|qs[1]      ; datapathMV:Datapath|reg8Bits:Reg|qs[6]      ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 1.818      ;
+; 1.623 ; datapathMV:Datapath|reg8Bits:Reg|qs[1]      ; datapathMV:Datapath|reg8Bits:Reg|qs[7]      ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 1.889      ;
+; 1.744 ; datapathMV:Datapath|reg8Bits:Reg|qs[0]      ; datapathMV:Datapath|reg8Bits:Reg|qs[2]      ; CLK_mv       ; CLK_mv      ; 0.000        ; -0.002     ; 2.008      ;
+; 1.815 ; datapathMV:Datapath|reg8Bits:Reg|qs[0]      ; datapathMV:Datapath|reg8Bits:Reg|qs[3]      ; CLK_mv       ; CLK_mv      ; 0.000        ; -0.002     ; 2.079      ;
+; 1.843 ; datapathMV:Datapath|reg8Bits:Reg|qs[6]      ; blocoDeControleMV:BlocodeControle|estado.E4 ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.002      ; 2.111      ;
+; 1.844 ; datapathMV:Datapath|reg8Bits:Reg|qs[6]      ; blocoDeControleMV:BlocodeControle|estado.E2 ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.002      ; 2.112      ;
+; 1.886 ; datapathMV:Datapath|reg8Bits:Reg|qs[0]      ; datapathMV:Datapath|reg8Bits:Reg|qs[4]      ; CLK_mv       ; CLK_mv      ; 0.000        ; -0.002     ; 2.150      ;
+; 1.934 ; datapathMV:Datapath|reg8Bits:Reg|qs[5]      ; blocoDeControleMV:BlocodeControle|estado.E4 ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.002      ; 2.202      ;
+; 1.935 ; datapathMV:Datapath|reg8Bits:Reg|qs[5]      ; blocoDeControleMV:BlocodeControle|estado.E2 ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.002      ; 2.203      ;
+; 1.957 ; datapathMV:Datapath|reg8Bits:Reg|qs[0]      ; datapathMV:Datapath|reg8Bits:Reg|qs[5]      ; CLK_mv       ; CLK_mv      ; 0.000        ; -0.002     ; 2.221      ;
+; 2.028 ; datapathMV:Datapath|reg8Bits:Reg|qs[0]      ; datapathMV:Datapath|reg8Bits:Reg|qs[6]      ; CLK_mv       ; CLK_mv      ; 0.000        ; -0.002     ; 2.292      ;
+; 2.032 ; datapathMV:Datapath|reg8Bits:Reg|qs[4]      ; blocoDeControleMV:BlocodeControle|estado.E4 ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.002      ; 2.300      ;
+; 2.033 ; datapathMV:Datapath|reg8Bits:Reg|qs[4]      ; blocoDeControleMV:BlocodeControle|estado.E2 ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.002      ; 2.301      ;
+; 2.044 ; datapathMV:Datapath|reg8Bits:Reg|qs[3]      ; blocoDeControleMV:BlocodeControle|estado.E4 ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.002      ; 2.312      ;
+; 2.045 ; datapathMV:Datapath|reg8Bits:Reg|qs[3]      ; blocoDeControleMV:BlocodeControle|estado.E2 ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.002      ; 2.313      ;
+; 2.070 ; datapathMV:Datapath|reg8Bits:Reg|qs[7]      ; blocoDeControleMV:BlocodeControle|estado.E4 ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.002      ; 2.338      ;
+; 2.071 ; datapathMV:Datapath|reg8Bits:Reg|qs[7]      ; blocoDeControleMV:BlocodeControle|estado.E2 ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.002      ; 2.339      ;
+; 2.099 ; datapathMV:Datapath|reg8Bits:Reg|qs[0]      ; datapathMV:Datapath|reg8Bits:Reg|qs[7]      ; CLK_mv       ; CLK_mv      ; 0.000        ; -0.002     ; 2.363      ;
+; 2.112 ; datapathMV:Datapath|reg8Bits:Reg|qs[2]      ; blocoDeControleMV:BlocodeControle|estado.E4 ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.002      ; 2.380      ;
+; 2.113 ; datapathMV:Datapath|reg8Bits:Reg|qs[2]      ; blocoDeControleMV:BlocodeControle|estado.E2 ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.002      ; 2.381      ;
+; 2.215 ; datapathMV:Datapath|reg8Bits:Reg|qs[1]      ; blocoDeControleMV:BlocodeControle|estado.E4 ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.002      ; 2.483      ;
+; 2.216 ; datapathMV:Datapath|reg8Bits:Reg|qs[1]      ; blocoDeControleMV:BlocodeControle|estado.E2 ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.002      ; 2.484      ;
+; 2.329 ; datapathMV:Datapath|reg8Bits:Reg|qs[0]      ; blocoDeControleMV:BlocodeControle|estado.E4 ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 2.595      ;
+; 2.330 ; datapathMV:Datapath|reg8Bits:Reg|qs[0]      ; blocoDeControleMV:BlocodeControle|estado.E2 ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 2.596      ;
++-------+---------------------------------------------+---------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Recovery: 'CLK_mv'                                                                                                                                       ;
++--------+---------------------------------------------+----------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                   ; To Node                                ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------------------------+----------------------------------------+--------------+-------------+--------------+------------+------------+
+; -0.453 ; blocoDeControleMV:BlocodeControle|estado.E1 ; datapathMV:Datapath|reg8Bits:Reg|qs[0] ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.002      ; 1.491      ;
+; -0.278 ; blocoDeControleMV:BlocodeControle|estado.E1 ; datapathMV:Datapath|reg8Bits:Reg|qs[2] ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 1.314      ;
+; -0.278 ; blocoDeControleMV:BlocodeControle|estado.E1 ; datapathMV:Datapath|reg8Bits:Reg|qs[3] ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 1.314      ;
+; -0.278 ; blocoDeControleMV:BlocodeControle|estado.E1 ; datapathMV:Datapath|reg8Bits:Reg|qs[4] ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 1.314      ;
+; -0.278 ; blocoDeControleMV:BlocodeControle|estado.E1 ; datapathMV:Datapath|reg8Bits:Reg|qs[5] ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 1.314      ;
+; -0.278 ; blocoDeControleMV:BlocodeControle|estado.E1 ; datapathMV:Datapath|reg8Bits:Reg|qs[6] ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 1.314      ;
+; -0.278 ; blocoDeControleMV:BlocodeControle|estado.E1 ; datapathMV:Datapath|reg8Bits:Reg|qs[7] ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 1.314      ;
+; -0.278 ; blocoDeControleMV:BlocodeControle|estado.E1 ; datapathMV:Datapath|reg8Bits:Reg|qs[1] ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 1.314      ;
++--------+---------------------------------------------+----------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Removal: 'CLK_mv'                                                                                                                                       ;
++-------+---------------------------------------------+----------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                   ; To Node                                ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------------------------------+----------------------------------------+--------------+-------------+--------------+------------+------------+
+; 1.048 ; blocoDeControleMV:BlocodeControle|estado.E1 ; datapathMV:Datapath|reg8Bits:Reg|qs[2] ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 1.314      ;
+; 1.048 ; blocoDeControleMV:BlocodeControle|estado.E1 ; datapathMV:Datapath|reg8Bits:Reg|qs[3] ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 1.314      ;
+; 1.048 ; blocoDeControleMV:BlocodeControle|estado.E1 ; datapathMV:Datapath|reg8Bits:Reg|qs[4] ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 1.314      ;
+; 1.048 ; blocoDeControleMV:BlocodeControle|estado.E1 ; datapathMV:Datapath|reg8Bits:Reg|qs[5] ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 1.314      ;
+; 1.048 ; blocoDeControleMV:BlocodeControle|estado.E1 ; datapathMV:Datapath|reg8Bits:Reg|qs[6] ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 1.314      ;
+; 1.048 ; blocoDeControleMV:BlocodeControle|estado.E1 ; datapathMV:Datapath|reg8Bits:Reg|qs[7] ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 1.314      ;
+; 1.048 ; blocoDeControleMV:BlocodeControle|estado.E1 ; datapathMV:Datapath|reg8Bits:Reg|qs[1] ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 1.314      ;
+; 1.223 ; blocoDeControleMV:BlocodeControle|estado.E1 ; datapathMV:Datapath|reg8Bits:Reg|qs[0] ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.002      ; 1.491      ;
++-------+---------------------------------------------+----------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'CLK_mv'                                                                                      ;
++--------+--------------+----------------+------------------+--------+------------+---------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock  ; Clock Edge ; Target                                      ;
++--------+--------------+----------------+------------------+--------+------------+---------------------------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; CLK_mv ; Rise       ; CLK_mv                                      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_mv ; Rise       ; blocoDeControleMV:BlocodeControle|estado.E1 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_mv ; Rise       ; blocoDeControleMV:BlocodeControle|estado.E1 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_mv ; Rise       ; blocoDeControleMV:BlocodeControle|estado.E2 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_mv ; Rise       ; blocoDeControleMV:BlocodeControle|estado.E2 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_mv ; Rise       ; blocoDeControleMV:BlocodeControle|estado.E3 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_mv ; Rise       ; blocoDeControleMV:BlocodeControle|estado.E3 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_mv ; Rise       ; blocoDeControleMV:BlocodeControle|estado.E4 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_mv ; Rise       ; blocoDeControleMV:BlocodeControle|estado.E4 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_mv ; Rise       ; datapathMV:Datapath|reg8Bits:Reg|qs[0]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_mv ; Rise       ; datapathMV:Datapath|reg8Bits:Reg|qs[0]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_mv ; Rise       ; datapathMV:Datapath|reg8Bits:Reg|qs[1]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_mv ; Rise       ; datapathMV:Datapath|reg8Bits:Reg|qs[1]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_mv ; Rise       ; datapathMV:Datapath|reg8Bits:Reg|qs[2]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_mv ; Rise       ; datapathMV:Datapath|reg8Bits:Reg|qs[2]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_mv ; Rise       ; datapathMV:Datapath|reg8Bits:Reg|qs[3]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_mv ; Rise       ; datapathMV:Datapath|reg8Bits:Reg|qs[3]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_mv ; Rise       ; datapathMV:Datapath|reg8Bits:Reg|qs[4]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_mv ; Rise       ; datapathMV:Datapath|reg8Bits:Reg|qs[4]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_mv ; Rise       ; datapathMV:Datapath|reg8Bits:Reg|qs[5]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_mv ; Rise       ; datapathMV:Datapath|reg8Bits:Reg|qs[5]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_mv ; Rise       ; datapathMV:Datapath|reg8Bits:Reg|qs[6]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_mv ; Rise       ; datapathMV:Datapath|reg8Bits:Reg|qs[6]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_mv ; Rise       ; datapathMV:Datapath|reg8Bits:Reg|qs[7]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_mv ; Rise       ; datapathMV:Datapath|reg8Bits:Reg|qs[7]      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLK_mv ; Rise       ; BlocodeControle|estado.E1|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLK_mv ; Rise       ; BlocodeControle|estado.E1|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLK_mv ; Rise       ; BlocodeControle|estado.E2|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLK_mv ; Rise       ; BlocodeControle|estado.E2|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLK_mv ; Rise       ; BlocodeControle|estado.E3|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLK_mv ; Rise       ; BlocodeControle|estado.E3|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLK_mv ; Rise       ; BlocodeControle|estado.E4|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLK_mv ; Rise       ; BlocodeControle|estado.E4|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLK_mv ; Rise       ; CLK_mv|combout                              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLK_mv ; Rise       ; CLK_mv|combout                              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLK_mv ; Rise       ; CLK_mv~clkctrl|inclk[0]                     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLK_mv ; Rise       ; CLK_mv~clkctrl|inclk[0]                     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLK_mv ; Rise       ; CLK_mv~clkctrl|outclk                       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLK_mv ; Rise       ; CLK_mv~clkctrl|outclk                       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLK_mv ; Rise       ; Datapath|Reg|qs[0]|clk                      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLK_mv ; Rise       ; Datapath|Reg|qs[0]|clk                      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLK_mv ; Rise       ; Datapath|Reg|qs[1]|clk                      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLK_mv ; Rise       ; Datapath|Reg|qs[1]|clk                      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLK_mv ; Rise       ; Datapath|Reg|qs[2]|clk                      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLK_mv ; Rise       ; Datapath|Reg|qs[2]|clk                      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLK_mv ; Rise       ; Datapath|Reg|qs[3]|clk                      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLK_mv ; Rise       ; Datapath|Reg|qs[3]|clk                      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLK_mv ; Rise       ; Datapath|Reg|qs[4]|clk                      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLK_mv ; Rise       ; Datapath|Reg|qs[4]|clk                      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLK_mv ; Rise       ; Datapath|Reg|qs[5]|clk                      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLK_mv ; Rise       ; Datapath|Reg|qs[5]|clk                      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLK_mv ; Rise       ; Datapath|Reg|qs[6]|clk                      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLK_mv ; Rise       ; Datapath|Reg|qs[6]|clk                      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLK_mv ; Rise       ; Datapath|Reg|qs[7]|clk                      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLK_mv ; Rise       ; Datapath|Reg|qs[7]|clk                      ;
++--------+--------------+----------------+------------------+--------+------------+---------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; A[*]      ; CLK_mv     ; 4.960 ; 4.960 ; Rise       ; CLK_mv          ;
+;  A[0]     ; CLK_mv     ; 4.960 ; 4.960 ; Rise       ; CLK_mv          ;
+;  A[1]     ; CLK_mv     ; 4.695 ; 4.695 ; Rise       ; CLK_mv          ;
+;  A[2]     ; CLK_mv     ; 4.093 ; 4.093 ; Rise       ; CLK_mv          ;
+;  A[3]     ; CLK_mv     ; 4.274 ; 4.274 ; Rise       ; CLK_mv          ;
+;  A[4]     ; CLK_mv     ; 4.383 ; 4.383 ; Rise       ; CLK_mv          ;
+;  A[5]     ; CLK_mv     ; 3.919 ; 3.919 ; Rise       ; CLK_mv          ;
+;  A[6]     ; CLK_mv     ; 4.307 ; 4.307 ; Rise       ; CLK_mv          ;
+;  A[7]     ; CLK_mv     ; 3.374 ; 3.374 ; Rise       ; CLK_mv          ;
+; C         ; CLK_mv     ; 1.674 ; 1.674 ; Rise       ; CLK_mv          ;
+; S[*]      ; CLK_mv     ; 5.422 ; 5.422 ; Rise       ; CLK_mv          ;
+;  S[0]     ; CLK_mv     ; 4.941 ; 4.941 ; Rise       ; CLK_mv          ;
+;  S[1]     ; CLK_mv     ; 5.157 ; 5.157 ; Rise       ; CLK_mv          ;
+;  S[2]     ; CLK_mv     ; 2.227 ; 2.227 ; Rise       ; CLK_mv          ;
+;  S[3]     ; CLK_mv     ; 4.950 ; 4.950 ; Rise       ; CLK_mv          ;
+;  S[4]     ; CLK_mv     ; 5.422 ; 5.422 ; Rise       ; CLK_mv          ;
+;  S[5]     ; CLK_mv     ; 5.183 ; 5.183 ; Rise       ; CLK_mv          ;
+;  S[6]     ; CLK_mv     ; 5.311 ; 5.311 ; Rise       ; CLK_mv          ;
+;  S[7]     ; CLK_mv     ; 5.122 ; 5.122 ; Rise       ; CLK_mv          ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; A[*]      ; CLK_mv     ; -2.894 ; -2.894 ; Rise       ; CLK_mv          ;
+;  A[0]     ; CLK_mv     ; -2.894 ; -2.894 ; Rise       ; CLK_mv          ;
+;  A[1]     ; CLK_mv     ; -3.724 ; -3.724 ; Rise       ; CLK_mv          ;
+;  A[2]     ; CLK_mv     ; -3.196 ; -3.196 ; Rise       ; CLK_mv          ;
+;  A[3]     ; CLK_mv     ; -3.445 ; -3.445 ; Rise       ; CLK_mv          ;
+;  A[4]     ; CLK_mv     ; -3.625 ; -3.625 ; Rise       ; CLK_mv          ;
+;  A[5]     ; CLK_mv     ; -3.232 ; -3.232 ; Rise       ; CLK_mv          ;
+;  A[6]     ; CLK_mv     ; -3.691 ; -3.691 ; Rise       ; CLK_mv          ;
+;  A[7]     ; CLK_mv     ; -3.144 ; -3.144 ; Rise       ; CLK_mv          ;
+; C         ; CLK_mv     ; -0.769 ; -0.769 ; Rise       ; CLK_mv          ;
+; S[*]      ; CLK_mv     ; -1.996 ; -1.996 ; Rise       ; CLK_mv          ;
+;  S[0]     ; CLK_mv     ; -4.710 ; -4.710 ; Rise       ; CLK_mv          ;
+;  S[1]     ; CLK_mv     ; -4.903 ; -4.903 ; Rise       ; CLK_mv          ;
+;  S[2]     ; CLK_mv     ; -1.996 ; -1.996 ; Rise       ; CLK_mv          ;
+;  S[3]     ; CLK_mv     ; -4.684 ; -4.684 ; Rise       ; CLK_mv          ;
+;  S[4]     ; CLK_mv     ; -5.058 ; -5.058 ; Rise       ; CLK_mv          ;
+;  S[5]     ; CLK_mv     ; -4.760 ; -4.760 ; Rise       ; CLK_mv          ;
+;  S[6]     ; CLK_mv     ; -4.380 ; -4.380 ; Rise       ; CLK_mv          ;
+;  S[7]     ; CLK_mv     ; -4.552 ; -4.552 ; Rise       ; CLK_mv          ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++------------------------------------------------------------------------+
+; Clock to Output Times                                                  ;
++------------+------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+------------+-------+-------+------------+-----------------+
+; D          ; CLK_mv     ; 6.623 ; 6.623 ; Rise       ; CLK_mv          ;
+; Tot_mv[*]  ; CLK_mv     ; 6.858 ; 6.858 ; Rise       ; CLK_mv          ;
+;  Tot_mv[0] ; CLK_mv     ; 6.858 ; 6.858 ; Rise       ; CLK_mv          ;
+;  Tot_mv[1] ; CLK_mv     ; 6.600 ; 6.600 ; Rise       ; CLK_mv          ;
+;  Tot_mv[2] ; CLK_mv     ; 6.631 ; 6.631 ; Rise       ; CLK_mv          ;
+;  Tot_mv[3] ; CLK_mv     ; 6.614 ; 6.614 ; Rise       ; CLK_mv          ;
+;  Tot_mv[4] ; CLK_mv     ; 6.805 ; 6.805 ; Rise       ; CLK_mv          ;
+;  Tot_mv[5] ; CLK_mv     ; 6.397 ; 6.397 ; Rise       ; CLK_mv          ;
+;  Tot_mv[6] ; CLK_mv     ; 6.628 ; 6.628 ; Rise       ; CLK_mv          ;
+;  Tot_mv[7] ; CLK_mv     ; 6.386 ; 6.386 ; Rise       ; CLK_mv          ;
++------------+------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                          ;
++------------+------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+------------+-------+-------+------------+-----------------+
+; D          ; CLK_mv     ; 6.623 ; 6.623 ; Rise       ; CLK_mv          ;
+; Tot_mv[*]  ; CLK_mv     ; 6.386 ; 6.386 ; Rise       ; CLK_mv          ;
+;  Tot_mv[0] ; CLK_mv     ; 6.858 ; 6.858 ; Rise       ; CLK_mv          ;
+;  Tot_mv[1] ; CLK_mv     ; 6.600 ; 6.600 ; Rise       ; CLK_mv          ;
+;  Tot_mv[2] ; CLK_mv     ; 6.631 ; 6.631 ; Rise       ; CLK_mv          ;
+;  Tot_mv[3] ; CLK_mv     ; 6.614 ; 6.614 ; Rise       ; CLK_mv          ;
+;  Tot_mv[4] ; CLK_mv     ; 6.805 ; 6.805 ; Rise       ; CLK_mv          ;
+;  Tot_mv[5] ; CLK_mv     ; 6.397 ; 6.397 ; Rise       ; CLK_mv          ;
+;  Tot_mv[6] ; CLK_mv     ; 6.628 ; 6.628 ; Rise       ; CLK_mv          ;
+;  Tot_mv[7] ; CLK_mv     ; 6.386 ; 6.386 ; Rise       ; CLK_mv          ;
++------------+------------+-------+-------+------------+-----------------+
+
+
++---------------------------------+
+; Fast Model Setup Summary        ;
++--------+--------+---------------+
+; Clock  ; Slack  ; End Point TNS ;
++--------+--------+---------------+
+; CLK_mv ; -0.204 ; -0.446        ;
++--------+--------+---------------+
+
+
++--------------------------------+
+; Fast Model Hold Summary        ;
++--------+-------+---------------+
+; Clock  ; Slack ; End Point TNS ;
++--------+-------+---------------+
+; CLK_mv ; 0.215 ; 0.000         ;
++--------+-------+---------------+
+
+
++--------------------------------+
+; Fast Model Recovery Summary    ;
++--------+-------+---------------+
+; Clock  ; Slack ; End Point TNS ;
++--------+-------+---------------+
+; CLK_mv ; 0.214 ; 0.000         ;
++--------+-------+---------------+
+
+
++--------------------------------+
+; Fast Model Removal Summary     ;
++--------+-------+---------------+
+; Clock  ; Slack ; End Point TNS ;
++--------+-------+---------------+
+; CLK_mv ; 0.592 ; 0.000         ;
++--------+-------+---------------+
+
+
++----------------------------------------+
+; Fast Model Minimum Pulse Width Summary ;
++--------+--------+----------------------+
+; Clock  ; Slack  ; End Point TNS        ;
++--------+--------+----------------------+
+; CLK_mv ; -1.380 ; -13.380              ;
++--------+--------+----------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'CLK_mv'                                                                                                                                               ;
++--------+---------------------------------------------+---------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                   ; To Node                                     ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------------------------+---------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -0.204 ; datapathMV:Datapath|reg8Bits:Reg|qs[7]      ; blocoDeControleMV:BlocodeControle|estado.E2 ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.002      ; 1.238      ;
+; -0.203 ; datapathMV:Datapath|reg8Bits:Reg|qs[7]      ; blocoDeControleMV:BlocodeControle|estado.E4 ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.002      ; 1.237      ;
+; -0.139 ; datapathMV:Datapath|reg8Bits:Reg|qs[3]      ; blocoDeControleMV:BlocodeControle|estado.E2 ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.002      ; 1.173      ;
+; -0.138 ; datapathMV:Datapath|reg8Bits:Reg|qs[3]      ; blocoDeControleMV:BlocodeControle|estado.E4 ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.002      ; 1.172      ;
+; -0.129 ; datapathMV:Datapath|reg8Bits:Reg|qs[1]      ; blocoDeControleMV:BlocodeControle|estado.E2 ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.002      ; 1.163      ;
+; -0.128 ; datapathMV:Datapath|reg8Bits:Reg|qs[1]      ; blocoDeControleMV:BlocodeControle|estado.E4 ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.002      ; 1.162      ;
+; -0.119 ; datapathMV:Datapath|reg8Bits:Reg|qs[0]      ; blocoDeControleMV:BlocodeControle|estado.E2 ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 1.151      ;
+; -0.118 ; datapathMV:Datapath|reg8Bits:Reg|qs[0]      ; blocoDeControleMV:BlocodeControle|estado.E4 ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 1.150      ;
+; -0.089 ; datapathMV:Datapath|reg8Bits:Reg|qs[6]      ; blocoDeControleMV:BlocodeControle|estado.E2 ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.002      ; 1.123      ;
+; -0.088 ; datapathMV:Datapath|reg8Bits:Reg|qs[6]      ; blocoDeControleMV:BlocodeControle|estado.E4 ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.002      ; 1.122      ;
+; -0.064 ; datapathMV:Datapath|reg8Bits:Reg|qs[4]      ; blocoDeControleMV:BlocodeControle|estado.E2 ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.002      ; 1.098      ;
+; -0.063 ; datapathMV:Datapath|reg8Bits:Reg|qs[4]      ; blocoDeControleMV:BlocodeControle|estado.E4 ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.002      ; 1.097      ;
+; -0.040 ; datapathMV:Datapath|reg8Bits:Reg|qs[2]      ; blocoDeControleMV:BlocodeControle|estado.E2 ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.002      ; 1.074      ;
+; -0.039 ; datapathMV:Datapath|reg8Bits:Reg|qs[2]      ; blocoDeControleMV:BlocodeControle|estado.E4 ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.002      ; 1.073      ;
+; -0.037 ; datapathMV:Datapath|reg8Bits:Reg|qs[0]      ; datapathMV:Datapath|reg8Bits:Reg|qs[7]      ; CLK_mv       ; CLK_mv      ; 1.000        ; -0.002     ; 1.067      ;
+; -0.002 ; datapathMV:Datapath|reg8Bits:Reg|qs[0]      ; datapathMV:Datapath|reg8Bits:Reg|qs[6]      ; CLK_mv       ; CLK_mv      ; 1.000        ; -0.002     ; 1.032      ;
+; 0.009  ; datapathMV:Datapath|reg8Bits:Reg|qs[5]      ; blocoDeControleMV:BlocodeControle|estado.E2 ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.002      ; 1.025      ;
+; 0.010  ; datapathMV:Datapath|reg8Bits:Reg|qs[5]      ; blocoDeControleMV:BlocodeControle|estado.E4 ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.002      ; 1.024      ;
+; 0.033  ; datapathMV:Datapath|reg8Bits:Reg|qs[0]      ; datapathMV:Datapath|reg8Bits:Reg|qs[5]      ; CLK_mv       ; CLK_mv      ; 1.000        ; -0.002     ; 0.997      ;
+; 0.068  ; datapathMV:Datapath|reg8Bits:Reg|qs[0]      ; datapathMV:Datapath|reg8Bits:Reg|qs[4]      ; CLK_mv       ; CLK_mv      ; 1.000        ; -0.002     ; 0.962      ;
+; 0.103  ; datapathMV:Datapath|reg8Bits:Reg|qs[0]      ; datapathMV:Datapath|reg8Bits:Reg|qs[3]      ; CLK_mv       ; CLK_mv      ; 1.000        ; -0.002     ; 0.927      ;
+; 0.138  ; datapathMV:Datapath|reg8Bits:Reg|qs[0]      ; datapathMV:Datapath|reg8Bits:Reg|qs[2]      ; CLK_mv       ; CLK_mv      ; 1.000        ; -0.002     ; 0.892      ;
+; 0.167  ; datapathMV:Datapath|reg8Bits:Reg|qs[1]      ; datapathMV:Datapath|reg8Bits:Reg|qs[7]      ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 0.865      ;
+; 0.202  ; datapathMV:Datapath|reg8Bits:Reg|qs[1]      ; datapathMV:Datapath|reg8Bits:Reg|qs[6]      ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 0.830      ;
+; 0.228  ; datapathMV:Datapath|reg8Bits:Reg|qs[4]      ; datapathMV:Datapath|reg8Bits:Reg|qs[7]      ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 0.804      ;
+; 0.229  ; datapathMV:Datapath|reg8Bits:Reg|qs[2]      ; datapathMV:Datapath|reg8Bits:Reg|qs[7]      ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 0.803      ;
+; 0.237  ; datapathMV:Datapath|reg8Bits:Reg|qs[1]      ; datapathMV:Datapath|reg8Bits:Reg|qs[5]      ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 0.795      ;
+; 0.263  ; datapathMV:Datapath|reg8Bits:Reg|qs[4]      ; datapathMV:Datapath|reg8Bits:Reg|qs[6]      ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 0.769      ;
+; 0.264  ; datapathMV:Datapath|reg8Bits:Reg|qs[2]      ; datapathMV:Datapath|reg8Bits:Reg|qs[6]      ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 0.768      ;
+; 0.268  ; datapathMV:Datapath|reg8Bits:Reg|qs[3]      ; datapathMV:Datapath|reg8Bits:Reg|qs[7]      ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 0.764      ;
+; 0.272  ; datapathMV:Datapath|reg8Bits:Reg|qs[1]      ; datapathMV:Datapath|reg8Bits:Reg|qs[4]      ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 0.760      ;
+; 0.276  ; datapathMV:Datapath|reg8Bits:Reg|qs[0]      ; datapathMV:Datapath|reg8Bits:Reg|qs[1]      ; CLK_mv       ; CLK_mv      ; 1.000        ; -0.002     ; 0.754      ;
+; 0.287  ; blocoDeControleMV:BlocodeControle|estado.E3 ; datapathMV:Datapath|reg8Bits:Reg|qs[2]      ; CLK_mv       ; CLK_mv      ; 1.000        ; -0.002     ; 0.743      ;
+; 0.287  ; blocoDeControleMV:BlocodeControle|estado.E3 ; datapathMV:Datapath|reg8Bits:Reg|qs[3]      ; CLK_mv       ; CLK_mv      ; 1.000        ; -0.002     ; 0.743      ;
+; 0.287  ; blocoDeControleMV:BlocodeControle|estado.E3 ; datapathMV:Datapath|reg8Bits:Reg|qs[4]      ; CLK_mv       ; CLK_mv      ; 1.000        ; -0.002     ; 0.743      ;
+; 0.287  ; blocoDeControleMV:BlocodeControle|estado.E3 ; datapathMV:Datapath|reg8Bits:Reg|qs[5]      ; CLK_mv       ; CLK_mv      ; 1.000        ; -0.002     ; 0.743      ;
+; 0.287  ; blocoDeControleMV:BlocodeControle|estado.E3 ; datapathMV:Datapath|reg8Bits:Reg|qs[6]      ; CLK_mv       ; CLK_mv      ; 1.000        ; -0.002     ; 0.743      ;
+; 0.287  ; blocoDeControleMV:BlocodeControle|estado.E3 ; datapathMV:Datapath|reg8Bits:Reg|qs[7]      ; CLK_mv       ; CLK_mv      ; 1.000        ; -0.002     ; 0.743      ;
+; 0.287  ; blocoDeControleMV:BlocodeControle|estado.E3 ; datapathMV:Datapath|reg8Bits:Reg|qs[1]      ; CLK_mv       ; CLK_mv      ; 1.000        ; -0.002     ; 0.743      ;
+; 0.298  ; datapathMV:Datapath|reg8Bits:Reg|qs[4]      ; datapathMV:Datapath|reg8Bits:Reg|qs[5]      ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 0.734      ;
+; 0.299  ; datapathMV:Datapath|reg8Bits:Reg|qs[2]      ; datapathMV:Datapath|reg8Bits:Reg|qs[5]      ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 0.733      ;
+; 0.303  ; datapathMV:Datapath|reg8Bits:Reg|qs[3]      ; datapathMV:Datapath|reg8Bits:Reg|qs[6]      ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 0.729      ;
+; 0.307  ; datapathMV:Datapath|reg8Bits:Reg|qs[1]      ; datapathMV:Datapath|reg8Bits:Reg|qs[3]      ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 0.725      ;
+; 0.328  ; datapathMV:Datapath|reg8Bits:Reg|qs[5]      ; datapathMV:Datapath|reg8Bits:Reg|qs[7]      ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 0.704      ;
+; 0.334  ; datapathMV:Datapath|reg8Bits:Reg|qs[2]      ; datapathMV:Datapath|reg8Bits:Reg|qs[4]      ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 0.698      ;
+; 0.338  ; datapathMV:Datapath|reg8Bits:Reg|qs[3]      ; datapathMV:Datapath|reg8Bits:Reg|qs[5]      ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 0.694      ;
+; 0.342  ; datapathMV:Datapath|reg8Bits:Reg|qs[1]      ; datapathMV:Datapath|reg8Bits:Reg|qs[2]      ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 0.690      ;
+; 0.350  ; blocoDeControleMV:BlocodeControle|estado.E2 ; blocoDeControleMV:BlocodeControle|estado.E2 ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 0.682      ;
+; 0.360  ; datapathMV:Datapath|reg8Bits:Reg|qs[6]      ; datapathMV:Datapath|reg8Bits:Reg|qs[7]      ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 0.672      ;
+; 0.363  ; datapathMV:Datapath|reg8Bits:Reg|qs[5]      ; datapathMV:Datapath|reg8Bits:Reg|qs[6]      ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 0.669      ;
+; 0.369  ; datapathMV:Datapath|reg8Bits:Reg|qs[2]      ; datapathMV:Datapath|reg8Bits:Reg|qs[3]      ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 0.663      ;
+; 0.373  ; datapathMV:Datapath|reg8Bits:Reg|qs[3]      ; datapathMV:Datapath|reg8Bits:Reg|qs[4]      ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 0.659      ;
+; 0.377  ; datapathMV:Datapath|reg8Bits:Reg|qs[1]      ; datapathMV:Datapath|reg8Bits:Reg|qs[1]      ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 0.655      ;
+; 0.420  ; blocoDeControleMV:BlocodeControle|estado.E3 ; datapathMV:Datapath|reg8Bits:Reg|qs[0]      ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 0.612      ;
+; 0.424  ; blocoDeControleMV:BlocodeControle|estado.E1 ; blocoDeControleMV:BlocodeControle|estado.E2 ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.002      ; 0.610      ;
+; 0.436  ; datapathMV:Datapath|reg8Bits:Reg|qs[4]      ; datapathMV:Datapath|reg8Bits:Reg|qs[4]      ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 0.596      ;
+; 0.498  ; datapathMV:Datapath|reg8Bits:Reg|qs[6]      ; datapathMV:Datapath|reg8Bits:Reg|qs[6]      ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 0.534      ;
+; 0.499  ; datapathMV:Datapath|reg8Bits:Reg|qs[7]      ; datapathMV:Datapath|reg8Bits:Reg|qs[7]      ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 0.533      ;
+; 0.500  ; blocoDeControleMV:BlocodeControle|estado.E3 ; blocoDeControleMV:BlocodeControle|estado.E2 ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 0.532      ;
+; 0.501  ; datapathMV:Datapath|reg8Bits:Reg|qs[5]      ; datapathMV:Datapath|reg8Bits:Reg|qs[5]      ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 0.531      ;
+; 0.508  ; blocoDeControleMV:BlocodeControle|estado.E2 ; blocoDeControleMV:BlocodeControle|estado.E3 ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 0.524      ;
+; 0.509  ; datapathMV:Datapath|reg8Bits:Reg|qs[2]      ; datapathMV:Datapath|reg8Bits:Reg|qs[2]      ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 0.523      ;
+; 0.510  ; blocoDeControleMV:BlocodeControle|estado.E2 ; blocoDeControleMV:BlocodeControle|estado.E4 ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 0.522      ;
+; 0.511  ; datapathMV:Datapath|reg8Bits:Reg|qs[3]      ; datapathMV:Datapath|reg8Bits:Reg|qs[3]      ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 0.521      ;
+; 0.528  ; blocoDeControleMV:BlocodeControle|estado.E4 ; blocoDeControleMV:BlocodeControle|estado.E1 ; CLK_mv       ; CLK_mv      ; 1.000        ; -0.002     ; 0.502      ;
+; 0.665  ; datapathMV:Datapath|reg8Bits:Reg|qs[0]      ; datapathMV:Datapath|reg8Bits:Reg|qs[0]      ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 0.367      ;
++--------+---------------------------------------------+---------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'CLK_mv'                                                                                                                                               ;
++-------+---------------------------------------------+---------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                   ; To Node                                     ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------------------------------+---------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.215 ; datapathMV:Datapath|reg8Bits:Reg|qs[0]      ; datapathMV:Datapath|reg8Bits:Reg|qs[0]      ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.352 ; blocoDeControleMV:BlocodeControle|estado.E4 ; blocoDeControleMV:BlocodeControle|estado.E1 ; CLK_mv       ; CLK_mv      ; 0.000        ; -0.002     ; 0.502      ;
+; 0.369 ; datapathMV:Datapath|reg8Bits:Reg|qs[3]      ; datapathMV:Datapath|reg8Bits:Reg|qs[3]      ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 0.521      ;
+; 0.370 ; blocoDeControleMV:BlocodeControle|estado.E2 ; blocoDeControleMV:BlocodeControle|estado.E4 ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 0.522      ;
+; 0.371 ; datapathMV:Datapath|reg8Bits:Reg|qs[2]      ; datapathMV:Datapath|reg8Bits:Reg|qs[2]      ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 0.523      ;
+; 0.372 ; blocoDeControleMV:BlocodeControle|estado.E2 ; blocoDeControleMV:BlocodeControle|estado.E3 ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 0.524      ;
+; 0.379 ; datapathMV:Datapath|reg8Bits:Reg|qs[5]      ; datapathMV:Datapath|reg8Bits:Reg|qs[5]      ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 0.531      ;
+; 0.380 ; blocoDeControleMV:BlocodeControle|estado.E3 ; blocoDeControleMV:BlocodeControle|estado.E2 ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 0.532      ;
+; 0.381 ; datapathMV:Datapath|reg8Bits:Reg|qs[7]      ; datapathMV:Datapath|reg8Bits:Reg|qs[7]      ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 0.533      ;
+; 0.382 ; datapathMV:Datapath|reg8Bits:Reg|qs[6]      ; datapathMV:Datapath|reg8Bits:Reg|qs[6]      ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 0.534      ;
+; 0.444 ; datapathMV:Datapath|reg8Bits:Reg|qs[4]      ; datapathMV:Datapath|reg8Bits:Reg|qs[4]      ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 0.596      ;
+; 0.456 ; blocoDeControleMV:BlocodeControle|estado.E1 ; blocoDeControleMV:BlocodeControle|estado.E2 ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.002      ; 0.610      ;
+; 0.460 ; blocoDeControleMV:BlocodeControle|estado.E3 ; datapathMV:Datapath|reg8Bits:Reg|qs[0]      ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 0.612      ;
+; 0.503 ; datapathMV:Datapath|reg8Bits:Reg|qs[1]      ; datapathMV:Datapath|reg8Bits:Reg|qs[1]      ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 0.655      ;
+; 0.507 ; datapathMV:Datapath|reg8Bits:Reg|qs[3]      ; datapathMV:Datapath|reg8Bits:Reg|qs[4]      ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 0.659      ;
+; 0.511 ; datapathMV:Datapath|reg8Bits:Reg|qs[2]      ; datapathMV:Datapath|reg8Bits:Reg|qs[3]      ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 0.663      ;
+; 0.517 ; datapathMV:Datapath|reg8Bits:Reg|qs[5]      ; datapathMV:Datapath|reg8Bits:Reg|qs[6]      ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 0.669      ;
+; 0.520 ; datapathMV:Datapath|reg8Bits:Reg|qs[6]      ; datapathMV:Datapath|reg8Bits:Reg|qs[7]      ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 0.672      ;
+; 0.530 ; blocoDeControleMV:BlocodeControle|estado.E2 ; blocoDeControleMV:BlocodeControle|estado.E2 ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 0.682      ;
+; 0.538 ; datapathMV:Datapath|reg8Bits:Reg|qs[1]      ; datapathMV:Datapath|reg8Bits:Reg|qs[2]      ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 0.690      ;
+; 0.542 ; datapathMV:Datapath|reg8Bits:Reg|qs[3]      ; datapathMV:Datapath|reg8Bits:Reg|qs[5]      ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 0.694      ;
+; 0.546 ; datapathMV:Datapath|reg8Bits:Reg|qs[2]      ; datapathMV:Datapath|reg8Bits:Reg|qs[4]      ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 0.698      ;
+; 0.552 ; datapathMV:Datapath|reg8Bits:Reg|qs[5]      ; datapathMV:Datapath|reg8Bits:Reg|qs[7]      ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 0.704      ;
+; 0.573 ; datapathMV:Datapath|reg8Bits:Reg|qs[1]      ; datapathMV:Datapath|reg8Bits:Reg|qs[3]      ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 0.725      ;
+; 0.577 ; datapathMV:Datapath|reg8Bits:Reg|qs[3]      ; datapathMV:Datapath|reg8Bits:Reg|qs[6]      ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 0.729      ;
+; 0.581 ; datapathMV:Datapath|reg8Bits:Reg|qs[2]      ; datapathMV:Datapath|reg8Bits:Reg|qs[5]      ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 0.733      ;
+; 0.582 ; datapathMV:Datapath|reg8Bits:Reg|qs[4]      ; datapathMV:Datapath|reg8Bits:Reg|qs[5]      ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 0.734      ;
+; 0.593 ; blocoDeControleMV:BlocodeControle|estado.E3 ; datapathMV:Datapath|reg8Bits:Reg|qs[2]      ; CLK_mv       ; CLK_mv      ; 0.000        ; -0.002     ; 0.743      ;
+; 0.593 ; blocoDeControleMV:BlocodeControle|estado.E3 ; datapathMV:Datapath|reg8Bits:Reg|qs[3]      ; CLK_mv       ; CLK_mv      ; 0.000        ; -0.002     ; 0.743      ;
+; 0.593 ; blocoDeControleMV:BlocodeControle|estado.E3 ; datapathMV:Datapath|reg8Bits:Reg|qs[4]      ; CLK_mv       ; CLK_mv      ; 0.000        ; -0.002     ; 0.743      ;
+; 0.593 ; blocoDeControleMV:BlocodeControle|estado.E3 ; datapathMV:Datapath|reg8Bits:Reg|qs[5]      ; CLK_mv       ; CLK_mv      ; 0.000        ; -0.002     ; 0.743      ;
+; 0.593 ; blocoDeControleMV:BlocodeControle|estado.E3 ; datapathMV:Datapath|reg8Bits:Reg|qs[6]      ; CLK_mv       ; CLK_mv      ; 0.000        ; -0.002     ; 0.743      ;
+; 0.593 ; blocoDeControleMV:BlocodeControle|estado.E3 ; datapathMV:Datapath|reg8Bits:Reg|qs[7]      ; CLK_mv       ; CLK_mv      ; 0.000        ; -0.002     ; 0.743      ;
+; 0.593 ; blocoDeControleMV:BlocodeControle|estado.E3 ; datapathMV:Datapath|reg8Bits:Reg|qs[1]      ; CLK_mv       ; CLK_mv      ; 0.000        ; -0.002     ; 0.743      ;
+; 0.604 ; datapathMV:Datapath|reg8Bits:Reg|qs[0]      ; datapathMV:Datapath|reg8Bits:Reg|qs[1]      ; CLK_mv       ; CLK_mv      ; 0.000        ; -0.002     ; 0.754      ;
+; 0.608 ; datapathMV:Datapath|reg8Bits:Reg|qs[1]      ; datapathMV:Datapath|reg8Bits:Reg|qs[4]      ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 0.760      ;
+; 0.612 ; datapathMV:Datapath|reg8Bits:Reg|qs[3]      ; datapathMV:Datapath|reg8Bits:Reg|qs[7]      ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 0.764      ;
+; 0.616 ; datapathMV:Datapath|reg8Bits:Reg|qs[2]      ; datapathMV:Datapath|reg8Bits:Reg|qs[6]      ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 0.768      ;
+; 0.617 ; datapathMV:Datapath|reg8Bits:Reg|qs[4]      ; datapathMV:Datapath|reg8Bits:Reg|qs[6]      ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 0.769      ;
+; 0.643 ; datapathMV:Datapath|reg8Bits:Reg|qs[1]      ; datapathMV:Datapath|reg8Bits:Reg|qs[5]      ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 0.795      ;
+; 0.651 ; datapathMV:Datapath|reg8Bits:Reg|qs[2]      ; datapathMV:Datapath|reg8Bits:Reg|qs[7]      ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 0.803      ;
+; 0.652 ; datapathMV:Datapath|reg8Bits:Reg|qs[4]      ; datapathMV:Datapath|reg8Bits:Reg|qs[7]      ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 0.804      ;
+; 0.678 ; datapathMV:Datapath|reg8Bits:Reg|qs[1]      ; datapathMV:Datapath|reg8Bits:Reg|qs[6]      ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 0.830      ;
+; 0.713 ; datapathMV:Datapath|reg8Bits:Reg|qs[1]      ; datapathMV:Datapath|reg8Bits:Reg|qs[7]      ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 0.865      ;
+; 0.742 ; datapathMV:Datapath|reg8Bits:Reg|qs[0]      ; datapathMV:Datapath|reg8Bits:Reg|qs[2]      ; CLK_mv       ; CLK_mv      ; 0.000        ; -0.002     ; 0.892      ;
+; 0.777 ; datapathMV:Datapath|reg8Bits:Reg|qs[0]      ; datapathMV:Datapath|reg8Bits:Reg|qs[3]      ; CLK_mv       ; CLK_mv      ; 0.000        ; -0.002     ; 0.927      ;
+; 0.811 ; datapathMV:Datapath|reg8Bits:Reg|qs[6]      ; blocoDeControleMV:BlocodeControle|estado.E4 ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.002      ; 0.965      ;
+; 0.812 ; datapathMV:Datapath|reg8Bits:Reg|qs[6]      ; blocoDeControleMV:BlocodeControle|estado.E2 ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.002      ; 0.966      ;
+; 0.812 ; datapathMV:Datapath|reg8Bits:Reg|qs[0]      ; datapathMV:Datapath|reg8Bits:Reg|qs[4]      ; CLK_mv       ; CLK_mv      ; 0.000        ; -0.002     ; 0.962      ;
+; 0.837 ; datapathMV:Datapath|reg8Bits:Reg|qs[5]      ; blocoDeControleMV:BlocodeControle|estado.E4 ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.002      ; 0.991      ;
+; 0.838 ; datapathMV:Datapath|reg8Bits:Reg|qs[5]      ; blocoDeControleMV:BlocodeControle|estado.E2 ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.002      ; 0.992      ;
+; 0.847 ; datapathMV:Datapath|reg8Bits:Reg|qs[0]      ; datapathMV:Datapath|reg8Bits:Reg|qs[5]      ; CLK_mv       ; CLK_mv      ; 0.000        ; -0.002     ; 0.997      ;
+; 0.869 ; datapathMV:Datapath|reg8Bits:Reg|qs[4]      ; blocoDeControleMV:BlocodeControle|estado.E4 ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.002      ; 1.023      ;
+; 0.870 ; datapathMV:Datapath|reg8Bits:Reg|qs[4]      ; blocoDeControleMV:BlocodeControle|estado.E2 ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.002      ; 1.024      ;
+; 0.882 ; datapathMV:Datapath|reg8Bits:Reg|qs[0]      ; datapathMV:Datapath|reg8Bits:Reg|qs[6]      ; CLK_mv       ; CLK_mv      ; 0.000        ; -0.002     ; 1.032      ;
+; 0.900 ; datapathMV:Datapath|reg8Bits:Reg|qs[3]      ; blocoDeControleMV:BlocodeControle|estado.E4 ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.002      ; 1.054      ;
+; 0.901 ; datapathMV:Datapath|reg8Bits:Reg|qs[3]      ; blocoDeControleMV:BlocodeControle|estado.E2 ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.002      ; 1.055      ;
+; 0.912 ; datapathMV:Datapath|reg8Bits:Reg|qs[7]      ; blocoDeControleMV:BlocodeControle|estado.E4 ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.002      ; 1.066      ;
+; 0.913 ; datapathMV:Datapath|reg8Bits:Reg|qs[7]      ; blocoDeControleMV:BlocodeControle|estado.E2 ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.002      ; 1.067      ;
+; 0.917 ; datapathMV:Datapath|reg8Bits:Reg|qs[0]      ; datapathMV:Datapath|reg8Bits:Reg|qs[7]      ; CLK_mv       ; CLK_mv      ; 0.000        ; -0.002     ; 1.067      ;
+; 0.919 ; datapathMV:Datapath|reg8Bits:Reg|qs[2]      ; blocoDeControleMV:BlocodeControle|estado.E4 ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.002      ; 1.073      ;
+; 0.920 ; datapathMV:Datapath|reg8Bits:Reg|qs[2]      ; blocoDeControleMV:BlocodeControle|estado.E2 ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.002      ; 1.074      ;
+; 0.959 ; datapathMV:Datapath|reg8Bits:Reg|qs[1]      ; blocoDeControleMV:BlocodeControle|estado.E4 ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.002      ; 1.113      ;
+; 0.960 ; datapathMV:Datapath|reg8Bits:Reg|qs[1]      ; blocoDeControleMV:BlocodeControle|estado.E2 ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.002      ; 1.114      ;
+; 0.998 ; datapathMV:Datapath|reg8Bits:Reg|qs[0]      ; blocoDeControleMV:BlocodeControle|estado.E4 ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 1.150      ;
+; 0.999 ; datapathMV:Datapath|reg8Bits:Reg|qs[0]      ; blocoDeControleMV:BlocodeControle|estado.E2 ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 1.151      ;
++-------+---------------------------------------------+---------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Recovery: 'CLK_mv'                                                                                                                                      ;
++-------+---------------------------------------------+----------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                   ; To Node                                ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------------------------------+----------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.214 ; blocoDeControleMV:BlocodeControle|estado.E1 ; datapathMV:Datapath|reg8Bits:Reg|qs[0] ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.002      ; 0.820      ;
+; 0.288 ; blocoDeControleMV:BlocodeControle|estado.E1 ; datapathMV:Datapath|reg8Bits:Reg|qs[2] ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 0.744      ;
+; 0.288 ; blocoDeControleMV:BlocodeControle|estado.E1 ; datapathMV:Datapath|reg8Bits:Reg|qs[3] ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 0.744      ;
+; 0.288 ; blocoDeControleMV:BlocodeControle|estado.E1 ; datapathMV:Datapath|reg8Bits:Reg|qs[4] ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 0.744      ;
+; 0.288 ; blocoDeControleMV:BlocodeControle|estado.E1 ; datapathMV:Datapath|reg8Bits:Reg|qs[5] ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 0.744      ;
+; 0.288 ; blocoDeControleMV:BlocodeControle|estado.E1 ; datapathMV:Datapath|reg8Bits:Reg|qs[6] ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 0.744      ;
+; 0.288 ; blocoDeControleMV:BlocodeControle|estado.E1 ; datapathMV:Datapath|reg8Bits:Reg|qs[7] ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 0.744      ;
+; 0.288 ; blocoDeControleMV:BlocodeControle|estado.E1 ; datapathMV:Datapath|reg8Bits:Reg|qs[1] ; CLK_mv       ; CLK_mv      ; 1.000        ; 0.000      ; 0.744      ;
++-------+---------------------------------------------+----------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Removal: 'CLK_mv'                                                                                                                                       ;
++-------+---------------------------------------------+----------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                   ; To Node                                ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------------------------------+----------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.592 ; blocoDeControleMV:BlocodeControle|estado.E1 ; datapathMV:Datapath|reg8Bits:Reg|qs[2] ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 0.744      ;
+; 0.592 ; blocoDeControleMV:BlocodeControle|estado.E1 ; datapathMV:Datapath|reg8Bits:Reg|qs[3] ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 0.744      ;
+; 0.592 ; blocoDeControleMV:BlocodeControle|estado.E1 ; datapathMV:Datapath|reg8Bits:Reg|qs[4] ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 0.744      ;
+; 0.592 ; blocoDeControleMV:BlocodeControle|estado.E1 ; datapathMV:Datapath|reg8Bits:Reg|qs[5] ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 0.744      ;
+; 0.592 ; blocoDeControleMV:BlocodeControle|estado.E1 ; datapathMV:Datapath|reg8Bits:Reg|qs[6] ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 0.744      ;
+; 0.592 ; blocoDeControleMV:BlocodeControle|estado.E1 ; datapathMV:Datapath|reg8Bits:Reg|qs[7] ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 0.744      ;
+; 0.592 ; blocoDeControleMV:BlocodeControle|estado.E1 ; datapathMV:Datapath|reg8Bits:Reg|qs[1] ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.000      ; 0.744      ;
+; 0.666 ; blocoDeControleMV:BlocodeControle|estado.E1 ; datapathMV:Datapath|reg8Bits:Reg|qs[0] ; CLK_mv       ; CLK_mv      ; 0.000        ; 0.002      ; 0.820      ;
++-------+---------------------------------------------+----------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'CLK_mv'                                                                                      ;
++--------+--------------+----------------+------------------+--------+------------+---------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock  ; Clock Edge ; Target                                      ;
++--------+--------------+----------------+------------------+--------+------------+---------------------------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; CLK_mv ; Rise       ; CLK_mv                                      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_mv ; Rise       ; blocoDeControleMV:BlocodeControle|estado.E1 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_mv ; Rise       ; blocoDeControleMV:BlocodeControle|estado.E1 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_mv ; Rise       ; blocoDeControleMV:BlocodeControle|estado.E2 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_mv ; Rise       ; blocoDeControleMV:BlocodeControle|estado.E2 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_mv ; Rise       ; blocoDeControleMV:BlocodeControle|estado.E3 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_mv ; Rise       ; blocoDeControleMV:BlocodeControle|estado.E3 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_mv ; Rise       ; blocoDeControleMV:BlocodeControle|estado.E4 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_mv ; Rise       ; blocoDeControleMV:BlocodeControle|estado.E4 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_mv ; Rise       ; datapathMV:Datapath|reg8Bits:Reg|qs[0]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_mv ; Rise       ; datapathMV:Datapath|reg8Bits:Reg|qs[0]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_mv ; Rise       ; datapathMV:Datapath|reg8Bits:Reg|qs[1]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_mv ; Rise       ; datapathMV:Datapath|reg8Bits:Reg|qs[1]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_mv ; Rise       ; datapathMV:Datapath|reg8Bits:Reg|qs[2]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_mv ; Rise       ; datapathMV:Datapath|reg8Bits:Reg|qs[2]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_mv ; Rise       ; datapathMV:Datapath|reg8Bits:Reg|qs[3]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_mv ; Rise       ; datapathMV:Datapath|reg8Bits:Reg|qs[3]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_mv ; Rise       ; datapathMV:Datapath|reg8Bits:Reg|qs[4]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_mv ; Rise       ; datapathMV:Datapath|reg8Bits:Reg|qs[4]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_mv ; Rise       ; datapathMV:Datapath|reg8Bits:Reg|qs[5]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_mv ; Rise       ; datapathMV:Datapath|reg8Bits:Reg|qs[5]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_mv ; Rise       ; datapathMV:Datapath|reg8Bits:Reg|qs[6]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_mv ; Rise       ; datapathMV:Datapath|reg8Bits:Reg|qs[6]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLK_mv ; Rise       ; datapathMV:Datapath|reg8Bits:Reg|qs[7]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLK_mv ; Rise       ; datapathMV:Datapath|reg8Bits:Reg|qs[7]      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLK_mv ; Rise       ; BlocodeControle|estado.E1|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLK_mv ; Rise       ; BlocodeControle|estado.E1|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLK_mv ; Rise       ; BlocodeControle|estado.E2|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLK_mv ; Rise       ; BlocodeControle|estado.E2|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLK_mv ; Rise       ; BlocodeControle|estado.E3|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLK_mv ; Rise       ; BlocodeControle|estado.E3|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLK_mv ; Rise       ; BlocodeControle|estado.E4|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLK_mv ; Rise       ; BlocodeControle|estado.E4|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLK_mv ; Rise       ; CLK_mv|combout                              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLK_mv ; Rise       ; CLK_mv|combout                              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLK_mv ; Rise       ; CLK_mv~clkctrl|inclk[0]                     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLK_mv ; Rise       ; CLK_mv~clkctrl|inclk[0]                     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLK_mv ; Rise       ; CLK_mv~clkctrl|outclk                       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLK_mv ; Rise       ; CLK_mv~clkctrl|outclk                       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLK_mv ; Rise       ; Datapath|Reg|qs[0]|clk                      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLK_mv ; Rise       ; Datapath|Reg|qs[0]|clk                      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLK_mv ; Rise       ; Datapath|Reg|qs[1]|clk                      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLK_mv ; Rise       ; Datapath|Reg|qs[1]|clk                      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLK_mv ; Rise       ; Datapath|Reg|qs[2]|clk                      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLK_mv ; Rise       ; Datapath|Reg|qs[2]|clk                      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLK_mv ; Rise       ; Datapath|Reg|qs[3]|clk                      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLK_mv ; Rise       ; Datapath|Reg|qs[3]|clk                      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLK_mv ; Rise       ; Datapath|Reg|qs[4]|clk                      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLK_mv ; Rise       ; Datapath|Reg|qs[4]|clk                      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLK_mv ; Rise       ; Datapath|Reg|qs[5]|clk                      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLK_mv ; Rise       ; Datapath|Reg|qs[5]|clk                      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLK_mv ; Rise       ; Datapath|Reg|qs[6]|clk                      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLK_mv ; Rise       ; Datapath|Reg|qs[6]|clk                      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLK_mv ; Rise       ; Datapath|Reg|qs[7]|clk                      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLK_mv ; Rise       ; Datapath|Reg|qs[7]|clk                      ;
++--------+--------------+----------------+------------------+--------+------------+---------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; A[*]      ; CLK_mv     ; 2.474 ; 2.474 ; Rise       ; CLK_mv          ;
+;  A[0]     ; CLK_mv     ; 2.474 ; 2.474 ; Rise       ; CLK_mv          ;
+;  A[1]     ; CLK_mv     ; 2.371 ; 2.371 ; Rise       ; CLK_mv          ;
+;  A[2]     ; CLK_mv     ; 2.093 ; 2.093 ; Rise       ; CLK_mv          ;
+;  A[3]     ; CLK_mv     ; 2.175 ; 2.175 ; Rise       ; CLK_mv          ;
+;  A[4]     ; CLK_mv     ; 2.192 ; 2.192 ; Rise       ; CLK_mv          ;
+;  A[5]     ; CLK_mv     ; 2.010 ; 2.010 ; Rise       ; CLK_mv          ;
+;  A[6]     ; CLK_mv     ; 2.180 ; 2.180 ; Rise       ; CLK_mv          ;
+;  A[7]     ; CLK_mv     ; 1.802 ; 1.802 ; Rise       ; CLK_mv          ;
+; C         ; CLK_mv     ; 0.517 ; 0.517 ; Rise       ; CLK_mv          ;
+; S[*]      ; CLK_mv     ; 2.691 ; 2.691 ; Rise       ; CLK_mv          ;
+;  S[0]     ; CLK_mv     ; 2.452 ; 2.452 ; Rise       ; CLK_mv          ;
+;  S[1]     ; CLK_mv     ; 2.574 ; 2.574 ; Rise       ; CLK_mv          ;
+;  S[2]     ; CLK_mv     ; 0.760 ; 0.760 ; Rise       ; CLK_mv          ;
+;  S[3]     ; CLK_mv     ; 2.469 ; 2.469 ; Rise       ; CLK_mv          ;
+;  S[4]     ; CLK_mv     ; 2.691 ; 2.691 ; Rise       ; CLK_mv          ;
+;  S[5]     ; CLK_mv     ; 2.569 ; 2.569 ; Rise       ; CLK_mv          ;
+;  S[6]     ; CLK_mv     ; 2.648 ; 2.648 ; Rise       ; CLK_mv          ;
+;  S[7]     ; CLK_mv     ; 2.559 ; 2.559 ; Rise       ; CLK_mv          ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; A[*]      ; CLK_mv     ; -1.550 ; -1.550 ; Rise       ; CLK_mv          ;
+;  A[0]     ; CLK_mv     ; -1.550 ; -1.550 ; Rise       ; CLK_mv          ;
+;  A[1]     ; CLK_mv     ; -1.936 ; -1.936 ; Rise       ; CLK_mv          ;
+;  A[2]     ; CLK_mv     ; -1.695 ; -1.695 ; Rise       ; CLK_mv          ;
+;  A[3]     ; CLK_mv     ; -1.810 ; -1.810 ; Rise       ; CLK_mv          ;
+;  A[4]     ; CLK_mv     ; -1.862 ; -1.862 ; Rise       ; CLK_mv          ;
+;  A[5]     ; CLK_mv     ; -1.715 ; -1.715 ; Rise       ; CLK_mv          ;
+;  A[6]     ; CLK_mv     ; -1.920 ; -1.920 ; Rise       ; CLK_mv          ;
+;  A[7]     ; CLK_mv     ; -1.682 ; -1.682 ; Rise       ; CLK_mv          ;
+; C         ; CLK_mv     ; -0.114 ; -0.114 ; Rise       ; CLK_mv          ;
+; S[*]      ; CLK_mv     ; -0.639 ; -0.639 ; Rise       ; CLK_mv          ;
+;  S[0]     ; CLK_mv     ; -2.331 ; -2.331 ; Rise       ; CLK_mv          ;
+;  S[1]     ; CLK_mv     ; -2.449 ; -2.449 ; Rise       ; CLK_mv          ;
+;  S[2]     ; CLK_mv     ; -0.639 ; -0.639 ; Rise       ; CLK_mv          ;
+;  S[3]     ; CLK_mv     ; -2.339 ; -2.339 ; Rise       ; CLK_mv          ;
+;  S[4]     ; CLK_mv     ; -2.487 ; -2.487 ; Rise       ; CLK_mv          ;
+;  S[5]     ; CLK_mv     ; -2.370 ; -2.370 ; Rise       ; CLK_mv          ;
+;  S[6]     ; CLK_mv     ; -2.221 ; -2.221 ; Rise       ; CLK_mv          ;
+;  S[7]     ; CLK_mv     ; -2.280 ; -2.280 ; Rise       ; CLK_mv          ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++------------------------------------------------------------------------+
+; Clock to Output Times                                                  ;
++------------+------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+------------+-------+-------+------------+-----------------+
+; D          ; CLK_mv     ; 3.773 ; 3.773 ; Rise       ; CLK_mv          ;
+; Tot_mv[*]  ; CLK_mv     ; 3.877 ; 3.877 ; Rise       ; CLK_mv          ;
+;  Tot_mv[0] ; CLK_mv     ; 3.877 ; 3.877 ; Rise       ; CLK_mv          ;
+;  Tot_mv[1] ; CLK_mv     ; 3.753 ; 3.753 ; Rise       ; CLK_mv          ;
+;  Tot_mv[2] ; CLK_mv     ; 3.775 ; 3.775 ; Rise       ; CLK_mv          ;
+;  Tot_mv[3] ; CLK_mv     ; 3.770 ; 3.770 ; Rise       ; CLK_mv          ;
+;  Tot_mv[4] ; CLK_mv     ; 3.833 ; 3.833 ; Rise       ; CLK_mv          ;
+;  Tot_mv[5] ; CLK_mv     ; 3.673 ; 3.673 ; Rise       ; CLK_mv          ;
+;  Tot_mv[6] ; CLK_mv     ; 3.777 ; 3.777 ; Rise       ; CLK_mv          ;
+;  Tot_mv[7] ; CLK_mv     ; 3.658 ; 3.658 ; Rise       ; CLK_mv          ;
++------------+------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                          ;
++------------+------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+------------+-------+-------+------------+-----------------+
+; D          ; CLK_mv     ; 3.773 ; 3.773 ; Rise       ; CLK_mv          ;
+; Tot_mv[*]  ; CLK_mv     ; 3.658 ; 3.658 ; Rise       ; CLK_mv          ;
+;  Tot_mv[0] ; CLK_mv     ; 3.877 ; 3.877 ; Rise       ; CLK_mv          ;
+;  Tot_mv[1] ; CLK_mv     ; 3.753 ; 3.753 ; Rise       ; CLK_mv          ;
+;  Tot_mv[2] ; CLK_mv     ; 3.775 ; 3.775 ; Rise       ; CLK_mv          ;
+;  Tot_mv[3] ; CLK_mv     ; 3.770 ; 3.770 ; Rise       ; CLK_mv          ;
+;  Tot_mv[4] ; CLK_mv     ; 3.833 ; 3.833 ; Rise       ; CLK_mv          ;
+;  Tot_mv[5] ; CLK_mv     ; 3.673 ; 3.673 ; Rise       ; CLK_mv          ;
+;  Tot_mv[6] ; CLK_mv     ; 3.777 ; 3.777 ; Rise       ; CLK_mv          ;
+;  Tot_mv[7] ; CLK_mv     ; 3.658 ; 3.658 ; Rise       ; CLK_mv          ;
++------------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                           ;
++------------------+---------+-------+----------+---------+---------------------+
+; Clock            ; Setup   ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+---------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -1.680  ; 0.215 ; -0.453   ; 0.592   ; -1.380              ;
+;  CLK_mv          ; -1.680  ; 0.215 ; -0.453   ; 0.592   ; -1.380              ;
+; Design-wide TNS  ; -11.151 ; 0.0   ; -2.399   ; 0.0     ; -13.38              ;
+;  CLK_mv          ; -11.151 ; 0.000 ; -2.399   ; 0.000   ; -13.380             ;
++------------------+---------+-------+----------+---------+---------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; A[*]      ; CLK_mv     ; 4.960 ; 4.960 ; Rise       ; CLK_mv          ;
+;  A[0]     ; CLK_mv     ; 4.960 ; 4.960 ; Rise       ; CLK_mv          ;
+;  A[1]     ; CLK_mv     ; 4.695 ; 4.695 ; Rise       ; CLK_mv          ;
+;  A[2]     ; CLK_mv     ; 4.093 ; 4.093 ; Rise       ; CLK_mv          ;
+;  A[3]     ; CLK_mv     ; 4.274 ; 4.274 ; Rise       ; CLK_mv          ;
+;  A[4]     ; CLK_mv     ; 4.383 ; 4.383 ; Rise       ; CLK_mv          ;
+;  A[5]     ; CLK_mv     ; 3.919 ; 3.919 ; Rise       ; CLK_mv          ;
+;  A[6]     ; CLK_mv     ; 4.307 ; 4.307 ; Rise       ; CLK_mv          ;
+;  A[7]     ; CLK_mv     ; 3.374 ; 3.374 ; Rise       ; CLK_mv          ;
+; C         ; CLK_mv     ; 1.674 ; 1.674 ; Rise       ; CLK_mv          ;
+; S[*]      ; CLK_mv     ; 5.422 ; 5.422 ; Rise       ; CLK_mv          ;
+;  S[0]     ; CLK_mv     ; 4.941 ; 4.941 ; Rise       ; CLK_mv          ;
+;  S[1]     ; CLK_mv     ; 5.157 ; 5.157 ; Rise       ; CLK_mv          ;
+;  S[2]     ; CLK_mv     ; 2.227 ; 2.227 ; Rise       ; CLK_mv          ;
+;  S[3]     ; CLK_mv     ; 4.950 ; 4.950 ; Rise       ; CLK_mv          ;
+;  S[4]     ; CLK_mv     ; 5.422 ; 5.422 ; Rise       ; CLK_mv          ;
+;  S[5]     ; CLK_mv     ; 5.183 ; 5.183 ; Rise       ; CLK_mv          ;
+;  S[6]     ; CLK_mv     ; 5.311 ; 5.311 ; Rise       ; CLK_mv          ;
+;  S[7]     ; CLK_mv     ; 5.122 ; 5.122 ; Rise       ; CLK_mv          ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; A[*]      ; CLK_mv     ; -1.550 ; -1.550 ; Rise       ; CLK_mv          ;
+;  A[0]     ; CLK_mv     ; -1.550 ; -1.550 ; Rise       ; CLK_mv          ;
+;  A[1]     ; CLK_mv     ; -1.936 ; -1.936 ; Rise       ; CLK_mv          ;
+;  A[2]     ; CLK_mv     ; -1.695 ; -1.695 ; Rise       ; CLK_mv          ;
+;  A[3]     ; CLK_mv     ; -1.810 ; -1.810 ; Rise       ; CLK_mv          ;
+;  A[4]     ; CLK_mv     ; -1.862 ; -1.862 ; Rise       ; CLK_mv          ;
+;  A[5]     ; CLK_mv     ; -1.715 ; -1.715 ; Rise       ; CLK_mv          ;
+;  A[6]     ; CLK_mv     ; -1.920 ; -1.920 ; Rise       ; CLK_mv          ;
+;  A[7]     ; CLK_mv     ; -1.682 ; -1.682 ; Rise       ; CLK_mv          ;
+; C         ; CLK_mv     ; -0.114 ; -0.114 ; Rise       ; CLK_mv          ;
+; S[*]      ; CLK_mv     ; -0.639 ; -0.639 ; Rise       ; CLK_mv          ;
+;  S[0]     ; CLK_mv     ; -2.331 ; -2.331 ; Rise       ; CLK_mv          ;
+;  S[1]     ; CLK_mv     ; -2.449 ; -2.449 ; Rise       ; CLK_mv          ;
+;  S[2]     ; CLK_mv     ; -0.639 ; -0.639 ; Rise       ; CLK_mv          ;
+;  S[3]     ; CLK_mv     ; -2.339 ; -2.339 ; Rise       ; CLK_mv          ;
+;  S[4]     ; CLK_mv     ; -2.487 ; -2.487 ; Rise       ; CLK_mv          ;
+;  S[5]     ; CLK_mv     ; -2.370 ; -2.370 ; Rise       ; CLK_mv          ;
+;  S[6]     ; CLK_mv     ; -2.221 ; -2.221 ; Rise       ; CLK_mv          ;
+;  S[7]     ; CLK_mv     ; -2.280 ; -2.280 ; Rise       ; CLK_mv          ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++------------------------------------------------------------------------+
+; Clock to Output Times                                                  ;
++------------+------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+------------+-------+-------+------------+-----------------+
+; D          ; CLK_mv     ; 6.623 ; 6.623 ; Rise       ; CLK_mv          ;
+; Tot_mv[*]  ; CLK_mv     ; 6.858 ; 6.858 ; Rise       ; CLK_mv          ;
+;  Tot_mv[0] ; CLK_mv     ; 6.858 ; 6.858 ; Rise       ; CLK_mv          ;
+;  Tot_mv[1] ; CLK_mv     ; 6.600 ; 6.600 ; Rise       ; CLK_mv          ;
+;  Tot_mv[2] ; CLK_mv     ; 6.631 ; 6.631 ; Rise       ; CLK_mv          ;
+;  Tot_mv[3] ; CLK_mv     ; 6.614 ; 6.614 ; Rise       ; CLK_mv          ;
+;  Tot_mv[4] ; CLK_mv     ; 6.805 ; 6.805 ; Rise       ; CLK_mv          ;
+;  Tot_mv[5] ; CLK_mv     ; 6.397 ; 6.397 ; Rise       ; CLK_mv          ;
+;  Tot_mv[6] ; CLK_mv     ; 6.628 ; 6.628 ; Rise       ; CLK_mv          ;
+;  Tot_mv[7] ; CLK_mv     ; 6.386 ; 6.386 ; Rise       ; CLK_mv          ;
++------------+------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                          ;
++------------+------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+------------+-------+-------+------------+-----------------+
+; D          ; CLK_mv     ; 3.773 ; 3.773 ; Rise       ; CLK_mv          ;
+; Tot_mv[*]  ; CLK_mv     ; 3.658 ; 3.658 ; Rise       ; CLK_mv          ;
+;  Tot_mv[0] ; CLK_mv     ; 3.877 ; 3.877 ; Rise       ; CLK_mv          ;
+;  Tot_mv[1] ; CLK_mv     ; 3.753 ; 3.753 ; Rise       ; CLK_mv          ;
+;  Tot_mv[2] ; CLK_mv     ; 3.775 ; 3.775 ; Rise       ; CLK_mv          ;
+;  Tot_mv[3] ; CLK_mv     ; 3.770 ; 3.770 ; Rise       ; CLK_mv          ;
+;  Tot_mv[4] ; CLK_mv     ; 3.833 ; 3.833 ; Rise       ; CLK_mv          ;
+;  Tot_mv[5] ; CLK_mv     ; 3.673 ; 3.673 ; Rise       ; CLK_mv          ;
+;  Tot_mv[6] ; CLK_mv     ; 3.777 ; 3.777 ; Rise       ; CLK_mv          ;
+;  Tot_mv[7] ; CLK_mv     ; 3.658 ; 3.658 ; Rise       ; CLK_mv          ;
++------------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; CLK_mv     ; CLK_mv   ; 82       ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; CLK_mv     ; CLK_mv   ; 82       ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Recovery Transfers                                                ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; CLK_mv     ; CLK_mv   ; 8        ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Removal Transfers                                                 ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; CLK_mv     ; CLK_mv   ; 8        ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 18    ; 18   ;
+; Unconstrained Input Port Paths  ; 59    ; 59   ;
+; Unconstrained Output Ports      ; 9     ; 9    ;
+; Unconstrained Output Port Paths ; 9     ; 9    ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
+    Info: Processing started: Fri Mar 06 17:15:48 2020
+Info: Command: quartus_sta maquinaVendas -c maquinaVendas
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'maquinaVendas.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name CLK_mv CLK_mv
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -1.680
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.680       -11.151 CLK_mv 
+Info (332146): Worst-case hold slack is 0.391
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.391         0.000 CLK_mv 
+Info (332146): Worst-case recovery slack is -0.453
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -0.453        -2.399 CLK_mv 
+Info (332146): Worst-case removal slack is 1.048
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     1.048         0.000 CLK_mv 
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380       -13.380 CLK_mv 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -0.204
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -0.204        -0.446 CLK_mv 
+Info (332146): Worst-case hold slack is 0.215
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.215         0.000 CLK_mv 
+Info (332146): Worst-case recovery slack is 0.214
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.214         0.000 CLK_mv 
+Info (332146): Worst-case removal slack is 0.592
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.592         0.000 CLK_mv 
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380       -13.380 CLK_mv 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 4544 megabytes
+    Info: Processing ended: Fri Mar 06 17:15:50 2020
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:01
+
+

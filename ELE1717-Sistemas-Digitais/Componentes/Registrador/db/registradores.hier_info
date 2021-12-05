@@ -1,0 +1,123 @@
+|reg8Bits
+clk_reg8bits => flipflopD:ffd00.clk
+clk_reg8bits => flipflopD:ffd01.clk
+clk_reg8bits => flipflopD:ffd02.clk
+clk_reg8bits => flipflopD:ffd03.clk
+clk_reg8bits => flipflopD:ffd04.clk
+clk_reg8bits => flipflopD:ffd05.clk
+clk_reg8bits => flipflopD:ffd06.clk
+clk_reg8bits => flipflopD:ffd07.clk
+clr_reg8bits => flipflopD:ffd00.clr
+clr_reg8bits => flipflopD:ffd01.clr
+clr_reg8bits => flipflopD:ffd02.clr
+clr_reg8bits => flipflopD:ffd03.clr
+clr_reg8bits => flipflopD:ffd04.clr
+clr_reg8bits => flipflopD:ffd05.clr
+clr_reg8bits => flipflopD:ffd06.clr
+clr_reg8bits => flipflopD:ffd07.clr
+ld_reg8bits => flipflopD:ffd00.load
+ld_reg8bits => flipflopD:ffd01.load
+ld_reg8bits => flipflopD:ffd02.load
+ld_reg8bits => flipflopD:ffd03.load
+ld_reg8bits => flipflopD:ffd04.load
+ld_reg8bits => flipflopD:ffd05.load
+ld_reg8bits => flipflopD:ffd06.load
+ld_reg8bits => flipflopD:ffd07.load
+d_in_reg8bits[0] => flipflopD:ffd00.d
+d_in_reg8bits[1] => flipflopD:ffd01.d
+d_in_reg8bits[2] => flipflopD:ffd02.d
+d_in_reg8bits[3] => flipflopD:ffd03.d
+d_in_reg8bits[4] => flipflopD:ffd04.d
+d_in_reg8bits[5] => flipflopD:ffd05.d
+d_in_reg8bits[6] => flipflopD:ffd06.d
+d_in_reg8bits[7] => flipflopD:ffd07.d
+q_out_reg8bits[0] <= flipflopD:ffd00.q
+q_out_reg8bits[1] <= flipflopD:ffd01.q
+q_out_reg8bits[2] <= flipflopD:ffd02.q
+q_out_reg8bits[3] <= flipflopD:ffd03.q
+q_out_reg8bits[4] <= flipflopD:ffd04.q
+q_out_reg8bits[5] <= flipflopD:ffd05.q
+q_out_reg8bits[6] <= flipflopD:ffd06.q
+q_out_reg8bits[7] <= flipflopD:ffd07.q
+
+
+|reg8Bits|flipflopD:ffd00
+clk => qs.CLK
+preSet => qs~0.IN0
+preSet => qs.PRESET
+clr => qs~0.IN1
+load => qs.ENA
+d => qs.DATAIN
+q <= qs.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|reg8Bits|flipflopD:ffd01
+clk => qs.CLK
+preSet => qs~0.IN0
+preSet => qs.PRESET
+clr => qs~0.IN1
+load => qs.ENA
+d => qs.DATAIN
+q <= qs.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|reg8Bits|flipflopD:ffd02
+clk => qs.CLK
+preSet => qs~0.IN0
+preSet => qs.PRESET
+clr => qs~0.IN1
+load => qs.ENA
+d => qs.DATAIN
+q <= qs.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|reg8Bits|flipflopD:ffd03
+clk => qs.CLK
+preSet => qs~0.IN0
+preSet => qs.PRESET
+clr => qs~0.IN1
+load => qs.ENA
+d => qs.DATAIN
+q <= qs.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|reg8Bits|flipflopD:ffd04
+clk => qs.CLK
+preSet => qs~0.IN0
+preSet => qs.PRESET
+clr => qs~0.IN1
+load => qs.ENA
+d => qs.DATAIN
+q <= qs.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|reg8Bits|flipflopD:ffd05
+clk => qs.CLK
+preSet => qs~0.IN0
+preSet => qs.PRESET
+clr => qs~0.IN1
+load => qs.ENA
+d => qs.DATAIN
+q <= qs.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|reg8Bits|flipflopD:ffd06
+clk => qs.CLK
+preSet => qs~0.IN0
+preSet => qs.PRESET
+clr => qs~0.IN1
+load => qs.ENA
+d => qs.DATAIN
+q <= qs.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|reg8Bits|flipflopD:ffd07
+clk => qs.CLK
+preSet => qs~0.IN0
+preSet => qs.PRESET
+clr => qs~0.IN1
+load => qs.ENA
+d => qs.DATAIN
+q <= qs.DB_MAX_OUTPUT_PORT_TYPE
+
+

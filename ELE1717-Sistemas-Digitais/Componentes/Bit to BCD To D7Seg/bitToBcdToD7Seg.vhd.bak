@@ -1,0 +1,23 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity bitToBcdToD7Seg is
+  port (SW_in: in std_logic_vector(7 downto 0);
+        HEX0,HEX1,HEX2: out std_logic_vector(6 downto 0));
+end bcdToD7Seg ;
+
+architecture ckt of bcdToD7Seg is
+  component bitToBcd is
+    port (bit_in: in std_logic_vector(7 downto 0);
+			 bcd_out: out std_logic_vector(11 downto 0));
+  end component;
+  
+  signal ciBtB_01_out, ciBtB_02_out, ciBtB_03_out, ciBtB_04_out, ciBtB_05_out, ciBtB_06_out, ciBtB_07_out: std_logic_vector(3 downto 0); 
+  
+  begin 
+      ciBtB01: ciBitToBcd port map(
+           BtB_in(3) => '0',
+           BtB_in(2 downto 0) => bit_in(7 downto 5),
+           BtB_out => ciBtB_01_out);
+      
+end ckt;    

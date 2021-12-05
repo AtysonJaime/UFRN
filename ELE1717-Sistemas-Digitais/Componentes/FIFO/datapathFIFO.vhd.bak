@@ -1,0 +1,33 @@
+library ieee ;
+use ieee.std_logic_1164.all;
+
+entity datapathFIFO is
+  port (
+			
+		  );
+end datapathFIFO;
+
+architecture ckt of datapathFIFO is
+	component bancoDeRegistrador16X13 is
+	  port (wr_data: std_logic_vector(12 downto 0);
+			  cont_wr,cont_rd: in std_logic_vector(3 downto 0); 
+			  clk_br, ld_wr, ld_rd, clr_reg: in std_logic;
+			  rd_data: out std_logic_vector(12 downto 0));
+	end component;
+	
+	component Comparador_4Bits is
+	  port (eA,eB: in std_logic_vector(3 downto 0);
+			  gt,lt,eq: in std_logic;
+			  AeqB,AltB,AgtB: out std_logic);
+	end component;
+	
+	component contador4Bits is
+	  port ( clk_c4B,ld_c4B,clr_c4B: in std_logic;	
+				out_c4B: out std_logic_vector(3 downto 0));
+	end component;
+	
+	signal
+	
+	begin
+		
+end ckt;

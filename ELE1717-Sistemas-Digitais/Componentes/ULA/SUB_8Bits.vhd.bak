@@ -1,0 +1,22 @@
+library ieee ;
+use ieee.std_logic_1164.all;
+
+entity SUB_8Bits is
+  port (sub_A8_in,sub_B8_in: in std_logic_vector(7 downto 0);
+        sub_S8_in: out std_logic);
+end SUB_8Bits;
+
+architecture ckt of SUB_8Bits is
+  
+  component SUM_8Bits is
+    port (A8_in,B8_in: in std_logic_vector(7 downto 0);
+			C8_in: in std_logic;
+			S8_out: out std_logic_vector(7 downto 0);
+			C8_out: out std_logic);
+ 	end component;
+  
+  signal B8_negado:
+  begin
+	
+        
+end ckt;

@@ -1,0 +1,8 @@
+library ieee ;
+use ieee.std_logic_1164.all;
+
+entity MUX2_1_13Bits is
+  port (I_1,I_0: std_logic_vector(12 downto 0);
+		  S: in std_logic;
+        d: out std_logic_vector(12 downto 0));
+end MUX2_1_13Bits;
