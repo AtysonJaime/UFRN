@@ -81,8 +81,44 @@ imgColorida[0:altura/2,0:largura] = imgQuadrante1
 ### e imgQuadrante for uma matriz colorida também, cada posição da imgColorida dentro desse intervalo passado,
 ### receberá seu corelacionada em imgQuadrante1, ou seja, imgColorida[0,0] recebe o array(B,G,R) de imgQuadrante1[0,0] e assim sucessivamente
 ### até finalizar o intervalo passado.
-
-
 #--------------------------------------------------------------
 #cv2.destroyAllWindows mata todas as janelas abertas;
 cv2.destroyAllWindows()
+
+
+
+#---------------------------------------------------------------
+## Trabalhando com Video
+cap = cv2.VideoCapture(0) # Inicializa a webcam
+if not cap.isOpened():
+    sys.exit("Não conseguimos abrir a câmera.")
+
+# Seto a largura e altura da janela de video
+cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640);
+cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480);
+
+# Capture frame por frame
+while True:
+    ret, frame = cap.read()
+
+    # Se o frame estiver sido lido, ret retorna true
+    if not ret:
+        print("Não conseguir ler o frame do video. Webcan ainda funcioando ?")
+        break
+
+    # Trasforma imagem recebida em escala de cinza
+    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+    histGray = cv2.calcHist([gray],[0],None,[256], [0, 256])
+
+    # Apresenta os dois frames, antes e o depois.
+    res = numpy.hstack((gray, equ)) # Mostra duas imagens juntas
+    cv2.imshow('Equalização', res) # Apresebta freme
+    # Caso aperte q, aplicação é encerrada 
+    if cv2.waitKey(1) == ord('q'):
+        break
+
+# When everything done, release the capture
+cap.release()
+cv2.destroyAllWindows()
+
+
