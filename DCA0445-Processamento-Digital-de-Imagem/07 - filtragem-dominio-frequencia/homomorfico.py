@@ -12,7 +12,6 @@ yv,cv,dv = 0,0,0
 def filtroHomomorfico():
     global yh, yl, c, d0, dft, dft_M, dft_N
     du = np.zeros(dft.shape, dtype=np.float32)
-    print(dft.shape, dft_M, dft_N, c, d0)
     for u in range(dft_M):
         for v in range(dft_N):
             du[u,v] = math.sqrt((u-dft_M/2.0)*(u-dft_M/2.0)+(v-dft_N/2.0)*(v-dft_N/2.0))
