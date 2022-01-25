@@ -47,9 +47,10 @@ while True:
             if calculaDiferenca >= 70:
                 contadorDeOcorrencias += 1  
         
-        # Se a quantiade de ocorrências forem maiores que 100, ou seja, mais ou menos 40% das intesidades mudaram seus valores.
-        # Então, quer dizer que houve uma movimentação na cena.
-        if(contadorDeOcorrencias > 100):
+        # Se a quantiade de ocorrências forem maiores que 200, ou seja, mais ou menos 40% das intesidades mudaram seus valores.
+        # Então, quer dizer que houve uma cls
+        # movimentação na cena.
+        if(contadorDeOcorrencias > 200):
             quantMexidas += 1    
             print('Numero de occorências maiores que 70 >>>>', contadorDeOcorrencias)
             print('VOCÊ SE MEXEU ', quantMexidas, ' VEZES!')      
